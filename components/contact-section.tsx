@@ -141,7 +141,14 @@ export function ContactSection() {
                     className="w-full bg-accent text-accent-foreground hover:bg-accent/90"
                     disabled={isSubmitting}
                   >
-                    {isSubmitting ? "Enviando..." : "Enviar y pedir presupuesto sin compromiso"}
+                    {isSubmitting ? (
+                      "Enviando..."
+                    ) : (
+                      <>
+                        <span className="sm:hidden">Solicitar presupuesto</span>
+                        <span className="hidden sm:inline">Enviar y pedir presupuesto sin compromiso</span>
+                      </>
+                    )}
                   </Button>
                   <Button
                     asChild

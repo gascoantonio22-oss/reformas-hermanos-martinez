@@ -55,11 +55,16 @@ export function HeroSection() {
       {/* Trust Bar */}
       <div className="relative bg-card border-t border-b border-border">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
-          <div className="flex flex-wrap justify-between items-center gap-y-4">
+          <div className="grid grid-cols-2 gap-3 md:flex md:flex-wrap md:justify-between md:items-center md:gap-y-4">
             {trustItems.map((item) => (
-              <div key={item.text} className="flex items-center gap-2 w-1/2 md:w-auto">
-                <item.icon className="h-5 w-5 text-accent flex-shrink-0" />
-                <span className="text-sm font-medium text-foreground">{item.text}</span>
+              <div
+                key={item.text}
+                className="flex items-start gap-2 rounded-lg border border-border/70 bg-background/70 px-3 py-3 md:w-auto md:items-center md:rounded-none md:border-0 md:bg-transparent md:px-0 md:py-0"
+              >
+                <item.icon className="mt-0.5 h-4 w-4 text-accent flex-shrink-0 md:mt-0 md:h-5 md:w-5" />
+                <span className="text-xs leading-snug font-medium text-foreground md:text-sm md:leading-normal">
+                  {item.text}
+                </span>
               </div>
             ))}
           </div>
