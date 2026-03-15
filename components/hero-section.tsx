@@ -24,15 +24,15 @@ export function HeroSection() {
         />
       </div>
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-        <div className="max-w-3xl">
+        <div className="max-w-3xl text-center md:text-left">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary-foreground leading-tight text-balance">
             Reformas en España: Sin Sorpresas, Sin Retrasos y con Precio Cerrado.
           </h1>
-          <p className="mt-5 text-lg text-primary-foreground/90 max-w-2xl leading-relaxed">
+          <p className="mt-5 text-lg text-primary-foreground/90 max-w-2xl leading-relaxed mx-auto md:mx-0">
             Somos una empresa familiar con 25 años de experiencia. Nos encargamos de todo para que tú solo disfrutes de tu nuevo hogar. Cocinas, baños y reformas integrales con garantía por escrito.
           </p>
 
-          <div className="mt-8 flex flex-col sm:flex-row gap-3">
+          <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
             <Button
               asChild
               size="lg"

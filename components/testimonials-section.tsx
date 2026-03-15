@@ -38,8 +38,8 @@ export function TestimonialsSection() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
           {testimonials.map((testimonial, index) => (
             <Card key={index} className="bg-card border-0">
-              <CardContent className="p-6">
-                <div className="flex gap-1 mb-3">
+              <CardContent className="p-6 text-center md:text-left">
+                <div className="flex gap-1 mb-3 justify-center md:justify-start">
                   {Array.from({ length: testimonial.rating }).map((_, i) => (
                     <Star key={i} className="h-4 w-4 fill-accent text-accent" />
                   ))}
@@ -47,7 +47,7 @@ export function TestimonialsSection() {
                 <p className="text-muted-foreground text-sm leading-relaxed mb-4">
                   &ldquo;{testimonial.text}&rdquo;
                 </p>
-                <div className="flex items-center justify-between">
+                <div className="flex flex-col items-center gap-2 md:flex-row md:items-center md:justify-between">
                   <div>
                     <p className="font-semibold text-foreground">{testimonial.name}</p>
                     <p className="text-sm text-muted-foreground">{testimonial.location}</p>

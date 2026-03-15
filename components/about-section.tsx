@@ -23,7 +23,7 @@ export function AboutSection() {
             </div>
           </div>
 
-          <div>
+          <div className="text-center lg:text-left">
             <h2 className="text-2xl sm:text-3xl font-bold text-foreground text-balance">
               Profesionales de los de antes
             </h2>
@@ -31,7 +31,7 @@ export function AboutSection() {
               No somos una franquicia. Somos profesionales de los de antes. Desde 1999, tratamos cada reforma como si fuera para nuestra propia familia. Más de 1.500 hogares en Madrid ya confían en nosotros.
             </p>
 
-            <div className="mt-8 flex gap-8">
+            <div className="mt-8 flex justify-center gap-8 lg:justify-start">
               {stats.map((stat) => (
                 <div key={stat.label} className="text-center">
                   <p className="text-3xl font-bold text-primary">{stat.value}</p>
