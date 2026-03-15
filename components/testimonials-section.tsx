@@ -4,19 +4,19 @@ import { Card, CardContent } from "@/components/ui/card"
 const testimonials = [
   {
     name: "María García",
-    location: "Chamberí, Madrid",
+    location: "Madrid",
     rating: 5,
     text: "Reformaron nuestra cocina y el resultado fue espectacular. Cumplieron los plazos y el presupuesto. Muy profesionales y atentos a los detalles.",
   },
   {
     name: "Carlos Rodríguez",
-    location: "Salamanca, Madrid",
+    location: "Málaga",
     rating: 5,
     text: "Excelente trabajo en la reforma del baño. El equipo fue muy limpio y respetuoso. Sin duda los recomendaré a familiares y amigos.",
   },
   {
     name: "Ana Martín",
-    location: "Retiro, Madrid",
+    location: "Ibiza",
     rating: 5,
     text: "Hicieron una reforma integral de nuestro piso y estamos encantados. La comunicación fue constante y resolvieron todas nuestras dudas.",
   },

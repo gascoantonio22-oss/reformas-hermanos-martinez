@@ -19,15 +19,9 @@ export function Header() {
     <header className="sticky top-0 z-50 bg-card border-b border-border shadow-sm">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
-          <div className="flex items-center gap-2">
-            <div className="flex h-10 w-10 items-center justify-center rounded bg-primary">
-              <span className="text-lg font-bold text-primary-foreground">HM</span>
-            </div>
-            <div className="hidden sm:block">
-              <p className="text-sm font-semibold text-foreground leading-tight">Hermanos Martínez</p>
-              <p className="text-xs text-muted-foreground">Reformas</p>
-            </div>
-          </div>
+          <Link href="/" className="text-base sm:text-lg font-semibold text-foreground leading-tight">
+            Hermanos Martinez
+          </Link>
 
           <nav className="hidden md:flex items-center gap-6">
             {navLinks.map((link) => (
