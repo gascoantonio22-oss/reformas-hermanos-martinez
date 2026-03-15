@@ -59,10 +59,12 @@ export function HeroSection() {
             {trustItems.map((item) => (
               <div
                 key={item.text}
-                className="flex items-start gap-2 rounded-lg border border-border/70 bg-background/70 px-3 py-3 md:w-auto md:items-center md:rounded-none md:border-0 md:bg-transparent md:px-0 md:py-0"
+                className="flex flex-col items-center gap-2 rounded-xl border border-border/70 bg-background/80 px-3 py-3 text-center shadow-sm md:w-auto md:flex-row md:items-center md:gap-2 md:rounded-none md:border-0 md:bg-transparent md:px-0 md:py-0 md:text-left md:shadow-none"
               >
-                <item.icon className="mt-0.5 h-4 w-4 text-accent flex-shrink-0 md:mt-0 md:h-5 md:w-5" />
-                <span className="text-xs leading-snug font-medium text-foreground md:text-sm md:leading-normal">
+                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-accent/10 md:h-auto md:w-auto md:rounded-none md:bg-transparent">
+                  <item.icon className="h-4 w-4 text-accent flex-shrink-0 md:h-5 md:w-5" />
+                </div>
+                <span className="text-[11px] leading-snug font-medium text-foreground md:text-sm md:leading-normal">
                   {item.text}
                 </span>
               </div>
