@@ -6,28 +6,15 @@ import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { ChevronLeft, ChevronRight } from "lucide-react"
 
-// Array of 20 project images - update paths as needed
 const projects = [
   { id: 1, title: "Cocina en Chamberí", location: "Madrid Centro", beforeImage: "/images/kitchen-before.jpg", afterImage: "/images/kitchen-after.jpg" },
   { id: 2, title: "Baño en Salamanca", location: "Barrio de Salamanca", beforeImage: "/images/bathroom-before.jpg", afterImage: "/images/bathroom-after.jpg" },
-  { id: 3, title: "Reforma integral en Retiro", location: "Retiro", beforeImage: "/images/kitchen-before.jpg", afterImage: "/images/kitchen-after.jpg" },
-  { id: 4, title: "Baño en Moncloa", location: "Moncloa-Aravaca", beforeImage: "/images/bathroom-before.jpg", afterImage: "/images/bathroom-after.jpg" },
-  { id: 5, title: "Cocina en Argüelles", location: "Argüelles", beforeImage: "/images/kitchen-before.jpg", afterImage: "/images/kitchen-after.jpg" },
-  { id: 6, title: "Baño en Chamartín", location: "Chamartín", beforeImage: "/images/bathroom-before.jpg", afterImage: "/images/bathroom-after.jpg" },
-  { id: 7, title: "Cocina en Tetuán", location: "Tetuán", beforeImage: "/images/kitchen-before.jpg", afterImage: "/images/kitchen-after.jpg" },
-  { id: 8, title: "Baño en Latina", location: "La Latina", beforeImage: "/images/bathroom-before.jpg", afterImage: "/images/bathroom-after.jpg" },
-  { id: 9, title: "Reforma integral en Malasaña", location: "Malasaña", beforeImage: "/images/kitchen-before.jpg", afterImage: "/images/kitchen-after.jpg" },
-  { id: 10, title: "Baño en Lavapiés", location: "Lavapiés", beforeImage: "/images/bathroom-before.jpg", afterImage: "/images/bathroom-after.jpg" },
-  { id: 11, title: "Cocina en Vallecas", location: "Vallecas", beforeImage: "/images/kitchen-before.jpg", afterImage: "/images/kitchen-after.jpg" },
-  { id: 12, title: "Baño en Carabanchel", location: "Carabanchel", beforeImage: "/images/bathroom-before.jpg", afterImage: "/images/bathroom-after.jpg" },
-  { id: 13, title: "Cocina en Usera", location: "Usera", beforeImage: "/images/kitchen-before.jpg", afterImage: "/images/kitchen-after.jpg" },
-  { id: 14, title: "Baño en Villaverde", location: "Villaverde", beforeImage: "/images/bathroom-before.jpg", afterImage: "/images/bathroom-after.jpg" },
-  { id: 15, title: "Reforma integral en Hortaleza", location: "Hortaleza", beforeImage: "/images/kitchen-before.jpg", afterImage: "/images/kitchen-after.jpg" },
-  { id: 16, title: "Baño en San Blas", location: "San Blas", beforeImage: "/images/bathroom-before.jpg", afterImage: "/images/bathroom-after.jpg" },
-  { id: 17, title: "Cocina en Moratalaz", location: "Moratalaz", beforeImage: "/images/kitchen-before.jpg", afterImage: "/images/kitchen-after.jpg" },
-  { id: 18, title: "Baño en Ciudad Lineal", location: "Ciudad Lineal", beforeImage: "/images/bathroom-before.jpg", afterImage: "/images/bathroom-after.jpg" },
-  { id: 19, title: "Cocina en Fuencarral", location: "Fuencarral-El Pardo", beforeImage: "/images/kitchen-before.jpg", afterImage: "/images/kitchen-after.jpg" },
-  { id: 20, title: "Baño en Barajas", location: "Barajas", beforeImage: "/images/bathroom-before.jpg", afterImage: "/images/bathroom-after.jpg" },
+  { id: 3, title: "Proyecto residencial 1", location: "Antes y después", beforeImage: "/images/projects-custom/project-01-before.png", afterImage: "/images/projects-custom/project-01-after.png" },
+  { id: 4, title: "Proyecto residencial 2", location: "Antes y después", beforeImage: "/images/projects-custom/project-02-before.png", afterImage: "/images/projects-custom/project-02-after.png" },
+  { id: 5, title: "Proyecto residencial 3", location: "Antes y después", beforeImage: "/images/projects-custom/project-03-before.png", afterImage: "/images/projects-custom/project-03-after.png" },
+  { id: 6, title: "Proyecto residencial 4", location: "Antes y después", beforeImage: "/images/projects-custom/project-04-before.png", afterImage: "/images/projects-custom/project-04-after.png" },
+  { id: 7, title: "Proyecto residencial 5", location: "Antes y después", beforeImage: "/images/projects-custom/project-05-before.png", afterImage: "/images/projects-custom/project-05-after.png" },
+  { id: 8, title: "Proyecto residencial 6", location: "Antes y después", beforeImage: "/images/projects-custom/project-06-before.png", afterImage: "/images/projects-custom/project-06-after.png" },
 ]
 
 export function ProjectsSection() {
