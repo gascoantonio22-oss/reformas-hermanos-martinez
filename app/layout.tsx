@@ -7,8 +7,8 @@ import './globals.css'
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 
 export const metadata: Metadata = {
-  title: 'Reformas Hermanos Martínez | Reformas Integrales en Madrid',
-  description: 'Empresa familiar con 25 años de experiencia en reformas de cocinas, baños y reformas integrales en Madrid. Presupuesto sin compromiso. Cumplimiento de plazos garantizado.',
+  title: 'Reformas Hermanos Martínez | Reformas Integrales en España',
+  description: 'Empresa familiar con 25 años de experiencia en reformas de cocinas, baños y reformas integrales en España. Presupuesto sin compromiso. Cumplimiento de plazos garantizado.',
   metadataBase: new URL('https://reformas-hermanos-martinez.vercel.app'),
   generator: 'v0.app',
   icons: {
@@ -32,9 +32,9 @@ export const metadata: Metadata = {
     type: 'website',
     locale: 'es_ES',
     url: 'https://reformas-hermanos-martinez.vercel.app',
-    title: 'Reformas Hermanos Martínez | Reformas Integrales en Madrid',
+    title: 'Reformas Hermanos Martínez | Reformas Integrales en España',
     description:
-      'Empresa familiar con 25 años de experiencia en reformas de cocinas, baños y reformas integrales en Madrid.',
+      'Empresa familiar con 25 años de experiencia en reformas de cocinas, baños y reformas integrales en España.',
     images: [
       {
         url: '/images/hero-renovation.jpg',

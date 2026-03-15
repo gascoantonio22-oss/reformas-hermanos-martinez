@@ -9,12 +9,12 @@ import { ChevronLeft, ChevronRight } from "lucide-react"
 const projects = [
   { id: 1, title: "Cocina en Chamberí", location: "Madrid Centro", beforeImage: "/images/kitchen-before.jpg", afterImage: "/images/kitchen-after.jpg" },
   { id: 2, title: "Baño en Salamanca", location: "Barrio de Salamanca", beforeImage: "/images/bathroom-before.jpg", afterImage: "/images/bathroom-after.jpg" },
-  { id: 3, title: "Proyecto residencial 1", location: "Antes y después", beforeImage: "/images/projects-custom/project-01-before.png", afterImage: "/images/projects-custom/project-01-after.png" },
-  { id: 4, title: "Proyecto residencial 2", location: "Antes y después", beforeImage: "/images/projects-custom/project-02-before.png", afterImage: "/images/projects-custom/project-02-after.png" },
-  { id: 5, title: "Proyecto residencial 3", location: "Antes y después", beforeImage: "/images/projects-custom/project-03-before.png", afterImage: "/images/projects-custom/project-03-after.png" },
-  { id: 6, title: "Proyecto residencial 4", location: "Antes y después", beforeImage: "/images/projects-custom/project-04-before.png", afterImage: "/images/projects-custom/project-04-after.png" },
-  { id: 7, title: "Proyecto residencial 5", location: "Antes y después", beforeImage: "/images/projects-custom/project-05-before.png", afterImage: "/images/projects-custom/project-05-after.png" },
-  { id: 8, title: "Proyecto residencial 6", location: "Antes y después", beforeImage: "/images/projects-custom/project-06-before.png", afterImage: "/images/projects-custom/project-06-after.png" },
+  { id: 3, title: "El Born", location: "Barcelona", beforeImage: "/images/projects-custom/project-01-before.png", afterImage: "/images/projects-custom/project-01-after.png" },
+  { id: 4, title: "La Malagueta", location: "Málaga", beforeImage: "/images/projects-custom/project-02-before.png", afterImage: "/images/projects-custom/project-02-after.png" },
+  { id: 5, title: "Dalt Vila", location: "Ibiza", beforeImage: "/images/projects-custom/project-03-before.png", afterImage: "/images/projects-custom/project-03-after.png" },
+  { id: 6, title: "Justicia", location: "Madrid", beforeImage: "/images/projects-custom/project-04-before.png", afterImage: "/images/projects-custom/project-04-after.png" },
+  { id: 7, title: "Sierra de Gredos", location: "Casa de campo", beforeImage: "/images/projects-custom/project-05-before.png", afterImage: "/images/projects-custom/project-05-after.png" },
+  { id: 8, title: "La Alpujarra", location: "Casa rural", beforeImage: "/images/projects-custom/project-06-before.png", afterImage: "/images/projects-custom/project-06-after.png" },
 ]
 
 export function ProjectsSection() {
