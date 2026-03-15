@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { Phone, Mail, MapPin, Clock } from "lucide-react"
+import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -142,6 +142,23 @@ export function ContactSection() {
                     disabled={isSubmitting}
                   >
                     {isSubmitting ? "Enviando..." : "Enviar y pedir presupuesto sin compromiso"}
+                  </Button>
+                  <Button
+                    asChild
+                    type="button"
+                    size="lg"
+                    variant="outline"
+                    className="w-full border-[#25D366]/40 text-[#1f8f4c] hover:bg-[#25D366]/10 hover:text-[#1f8f4c]"
+                  >
+                    <a
+                      href="https://wa.me/34612345678?text=Hola,%20me%20gustar%C3%ADa%20hablar%20sobre%20mi%20proyecto%20de%20reforma"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex items-center justify-center gap-2"
+                    >
+                      <MessageCircle className="h-4 w-4" />
+                      Hablar por WhatsApp
+                    </a>
                   </Button>
                   <p className="text-xs text-muted-foreground text-center">
                     Al enviar este formulario aceptas nuestra política de privacidad

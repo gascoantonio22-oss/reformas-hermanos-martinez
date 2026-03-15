@@ -1,6 +1,6 @@
 "use client"
 
-import { useState, useRef } from "react"
+import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 import { Card } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
@@ -17,9 +17,12 @@ const projects = [
   { id: 8, title: "La Alpujarra", location: "Casa rural", beforeImage: "/images/projects-custom/project-06-before.png", afterImage: "/images/projects-custom/project-06-after.png" },
 ]
 
+const circularProjects = [...projects, ...projects, ...projects]
+
 export function ProjectsSection() {
   const [activeViews, setActiveViews] = useState<Record<number, "before" | "after">>({})
   const scrollRef = useRef<HTMLDivElement>(null)
+  const isAdjustingRef = useRef(false)
 
   const getView = (projectId: number) => activeViews[projectId] || "after"
 
@@ -28,6 +31,45 @@ export function ProjectsSection() {
       ...prev,
       [projectId]: view,
     }))
+  }
+
+  useEffect(() => {
+    const container = scrollRef.current
+    if (!container) return
+
+    const setInitialPosition = () => {
+      const segmentWidth = container.scrollWidth / 3
+      container.scrollLeft = segmentWidth
+    }
+
+    setInitialPosition()
+
+    const handleResize = () => setInitialPosition()
+    window.addEventListener("resize", handleResize)
+
+    return () => window.removeEventListener("resize", handleResize)
+  }, [])
+
+  const handleInfiniteScroll = () => {
+    const container = scrollRef.current
+    if (!container || isAdjustingRef.current) return
+
+    const segmentWidth = container.scrollWidth / 3
+    const buffer = 24
+
+    if (container.scrollLeft <= buffer) {
+      isAdjustingRef.current = true
+      container.scrollLeft += segmentWidth
+      requestAnimationFrame(() => {
+        isAdjustingRef.current = false
+      })
+    } else if (container.scrollLeft >= segmentWidth * 2 - buffer) {
+      isAdjustingRef.current = true
+      container.scrollLeft -= segmentWidth
+      requestAnimationFrame(() => {
+        isAdjustingRef.current = false
+      })
+    }
   }
 
   const scroll = (direction: "left" | "right") => {
@@ -76,10 +118,11 @@ export function ProjectsSection() {
             ref={scrollRef}
             className="flex gap-4 overflow-x-auto scrollbar-hide scroll-smooth pb-4 -mx-4 px-4 md:mx-0 md:px-0"
             style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+            onScroll={handleInfiniteScroll}
           >
-            {projects.map((project) => (
+            {circularProjects.map((project, index) => (
               <Card
-                key={project.id}
+                key={`${project.id}-${index}`}
                 className="flex-shrink-0 w-80 sm:w-96 overflow-hidden border-border group"
               >
                 <div className="relative aspect-[4/3] h-64 sm:h-80">
