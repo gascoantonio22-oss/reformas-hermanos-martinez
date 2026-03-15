@@ -61,9 +61,9 @@ export function ServicesSection() {
                 <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10 mb-3">
                   <service.icon className="h-6 w-6 text-primary" />
                 </div>
-                <CardTitle className="text-lg min-h-[2.75rem] flex items-start leading-tight">{service.title}</CardTitle>
+                <CardTitle className="text-lg min-h-[2.4rem] flex items-start leading-tight">{service.title}</CardTitle>
               </CardHeader>
-              <CardContent className="flex-1 pt-2">
+              <CardContent className="flex-1 pt-1">
                 <CardDescription className="text-sm leading-relaxed">
                   {service.description}
                 </CardDescription>
