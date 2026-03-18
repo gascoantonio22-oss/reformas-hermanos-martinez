@@ -20,7 +20,7 @@ export function Header() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <Link href="/" className="text-base sm:text-lg font-semibold text-foreground leading-tight">
-            Hermanos Martinez
+            Hermanos Martínez
           </Link>
 
           <nav className="hidden md:flex items-center gap-6">

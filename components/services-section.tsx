@@ -10,7 +10,7 @@ const services = [
   {
     icon: Bath,
     title: "Reformas de Baños",
-    description: "Especialistas en cambio de bañera por plato de ducha en 24h o reforma completa con nuevos azulejos, sanitarios y mobiliario.",
+    description: "Especialistas en cambio de bañera por plato de ducha o reforma completa con nuevos azulejos, sanitarios y mobiliario.",
   },
   {
     icon: Home,
@@ -63,7 +63,7 @@ export function ServicesSection() {
                 </div>
                 <CardTitle className="text-lg min-h-[2.4rem] flex items-center justify-center md:justify-start leading-tight">{service.title}</CardTitle>
               </CardHeader>
-              <CardContent className="flex-1 pt-1 text-center md:text-left">
+              <CardContent className="flex-1 pt-1 text-left md:text-left">
                 <CardDescription className="text-sm leading-relaxed">
                   {service.description}
                 </CardDescription>
