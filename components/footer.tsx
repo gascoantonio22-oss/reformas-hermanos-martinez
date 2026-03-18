@@ -17,7 +17,7 @@ export function Footer() {
               </div>
             </div>
             <p className="text-sm text-background/70">
-              Empresa familiar con más de 25 años de experiencia en reformas de confianza en Madrid.
+              Empresa familiar con más de 25 años de experiencia en reformas de confianza en España.
             </p>
           </div>
 
@@ -35,7 +35,7 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex items-center gap-2 text-background/70">
                 <MapPin className="h-4 w-4 flex-shrink-0" />
-                <span>Calle Falsa 123, Madrid</span>
+                <span>Calle Falsa 123, España</span>
               </li>
               <li className="flex items-center gap-2 text-background/70">
                 <Mail className="h-4 w-4 flex-shrink-0" />
