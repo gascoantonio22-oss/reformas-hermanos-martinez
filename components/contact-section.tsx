@@ -62,11 +62,11 @@ export function ContactSection() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          <Card className="lg:col-span-2 border-border">
-            <CardHeader>
-              <CardTitle>Formulario de Contacto</CardTitle>
-              <CardDescription>Rellena el formulario y te llamaremos sin compromiso</CardDescription>
-            </CardHeader>
+            <Card className="border-border lg:col-span-2">
+              <CardHeader className="text-center">
+                <CardTitle>Formulario de Contacto</CardTitle>
+                <CardDescription>Rellena el formulario y te llamaremos sin compromiso</CardDescription>
+              </CardHeader>
             <CardContent>
               {isSubmitted ? (
                 <div className="text-center py-8">
@@ -182,8 +182,8 @@ export function ContactSection() {
               </CardHeader>
               <CardContent className="space-y-4">
                 {contactInfo.map((item) => (
-                  <div key={item.label} className="flex items-start gap-3">
-                    <div className="flex h-9 w-9 items-center justify-center rounded-lg bg-primary/10 flex-shrink-0">
+                  <div key={item.label} className="flex flex-col items-center gap-3 text-center">
+                    <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10">
                       <item.icon className="h-4 w-4 text-primary" />
                     </div>
                     <div>
@@ -202,7 +202,7 @@ export function ContactSection() {
             </Card>
 
             <Card className="border-accent bg-accent/5">
-              <CardContent className="p-4">
+              <CardContent className="p-4 text-center">
                 <p className="font-semibold text-foreground">Respuesta rápida garantizada</p>
                 <p className="text-sm text-muted-foreground mt-1">
                   Te llamamos en menos de 24 horas para concertar una visita sin compromiso.

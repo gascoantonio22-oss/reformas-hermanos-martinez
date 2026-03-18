@@ -24,15 +24,15 @@ export function HeroSection() {
         />
       </div>
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-        <div className="max-w-3xl text-center md:text-left">
+        <div className="mx-auto max-w-3xl text-center">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary-foreground leading-tight text-balance">
             Reformas sin sorpresas, sin retrasos y con precio cerrado.
           </h1>
-          <p className="mt-5 text-lg text-primary-foreground/90 max-w-2xl leading-relaxed mx-auto md:mx-0">
+          <p className="mt-5 mx-auto max-w-2xl text-lg leading-relaxed text-primary-foreground/90">
             Somos una empresa familiar con 25 años de experiencia. Nos encargamos de todo para que tú solo disfrutes de tu nuevo hogar. Cocinas, baños y reformas integrales con garantía por escrito.
           </p>
 
-          <div className="mt-8 flex flex-col sm:flex-row gap-3 justify-center md:justify-start">
+          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
             <Button
               asChild
               size="lg"
@@ -59,7 +59,7 @@ export function HeroSection() {
             {trustItems.map((item) => (
               <div
                 key={item.text}
-                className="flex flex-col items-center gap-2 rounded-xl border border-border/70 bg-background/80 px-3 py-3 text-center shadow-sm md:w-auto md:flex-row md:items-center md:gap-2 md:rounded-none md:border-0 md:bg-transparent md:px-0 md:py-0 md:text-left md:shadow-none"
+                  className="flex flex-col items-center gap-2 rounded-xl border border-border/70 bg-background/80 px-3 py-3 text-center shadow-sm md:w-auto md:flex-row md:items-center md:justify-center md:gap-2 md:rounded-none md:border-0 md:bg-transparent md:px-0 md:py-0 md:shadow-none"
               >
                 <div className="flex h-9 w-9 items-center justify-center rounded-full bg-accent/10 md:h-auto md:w-auto md:rounded-none md:bg-transparent">
                   <item.icon className="h-4 w-4 text-accent flex-shrink-0 md:h-5 md:w-5" />
