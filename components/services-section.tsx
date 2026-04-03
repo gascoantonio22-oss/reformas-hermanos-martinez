@@ -4,42 +4,42 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 const services = [
   {
     title: "COCINA",
-    image: "/images/services/cocina.png",
+    image: "/images/services/cocina.jpg",
     description: "Reforma completa de cocina con distribución funcional, mobiliario bien resuelto y acabados pensados para el uso diario.",
   },
   {
     title: "BAÑO",
-    image: "/images/services/bano.png",
+    image: "/images/services/bano.jpg",
     description: "Renovación de baño con nuevos revestimientos, sanitarios y una solución más cómoda y actual para el espacio.",
   },
   {
     title: "Reforma Integral",
-    image: "/images/services/reforma-integral.png",
+    image: "/images/services/reforma-integral.jpg",
     description: "Transformación completa de la vivienda con una ejecución coordinada para que todas las estancias hablen el mismo lenguaje.",
   },
   {
     title: "Baño Plato ucha",
-    image: "/images/services/bano-plato-ucha.png",
+    image: "/images/services/bano-plato-ucha.jpg",
     description: "Cambio a plato de ducha con acceso más cómodo, limpieza sencilla y una imagen mucho más moderna del baño.",
   },
   {
     title: "alicatados",
-    image: "/images/services/alicatados.png",
+    image: "/images/services/alicatados.jpg",
     description: "Colocación cuidada de azulejos y pavimentos con juntas, nivelación y remates que hacen que el resultado se vea sólido y limpio.",
   },
   {
     title: "carpinteria interior",
-    image: "/images/services/carpinteria-interior.png",
+    image: "/images/services/carpinteria-interior.jpg",
     description: "Puertas, armarios y soluciones interiores a medida para aprovechar mejor el espacio y mantener una estética coherente.",
   },
   {
     title: "pinturas y acabados",
-    image: "/images/services/pinturas-y-acabados.png",
+    image: "/images/services/pinturas-y-acabados.jpg",
     description: "Pintura, alisado y terminaciones finales para dejar cada estancia rematada, luminosa y lista para entrar a vivir.",
   },
   {
     title: "instalaciones",
-    image: "/images/services/instalaciones.png",
+    image: "/images/services/instalaciones.jpg",
     description: "Actualización de instalaciones eléctricas y de fontanería para mejorar seguridad, rendimiento y fiabilidad en el día a día.",
   },
 ]
