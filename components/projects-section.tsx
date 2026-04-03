@@ -87,10 +87,10 @@ export function ProjectsSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground text-balance">
-            Proyectos Realizados
+            Reformas que se notan a simple vista
           </h2>
           <p className="mt-3 text-muted-foreground">
-            Mira el antes y después de algunas de nuestras reformas más recientes
+            Compara el antes y el después de algunos trabajos realizados por nuestro equipo
           </p>
         </div>
 

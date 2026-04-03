@@ -17,16 +17,16 @@ export function Footer() {
               </div>
             </div>
             <p className="text-sm text-background/70">
-              Empresa familiar con más de 25 años de experiencia en reformas de confianza en España.
+              Empresa familiar con más de 25 años reformando hogares con seriedad, oficio y trato cercano.
             </p>
           </div>
 
           <div>
-            <h3 className="mb-4 font-semibold">Servicios</h3>
+            <h3 className="mb-4 font-semibold">Qué hacemos</h3>
             <ul className="space-y-2 text-sm text-background/70">
-              <li><Link href="#servicios" className="hover:text-background">Reformas de Cocinas</Link></li>
-              <li><Link href="#servicios" className="hover:text-background">Reformas de Baños</Link></li>
-              <li><Link href="#servicios" className="hover:text-background">Reformas Integrales</Link></li>
+              <li><Link href="#servicios" className="hover:text-background">Cocinas completas</Link></li>
+              <li><Link href="#servicios" className="hover:text-background">Baños funcionales</Link></li>
+              <li><Link href="#servicios" className="hover:text-background">Reformas integrales</Link></li>
             </ul>
           </div>
 
@@ -35,7 +35,7 @@ export function Footer() {
             <ul className="space-y-3 text-sm">
               <li className="flex items-center justify-center gap-2 text-background/70">
                 <MapPin className="h-4 w-4 flex-shrink-0" />
-                <span>Calle Falsa 123, España</span>
+                <span>Madrid y alrededores</span>
               </li>
               <li className="flex items-center justify-center gap-2 text-background/70">
                 <Mail className="h-4 w-4 flex-shrink-0" />

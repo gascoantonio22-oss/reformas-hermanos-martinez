@@ -4,10 +4,10 @@ import { CheckCircle, Clock, Shield, HardHat } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const trustItems = [
-  { icon: CheckCircle, text: "Presupuesto cerrado por contrato" },
-  { icon: Clock, text: "Fecha de entrega garantizada" },
-  { icon: Shield, text: "2 años de garantía total" },
-  { icon: HardHat, text: "Personal propio, sin subcontratas" },
+  { icon: CheckCircle, text: "Presupuesto claro y cerrado" },
+  { icon: Clock, text: "Plazos pactados por escrito" },
+  { icon: Shield, text: "2 años de garantía" },
+  { icon: HardHat, text: "Equipo propio, sin subcontratas" },
 ]
 
 export function HeroSection() {
@@ -26,10 +26,10 @@ export function HeroSection() {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
         <div className="mx-auto max-w-3xl text-center">
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary-foreground leading-tight text-balance">
-            Reformas sin sorpresas, sin retrasos y con precio cerrado.
+            Tu reforma bien hecha, con precio claro y plazos serios.
           </h1>
           <p className="mt-5 mx-auto max-w-2xl text-lg leading-relaxed text-primary-foreground/90">
-            Somos una empresa familiar con 25 años de experiencia. Nos encargamos de todo para que tú solo disfrutes de tu nuevo hogar. Cocinas, baños y reformas integrales con garantía por escrito.
+            Empresa familiar con 25 años de oficio. Reformamos cocinas, baños y viviendas completas ocupándonos de cada detalle para que vivas la obra con más tranquilidad.
           </p>
 
           <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
@@ -38,7 +38,7 @@ export function HeroSection() {
               size="lg"
               className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold"
             >
-              <Link href="#contacto">Solicitar Presupuesto Gratis</Link>
+              <Link href="#contacto">Pedir Presupuesto Gratis</Link>
             </Button>
             <Button
               asChild
@@ -46,7 +46,7 @@ export function HeroSection() {
               variant="outline"
               className="bg-transparent border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
             >
-              <Link href="#proyectos">Ver Proyectos Realizados</Link>
+              <Link href="#proyectos">Ver Reformas Reales</Link>
             </Button>
           </div>
         </div>

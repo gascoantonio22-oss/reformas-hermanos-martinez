@@ -25,10 +25,10 @@ export function AboutSection() {
 
           <div className="text-center">
             <h2 className="text-[1.75rem] sm:text-3xl font-bold text-foreground text-balance">
-              Profesionales de los de antes
+              Profesionales de verdad, trato de verdad
             </h2>
             <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-              No somos una franquicia. Somos profesionales de los de antes. Desde 1999, tratamos cada reforma como si fuera para nuestra propia familia. Más de 1.500 hogares ya han confiado en nosotros.
+              Somos una empresa familiar, no una cadena. Desde 1999 trabajamos cada vivienda con cercanía, oficio y responsabilidad. Más de 1.500 hogares ya han confiado en nuestro equipo.
             </p>
 
             <div className="mt-8 flex justify-center gap-8">

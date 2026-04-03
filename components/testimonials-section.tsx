@@ -6,19 +6,19 @@ const testimonials = [
     name: "María García",
     location: "Madrid",
     rating: 5,
-    text: "Reformaron nuestra cocina y el resultado fue espectacular. Cumplieron los plazos y el presupuesto. Muy profesionales y atentos a los detalles.",
+    text: "Nos reformaron la cocina y desde el principio supimos qué se iba a hacer y cuánto iba a costar. El acabado quedó impecable.",
   },
   {
     name: "Carlos Rodríguez",
     location: "Málaga",
     rating: 5,
-    text: "Excelente trabajo en la reforma del baño. El equipo fue muy limpio y respetuoso. Sin duda los recomendaré a familiares y amigos.",
+    text: "El cambio del baño fue rápido, limpio y muy bien coordinado. Da gusto encontrar un equipo serio y cuidadoso dentro de casa.",
   },
   {
     name: "Ana Martín",
     location: "Ibiza",
     rating: 5,
-    text: "Hicieron una reforma integral de nuestro piso y estamos encantados. La comunicación fue constante y resolvieron todas nuestras dudas.",
+    text: "En la reforma integral cumplieron lo hablado y estuvieron pendientes de todo. La comunicación fue clara y el resultado, excelente.",
   },
 ]
 
@@ -28,10 +28,10 @@ export function TestimonialsSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold text-primary-foreground text-balance">
-            Lo Que Dicen Nuestros Clientes
+            Opiniones de clientes que ya reformaron con nosotros
           </h2>
           <p className="mt-3 text-primary-foreground/80">
-            La satisfacción de nuestros clientes es nuestra mejor carta de presentación
+            La mejor carta de presentación es dejar una obra bien hecha y un cliente tranquilo
           </p>
         </div>
 

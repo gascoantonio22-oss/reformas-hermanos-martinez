@@ -4,26 +4,26 @@ const steps = [
   {
     icon: Home,
     number: "1",
-    title: "Visita y Medición",
-    description: "Vamos a tu casa gratis, escuchamos tu idea y tomamos medidas exactas.",
+    title: "Visita y Asesoramiento",
+    description: "Escuchamos lo que necesitas, revisamos el espacio y te orientamos con soluciones realistas.",
   },
   {
     icon: FileText,
     number: "2",
-    title: "Presupuesto Detallado",
-    description: "Te entregamos un desglose partida por partida. Lo que ves es lo que pagas.",
+    title: "Presupuesto Claro",
+    description: "Recibes un presupuesto desglosado, sin partidas ambiguas ni extras escondidos.",
   },
   {
     icon: Hammer,
     number: "3",
-    title: "Ejecución Profesional",
-    description: "Trabajamos con materiales de calidad y protegiendo siempre las zonas comunes de tu edificio.",
+    title: "Obra Bien Organizada",
+    description: "Coordinamos la ejecución, cuidamos los acabados y respetamos las zonas comunes del edificio.",
   },
   {
     icon: CheckCircle,
     number: "4",
-    title: "Entrega y Revisión",
-    description: "Solo cuando tú estás 100% satisfecho, damos la obra por terminada.",
+    title: "Entrega Final",
+    description: "Revisamos contigo cada detalle y no damos por cerrada la obra hasta verte conforme.",
   },
 ]
 
@@ -33,7 +33,7 @@ export function ProcessSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground text-balance">
-            Tu reforma en 4 pasos sencillos
+            Así hacemos una reforma sin sobresaltos
           </h2>
         </div>
 

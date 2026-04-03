@@ -10,8 +10,8 @@ export function Header() {
 
   const navLinks = [
     { href: "#servicios", label: "Servicios" },
-    { href: "#proyectos", label: "Proyectos" },
-    { href: "#proceso", label: "Proceso" },
+    { href: "#proyectos", label: "Trabajos" },
+    { href: "#proceso", label: "Cómo trabajamos" },
     { href: "#contacto", label: "Presupuesto" },
   ]
 
@@ -46,7 +46,7 @@ export function Header() {
             <Button asChild className="hidden sm:inline-flex bg-[#25D366] text-white hover:bg-[#20bd5a]">
               <a href="https://wa.me/34612345678?text=Hola,%20me%20gustaría%20solicitar%20un%20presupuesto" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                 <MessageCircle className="h-4 w-4" />
-                Escríbenos por WhatsApp
+                Habla con nosotros
               </a>
             </Button>
             <button
@@ -83,7 +83,7 @@ export function Header() {
               <Button asChild className="mt-2 bg-[#25D366] text-white hover:bg-[#20bd5a]">
                 <a href="https://wa.me/34612345678?text=Hola,%20me%20gustaría%20solicitar%20un%20presupuesto" target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                   <MessageCircle className="h-4 w-4" />
-                  Escríbenos por WhatsApp
+                  Habla con nosotros
                 </a>
               </Button>
             </nav>

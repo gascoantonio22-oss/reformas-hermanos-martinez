@@ -1,46 +1,46 @@
-import { UtensilsCrossed, Bath, Home, ShowerHead, Grid3X3, DoorOpen, PaintBucket, Wrench } from "lucide-react"
+import Image from "next/image"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 
 const services = [
   {
-    icon: UtensilsCrossed,
-    title: "Reformas de Cocinas",
-    description: "Diseñamos y montamos tu cocina completa. Fontanería, electricidad, muebles y encimera sin que tengas que coordinar a nadie.",
+    title: "COCINA",
+    image: "/images/services/cocina.png",
+    description: "Reforma completa de cocina con distribución funcional, mobiliario bien resuelto y acabados pensados para el uso diario.",
   },
   {
-    icon: Bath,
-    title: "Reformas de Baños",
-    description: "Especialistas en cambio de bañera por plato de ducha o reforma completa con nuevos azulejos, sanitarios y mobiliario.",
+    title: "BAÑO",
+    image: "/images/services/bano.png",
+    description: "Renovación de baño con nuevos revestimientos, sanitarios y una solución más cómoda y actual para el espacio.",
   },
   {
-    icon: Home,
-    title: "Reformas Integrales",
-    description: "Transformamos tu piso antiguo en una vivienda totalmente renovada. Coordinamos todos los gremios y cuidamos cada detalle de la obra.",
+    title: "Reforma Integral",
+    image: "/images/services/reforma-integral.png",
+    description: "Transformación completa de la vivienda con una ejecución coordinada para que todas las estancias hablen el mismo lenguaje.",
   },
   {
-    icon: ShowerHead,
-    title: "Cambio de Bañera por Ducha",
-    description: "Retiramos tu bañera y colocamos un plato de ducha moderno, seguro y fácil de limpiar en muy poco tiempo.",
+    title: "Baño Plato ucha",
+    image: "/images/services/bano-plato-ucha.png",
+    description: "Cambio a plato de ducha con acceso más cómodo, limpieza sencilla y una imagen mucho más moderna del baño.",
   },
   {
-    icon: Grid3X3,
-    title: "Alicatados y Solados",
-    description: "Colocación profesional de azulejos, suelos porcelánicos y pavimentos resistentes para cocina, baño o cualquier estancia.",
+    title: "alicatados",
+    image: "/images/services/alicatados.png",
+    description: "Colocación cuidada de azulejos y pavimentos con juntas, nivelación y remates que hacen que el resultado se vea sólido y limpio.",
   },
   {
-    icon: DoorOpen,
-    title: "Carpintería Interior",
-    description: "Instalación de puertas, armarios empotrados, suelos laminados y soluciones de almacenamiento hechas a medida.",
+    title: "carpinteria interior",
+    image: "/images/services/carpinteria-interior.png",
+    description: "Puertas, armarios y soluciones interiores a medida para aprovechar mejor el espacio y mantener una estética coherente.",
   },
   {
-    icon: PaintBucket,
-    title: "Pintura y Acabados",
-    description: "Trabajos de pintura interior, alisado de paredes, reparación de grietas y acabados que dejan tu casa lista para disfrutar.",
+    title: "pinturas y acabados",
+    image: "/images/services/pinturas-y-acabados.png",
+    description: "Pintura, alisado y terminaciones finales para dejar cada estancia rematada, luminosa y lista para entrar a vivir.",
   },
   {
-    icon: Wrench,
-    title: "Instalaciones",
-    description: "Renovamos instalaciones de electricidad y fontanería antiguas para que tu vivienda cumpla con la normativa actual y sea segura.",
+    title: "instalaciones",
+    image: "/images/services/instalaciones.png",
+    description: "Actualización de instalaciones eléctricas y de fontanería para mejorar seguridad, rendimiento y fiabilidad en el día a día.",
   },
 ]
 
@@ -50,22 +50,31 @@ export function ServicesSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="text-center max-w-2xl mx-auto mb-12">
           <h2 className="text-2xl sm:text-3xl font-bold text-foreground text-balance">
-            Soluciones Reales para tu Hogar
+            Todo lo que necesitas para reformar con tranquilidad
           </h2>
         </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 items-stretch">
           {services.map((service) => (
-            <Card key={service.title} className="flex h-full flex-col border-border transition-shadow hover:shadow-md">
-              <CardHeader className="space-y-0 pb-0 text-center">
-                <div className="mx-auto mb-3 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
-                  <service.icon className="h-6 w-6 text-primary" />
+            <Card key={service.title} className="group flex h-full flex-col overflow-hidden border-border transition-all hover:-translate-y-1 hover:shadow-lg">
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <Image
+                  src={service.image}
+                  alt={service.title}
+                  fill
+                  className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
+                />
+              </div>
+              <CardHeader className="space-y-0 pb-0 pt-5 text-center">
+                <div className="mx-auto mb-3 h-1 w-12 rounded-full bg-primary/20" />
+                <div className="px-2">
+                  <CardTitle className="flex min-h-[2.8rem] items-center justify-center text-lg leading-tight">
+                    {service.title}
+                  </CardTitle>
                 </div>
-                <CardTitle className="flex min-h-[2.4rem] items-center justify-center text-lg leading-tight">
-                  {service.title}
-                </CardTitle>
               </CardHeader>
-              <CardContent className="flex-1 pt-1 text-center">
+              <CardContent className="flex-1 pt-3 text-center">
                 <CardDescription className="text-sm leading-relaxed">
                   {service.description}
                 </CardDescription>
