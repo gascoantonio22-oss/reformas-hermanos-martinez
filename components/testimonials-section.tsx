@@ -109,10 +109,29 @@ export function TestimonialsSection() {
   }
 
   return (
-    <section className="bg-primary py-12 md:py-20">
+    <section className="relative bg-primary pt-16 pb-12 md:py-20">
+      <div aria-hidden="true" className="absolute inset-x-0 -top-10 h-10 overflow-hidden text-primary md:hidden">
+        <svg
+          viewBox="0 0 1440 120"
+          preserveAspectRatio="none"
+          className="block h-[calc(100%+3px)] w-full translate-y-px fill-current"
+        >
+          <path d="M0,120 C260,22 1180,22 1440,120 L1440,123 L0,123 Z" />
+        </svg>
+      </div>
+
+      <div aria-hidden="true" className="absolute inset-x-0 -top-16 hidden h-16 overflow-hidden text-primary md:block md:-top-20 md:h-20">
+        <svg
+          viewBox="0 0 1440 120"
+          preserveAspectRatio="none"
+          className="block h-[calc(100%+3px)] w-full translate-y-px fill-current"
+        >
+          <path d="M0,78 C122,44 244,44 366,70 C488,96 610,96 732,70 C854,44 976,44 1098,70 C1220,96 1330,96 1440,74 L1440,123 L0,123 Z" />
+        </svg>
+      </div>
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-[1240px]">
-          <div className="mb-7 flex flex-col gap-4 md:mb-12 md:flex-row md:items-end md:justify-between">
+          <div className="section-fade-up mb-7 flex flex-col gap-4 md:mb-12 md:flex-row md:items-end md:justify-between">
             <div className="max-w-2xl">
               <p className="text-[0.7rem] font-semibold uppercase tracking-[0.18em] text-primary-foreground/65 sm:text-sm">
                 Testimonios
@@ -138,7 +157,7 @@ export function TestimonialsSection() {
             </div>
           </div>
 
-          <div className="relative mx-auto px-2 sm:px-5 md:px-8">
+          <div className="section-fade-up-delayed relative mx-auto px-2 sm:px-5 md:px-8">
             <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
               {visibleTestimonials.map((testimonial) => (
                 <article
@@ -184,7 +203,7 @@ export function TestimonialsSection() {
                 type="button"
                 onClick={goToPrevious}
                 aria-label="Ver testimonios anteriores"
-                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/12 bg-accent text-accent-foreground shadow-[0_18px_35px_-20px_rgba(0,0,0,0.45)] transition hover:scale-[1.03] hover:bg-accent/92"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white shadow-sm backdrop-blur-sm transition hover:scale-[1.03] hover:bg-white/20"
               >
                 <ChevronLeft className="h-5 w-5" />
               </button>
@@ -195,19 +214,19 @@ export function TestimonialsSection() {
                 type="button"
                 onClick={goToNext}
                 aria-label="Ver testimonios siguientes"
-                className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/12 bg-accent text-accent-foreground shadow-[0_18px_35px_-20px_rgba(0,0,0,0.45)] transition hover:scale-[1.03] hover:bg-accent/92"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/20 bg-white/10 text-white shadow-sm backdrop-blur-sm transition hover:scale-[1.03] hover:bg-white/20"
               >
                 <ChevronRight className="h-5 w-5" />
               </button>
             </div>
           </div>
 
-          <div className="mt-4 flex items-center justify-center gap-2.5 sm:hidden">
+          <div className="mt-10 flex items-center justify-center gap-3 sm:hidden">
             <button
               type="button"
               onClick={goToPrevious}
               aria-label="Ver testimonios anteriores"
-              className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/12 bg-accent text-accent-foreground shadow-[0_18px_35px_-20px_rgba(0,0,0,0.45)] transition hover:bg-accent/92"
+              className="inline-flex h-7 w-7 translate-y-[1.5px] items-center justify-center rounded-full border border-white/20 bg-white/10 text-white shadow-sm backdrop-blur-sm transition hover:bg-white/20"
             >
               <ChevronLeft className="h-3.5 w-3.5" />
             </button>
@@ -218,8 +237,8 @@ export function TestimonialsSection() {
                   type="button"
                   onClick={() => setActiveIndex(index)}
                   aria-label={`Ir al testimonio ${index + 1}`}
-                  className={`h-2 rounded-full transition-all ${
-                    index === activeIndex ? "w-6 bg-accent" : "w-2 bg-white/25 hover:bg-white/45"
+                  className={`h-1.5 rounded-full transition-all ${
+                    index === activeIndex ? "w-5 bg-white" : "w-1.5 bg-white/30 hover:bg-white/50"
                   }`}
                 />
               ))}
@@ -228,21 +247,21 @@ export function TestimonialsSection() {
               type="button"
               onClick={goToNext}
               aria-label="Ver testimonios siguientes"
-              className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-white/12 bg-accent text-accent-foreground shadow-[0_18px_35px_-20px_rgba(0,0,0,0.45)] transition hover:bg-accent/92"
+              className="inline-flex h-7 w-7 translate-y-[1.5px] items-center justify-center rounded-full border border-white/20 bg-white/10 text-white shadow-sm backdrop-blur-sm transition hover:bg-white/20"
             >
               <ChevronRight className="h-3.5 w-3.5" />
             </button>
           </div>
 
-          <div className="mt-6 hidden items-center justify-center gap-2 sm:flex">
+          <div className="mt-12 hidden items-center justify-center gap-2 sm:flex">
             {testimonials.map((testimonial, index) => (
               <button
                 key={testimonial.id}
                 type="button"
                 onClick={() => setActiveIndex(index)}
                 aria-label={`Ir al testimonio ${index + 1}`}
-                className={`h-2.5 rounded-full transition-all ${
-                  index === activeIndex ? "w-7 bg-accent" : "w-2.5 bg-white/25 hover:bg-white/45"
+                className={`h-2 rounded-full transition-all ${
+                  index === activeIndex ? "w-6 bg-white" : "w-2 bg-white/30 hover:bg-white/50"
                 }`}
               />
             ))}

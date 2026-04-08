@@ -144,6 +144,23 @@
     font-family: var(--font-display), "Inter", sans-serif;
   }
 
+  .section-fade-up {
+    will-change: opacity, transform;
+  }
+
+  .section-fade-up-delayed {
+    will-change: opacity, transform;
+  }
+
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
   .section-kicker {
     color: #60738d;
     font-size: 0.72rem;
@@ -182,5 +199,57 @@
       linear-gradient(rgba(82, 103, 127, 0.08) 1px, transparent 1px),
       linear-gradient(90deg, rgba(82, 103, 127, 0.08) 1px, transparent 1px);
     background-size: 26px 26px;
+  }
+
+  .has-scroll-reveal .section-fade-up,
+  .has-scroll-reveal .section-fade-up-delayed {
+    opacity: 0;
+    transform: translate3d(0, 24px, 0);
+  }
+
+  .has-scroll-reveal .section-fade-up {
+    transition:
+      opacity 0.78s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.78s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .has-scroll-reveal .section-fade-up-delayed {
+    transition:
+      opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.08s,
+      transform 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.08s;
+  }
+
+  .has-scroll-reveal .reveal-visible.section-fade-up,
+  .has-scroll-reveal .reveal-visible.section-fade-up-delayed {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@media (max-width: 767px) {
+  .has-scroll-reveal .section-fade-up,
+  .has-scroll-reveal .section-fade-up-delayed {
+    transform: translate3d(0, 14px, 0);
+  }
+
+  .has-scroll-reveal .section-fade-up {
+    transition:
+      opacity 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+      transform 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .has-scroll-reveal .section-fade-up-delayed {
+    transition:
+      opacity 0.56s cubic-bezier(0.22, 1, 0.36, 1) 0.03s,
+      transform 0.56s cubic-bezier(0.22, 1, 0.36, 1) 0.03s;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .section-fade-up,
+  .section-fade-up-delayed {
+    transition: none !important;
+    transform: none !important;
+    opacity: 1 !important;
   }
 }

@@ -71,9 +71,13 @@ export function AboutSection() {
   }, [])
 
   return (
-    <section ref={sectionRef} id="nosotros" className="py-14 md:py-20">
+    <section
+      ref={sectionRef}
+      id="nosotros"
+      className="relative z-0 bg-white -mt-44 sm:-mt-44 md:-mt-32 lg:-mt-36 pt-64 sm:pt-64 md:pt-52 lg:pt-60 pb-20 md:pb-20 lg:pb-24"
+    >
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-12">
+        <div className="section-fade-up grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-12">
           <div className="overflow-hidden rounded-2xl border border-border bg-white shadow-sm">
             <Image
               src="/images/team.jpg"

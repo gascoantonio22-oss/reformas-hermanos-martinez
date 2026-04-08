@@ -18,7 +18,7 @@ export const services: Service[] = [
     image: "/images/services/cocina.jpg",
     price: "Desde 6.900 €",
     shortDescription:
-      "Diseñamos y ejecutamos tu cocina completa: fontanería, electricidad, muebles y encimera. Nos encargamos de todo para que no tengas que coordinar distintos profesionales.",
+      "Diseñamos tu cocina completa con fontanería, electricidad, muebles y encimera, para que no tengas que coordinar distintos profesionales.",
     intro:
       "Reformamos cocinas para que resulten más cómodas, prácticas y agradables de usar cada día, adaptando la distribución y los materiales a cómo se vive la casa de verdad.",
     highlights: [
@@ -62,7 +62,7 @@ export const services: Service[] = [
     image: "/images/services/reforma-integral.jpg",
     price: "Desde 650 €/m2",
     shortDescription:
-      "Renovamos tu vivienda por completo coordinando todos los trabajos y cuidando cada detalle para que el resultado sea exactamente el que esperas.",
+      "Renovamos tu vivienda completa coordinando todos los trabajos para que el resultado quede bien ejecutado y a tu gusto.",
     intro:
       "Nos encargamos de la reforma completa de la vivienda para que todo tenga orden, coherencia y un único equipo coordinando el proceso.",
     highlights: [
