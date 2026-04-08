@@ -1,41 +1,107 @@
+"use client"
+
+import { useEffect, useRef, useState } from "react"
 import Image from "next/image"
 
 const stats = [
-  { value: "25", label: "Años" },
-  { value: "1.500+", label: "Obras" },
-  { value: "2 años", label: "Garantía" },
-]
+  {
+    target: 25,
+    label: "Años de experiencia",
+    format: (value: number) => `${value}`,
+  },
+  {
+    target: 1500,
+    label: "Reformas realizadas",
+    format: (value: number) => `${new Intl.NumberFormat("es-ES").format(value)}+`,
+  },
+  {
+    target: 2,
+    label: "Garantía",
+    format: (value: number) => `${value} años`,
+  },
+] as const
+
+const ANIMATION_DURATION_MS = 1600
+
+function easeOutCubic(progress: number) {
+  return 1 - (1 - progress) ** 3
+}
 
 export function AboutSection() {
+  const [counts, setCounts] = useState(() => stats.map(() => 0))
+  const sectionRef = useRef<HTMLElement | null>(null)
+  const hasAnimatedRef = useRef(false)
+
+  useEffect(() => {
+    const section = sectionRef.current
+    if (!section) return
+
+    let frameId = 0
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry?.isIntersecting || hasAnimatedRef.current) return
+
+        hasAnimatedRef.current = true
+        const startTime = performance.now()
+
+        const animate = (currentTime: number) => {
+          const progress = Math.min((currentTime - startTime) / ANIMATION_DURATION_MS, 1)
+          const easedProgress = easeOutCubic(progress)
+
+          setCounts(stats.map((stat) => Math.round(stat.target * easedProgress)))
+
+          if (progress < 1) {
+            frameId = requestAnimationFrame(animate)
+          }
+        }
+
+        frameId = requestAnimationFrame(animate)
+        observer.disconnect()
+      },
+      { threshold: 0.35 },
+    )
+
+    observer.observe(section)
+
+    return () => {
+      observer.disconnect()
+      cancelAnimationFrame(frameId)
+    }
+  }, [])
+
   return (
-    <section id="nosotros" className="py-16 md:py-20 bg-background">
+    <section ref={sectionRef} id="nosotros" className="py-14 md:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div className="relative">
-            <div className="aspect-[4/3] relative rounded-lg overflow-hidden shadow-lg">
-              <Image
-                src="/images/team.jpg"
-                alt="Equipo de Hermanos Martínez"
-                fill
-                sizes="(max-width: 1024px) 100vw, 50vw"
-                className="object-cover"
-              />
-            </div>
+        <div className="grid gap-8 lg:grid-cols-[1fr_1fr] lg:items-center lg:gap-12">
+          <div className="overflow-hidden rounded-2xl border border-border bg-white shadow-sm">
+            <Image
+              src="/images/team.jpg"
+              alt="Equipo de Hermanos Martínez"
+              width={1200}
+              height={900}
+              className="w-full object-cover"
+              sizes="(min-width: 1024px) 50vw, 100vw"
+            />
           </div>
 
-          <div className="text-center">
-            <h2 className="text-[1.75rem] sm:text-3xl font-bold text-foreground text-balance">
-              Profesionales de verdad, trato de verdad
+          <div className="text-center lg:text-left">
+            <h2 className="text-balance text-4xl font-bold leading-tight text-foreground md:text-5xl">
+              Profesionales de verdad, trato cercano
             </h2>
-            <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">
-              Somos una empresa familiar, no una cadena. Desde 1999 trabajamos cada vivienda con cercanía, oficio y responsabilidad. Más de 1.500 hogares ya han confiado en nuestro equipo.
+            <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-muted-foreground lg:mx-0">
+              Somos una empresa familiar, no una cadena. Desde 1999 trabajamos cada reforma con
+              responsabilidad, cercanía y atención al detalle. Más de 1.500 viviendas ya han
+              confiado en nuestro equipo.
             </p>
 
-            <div className="mt-8 flex justify-center gap-8">
-              {stats.map((stat) => (
-                <div key={stat.label} className="text-center">
-                  <p className="text-3xl font-bold text-primary">{stat.value}</p>
-                  <p className="text-sm text-muted-foreground mt-1">{stat.label}</p>
+            <div className="mx-auto mt-8 grid max-w-2xl grid-cols-3 gap-4 text-center lg:mx-0">
+              {stats.map((stat, index) => (
+                <div key={stat.label}>
+                  <p className="whitespace-nowrap text-4xl font-bold leading-none tracking-[-0.04em] text-primary sm:text-5xl">
+                    {stat.format(counts[index] ?? 0)}
+                  </p>
+                  <p className="mt-3 text-sm leading-6 text-muted-foreground sm:text-base">{stat.label}</p>
                 </div>
               ))}
             </div>

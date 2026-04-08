@@ -1,43 +1,34 @@
-import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
-import { Analytics } from '@vercel/analytics/next'
-import { SpeedInsights } from '@vercel/speed-insights/next'
-import './globals.css'
+import type { Metadata } from "next"
+import { Inter } from "next/font/google"
+import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
+import "./globals.css"
 
-const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-body",
+})
 
 export const metadata: Metadata = {
-  title: 'Reformas Hermanos Martínez | Precio Claro y Reformas Bien Hechas',
-  description: 'Empresa familiar especializada en cocinas, baños y reformas integrales. Presupuesto detallado, plazos serios y garantía por escrito.',
-  metadataBase: new URL('https://reformas-hermanos-martinez.vercel.app'),
-  generator: 'v0.app',
+  title: "Reformas Hermanos Martínez | Reformas Integrales con Precio Cerrado",
+  description:
+    "Empresa familiar con más de 25 años de experiencia en reformas de cocinas, baños y reformas integrales. Presupuesto sin compromiso y cumplimiento de plazos garantizado.",
+  metadataBase: new URL("https://reformas-hermanos-martinez-five.vercel.app"),
   icons: {
-    icon: [
-      {
-        url: '/icon-light-32x32.png',
-        media: '(prefers-color-scheme: light)',
-      },
-      {
-        url: '/icon-dark-32x32.png',
-        media: '(prefers-color-scheme: dark)',
-      },
-      {
-        url: '/icon.svg',
-        type: 'image/svg+xml',
-      },
-    ],
-    apple: '/apple-icon.png',
+    icon: [{ url: "/favicon-rhm.png", type: "image/png" }],
+    shortcut: "/favicon-rhm.png",
+    apple: "/favicon-rhm.png",
   },
   openGraph: {
-    type: 'website',
-    locale: 'es_ES',
-    url: 'https://reformas-hermanos-martinez.vercel.app',
-    title: 'Reformas Hermanos Martínez | Precio Claro y Reformas Bien Hechas',
+    type: "website",
+    locale: "es_ES",
+    url: "https://reformas-hermanos-martinez-five.vercel.app",
+    title: "Reformas Hermanos Martínez | Reformas Integrales con Precio Cerrado",
     description:
-      'Empresa familiar especializada en cocinas, baños y reformas integrales con presupuesto detallado y ejecución cuidada.',
+      "Empresa familiar con más de 25 años de experiencia en reformas de cocinas, baños y reformas integrales.",
     images: [
       {
-        url: '/images/hero-renovation.jpg',
+        url: "/images/hero-renovation.jpg",
         width: 1200,
         height: 630,
       },

@@ -1,71 +1,93 @@
 import Image from "next/image"
 import Link from "next/link"
-import { CheckCircle, Clock, Shield, HardHat } from "lucide-react"
+import { CheckCircle, Clock, HardHat, Shield } from "lucide-react"
 import { Button } from "@/components/ui/button"
 
 const trustItems = [
-  { icon: CheckCircle, text: "Presupuesto claro y cerrado" },
-  { icon: Clock, text: "Plazos pactados por escrito" },
-  { icon: Shield, text: "2 años de garantía" },
-  { icon: HardHat, text: "Equipo propio, sin subcontratas" },
+  {
+    icon: CheckCircle,
+    text: "Presupuesto claro desde el principio",
+    mobileText: "Presupuesto claro",
+  },
+  {
+    icon: Clock,
+    text: "Plazos por escrito",
+    mobileText: "Plazos por escrito",
+  },
+  {
+    icon: Shield,
+    text: "2 años de garantía",
+    mobileText: "2 años de garantía",
+  },
+  {
+    icon: HardHat,
+    text: "Equipo propio (sin subcontratas)",
+    mobileText: "Personal propio",
+  },
 ]
 
 export function HeroSection() {
   return (
-    <section className="relative bg-primary overflow-hidden">
+    <section className="relative overflow-hidden bg-primary">
       <div className="absolute inset-0">
         <Image
           src="/images/hero-renovation.jpg"
           alt="Salón reformado moderno"
           fill
-          sizes="100vw"
-          className="object-cover opacity-20"
           priority
+          className="scale-105 object-cover opacity-25"
         />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_48%)]" />
       </div>
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-16 md:py-24">
-        <div className="mx-auto max-w-3xl text-center">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-primary-foreground leading-tight text-balance">
-            Tu reforma bien hecha, con precio claro y plazos serios.
+
+      <div className="relative mx-auto flex min-h-[64svh] max-w-7xl items-center px-4 py-14 sm:px-6 md:min-h-[78svh] md:py-32 lg:px-8 lg:py-36">
+        <div className="mx-auto max-w-4xl text-center">
+          <span className="inline-flex rounded-full border border-white/15 bg-white/8 px-3 py-1.5 text-xs font-medium text-primary-foreground/85 backdrop-blur-sm sm:px-4 sm:py-2 sm:text-sm">
+            Reformas en toda España
+          </span>
+
+          <h1 className="mt-4 text-balance text-3xl font-bold leading-tight text-primary-foreground sm:mt-6 sm:text-5xl md:text-6xl">
+            Reformas integrales en Madrid con presupuesto cerrado y fecha garantizada
           </h1>
-          <p className="mt-5 mx-auto max-w-2xl text-lg leading-relaxed text-primary-foreground/90">
-            Empresa familiar con 25 años de oficio. Reformamos cocinas, baños y viviendas completas ocupándonos de cada detalle para que vivas la obra con más tranquilidad.
+
+          <p className="mx-auto mt-4 max-w-[34rem] text-base leading-relaxed text-primary-foreground/90 sm:mt-6 sm:text-xl">
+            Empresa familiar con 25 años reformando cocinas, baños y viviendas completas. Nos
+            ocupamos de todo para que vivas la obra sin estrés.
           </p>
 
-          <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+          <div className="mt-7 flex flex-col justify-center gap-3 sm:mt-10 sm:flex-row">
             <Button
               asChild
-              size="lg"
-              className="bg-accent text-accent-foreground hover:bg-accent/90 font-semibold"
+              className="h-11 rounded-md bg-accent px-6 text-sm font-semibold text-accent-foreground hover:bg-accent/90 sm:h-12 sm:px-7 sm:text-base"
             >
-              <Link href="#contacto">Pedir Presupuesto Gratis</Link>
+              <Link href="/#contacto">Pedir presupuesto gratis</Link>
             </Button>
+
             <Button
               asChild
-              size="lg"
               variant="outline"
-              className="bg-transparent border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10"
+              className="h-11 rounded-md border-primary-foreground/30 bg-transparent px-6 text-sm text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground sm:h-12 sm:px-7 sm:text-base"
             >
-              <Link href="#proyectos">Ver Reformas Reales</Link>
+              <Link href="/#proyectos">Ver reformas reales</Link>
             </Button>
           </div>
         </div>
       </div>
 
-      {/* Trust Bar */}
-      <div className="relative bg-card border-t border-b border-border">
-        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-4">
-          <div className="grid grid-cols-2 gap-3 md:flex md:flex-wrap md:justify-between md:items-center md:gap-y-4">
+      <div className="relative border-y border-border bg-card">
+        <div className="mx-auto max-w-7xl px-4 py-3 sm:px-6 md:py-4 lg:px-8">
+          <div className="grid grid-cols-4 gap-2 md:flex md:flex-wrap md:items-center md:justify-between md:gap-y-4">
             {trustItems.map((item) => (
               <div
                 key={item.text}
-                  className="flex flex-col items-center gap-2 rounded-xl border border-border/70 bg-background/80 px-3 py-3 text-center shadow-sm md:w-auto md:flex-row md:items-center md:justify-center md:gap-2 md:rounded-none md:border-0 md:bg-transparent md:px-0 md:py-0 md:shadow-none"
+                className="flex min-w-0 flex-col items-center justify-start gap-1.5 px-1 text-center md:w-auto md:flex-row md:items-center md:justify-center md:gap-2 md:px-0"
               >
-                <div className="flex h-9 w-9 items-center justify-center rounded-full bg-accent/10 md:h-auto md:w-auto md:rounded-none md:bg-transparent">
-                  <item.icon className="h-4 w-4 text-accent flex-shrink-0 md:h-5 md:w-5" />
+                <div className="flex h-7 w-7 items-center justify-center rounded-full bg-accent/10 text-accent md:h-auto md:w-auto md:rounded-none md:bg-transparent">
+                  <item.icon className="h-3.5 w-3.5 flex-shrink-0 md:h-5 md:w-5" />
                 </div>
-                <span className="text-[11px] leading-snug font-medium text-foreground md:text-sm md:leading-normal">
-                  {item.text}
+                <span className="hidden text-sm font-medium text-foreground md:inline">{item.text}</span>
+                <span className="text-balance text-[10px] font-medium leading-[1.2] text-foreground md:hidden">
+                  {item.mobileText}
                 </span>
               </div>
             ))}

@@ -1,32 +1,21 @@
 "use client"
 
 import { useState } from "react"
-import { Phone, Mail, MapPin, Clock, MessageCircle } from "lucide-react"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Clock, Phone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
-import {
-  Select,
-  SelectContent,
-  SelectItem,
-  SelectTrigger,
-  SelectValue,
-} from "@/components/ui/select"
-
-const contactInfo = [
-  { icon: Phone, label: "Teléfono", value: "912 345 678", href: "tel:+34912345678" },
-  { icon: Mail, label: "Email", value: "info@hermanosmartinez.es", href: "mailto:info@hermanosmartinez.es" },
-  { icon: MapPin, label: "Zona de trabajo", value: "Madrid y alrededores", href: null },
-  { icon: Clock, label: "Horario", value: "Lun-Vie 8:00 a 19:00", href: null },
-]
+import { Textarea } from "@/components/ui/textarea"
 
 const reformaTypes = [
-  { value: "cocina", label: "Reforma de Cocina" },
-  { value: "bano", label: "Reforma de Baño" },
-  { value: "integral", label: "Reforma Integral" },
-  { value: "otro", label: "Otro" },
+  { value: "reformas-cocinas", label: "Reformas de cocinas" },
+  { value: "reformas-banos", label: "Reformas de baños" },
+  { value: "reformas-integrales", label: "Reformas integrales" },
+  { value: "cambio-banera-ducha", label: "Cambio de bañera por ducha" },
+  { value: "alicatados-solados", label: "Alicatados y solados" },
+  { value: "carpinteria-interior", label: "Carpintería interior" },
+  { value: "pintura-acabados", label: "Pintura y acabados" },
+  { value: "instalaciones", label: "Instalaciones" },
 ]
 
 export function ContactSection() {
@@ -42,7 +31,6 @@ export function ContactSection() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
-    // Simulate form submission
     await new Promise((resolve) => setTimeout(resolve, 1000))
     setIsSubmitting(false)
     setIsSubmitted(true)
@@ -50,166 +38,130 @@ export function ContactSection() {
   }
 
   return (
-    <section id="contacto" className="py-16 md:py-20 bg-secondary">
+    <section id="contacto" className="scroll-mt-24 py-14 md:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <h2 className="text-2xl sm:text-3xl font-bold text-foreground text-balance">
+        <div className="mx-auto max-w-4xl text-center">
+          <h2 className="text-balance text-4xl font-bold leading-tight text-foreground md:text-5xl">
             Cuéntanos qué quieres reformar
           </h2>
-          <p className="mt-3 text-muted-foreground">
-            Déjanos tus datos y te llamaremos para valorar tu reforma y agendar una visita sin compromiso.
+          <p className="mx-auto mt-4 max-w-3xl text-lg leading-8 text-muted-foreground">
+            Déjanos tus datos y te llamaremos para valorar tu reforma y concertar una visita sin
+            compromiso.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            <Card className="border-border lg:col-span-2">
-              <CardHeader className="text-center">
-                <CardTitle>Pide tu presupuesto</CardTitle>
-                <CardDescription>Rellena el formulario y te contactaremos lo antes posible</CardDescription>
-              </CardHeader>
-            <CardContent>
-              {isSubmitted ? (
-                <div className="text-center py-8">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-green-100 mx-auto mb-4">
-                    <svg className="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                    </svg>
-                  </div>
-                  <h3 className="text-lg font-semibold text-foreground">Solicitud enviada</h3>
-                  <p className="mt-2 text-muted-foreground">Te llamaremos para hablar de tu reforma.</p>
-                  <Button className="mt-4" onClick={() => setIsSubmitted(false)}>
-                    Enviar otra solicitud
-                  </Button>
-                </div>
-              ) : (
-                <form onSubmit={handleSubmit} className="space-y-4">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                    <div className="space-y-2">
-                      <Label htmlFor="nombre">Nombre *</Label>
-                      <Input
-                        id="nombre"
-                        required
-                        placeholder="¿Cómo te llamas?"
-                        value={formState.nombre}
-                        onChange={(e) => setFormState((s) => ({ ...s, nombre: e.target.value }))}
-                      />
-                    </div>
-                    <div className="space-y-2">
-                      <Label htmlFor="telefono">Teléfono *</Label>
-                      <Input
-                        id="telefono"
-                        type="tel"
-                        required
-                        placeholder="Tu número de contacto"
-                        value={formState.telefono}
-                        onChange={(e) => setFormState((s) => ({ ...s, telefono: e.target.value }))}
-                      />
-                    </div>
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="tipoReforma">Tipo de Reforma *</Label>
-                    <Select
-                      required
-                      value={formState.tipoReforma}
-                      onValueChange={(value) => setFormState((s) => ({ ...s, tipoReforma: value }))}
-                    >
-                      <SelectTrigger>
-                        <SelectValue placeholder="Selecciona el tipo de trabajo" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        {reformaTypes.map((type) => (
-                          <SelectItem key={type.value} value={type.value}>
-                            {type.label}
-                          </SelectItem>
-                        ))}
-                      </SelectContent>
-                    </Select>
-                  </div>
-                  <div className="space-y-2">
-                    <Label htmlFor="descripcion">Breve descripción</Label>
-                    <Textarea
-                      id="descripcion"
-                      rows={4}
-                      placeholder="Cuéntanos brevemente qué necesitas reformar..."
-                      value={formState.descripcion}
-                      onChange={(e) => setFormState((s) => ({ ...s, descripcion: e.target.value }))}
-                    />
-                  </div>
-                  <Button
-                    type="submit"
-                    size="lg"
-                    className="w-full bg-accent text-accent-foreground hover:bg-accent/90"
-                    disabled={isSubmitting}
-                  >
-                    {isSubmitting ? (
-                      "Enviando..."
-                    ) : (
-                      <>
-                        <span className="sm:hidden">Solicitar presupuesto</span>
-                        <span className="hidden sm:inline">Quiero mi presupuesto sin compromiso</span>
-                      </>
-                    )}
-                  </Button>
-                  <Button
-                    asChild
-                    type="button"
-                    size="lg"
-                    variant="outline"
-                    className="w-full border-[#25D366]/40 text-[#1f8f4c] hover:bg-[#25D366]/10 hover:text-[#1f8f4c]"
-                  >
-                    <a
-                      href="https://wa.me/34612345678?text=Hola,%20me%20gustar%C3%ADa%20hablar%20sobre%20mi%20proyecto%20de%20reforma"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center justify-center gap-2"
-                    >
-                      <MessageCircle className="h-4 w-4" />
-                      Hablar ahora por WhatsApp
-                    </a>
-                  </Button>
-                  <p className="text-xs text-muted-foreground text-center">
-                    Al enviar el formulario aceptas nuestra política de privacidad
-                  </p>
-                </form>
-              )}
-            </CardContent>
-          </Card>
-
-          <div className="space-y-4">
-            <Card className="border-border">
-              <CardHeader className="pb-3">
-                <CardTitle className="text-lg">Información de Contacto</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                {contactInfo.map((item) => (
-                  <div key={item.label} className="flex flex-col items-center gap-3 text-center">
-                    <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-primary/10">
-                      <item.icon className="h-4 w-4 text-primary" />
-                    </div>
-                    <div>
-                      <p className="text-sm text-muted-foreground">{item.label}</p>
-                      {item.href ? (
-                        <a href={item.href} className="font-medium text-foreground hover:text-primary">
-                          {item.value}
-                        </a>
-                      ) : (
-                        <p className="font-medium text-foreground">{item.value}</p>
-                      )}
-                    </div>
-                  </div>
-                ))}
-              </CardContent>
-            </Card>
-
-            <Card className="border-accent bg-accent/5">
-              <CardContent className="p-4 text-center">
-                <p className="font-semibold text-foreground">Primera respuesta en menos de 24 horas</p>
-                <p className="text-sm text-muted-foreground mt-1">
-                  Te contactamos para resolver dudas y concertar una visita sin compromiso.
+        <div className="mx-auto mt-8 max-w-3xl rounded-2xl border border-border bg-white px-5 py-6 shadow-sm sm:px-8 sm:py-8">
+          {isSubmitted ? (
+            <div className="py-10 text-center">
+              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-accent/12">
+                <svg className="h-7 w-7 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <h3 className="text-3xl font-bold text-foreground">Solicitud enviada</h3>
+              <p className="mt-3 text-base leading-7 text-muted-foreground">
+                Te llamaremos para comentar tu reforma.
+              </p>
+              <Button className="mt-5 bg-accent text-accent-foreground hover:bg-accent/92" onClick={() => setIsSubmitted(false)}>
+                Enviar otra solicitud
+              </Button>
+            </div>
+          ) : (
+            <form onSubmit={handleSubmit} className="space-y-5">
+              <div className="border-b border-border pb-5 text-center">
+                <h3 className="text-3xl font-bold text-foreground">Pide tu presupuesto</h3>
+                <p className="mt-3 text-base leading-7 text-muted-foreground">
+                  Rellena el formulario y te contactaremos lo antes posible.
                 </p>
-              </CardContent>
-            </Card>
-          </div>
+              </div>
+
+              <div className="grid gap-4 sm:grid-cols-2">
+                <div className="space-y-2">
+                  <Label htmlFor="nombre">Nombre *</Label>
+                  <Input
+                    id="nombre"
+                    required
+                    placeholder="¿Cómo te llamas?"
+                    value={formState.nombre}
+                    onChange={(e) => setFormState((current) => ({ ...current, nombre: e.target.value }))}
+                  />
+                </div>
+
+                <div className="space-y-2">
+                  <Label htmlFor="telefono">Teléfono *</Label>
+                  <Input
+                    id="telefono"
+                    type="tel"
+                    required
+                    placeholder="Tu número de contacto"
+                    value={formState.telefono}
+                    onChange={(e) => setFormState((current) => ({ ...current, telefono: e.target.value }))}
+                  />
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="tipo-reforma">Tipo de reforma *</Label>
+                <select
+                  id="tipo-reforma"
+                  required
+                  value={formState.tipoReforma}
+                  onChange={(e) => setFormState((current) => ({ ...current, tipoReforma: e.target.value }))}
+                  className="flex h-10 w-full rounded-md border border-input bg-transparent px-3 py-2 text-base shadow-xs outline-none focus-visible:border-ring focus-visible:ring-[3px] focus-visible:ring-ring/50 md:text-sm"
+                >
+                  <option value="">Selecciona el trabajo</option>
+                  {reformaTypes.map((type) => (
+                    <option key={type.value} value={type.value}>
+                      {type.label}
+                    </option>
+                  ))}
+                </select>
+              </div>
+
+              <div className="space-y-2">
+                <Label htmlFor="descripcion">Descripción</Label>
+                <Textarea
+                  id="descripcion"
+                  rows={6}
+                  placeholder="Cuéntanos brevemente qué necesitas reformar"
+                  value={formState.descripcion}
+                  onChange={(e) => setFormState((current) => ({ ...current, descripcion: e.target.value }))}
+                />
+              </div>
+
+              <Button
+                type="submit"
+                size="lg"
+                className="h-12 w-full bg-accent text-base font-semibold text-accent-foreground hover:bg-accent/92"
+                disabled={isSubmitting}
+              >
+                {isSubmitting ? "Enviando..." : "Quiero mi presupuesto sin compromiso"}
+              </Button>
+
+              <div className="border-t border-border pt-5 text-center">
+                <p className="text-sm leading-6 text-muted-foreground">
+                  Al enviar el formulario aceptas nuestra{" "}
+                  <span className="font-semibold text-foreground underline underline-offset-4">
+                    política de privacidad
+                  </span>
+                </p>
+
+                <div className="mt-5 flex flex-col items-center justify-center gap-3 sm:flex-row sm:gap-6">
+                  <a
+                    href="tel:+34912345678"
+                    className="inline-flex items-center gap-2 rounded-full border border-[#c8d2dc] bg-[#f8fbff] px-5 py-3 text-base font-semibold text-primary"
+                  >
+                    <Phone className="h-4 w-4" />
+                    912 345 678
+                  </a>
+                  <div className="inline-flex items-center gap-2 text-base text-muted-foreground">
+                    <Clock className="h-4 w-4 text-primary" />
+                    Lun-Vie 8:00 a 19:00
+                  </div>
+                </div>
+              </div>
+            </form>
+          )}
         </div>
       </div>
     </section>
