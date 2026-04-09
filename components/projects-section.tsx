@@ -174,15 +174,14 @@ export function ProjectsSection() {
 
   return (
     <>
-      <section id="proyectos" className="scroll-mt-24 bg-[#f3f6fa] pt-14 pb-8 md:scroll-mt-28 md:pt-20 md:pb-12">
+      <section id="proyectos" className="scroll-mt-24 bg-[#f3f6fa] py-14 md:scroll-mt-28 md:py-20">
         <div className="mx-auto max-w-[112rem] px-4 sm:px-6 lg:px-8">
           <div className="section-fade-up mx-auto max-w-4xl text-center">
             <h2 className="text-balance text-3xl font-bold leading-tight text-foreground sm:text-4xl">
-              Trabajos de reformas realizados en Madrid
+              Reformas que hablan por sí solas
             </h2>
             <p className="mt-4 text-lg leading-8 text-muted-foreground">
-              Te enseñamos una selección de reformas reales para que puedas ver acabados,
-              soluciones y resultados antes de pedir presupuesto.
+              Una selección de trabajos reales para que puedas ver acabados, materiales y resultados con más detalle.
             </p>
           </div>
 
@@ -217,7 +216,7 @@ export function ProjectsSection() {
               ))}
             </div>
 
-            <div className="mt-4 flex items-center justify-center gap-3 md:mt-6 md:gap-4">
+            <div className="mt-6 flex items-center justify-center gap-3 md:mt-8 md:gap-4">
               <button
                 type="button"
                 onClick={goToPrevious}

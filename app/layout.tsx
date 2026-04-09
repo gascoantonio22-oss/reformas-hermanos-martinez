@@ -1,28 +1,20 @@
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
-import { JsonLd } from "@/components/json-ld"
+import { Analytics } from "@vercel/analytics/next"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 import { ScrollReveal } from "@/components/scroll-reveal"
-import { buildLocalBusinessSchema, buildOrganizationSchema, buildWebsiteSchema } from "@/lib/seo"
-import { siteConfig } from "@/lib/site"
 import "./globals.css"
 
 const inter = Inter({
   subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
   variable: "--font-body",
 })
 
 export const metadata: Metadata = {
-  title: {
-    default: siteConfig.defaultTitle,
-    template: "%s",
-  },
-  description: siteConfig.defaultDescription,
-  applicationName: siteConfig.name,
-  metadataBase: new URL(siteConfig.url),
-  alternates: {
-    canonical: siteConfig.url,
-  },
+  title: "Reformas Hermanos Martínez | Reformas Integrales con Precio Cerrado",
+  description:
+    "Empresa familiar con más de 25 años de experiencia en reformas de cocinas, baños y reformas integrales. Presupuesto sin compromiso y cumplimiento de plazos garantizado.",
+  metadataBase: new URL("https://reformas-hermanos-martinez-five.vercel.app"),
   icons: {
     icon: [{ url: "/favicon-rhm.png", type: "image/png" }],
     shortcut: "/favicon-rhm.png",
@@ -31,31 +23,19 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     locale: "es_ES",
-    url: siteConfig.url,
-    siteName: siteConfig.name,
-    title: siteConfig.defaultTitle,
-    description: siteConfig.defaultDescription,
+    url: "https://reformas-hermanos-martinez-five.vercel.app",
+    title: "Reformas Hermanos Martínez | Reformas Integrales con Precio Cerrado",
+    description:
+      "Empresa familiar con más de 25 años de experiencia en reformas de cocinas, baños y reformas integrales.",
     images: [
       {
-        url: siteConfig.defaultOgImage,
+        url: "/images/hero-renovation.jpg",
         width: 1200,
         height: 630,
       },
     ],
   },
-  twitter: {
-    card: "summary_large_image",
-    title: siteConfig.defaultTitle,
-    description: siteConfig.defaultDescription,
-    images: [siteConfig.defaultOgImage],
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
 }
-
-import { Toaster } from "sonner"
 
 export default function RootLayout({
   children,
@@ -65,10 +45,10 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className={`${inter.variable} font-sans antialiased`}>
-        <JsonLd data={[buildWebsiteSchema(), buildOrganizationSchema(), buildLocalBusinessSchema()]} />
         <ScrollReveal />
         {children}
-        <Toaster richColors position="bottom-center" />
+        <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )

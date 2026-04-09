@@ -1,92 +1,37 @@
-"use client"
-
-import { Clock, Mail, MapPin, Phone, ArrowUpRight } from "lucide-react"
-import Link from "next/link"
-import { toast } from "sonner"
+import { Clock, Mail, MapPin, Phone } from "lucide-react"
 
 export function Footer() {
-  const currentYear = new Date().getFullYear()
-
-  const handleDemoClick = (e: React.MouseEvent) => {
-    e.preventDefault()
-    toast.info("No disponible en la Demo", {
-      description: "Para ver una referencia de cómo maquetamos un servicio completo, por favor entra en 'Reformas de cocinas'.",
-    })
-  }
-
   return (
     <footer className="bg-[#1f2c3a] text-[rgba(228,235,242,0.9)]">
-      <div className="section-fade-up mx-auto max-w-6xl px-4 py-12 sm:px-6 lg:px-8 lg:py-16">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-3 md:gap-8">
-          <div>
-            <h3 className="text-lg font-bold text-white mb-4">Hermanos Martínez</h3>
-            <p className="text-sm leading-relaxed text-[rgba(228,235,242,0.72)] max-w-xs">
-              Empresa familiar de reformas en Madrid capital. Especialistas en reformas
-              integrales, reformas de cocinas, reformas de baños y cambio de bañera por ducha con
-              presupuesto cerrado y trato directo.
-            </p>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-semibold text-white mb-4">Servicios y recursos</h3>
-            <ul className="space-y-3 text-sm text-[rgba(228,235,242,0.72)]">
-              <li>
-                <Link href="/reformas-cocinas-madrid" className="hover:text-white transition-colors">
-                  Reformas de cocinas
-                </Link>
-              </li>
-              <li>
-                <button type="button" onClick={handleDemoClick} className="hover:text-white transition-colors text-left">
-                  Reformas integrales
-                </button>
-              </li>
-              <li>
-                <button type="button" onClick={handleDemoClick} className="hover:text-white transition-colors text-left">
-                  Reformas de baños
-                </button>
-              </li>
-              <li>
-                <button type="button" onClick={handleDemoClick} className="hover:text-white transition-colors text-left">
-                  Cambio de bañera por ducha
-                </button>
-              </li>
-              <li className="pt-2">
-                <button type="button" onClick={handleDemoClick} className="inline-flex items-center hover:text-white transition-colors font-medium text-primary-foreground text-left">
-                  Guías y consejos <ArrowUpRight className="ml-1 h-3 w-3" />
-                </button>
-              </li>
-            </ul>
-          </div>
-
-          <div>
-            <h3 className="text-lg font-semibold text-white mb-4">Contacto</h3>
-            <ul className="space-y-3 text-sm leading-6 text-[rgba(228,235,242,0.72)]">
-              <li className="flex items-start gap-3">
-                <MapPin className="h-4 w-4 mt-1 flex-shrink-0" />
-                <span>Madrid capital y alrededores</span>
-              </li>
-              <li className="flex items-center gap-3">
-                <Mail className="h-4 w-4 flex-shrink-0" />
-                <a href="mailto:info@hermanosmartinez.es" className="hover:text-white transition-colors">
-                  info@hermanosmartinez.es
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <Phone className="h-4 w-4 flex-shrink-0" />
-                <a href="tel:+34912345678" className="hover:text-white transition-colors">
-                  912 345 678
-                </a>
-              </li>
-              <li className="flex items-center gap-3">
-                <Clock className="h-4 w-4 flex-shrink-0" />
-                <span>Lun-Vie de 8:00 a 19:00</span>
-              </li>
-            </ul>
-          </div>
+      <div className="section-fade-up mx-auto max-w-4xl px-4 py-8 sm:px-6 sm:py-12 lg:px-8 lg:py-14">
+        <div className="text-center">
+          <h3 className="text-lg font-semibold tracking-[-0.03em] text-white sm:text-2xl">Contacto</h3>
+          <ul className="mt-4 space-y-2.5 text-sm leading-6 text-[rgba(228,235,242,0.72)] sm:mt-5 sm:space-y-3 sm:text-base sm:leading-7">
+            <li className="flex items-center justify-center gap-2.5">
+              <MapPin className="h-3.5 w-3.5 flex-shrink-0 sm:h-4 sm:w-4" />
+              <span>Toda España</span>
+            </li>
+            <li className="flex items-center justify-center gap-2.5">
+              <Mail className="h-3.5 w-3.5 flex-shrink-0 sm:h-4 sm:w-4" />
+              <a href="mailto:info@hermanosmartinez.es" className="hover:text-white">
+                info@hermanosmartinez.es
+              </a>
+            </li>
+            <li className="flex items-center justify-center gap-2.5">
+              <Phone className="h-3.5 w-3.5 flex-shrink-0 sm:h-4 sm:w-4" />
+              <a href="tel:+34912345678" className="hover:text-white">
+                912 345 678
+              </a>
+            </li>
+            <li className="flex items-center justify-center gap-2.5">
+              <Clock className="h-3.5 w-3.5 flex-shrink-0 sm:h-4 sm:w-4" />
+              <span>Lun-Vie 8:00 a 19:00</span>
+            </li>
+          </ul>
         </div>
 
-        <div className="mt-12 border-t border-white/10 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-[rgba(228,235,242,0.52)]">
-          <p>© {currentYear} Hermanos Martínez. Todos los derechos reservados.</p>
+        <div className="mt-6 border-t border-white/10 pt-4 text-center text-[11px] text-[rgba(228,235,242,0.52)] sm:mt-8 sm:pt-6 sm:text-sm">
+          <p>© 2026 Reformas Hermanos Martínez. Todos los derechos reservados.</p>
         </div>
       </div>
     </footer>

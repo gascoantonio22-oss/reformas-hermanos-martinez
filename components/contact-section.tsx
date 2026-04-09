@@ -42,10 +42,10 @@ export function ContactSection() {
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="section-fade-up mx-auto max-w-4xl text-center">
           <h2 className="text-balance text-3xl font-bold leading-tight text-foreground md:text-5xl">
-            Pide presupuesto para tu reforma en Madrid
+            Cuéntanos qué quieres reformar
           </h2>
           <p className="mx-auto mt-4 max-w-3xl text-base leading-7 text-muted-foreground md:text-lg md:leading-8">
-            Déjanos tus datos y te llamaremos para valorar tu reforma en Madrid capital y concertar una visita sin
+            Déjanos tus datos y te llamaremos para valorar tu reforma y concertar una visita sin
             compromiso.
           </p>
         </div>
@@ -69,7 +69,7 @@ export function ContactSection() {
           ) : (
             <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
               <div className="border-b border-border pb-4 text-center sm:pb-5">
-                <h3 className="text-2xl font-bold text-foreground sm:text-3xl">Cuéntanos qué quieres reformar</h3>
+                <h3 className="text-2xl font-bold text-foreground sm:text-3xl">Pide tu presupuesto</h3>
                 <p className="mt-2 text-sm leading-6 text-muted-foreground sm:mt-3 sm:text-base sm:leading-7">
                   Rellena el formulario y te contactaremos lo antes posible.
                 </p>
@@ -123,7 +123,7 @@ export function ContactSection() {
                 <Textarea
                   id="descripcion"
                   rows={6}
-                  placeholder="Cuéntanos brevemente qué necesitas"
+                  placeholder="Cuéntanos brevemente qué necesitas reformar"
                   value={formState.descripcion}
                   onChange={(e) => setFormState((current) => ({ ...current, descripcion: e.target.value }))}
                 />
@@ -144,7 +144,6 @@ export function ContactSection() {
                   <span className="font-semibold text-foreground underline underline-offset-4">
                     política de privacidad
                   </span>
-                  .
                 </p>
 
                 <div className="mt-4 flex flex-col items-center justify-center gap-3 sm:mt-5 sm:flex-row sm:gap-6">
@@ -157,7 +156,7 @@ export function ContactSection() {
                   </a>
                   <div className="inline-flex items-center gap-2 text-sm text-muted-foreground sm:text-base">
                     <Clock className="h-4 w-4 text-primary" />
-                    Lun-Vie de 8:00 a 19:00
+                    Lun-Vie 8:00 a 19:00
                   </div>
                 </div>
               </div>

@@ -3,9 +3,32 @@
 import { useEffect, useState } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { CheckCircle, Clock, Shield, Star } from "lucide-react"
+import { CheckCircle, Clock, HardHat, Shield } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import heroImage from "@/public/images/hero-renovation.jpg"
+
+const trustItems = [
+  {
+    icon: CheckCircle,
+    text: "Presupuesto claro desde el principio",
+    mobileText: "Presupuesto claro",
+  },
+  {
+    icon: Clock,
+    text: "Plazos por escrito",
+    mobileText: "Plazos por escrito",
+  },
+  {
+    icon: Shield,
+    text: "2 años de garantía",
+    mobileText: "2 años de garantía",
+  },
+  {
+    icon: HardHat,
+    text: "Equipo propio (sin subcontratas)",
+    mobileText: "Personal propio",
+  },
+]
 
 export function HeroSection() {
   const [isImageReady, setIsImageReady] = useState(false)
@@ -17,51 +40,46 @@ export function HeroSection() {
   }, [])
 
   return (
-    <section className="relative overflow-hidden bg-[#1a2b3c]">
+    <section className="relative overflow-hidden bg-primary">
       <div className="absolute inset-0">
+        <div className="absolute inset-0 bg-[rgba(41,74,113,0.72)]" />
         <Image
           src={heroImage}
-          alt="Salón reformado moderno en Madrid"
+          alt="Salón reformado moderno"
           fill
           priority
           placeholder="blur"
-          onLoad={() => setIsImageReady(true)}
-          className={`object-cover transition-[opacity,transform] duration-1000 ease-out ${
-            isImageReady ? "scale-100 opacity-100" : "scale-105 opacity-0"
+          onLoadingComplete={() => setIsImageReady(true)}
+          className={`object-cover transition-[opacity,transform] duration-700 ease-out ${
+            isImageReady ? "scale-100 opacity-[0.28]" : "scale-[1.02] opacity-0"
           }`}
         />
-        {/* Nuevo gradient sutil: Múltiples capas para conservar la iluminación */}
-        <div className="absolute inset-0 bg-black/20" />
-        <div className="absolute inset-0 block sm:hidden bg-gradient-to-r from-[#1a2b3c]/90 via-[#1a2b3c]/60 to-transparent" />
-        <div className="absolute inset-0 bg-[#1a2b3c]/30 sm:bg-[#1a2b3c]/60 mix-blend-multiply" />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#1a2b3c]/90 via-[#1a2b3c]/40 to-transparent sm:from-[#1a2b3c]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(255,255,255,0.08),transparent_48%)]" />
       </div>
 
-      <div className="relative mx-auto flex min-h-[60vh] md:min-h-[70vh] max-w-7xl items-center px-4 pt-20 pb-12 sm:py-20 lg:px-8">
+      <div className="relative mx-auto flex min-h-[64svh] max-w-7xl items-center px-4 py-14 sm:px-6 md:min-h-[78svh] md:py-32 lg:px-8 lg:py-36">
         <div
-          className={`mx-0 sm:mx-auto max-w-4xl text-left sm:text-center transition-[opacity,transform] duration-700 ease-out ${
-            isContentVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+          className={`mx-auto max-w-4xl text-center transition-[opacity,transform] duration-700 ease-out ${
+            isContentVisible ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
           }`}
         >
-          <span className="block text-[#d85b1d] font-bold text-[11px] sm:hidden uppercase tracking-wider mb-3">
-            Especialistas en Madrid
-          </span>
-          <h1 className="text-balance text-[28px] leading-[1.1] font-extrabold text-white sm:text-5xl md:text-6xl tracking-tight drop-shadow-sm">
+          <h1 className="mt-4 text-balance text-3xl font-bold leading-tight text-primary-foreground sm:mt-6 sm:text-5xl md:text-6xl">
             Reformas integrales en Madrid con presupuesto cerrado y fecha garantizada
           </h1>
 
-          <p className="mx-0 sm:mx-auto mt-4 sm:mt-5 max-w-[38rem] text-[15px] sm:text-[1.1rem] leading-relaxed text-white/90 md:mt-6 drop-shadow-sm font-light">
-            Empresa familiar con 25 años reformando cocinas, baños y viviendas completas. Nos ocupamos de todo para que vivas la obra sin estrés.
+          <p className="mx-auto mt-4 max-w-[34rem] text-base leading-relaxed text-primary-foreground/90 sm:mt-6 sm:text-xl">
+            Empresa familiar con 25 años reformando cocinas, baños y viviendas completas. Nos
+            ocupamos de todo para que vivas la obra sin estrés.
           </p>
 
           <div
-            className={`mt-8 md:mt-10 flex flex-col justify-center sm:grid sm:auto-cols-auto sm:grid-flow-col gap-2 sm:gap-4 transition-[opacity,transform] duration-700 delay-100 ease-out ${
-              isContentVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
+            className={`mt-7 flex flex-col justify-center gap-3 transition-[opacity,transform] duration-700 delay-100 ease-out sm:mt-10 sm:flex-row ${
+              isContentVisible ? "translate-y-0 opacity-100" : "translate-y-3 opacity-0"
             }`}
           >
             <Button
               asChild
-              className="h-14 rounded-md bg-[#d85b1d] px-8 text-base font-bold text-white shadow-[0_0_20px_rgba(216,91,29,0.15)] hover:bg-[#c24e15] hover:shadow-[0_0_25px_rgba(216,91,29,0.3)] hover:-translate-y-0.5 transition-all duration-300 w-full focus:ring-0"
+              className="h-11 rounded-md bg-accent px-6 text-sm font-semibold text-accent-foreground hover:bg-accent/90 sm:h-12 sm:px-7 sm:text-base"
             >
               <Link href="/#contacto">Pedir presupuesto gratis</Link>
             </Button>
@@ -69,37 +87,35 @@ export function HeroSection() {
             <Button
               asChild
               variant="outline"
-              className="h-auto py-1 px-0 border-transparent bg-transparent underline underline-offset-4 rounded-md sm:py-0 sm:h-14 sm:border sm:border-white/30 sm:no-underline sm:px-8 text-[15px] sm:text-base font-medium sm:font-bold text-white/70 sm:text-white hover:text-white hover:bg-transparent sm:hover:bg-white sm:hover:text-[#1a2b3c] transition-all duration-300 w-full"
+              className="h-11 rounded-md border-primary-foreground/30 bg-transparent px-6 text-sm text-primary-foreground hover:bg-primary-foreground/10 hover:text-primary-foreground sm:h-12 sm:px-7 sm:text-base"
             >
               <Link href="/#proyectos">Ver reformas</Link>
             </Button>
           </div>
+        </div>
+      </div>
 
-          {/* Fila de Confianza Inline (Trust Row) */}
-          <div 
-            className={`mt-5 sm:mt-10 flex flex-wrap items-center sm:justify-center gap-x-3 sm:gap-x-4 gap-y-2 sm:gap-y-3 text-[13px] sm:text-sm font-medium text-white/80 transition-[opacity,transform] duration-700 delay-200 ease-out ${
-              isContentVisible ? "translate-y-0 opacity-100" : "translate-y-4 opacity-0"
-            }`}
-          >
-            <div className="flex items-center gap-1.5">
-              <Star className="h-4 w-4 text-[#d85b1d]" />
-              <span>25 años en Madrid</span>
-            </div>
-            <span className="opacity-30 sm:px-1">•</span>
-            <div className="flex items-center gap-1.5">
-              <Shield className="h-4 w-4 text-[#d85b1d]" />
-              <span>Presupuesto cerrado</span>
-            </div>
-            <span className="hidden sm:inline opacity-30 px-1">•</span>
-            <div className="hidden sm:flex items-center gap-1.5">
-              <Clock className="h-4 w-4 text-[#d85b1d]" />
-              <span>Fecha garantizada</span>
-            </div>
-            <span className="hidden md:inline opacity-30 px-1">•</span>
-            <div className="hidden md:flex items-center gap-1.5">
-              <CheckCircle className="h-4 w-4 text-[#d85b1d]" />
-              <span>+1500 reformas</span>
-            </div>
+      <div
+        className={`relative border-y border-border bg-card transition-[opacity,transform] duration-700 delay-150 ease-out ${
+          isContentVisible ? "translate-y-0 opacity-100" : "translate-y-2 opacity-0"
+        }`}
+      >
+        <div className="mx-auto max-w-7xl px-4 py-3 sm:px-6 md:py-4 lg:px-8">
+          <div className="grid grid-cols-4 gap-2 md:flex md:flex-wrap md:items-center md:justify-between md:gap-y-4">
+            {trustItems.map((item) => (
+              <div
+                key={item.text}
+                className="flex min-w-0 flex-col items-center justify-start gap-1.5 px-1 text-center md:w-auto md:flex-row md:items-center md:justify-center md:gap-2 md:px-0"
+              >
+                <div className="flex h-7 w-7 items-center justify-center rounded-full bg-accent/10 text-accent md:h-auto md:w-auto md:rounded-none md:bg-transparent">
+                  <item.icon className="h-3.5 w-3.5 flex-shrink-0 md:h-5 md:w-5" />
+                </div>
+                <span className="hidden text-sm font-medium text-foreground md:inline">{item.text}</span>
+                <span className="text-balance text-[10px] font-medium leading-[1.2] text-foreground md:hidden">
+                  {item.mobileText}
+                </span>
+              </div>
+            ))}
           </div>
         </div>
       </div>

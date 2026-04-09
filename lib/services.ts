@@ -15,10 +15,10 @@ export const services: Service[] = [
     slug: "reformas-cocinas",
     cardTitle: "Reformas de cocinas",
     pageTitle: "Reformas de cocinas",
-    image: "/images/cocinas-madrid/6.jpg",
+    image: "/images/services/cocina.jpg",
     price: "Desde 6.900 €",
     shortDescription:
-      "Diseñamos y ejecutamos reformas de cocinas completas, coordinando fontanería, electricidad, alicatado, mobiliario y encimera para que no tengas que ocuparte de nada.",
+      "Diseñamos tu cocina completa con fontanería, electricidad, muebles y encimera, para que no tengas que coordinar distintos profesionales.",
     intro:
       "Reformamos cocinas para que resulten más cómodas, prácticas y agradables de usar cada día, adaptando la distribución y los materiales a cómo se vive la casa de verdad.",
     highlights: [
@@ -40,7 +40,7 @@ export const services: Service[] = [
     image: "/images/services/bano.jpg",
     price: "Desde 4.900 €",
     shortDescription:
-      "Hacemos reformas de baños completas y cambios de bañera por ducha con soluciones prácticas, materiales duraderos y acabados cuidados.",
+      "Especialistas en cambio de bañera por plato de ducha o reformas completas con nuevos azulejos, sanitarios y mobiliario.",
     intro:
       "Reformamos baños completos para que ganen comodidad, limpieza y funcionalidad, con soluciones duraderas y fáciles de mantener.",
     highlights: [
@@ -62,7 +62,7 @@ export const services: Service[] = [
     image: "/images/services/reforma-integral.jpg",
     price: "Desde 650 €/m2",
     shortDescription:
-      "Reformamos viviendas completas organizando todos los oficios para que la obra avance con orden, tiempos realistas y seguimiento continuo.",
+      "Renovamos tu vivienda completa coordinando todos los trabajos para que el resultado quede bien ejecutado y a tu gusto.",
     intro:
       "Nos encargamos de la reforma completa de la vivienda para que todo tenga orden, coherencia y un único equipo coordinando el proceso.",
     highlights: [
@@ -84,7 +84,7 @@ export const services: Service[] = [
     image: "/images/services/bano-plato-ucha.jpg",
     price: "Desde 1.950 €",
     shortDescription:
-      "Sustituimos bañeras por platos de ducha cómodos, seguros y fáciles de mantener, con una ejecución rápida y limpia.",
+      "Sustituimos tu bañera por un plato de ducha moderno, cómodo y fácil de limpiar en muy poco tiempo.",
     intro:
       "Cambiamos la bañera por una ducha más cómoda y accesible, con una obra contenida y un resultado que se nota desde el primer día.",
     highlights: [

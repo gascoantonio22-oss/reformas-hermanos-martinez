@@ -2,19 +2,12 @@
 
 import { useState } from "react"
 import Link from "next/link"
-import { Menu, MessageCircle, Phone, X, ChevronDown } from "lucide-react"
-import { toast } from "sonner"
+import { Menu, MessageCircle, Phone, X } from "lucide-react"
 
 const navLinks = [
+  { href: "/#servicios", label: "Servicios" },
   { href: "/#proyectos", label: "Trabajos realizados" },
   { href: "/#contacto", label: "Presupuesto" },
-]
-
-const servicesLinks = [
-  { href: "/reformas-cocinas-madrid", label: "Reformas de cocinas en Madrid" },
-  { href: "/reformas-integrales-madrid", label: "Reformas integrales en Madrid" },
-  { href: "/reformas-banos-madrid", label: "Reformas de baños en Madrid" },
-  { href: "/cambiar-banera-por-ducha-madrid", label: "Cambiar bañera por ducha en Madrid" },
 ]
 
 export function Header() {
@@ -23,49 +16,12 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-white shadow-sm">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-14 lg:h-16 items-center justify-between gap-4">
-          <Link href="/" className="text-base font-semibold text-foreground sm:text-lg shrink-0">
+        <div className="flex h-16 items-center justify-between gap-4">
+          <Link href="/" className="text-base font-semibold text-foreground sm:text-lg">
             Hermanos Martínez
           </Link>
 
-          <nav className="hidden items-center gap-6 lg:flex">
-            <div className="group relative flex h-14 lg:h-16 items-center">
-              <span className="flex cursor-pointer items-center gap-1 text-sm font-medium text-foreground transition-colors group-hover:text-primary">
-                Servicios <ChevronDown className="h-4 w-4 transition-transform group-hover:rotate-180" />
-              </span>
-              <div className="absolute left-0 top-[100%] z-50 hidden w-[260px] flex-col rounded-xl border border-border bg-white p-2 shadow-xl group-hover:flex">
-                {servicesLinks.map((service) => {
-                  if (service.href === "/reformas-cocinas-madrid") {
-                    return (
-                      <Link
-                        key={service.href}
-                        href={service.href}
-                        className="rounded-lg p-3 text-sm font-medium text-foreground transition-colors hover:bg-muted hover:text-primary"
-                      >
-                        {service.label}
-                      </Link>
-                    )
-                  }
-                  
-                  return (
-                    <button
-                      key={service.href}
-                      type="button"
-                      onClick={(e) => {
-                        e.preventDefault()
-                        toast.info("No disponible en la Demo", {
-                          description: "Para ver una referencia de cómo maquetamos un servicio completo, por favor entra en 'Reformas de cocinas'.",
-                        })
-                      }}
-                      className="rounded-lg p-3 text-left text-sm font-medium text-foreground transition-colors hover:bg-muted hover:text-primary"
-                    >
-                      {service.label}
-                    </button>
-                  )
-                })}
-              </div>
-            </div>
-
+          <nav className="hidden items-center gap-6 md:flex">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -95,7 +51,7 @@ export function Header() {
 
             <button
               type="button"
-              className="p-2 text-foreground lg:hidden"
+              className="p-2 text-foreground md:hidden"
               onClick={() => setMobileMenuOpen((open) => !open)}
               aria-label="Abrir menú"
             >
@@ -105,60 +61,20 @@ export function Header() {
         </div>
 
         {mobileMenuOpen ? (
-          <div className="border-t border-border py-4 lg:hidden">
+          <div className="border-t border-border py-4 md:hidden">
             <nav className="flex flex-col gap-2">
-              <div className="mb-2">
-                <p className="mb-2 px-2 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
-                  Servicios
-                </p>
-                <div className="ml-3 flex flex-col gap-1 border-l-2 border-muted pl-3">
-                  {servicesLinks.map((service) => {
-                    if (service.href === "/reformas-cocinas-madrid") {
-                      return (
-                        <Link
-                          key={service.href}
-                          href={service.href}
-                          className="py-2 text-sm font-medium text-foreground"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          {service.label}
-                        </Link>
-                      )
-                    }
-                    return (
-                      <button
-                        key={service.href}
-                        type="button"
-                        onClick={(e) => {
-                          e.preventDefault()
-                          setMobileMenuOpen(false)
-                          toast.info("No disponible en la Demo", {
-                            description: "Para ver una referencia de cómo maquetamos un servicio completo, por favor entra en 'Reformas de cocinas'.",
-                          })
-                        }}
-                        className="py-2 text-left text-sm font-medium text-foreground"
-                      >
-                        {service.label}
-                      </button>
-                    )
-                  })}
-                </div>
-              </div>
-
-              <div className="my-2 h-px w-full bg-border/50"></div>
-
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
-                  className="px-2 py-2 text-sm font-medium text-foreground"
+                  className="py-2 text-sm font-medium text-foreground"
                   onClick={() => setMobileMenuOpen(false)}
                 >
                   {link.label}
                 </Link>
               ))}
 
-              <a href="tel:+34912345678" className="mt-4 flex items-center gap-2 px-2 py-2 text-sm font-semibold text-primary">
+              <a href="tel:+34912345678" className="mt-2 flex items-center gap-2 py-2 text-sm font-semibold text-primary">
                 <Phone className="h-4 w-4" />
                 912 345 678
               </a>
