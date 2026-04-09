@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, Phone, Star, Shield, Clock, Sparkles, TrendingUp, Wrench, Quote, MapPin, CheckCircle, X } from "lucide-react"
+import { ArrowRight, Phone, Star, Shield, Clock, Sparkles, TrendingUp, Wrench, Quote, MapPin, CheckCircle, X, ChevronLeft, ChevronRight } from "lucide-react"
 import { toast } from "sonner"
 
 import { Footer } from "@/components/footer"
@@ -35,28 +35,62 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
   const service = getServiceBySlug(landing.serviceSlug)
   const [lightboxImage, setLightboxImage] = useState<string | null>(null)
 
-  useEffect(() => {
-    if (lightboxImage !== null) {
-      document.body.style.overflow = "hidden"
-      const handleEscape = (e: KeyboardEvent) => {
-        if (e.key === "Escape") setLightboxImage(null)
-      }
-      window.addEventListener("keydown", handleEscape)
-      return () => {
-        document.body.style.overflow = ""
-        window.removeEventListener("keydown", handleEscape)
-      }
-    }
-  }, [lightboxImage])
-
-  if (!service) {
-    throw new Error(`Servicio no encontrado para ${landing.path}`)
-  }
-
   // Precalcula imágenes de galería evitando servicios mezclados
   const displayGallery = (landing.galleryImages && landing.galleryImages.length > 0)
     ? landing.galleryImages
     : [service.image, service.image, service.image]
+
+  const handleNextImage = () => {
+    setLightboxImage((prev) => {
+      if (!prev) return null;
+      const currentIndex = displayGallery.indexOf(prev);
+      if (currentIndex !== -1 && currentIndex < displayGallery.length - 1) {
+        return displayGallery[currentIndex + 1];
+      } else if (currentIndex !== -1) {
+        return displayGallery[0];
+      }
+      return prev;
+    });
+  };
+
+  const handlePrevImage = () => {
+    setLightboxImage((prev) => {
+      if (!prev) return null;
+      const currentIndex = displayGallery.indexOf(prev);
+      if (currentIndex !== -1 && currentIndex > 0) {
+        return displayGallery[currentIndex - 1];
+      } else if (currentIndex !== -1) {
+        return displayGallery[displayGallery.length - 1];
+      }
+      return prev;
+    });
+  };
+
+  useEffect(() => {
+    if (lightboxImage !== null) {
+      document.body.style.overflow = "hidden"
+      
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === "Escape") {
+          setLightboxImage(null)
+        } else if (e.key === "ArrowRight") {
+          handleNextImage()
+        } else if (e.key === "ArrowLeft") {
+          handlePrevImage()
+        }
+      }
+      
+      window.addEventListener("keydown", handleKeyDown)
+      return () => {
+        document.body.style.overflow = ""
+        window.removeEventListener("keydown", handleKeyDown)
+      }
+    }
+  }, [lightboxImage, displayGallery])
+
+  if (!service) {
+    throw new Error(`Servicio no encontrado para ${landing.path}`)
+  }
 
   return (
     <>
@@ -842,22 +876,56 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
             type="button"
             aria-label="Cerrar imagen ampliada"
             className="absolute right-3 top-3 z-10 inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white transition-all hover:bg-white/20 sm:right-5 sm:top-5"
-            onClick={() => setLightboxImage(null)}
+            onClick={(e) => {
+              e.stopPropagation()
+              setLightboxImage(null)
+            }}
           >
             <X className="h-5 w-5" />
           </button>
+
+          {displayGallery.length > 1 && (
+            <>
+              <button
+                type="button"
+                aria-label="Imagen anterior"
+                className="absolute left-3 top-1/2 z-10 -translate-y-1/2 inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white transition-all hover:bg-white/20 sm:left-6 sm:h-14 sm:w-14"
+                onClick={(e) => {
+                  e.stopPropagation()
+                  handlePrevImage()
+                }}
+              >
+                <ChevronLeft className="h-6 w-6 sm:h-8 sm:w-8" />
+              </button>
+              
+              <button
+                type="button"
+                aria-label="Siguiente imagen"
+                className="absolute right-3 top-1/2 z-10 -translate-y-1/2 inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white transition-all hover:bg-white/20 sm:right-6 sm:h-14 sm:w-14"
+                onClick={(e) => {
+                  e.stopPropagation()
+                  handleNextImage()
+                }}
+              >
+                <ChevronRight className="h-6 w-6 sm:h-8 sm:w-8" />
+              </button>
+            </>
+          )}
+
           <div
-            className="relative h-[92vh] w-full max-w-[1800px] scale-100 transition-transform duration-300 ease-out"
+            className="relative h-[92vh] w-full max-w-[1800px] scale-100 transition-transform duration-300 ease-out flex items-center justify-center"
             onClick={(e) => e.stopPropagation()}
           >
-            <Image
-              src={lightboxImage}
-              alt="Vista ampliada de la reforma"
-              fill
-              quality={100}
-              sizes="100vw"
-              className="object-contain"
-            />
+            <div className="relative w-full h-full">
+              <Image
+                src={lightboxImage}
+                alt="Vista ampliada de la reforma"
+                fill
+                quality={100}
+                sizes="100vw"
+                className="object-contain"
+              />
+            </div>
           </div>
         </div>
       )}
