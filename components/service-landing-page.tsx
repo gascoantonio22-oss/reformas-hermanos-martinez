@@ -600,7 +600,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
 
         {/* 7. Testimonios */}
         {landing.serviceSlug === "reformas-cocinas" ? (
-          <section className="py-16 sm:py-20 md:py-24 bg-[#f2f6ff]">
+          <section className="pt-16 sm:pt-20 md:pt-24 pb-12 sm:pb-16 bg-[#f2f6ff]">
             <div className="container mx-auto px-4 sm:px-6">
               <div className="text-center mb-10 sm:mb-12 md:mb-16 section-fade-up">
                 <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#1a2b3c] mb-3 sm:mb-4">
@@ -716,7 +716,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
 
         {/* 8.5. Nueva Sección de Recursos (Solo Cocinas) */}
         {landing.serviceSlug === "reformas-cocinas" && (
-          <section className="py-16 sm:py-20 md:py-24 bg-white border-t border-slate-100">
+          <section className="pt-20 sm:pt-28 pb-16 sm:pb-24 bg-slate-50 border-t border-slate-200 shadow-[inset_0_4px_6px_-6px_rgba(0,0,0,0.1)]">
             <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
               <div className="text-center mb-12 sm:mb-16 section-fade-up">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#1a2b3c] mb-4 tracking-tight">
