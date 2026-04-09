@@ -23,13 +23,13 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-white shadow-sm">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between gap-4">
+        <div className="flex h-14 lg:h-16 items-center justify-between gap-4">
           <Link href="/" className="text-base font-semibold text-foreground sm:text-lg shrink-0">
             Hermanos Martínez
           </Link>
 
           <nav className="hidden items-center gap-6 lg:flex">
-            <div className="group relative flex h-16 items-center">
+            <div className="group relative flex h-14 lg:h-16 items-center">
               <span className="flex cursor-pointer items-center gap-1 text-sm font-medium text-foreground transition-colors group-hover:text-primary">
                 Servicios <ChevronDown className="h-4 w-4 transition-transform group-hover:rotate-180" />
               </span>
