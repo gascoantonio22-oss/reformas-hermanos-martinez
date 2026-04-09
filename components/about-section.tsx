@@ -69,46 +69,46 @@ export function AboutSection() {
           </div>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 md:gap-12 lg:gap-14 section-fade-up mt-8 md:mt-16 pt-8 md:pt-16 border-t border-[#1a2b3c]/5">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 md:gap-12 lg:gap-14 section-fade-up mt-8 md:mt-16 pt-8 md:pt-16 border-t border-[#1a2b3c]/5">
           
-          <div className="flex flex-col md:items-start h-full">
-            <div className="flex items-center gap-3 md:gap-0 mb-2 md:mb-5 md:flex-col md:items-start">
-              <Shield strokeWidth={1.5} className="h-6 w-6 md:h-10 md:w-10 text-[#d85b1d] flex-shrink-0" />
-              <h3 className="text-[1.1rem] md:text-xl font-bold text-[#1a2b3c] mt-0.5 md:mt-0">Transparencia</h3>
+          <div className="flex flex-col md:items-start h-full border-b border-[#1a2b3c]/5 pb-5 mb-5 md:border-0 md:pb-0 md:mb-0">
+            <div className="flex items-center md:gap-0 mb-1 md:mb-5 md:flex-col md:items-start">
+              <Shield strokeWidth={1.5} className="hidden md:block md:h-10 md:w-10 text-[#d85b1d] flex-shrink-0" />
+              <h3 className="text-base md:text-xl font-bold text-[#1a2b3c] md:mt-0">Transparencia</h3>
             </div>
-            <p className="text-[#51677c] leading-relaxed text-[15px] md:text-[1.05rem]">
+            <p className="text-[#51677c] leading-relaxed text-[14px] md:text-[1.05rem]">
               Trabajamos con presupuestos claros, comunicación directa y una planificación
               realista desde el principio.
             </p>
           </div>
 
-          <div className="flex flex-col md:items-start h-full">
-            <div className="flex items-center gap-3 md:gap-0 mb-2 md:mb-5 md:flex-col md:items-start">
-              <Award strokeWidth={1.5} className="h-6 w-6 md:h-10 md:w-10 text-[#d85b1d] flex-shrink-0" />
-              <h3 className="text-[1.1rem] md:text-xl font-bold text-[#1a2b3c] mt-0.5 md:mt-0">Calidad</h3>
+          <div className="flex flex-col md:items-start h-full border-b border-[#1a2b3c]/5 pb-5 mb-5 md:border-0 md:pb-0 md:mb-0">
+            <div className="flex items-center md:gap-0 mb-1 md:mb-5 md:flex-col md:items-start">
+              <Award strokeWidth={1.5} className="hidden md:block md:h-10 md:w-10 text-[#d85b1d] flex-shrink-0" />
+              <h3 className="text-base md:text-xl font-bold text-[#1a2b3c] md:mt-0">Calidad</h3>
             </div>
-            <p className="text-[#51677c] leading-relaxed text-[15px] md:text-[1.05rem]">
+            <p className="text-[#51677c] leading-relaxed text-[14px] md:text-[1.05rem]">
               Cuidamos materiales, ejecución y remates para que la reforma quede bien hecha y
               dure en el tiempo.
             </p>
           </div>
 
-          <div className="flex flex-col md:items-start h-full">
-            <div className="flex items-center gap-3 md:gap-0 mb-2 md:mb-5 md:flex-col md:items-start">
-              <Users strokeWidth={1.5} className="h-6 w-6 md:h-10 md:w-10 text-[#d85b1d] flex-shrink-0" />
-              <h3 className="text-[1.1rem] md:text-xl font-bold text-[#1a2b3c] mt-0.5 md:mt-0">Experiencia</h3>
+          <div className="hidden md:flex flex-col md:items-start h-full">
+            <div className="flex items-center md:gap-0 mb-1 md:mb-5 md:flex-col md:items-start">
+              <Users strokeWidth={1.5} className="hidden md:block md:h-10 md:w-10 text-[#d85b1d] flex-shrink-0" />
+              <h3 className="text-base md:text-xl font-bold text-[#1a2b3c] md:mt-0">Experiencia</h3>
             </div>
-            <p className="text-[#51677c] leading-relaxed text-[15px] md:text-[1.05rem]">
+            <p className="text-[#51677c] leading-relaxed text-[14px] md:text-[1.05rem]">
               Más de 25 años reformando viviendas en Madrid y más de 1.500 proyectos realizados.
             </p>
           </div>
 
-          <div className="flex flex-col md:items-start h-full">
-            <div className="flex items-center gap-3 md:gap-0 mb-2 md:mb-5 md:flex-col md:items-start">
-              <Heart strokeWidth={1.5} className="h-6 w-6 md:h-10 md:w-10 text-[#d85b1d] flex-shrink-0" />
-              <h3 className="text-[1.1rem] md:text-xl font-bold text-[#1a2b3c] mt-0.5 md:mt-0">Cuidado</h3>
+          <div className="flex flex-col md:items-start h-full pb-2 md:pb-0">
+            <div className="flex items-center md:gap-0 mb-1 md:mb-5 md:flex-col md:items-start">
+              <Heart strokeWidth={1.5} className="hidden md:block md:h-10 md:w-10 text-[#d85b1d] flex-shrink-0" />
+              <h3 className="text-base md:text-xl font-bold text-[#1a2b3c] md:mt-0">Cuidado</h3>
             </div>
-            <p className="text-[#51677c] leading-relaxed text-[15px] md:text-[1.05rem]">
+            <p className="text-[#51677c] leading-relaxed text-[14px] md:text-[1.05rem]">
               Entramos en tu casa para trabajar con orden, respeto y atención al detalle en cada
               fase de la obra.
             </p>

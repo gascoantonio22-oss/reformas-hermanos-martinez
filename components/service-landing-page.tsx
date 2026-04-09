@@ -1,8 +1,9 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, Phone, Star, Shield, Clock, Sparkles, TrendingUp, Wrench, Quote, MapPin, CheckCircle } from "lucide-react"
+import { ArrowRight, Phone, Star, Shield, Clock, Sparkles, TrendingUp, Wrench, Quote, MapPin, CheckCircle, X } from "lucide-react"
 import { toast } from "sonner"
 
 import { Footer } from "@/components/footer"
@@ -32,6 +33,21 @@ const IconMap: Record<string, any> = {
 
 export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
   const service = getServiceBySlug(landing.serviceSlug)
+  const [lightboxImage, setLightboxImage] = useState<string | null>(null)
+
+  useEffect(() => {
+    if (lightboxImage !== null) {
+      document.body.style.overflow = "hidden"
+      const handleEscape = (e: KeyboardEvent) => {
+        if (e.key === "Escape") setLightboxImage(null)
+      }
+      window.addEventListener("keydown", handleEscape)
+      return () => {
+        document.body.style.overflow = ""
+        window.removeEventListener("keydown", handleEscape)
+      }
+    }
+  }, [lightboxImage])
 
   if (!service) {
     throw new Error(`Servicio no encontrado para ${landing.path}`)
@@ -71,7 +87,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
 
         {/* 1. Hero principal */}
         {landing.serviceSlug === "reformas-cocinas" ? (
-          <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center overflow-hidden bg-[#1a2b3c]">
+          <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-start md:items-center overflow-hidden bg-[#1a2b3c]">
             <div className="absolute inset-0 z-0">
               <div className="relative w-full h-full">
                 <Image
@@ -89,56 +105,56 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
               <div className="absolute inset-0 bg-gradient-to-t from-[#1a2b3c] via-transparent to-transparent md:hidden" />
             </div>
             
-            <div className="container mx-auto px-4 sm:px-6 relative z-10 pt-32 pb-20 md:py-36">
+            <div className="container mx-auto px-4 sm:px-6 relative z-10 pt-24 pb-16 md:py-36">
               <div className="max-w-[46rem] text-left section-fade-up">
                 
-                <div className="mb-6 inline-flex items-center rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs sm:text-sm font-semibold tracking-wider text-white/90 backdrop-blur-md">
+                <span className="block text-[#d85b1d] font-bold text-[11px] sm:inline-flex sm:items-center sm:rounded-full sm:border sm:border-white/20 sm:bg-white/10 sm:px-4 sm:py-2 sm:text-sm uppercase tracking-wider sm:normal-case sm:tracking-normal mb-3 sm:mb-6 sm:text-white/90 sm:backdrop-blur-md text-left">
                   REFORMAS DE COCINAS EN MADRID
-                </div>
+                </span>
                 
-                <h1 className="text-[2.5rem] sm:text-5xl md:text-6xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight text-balance drop-shadow-sm">
+                <h1 className="text-[28px] sm:text-5xl md:text-6xl font-extrabold text-white mb-4 sm:mb-6 leading-[1.1] tracking-tight text-balance drop-shadow-sm text-left">
                   {landing.heroTitle ?? landing.title}
                 </h1>
                 
-                <p className="mb-10 max-w-[38rem] text-[1.1rem] sm:text-xl font-light leading-relaxed text-white/90 drop-shadow-sm text-balance">
+                <p className="mb-8 mt-4 sm:mt-5 max-w-[38rem] text-[15px] sm:text-[1.1rem] sm:text-xl font-light leading-relaxed text-white/90 drop-shadow-sm text-balance text-left">
                   {landing.heroSubtitle}
                 </p>
 
-                <div className="flex flex-col sm:flex-row items-start gap-4 mb-10 w-full">
+                <div className="mt-8 md:mt-10 flex flex-col justify-center sm:grid sm:auto-cols-auto sm:grid-flow-col gap-2 sm:gap-4 mb-5 sm:mb-10 w-full transition-[opacity,transform]">
                   <Link
                     href="#contacto"
-                    className="inline-flex items-center justify-center h-14 rounded-md bg-[#d85b1d] px-8 text-base font-bold text-white shadow-[0_0_20px_rgba(216,91,29,0.15)] hover:bg-[#c24e15] hover:shadow-[0_0_25px_rgba(216,91,29,0.3)] hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto focus:ring-0 whitespace-nowrap"
+                    className="inline-flex items-center justify-center h-14 rounded-md bg-[#d85b1d] px-8 text-base font-bold text-white shadow-[0_0_20px_rgba(216,91,29,0.15)] hover:bg-[#c24e15] hover:shadow-[0_0_25px_rgba(216,91,29,0.3)] hover:-translate-y-0.5 transition-all duration-300 w-full focus:ring-0 whitespace-nowrap"
                   >
                     Pedir presupuesto gratis
                   </Link>
 
                   <a
                     href={`tel:${siteConfig.phoneHref}`}
-                    className="inline-flex items-center justify-center gap-2 h-14 rounded-md border border-white/30 bg-transparent px-8 text-base font-bold text-white hover:bg-white hover:text-[#1a2b3c] transition-all duration-300 w-full sm:w-auto whitespace-nowrap"
+                    className="inline-flex items-center justify-center gap-2 h-auto py-1 sm:h-14 sm:py-0 rounded-md border-transparent sm:border sm:border-white/30 bg-transparent px-0 sm:px-8 text-[15px] sm:text-base font-medium sm:font-bold text-white/70 sm:text-white underline underline-offset-4 sm:no-underline hover:text-white sm:hover:bg-white sm:hover:text-[#1a2b3c] transition-all duration-300 w-full whitespace-nowrap"
                   >
-                    <Phone className="h-5 w-5" />
+                    <Phone className="h-4 w-4 sm:h-5 sm:w-5" />
                     Llamar ahora
                   </a>
                 </div>
 
                 {/* Fila de Confianza Inline (Trust Row) específica cocinas */}
-                <div className="flex flex-wrap items-center justify-start gap-x-4 gap-y-3 text-sm font-medium text-white/80">
+                <div className="mt-5 sm:mt-10 flex flex-wrap items-center justify-start gap-x-3 sm:gap-x-4 gap-y-2 sm:gap-y-3 text-[13px] sm:text-sm font-medium text-white/80">
                   <div className="flex items-center gap-1.5">
                     <CheckCircle className="h-4 w-4 text-[#d85b1d]" />
                     <span>Presupuesto cerrado</span>
                   </div>
-                  <span className="hidden sm:inline opacity-30 px-1">•</span>
+                  <span className="opacity-30 sm:px-1">•</span>
                   <div className="flex items-center gap-1.5">
                     <CheckCircle className="h-4 w-4 text-[#d85b1d]" />
                     <span>Diseño + obra + montaje</span>
                   </div>
-                  <span className="hidden lg:inline opacity-30 px-1">•</span>
-                  <div className="flex items-center gap-1.5">
+                  <span className="hidden sm:inline opacity-30 px-1">•</span>
+                  <div className="hidden sm:flex items-center gap-1.5">
                     <CheckCircle className="h-4 w-4 text-[#d85b1d]" />
                     <span>Coordinación completa</span>
                   </div>
-                  <span className="hidden lg:inline opacity-30 px-1">•</span>
-                  <div className="hidden lg:flex items-center gap-1.5">
+                  <span className="hidden md:inline opacity-30 px-1">•</span>
+                  <div className="hidden md:flex items-center gap-1.5">
                     <Star className="h-4 w-4 text-[#d85b1d]" />
                     <span>25 años en Madrid</span>
                   </div>
@@ -166,56 +182,55 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
             <div className="container mx-auto px-4 sm:px-6 relative z-10 pt-36 md:pt-40 pb-16 sm:pb-24">
               <div className="max-w-4xl mx-auto text-center section-fade-up">
                 {landing.heroEyebrow ? (
-                  <div className="mb-5 inline-flex items-center rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-white/90 backdrop-blur-md">
+                  <span className="block text-[#d85b1d] font-bold text-[11px] sm:inline-flex sm:items-center sm:rounded-full sm:border sm:border-white/15 sm:bg-white/10 sm:px-4 sm:py-2 sm:text-sm uppercase tracking-wider sm:normal-case sm:tracking-normal mb-3 sm:mb-5 sm:text-white/90 sm:backdrop-blur-md">
                     {landing.heroEyebrow}
-                  </div>
+                  </span>
                 ) : null}
-                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight text-balance">
+                <h1 className="text-[28px] leading-[1.1] sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-4 sm:mb-6 tracking-tight text-balance">
                   {landing.heroTitle ?? landing.title}
                 </h1>
                 {landing.heroParagraphs?.length ? (
-                  <div className="mx-auto mb-10 max-w-3xl space-y-5 px-2 text-left sm:text-center">
+                  <div className="mx-auto mb-8 sm:mb-10 max-w-3xl space-y-4 sm:space-y-5 px-2 text-left sm:text-center text-[15px] sm:text-lg text-white/90 font-light">
                     {landing.heroParagraphs.map((paragraph) => (
-                      <p
-                        key={paragraph}
-                        className="text-base leading-8 text-white/90 sm:text-lg sm:leading-8"
-                      >
+                      <p key={paragraph} className="leading-relaxed">
                         {paragraph}
                       </p>
                     ))}
                   </div>
                 ) : (
-                  <>
-                    <p className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed font-light px-2 text-balance">
-                      {landing.heroSubtitle}
-                    </p>
-                    
-                    <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-10 px-2">
-                      {landing.heroBadges.map((badge, idx) => (
-                        <span key={idx} className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white/90 backdrop-blur-md">
-                          <CheckCircle className="h-4 w-4 text-[#d85b1d]" />
-                          {badge}
-                        </span>
-                      ))}
-                    </div>
-                  </>
+                  <p className="mb-8 mt-4 sm:mt-5 max-w-[38rem] mx-auto text-[15px] sm:text-xl font-light leading-relaxed text-white/90 text-balance text-left sm:text-center px-2">
+                    {landing.heroSubtitle}
+                  </p>
                 )}
 
-                <div className="flex flex-col sm:flex-row justify-center gap-4 px-4 sm:px-0">
+                <div className="mt-8 md:mt-10 flex flex-col justify-center sm:grid sm:auto-cols-auto sm:grid-flow-col gap-2 sm:gap-4 mb-5 sm:mb-10 w-full px-4 sm:px-0 transition-[opacity,transform]">
                   <Link
                     href="#contacto"
-                    className="inline-flex items-center justify-center h-14 rounded-md bg-[#d85b1d] hover:bg-[#c24e15] text-white font-bold text-lg px-8 shadow-2xl transition-all duration-300 hover:scale-105 w-full sm:w-auto whitespace-nowrap"
+                    className="inline-flex items-center justify-center h-14 rounded-md bg-[#d85b1d] px-8 text-base font-bold text-white shadow-[0_0_20px_rgba(216,91,29,0.15)] hover:bg-[#c24e15] hover:shadow-[0_0_25px_rgba(216,91,29,0.3)] hover:-translate-y-0.5 transition-all duration-300 w-full focus:ring-0 whitespace-nowrap"
                   >
                     Pedir Presupuesto
                   </Link>
+
                   <a
                     href={`tel:${siteConfig.phoneHref}`}
-                    className="inline-flex items-center justify-center gap-2 h-14 rounded-md border-2 border-white text-white hover:bg-white hover:text-[#1a2b3c] font-bold text-lg px-8 bg-transparent w-full sm:w-auto transition-colors whitespace-nowrap"
+                    className="inline-flex items-center justify-center gap-2 h-auto py-1 sm:h-14 sm:py-0 rounded-md border-transparent sm:border sm:border-white/30 bg-transparent px-0 sm:px-8 text-[15px] sm:text-base font-medium sm:font-bold text-white/70 sm:text-white underline underline-offset-4 sm:no-underline hover:text-white sm:hover:bg-white sm:hover:text-[#1a2b3c] transition-all duration-300 w-full whitespace-nowrap"
                   >
-                    <Phone className="h-5 w-5" />
+                    <Phone className="h-4 w-4 sm:h-5 sm:w-5" />
                     Llamar ahora
                   </a>
                 </div>
+
+                {!landing.heroParagraphs?.length && landing.heroBadges?.length > 0 && (
+                  <div className="mt-5 sm:mt-10 flex flex-wrap items-center justify-center sm:justify-center gap-y-2 sm:gap-y-3 text-[13px] sm:text-sm font-medium text-white/80 px-2 text-left sm:text-center">
+                    {landing.heroBadges.map((badge, idx) => (
+                      <div key={idx} className={`flex items-center gap-1.5 ${idx >= 2 ? "hidden sm:flex" : ""}`}>
+                        {idx > 0 && <span className={`opacity-30 px-1 sm:px-2 ${idx >= 2 ? "hidden sm:inline" : ""}`}>•</span>}
+                        <CheckCircle className="h-4 w-4 text-[#d85b1d]" />
+                        <span>{badge}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
               </div>
             </div>
           </section>
@@ -383,7 +398,11 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
               </div>
               
               <div className="section-fade-up-delayed max-w-6xl mx-auto">
-                <div className="relative mb-4 sm:mb-6 md:mb-8 rounded-xl sm:rounded-2xl overflow-hidden shadow-xl sm:shadow-2xl group w-full h-[280px] sm:h-[400px] md:h-[500px] lg:h-[600px]">
+                <button
+                  type="button"
+                  onClick={() => setLightboxImage(landing.galleryImages[0] || service.image)}
+                  className="relative block w-full mb-4 sm:mb-6 md:mb-8 rounded-xl sm:rounded-2xl overflow-hidden shadow-xl sm:shadow-2xl group h-[280px] sm:h-[400px] md:h-[500px] lg:h-[600px] cursor-zoom-in"
+                >
                   <Image
                     src={landing.galleryImages[0] || service.image}
                     alt="Proyecto principal de cocina reformificada en Madrid con mobiliario a medida"
@@ -391,11 +410,16 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                     sizes="100vw"
                   />
-                </div>
+                </button>
                 
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
                   {landing.galleryImages.slice(1, 7).map((imgSrc, idx) => (
-                    <div key={idx} className="relative rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-xl sm:hover:shadow-2xl transition-all duration-500 group aspect-[4/3]">
+                    <button 
+                      key={idx} 
+                      type="button"
+                      onClick={() => setLightboxImage(imgSrc || service.image)}
+                      className="relative block w-full rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-xl sm:hover:shadow-2xl transition-all duration-500 group aspect-[4/3] cursor-zoom-in"
+                    >
                       <Image
                         src={imgSrc || service.image}
                         alt={`Muestra de detalle en proyecto de cocina, vista ${idx + 2}`}
@@ -403,7 +427,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
                         className="object-cover group-hover:scale-110 transition-transform duration-700"
                         sizes="(min-width: 768px) 33vw, 50vw"
                       />
-                    </div>
+                    </button>
                   ))}
                 </div>
 
@@ -437,7 +461,11 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
               </div>
               
               <div className="grid gap-4 sm:gap-6 lg:grid-cols-3 section-fade-up-delayed">
-                <div className="lg:col-span-2 relative aspect-[16/9] lg:aspect-auto w-full rounded-2xl overflow-hidden group shadow-xl bg-slate-200">
+                <button 
+                  type="button"
+                  onClick={() => setLightboxImage(displayGallery[0] || service.image)}
+                  className="lg:col-span-2 relative block w-full aspect-[16/9] lg:aspect-auto rounded-2xl overflow-hidden group shadow-xl bg-slate-200 cursor-zoom-in"
+                >
                   <Image
                     src={displayGallery[0] || service.image}
                     alt={`Proyecto de ${landing.title}`}
@@ -446,10 +474,15 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
                     sizes="(min-width: 1024px) 66vw, 100vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#1a2b3c]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
+                </button>
                 <div className="grid gap-4 sm:gap-6 grid-rows-2">
                   {displayGallery.slice(1, 3).map((imgSrc, idx) => (
-                     <div key={idx} className="relative aspect-[16/9] lg:aspect-auto w-full rounded-2xl overflow-hidden group shadow-lg bg-slate-200">
+                     <button 
+                      key={idx} 
+                      type="button"
+                      onClick={() => setLightboxImage(imgSrc || service.image)}
+                      className="relative block w-full aspect-[16/9] lg:aspect-auto rounded-2xl overflow-hidden group shadow-lg bg-slate-200 cursor-zoom-in"
+                     >
                       <Image
                         src={imgSrc || service.image}
                         alt={`Detalle de ${landing.title}`}
@@ -458,7 +491,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
                         sizes="(min-width: 1024px) 33vw, 100vw"
                       />
                       <div className="absolute inset-0 bg-[#1a2b3c]/0 group-hover:bg-[#1a2b3c]/10 transition-colors duration-300" />
-                    </div>
+                    </button>
                   ))}
                 </div>
               </div>
@@ -726,6 +759,39 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
 
       </main>
       <Footer />
+
+      {/* Lightbox Overlay */}
+      {lightboxImage && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-[rgba(22,33,47,0.9)] p-2 backdrop-blur-sm sm:p-4 opacity-100 transition-opacity duration-300"
+          role="dialog"
+          aria-modal="true"
+          onClick={() => setLightboxImage(null)}
+        >
+          <button
+            type="button"
+            aria-label="Cerrar imagen ampliada"
+            className="absolute right-3 top-3 z-10 inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white transition-all hover:bg-white/20 sm:right-5 sm:top-5"
+            onClick={() => setLightboxImage(null)}
+          >
+            <X className="h-5 w-5" />
+          </button>
+          <div
+            className="relative h-[92vh] w-full max-w-[1800px] scale-100 transition-transform duration-300 ease-out"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Image
+              src={lightboxImage}
+              alt="Vista ampliada de la reforma"
+              fill
+              quality={100}
+              sizes="100vw"
+              className="object-contain"
+            />
+          </div>
+        </div>
+      )}
     </>
   )
+
 }
