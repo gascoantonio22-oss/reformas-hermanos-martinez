@@ -714,6 +714,78 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
           </section>
         )}
 
+        {/* 8.5. Nueva Sección de Recursos (Solo Cocinas) */}
+        {landing.serviceSlug === "reformas-cocinas" && (
+          <section className="py-16 sm:py-20 md:py-24 bg-white border-t border-slate-100">
+            <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
+              <div className="text-center mb-12 sm:mb-16 section-fade-up">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#1a2b3c] mb-4 tracking-tight">
+                  Guías y consejos para planificar tu reforma de cocina
+                </h2>
+                <p className="text-lg text-[#51677c] max-w-2xl mx-auto">
+                  Una selección de contenidos prácticos para ayudarte a tomar mejores decisiones antes de reformar tu cocina en Madrid.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 section-fade-up-delayed">
+                {[
+                  {
+                    eyebrow: "GUÍA DE PRECIOS",
+                    title: "Cuánto cuesta reformar una cocina en Madrid",
+                    text: "Factores que influyen en el presupuesto de una reforma de cocina y cómo comparar partidas con más claridad."
+                  },
+                  {
+                    eyebrow: "DISTRIBUCIÓN",
+                    title: "Qué distribución de cocina aprovecha mejor el espacio",
+                    text: "Ideas para resolver cocinas alargadas, abiertas o pequeñas sin perder funcionalidad."
+                  },
+                  {
+                    eyebrow: "MATERIALES",
+                    title: "Encimeras, muebles y acabados: qué elegir",
+                    text: "Consejos para comparar materiales según uso diario, mantenimiento y estilo."
+                  },
+                  {
+                    eyebrow: "ERRORES COMUNES",
+                    title: "Errores que conviene evitar antes de reformar la cocina",
+                    text: "Decisiones que suelen encarecer la obra o complicar el resultado final si no se prevén a tiempo."
+                  },
+                  {
+                    eyebrow: "PLANIFICACIÓN",
+                    title: "Cómo preparar una reforma de cocina paso a paso",
+                    text: "Qué revisar antes de empezar, cómo ordenar decisiones y qué conviene dejar cerrado desde el principio."
+                  },
+                  {
+                    eyebrow: "PERMISOS Y OBRA",
+                    title: "Qué tener en cuenta antes de empezar la obra",
+                    text: "Instalaciones, tiempos, coordinación de oficios y aspectos prácticos a revisar antes de arrancar."
+                  }
+                ].map((resource, idx) => (
+                  <button
+                    key={idx}
+                    type="button"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      toast.info("Demo no disponible", {
+                        description: "Esta sección de blog aún no está activa.",
+                      });
+                    }}
+                    className="group bg-white rounded-2xl p-6 sm:p-8 border border-slate-100 shadow-[0_2px_10px_rgb(0,0,0,0.02)] hover:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 text-left flex flex-col h-full cursor-pointer"
+                  >
+                    <span className="text-[#d85b1d] font-bold text-[10px] tracking-wider uppercase mb-3 block">
+                      {resource.eyebrow}
+                    </span>
+                    <h3 className="text-[#1a2b3c] font-bold text-[17px] leading-snug mb-3 group-hover:text-[#d85b1d] transition-colors">
+                      {resource.title}
+                    </h3>
+                    <p className="text-[#51677c] text-[15px] font-light leading-relaxed mt-auto">
+                      {resource.text}
+                    </p>
+                  </button>
+                ))}
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* 9. Gran Contacto / CTA Final */}
         <section className="py-24 bg-[#1a2b3c] relative overflow-hidden text-white" id="contacto">
