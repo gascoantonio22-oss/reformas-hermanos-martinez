@@ -2,7 +2,7 @@
 
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, Phone, Star, Shield, Clock, Sparkles, TrendingUp, Wrench, Quote, MapPin } from "lucide-react"
+import { ArrowRight, Phone, Star, Shield, Clock, Sparkles, TrendingUp, Wrench, Quote, MapPin, CheckCircle } from "lucide-react"
 import { toast } from "sonner"
 
 import { Footer } from "@/components/footer"
@@ -70,79 +70,156 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
         />
 
         {/* 1. Hero principal */}
-        <section className="relative min-h-[60vh] sm:min-h-[70vh] md:min-h-[85vh] flex items-center justify-center overflow-hidden bg-slate-900">
-          <div className="absolute inset-0 z-0">
-            <div className="relative overflow-hidden w-full h-full">
-              <Image
-                src={service.image}
-                alt={landing.title}
-                fill
-                priority
-                className="w-full h-full object-cover opacity-80"
-                sizes="100vw"
-              />
+        {landing.serviceSlug === "reformas-cocinas" ? (
+          <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-center overflow-hidden bg-[#1a2b3c]">
+            <div className="absolute inset-0 z-0">
+              <div className="relative w-full h-full">
+                <Image
+                  src={service.image}
+                  alt={landing.title}
+                  fill
+                  priority
+                  className="w-full h-full object-cover scale-105"
+                  sizes="100vw"
+                />
+              </div>
+              {/* Fotografía: mix-blend multiply y gradiente desplazado */}
+              <div className="absolute inset-0 bg-[#1a2b3c]/60 mix-blend-multiply" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#1a2b3c]/90 via-[#1a2b3c]/60 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1a2b3c] via-transparent to-transparent md:hidden" />
             </div>
-            <div className="absolute inset-0 bg-black/50" />
-            <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-transparent to-black/60" />
-          </div>
-          <div className="container mx-auto px-4 sm:px-6 relative z-10 pt-36 md:pt-40 pb-16 sm:pb-24">
-            <div className="max-w-4xl mx-auto text-center section-fade-up">
-              {landing.heroEyebrow ? (
-                <div className="mb-5 inline-flex items-center rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-white/90 backdrop-blur-md">
-                  {landing.heroEyebrow}
+            
+            <div className="container mx-auto px-4 sm:px-6 relative z-10 pt-32 pb-20 md:py-36">
+              <div className="max-w-[46rem] text-left section-fade-up">
+                
+                <div className="mb-6 inline-flex items-center rounded-full border border-white/20 bg-white/10 px-4 py-2 text-xs sm:text-sm font-semibold tracking-wider text-white/90 backdrop-blur-md">
+                  REFORMAS DE COCINAS EN MADRID
                 </div>
-              ) : null}
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight text-balance">
-                {landing.heroTitle ?? landing.title}
-              </h1>
-              {landing.heroParagraphs?.length ? (
-                <div className="mx-auto mb-10 max-w-3xl space-y-5 px-2 text-left sm:text-center">
-                  {landing.heroParagraphs.map((paragraph) => (
-                    <p
-                      key={paragraph}
-                      className="text-base leading-8 text-white/90 sm:text-lg sm:leading-8"
-                    >
-                      {paragraph}
-                    </p>
-                  ))}
-                </div>
-              ) : (
-                <>
-                  <p className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed font-light px-2 text-balance">
-                    {landing.heroSubtitle}
-                  </p>
-                  
-                  <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-10 px-2">
-                    {landing.heroBadges.map((badge, idx) => (
-                      <div key={idx} className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
-                        {idx === 0 && <Star className="h-4 w-4 text-[#d85b1d] flex-shrink-0" />}
-                        {idx === 1 && <Shield className="h-4 w-4 text-[#d85b1d] flex-shrink-0" />}
-                        {idx === 2 && <Clock className="h-4 w-4 text-[#d85b1d] flex-shrink-0" />}
-                        <span className="text-white text-sm font-medium whitespace-nowrap">{badge}</span>
-                      </div>
-                    ))}
-                  </div>
-                </>
-              )}
+                
+                <h1 className="text-[2.5rem] sm:text-5xl md:text-6xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight text-balance drop-shadow-sm">
+                  {landing.heroTitle ?? landing.title}
+                </h1>
+                
+                <p className="mb-10 max-w-[38rem] text-[1.1rem] sm:text-xl font-light leading-relaxed text-white/90 drop-shadow-sm text-balance">
+                  {landing.heroSubtitle}
+                </p>
 
-              <div className="flex flex-col sm:flex-row justify-center gap-4 px-4 sm:px-0">
-                <Link
-                  href="#contacto"
-                  className="inline-flex items-center justify-center h-14 rounded-md bg-[#d85b1d] hover:bg-[#c24e15] text-white font-bold text-lg px-8 shadow-2xl transition-all duration-300 hover:scale-105 w-full sm:w-auto whitespace-nowrap"
-                >
-                  Pedir Presupuesto
-                </Link>
-                <a
-                  href={`tel:${siteConfig.phoneHref}`}
-                  className="inline-flex items-center justify-center gap-2 h-14 rounded-md border-2 border-white text-white hover:bg-white hover:text-[#1a2b3c] font-bold text-lg px-8 bg-transparent w-full sm:w-auto transition-colors whitespace-nowrap"
-                >
-                  <Phone className="h-5 w-5" />
-                  Llamar ahora
-                </a>
+                <div className="flex flex-col sm:flex-row items-start gap-4 mb-10 w-full">
+                  <Link
+                    href="#contacto"
+                    className="inline-flex items-center justify-center h-14 rounded-md bg-[#d85b1d] px-8 text-base font-bold text-white shadow-[0_0_20px_rgba(216,91,29,0.15)] hover:bg-[#c24e15] hover:shadow-[0_0_25px_rgba(216,91,29,0.3)] hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto focus:ring-0 whitespace-nowrap"
+                  >
+                    Pedir presupuesto gratis
+                  </Link>
+
+                  <a
+                    href={`tel:${siteConfig.phoneHref}`}
+                    className="inline-flex items-center justify-center gap-2 h-14 rounded-md border border-white/30 bg-transparent px-8 text-base font-bold text-white hover:bg-white hover:text-[#1a2b3c] transition-all duration-300 w-full sm:w-auto whitespace-nowrap"
+                  >
+                    <Phone className="h-5 w-5" />
+                    Llamar ahora
+                  </a>
+                </div>
+
+                {/* Fila de Confianza Inline (Trust Row) específica cocinas */}
+                <div className="flex flex-wrap items-center justify-start gap-x-4 gap-y-3 text-sm font-medium text-white/80">
+                  <div className="flex items-center gap-1.5">
+                    <CheckCircle className="h-4 w-4 text-[#d85b1d]" />
+                    <span>Presupuesto cerrado</span>
+                  </div>
+                  <span className="hidden sm:inline opacity-30 px-1">•</span>
+                  <div className="flex items-center gap-1.5">
+                    <CheckCircle className="h-4 w-4 text-[#d85b1d]" />
+                    <span>Diseño + obra + montaje</span>
+                  </div>
+                  <span className="hidden lg:inline opacity-30 px-1">•</span>
+                  <div className="flex items-center gap-1.5">
+                    <CheckCircle className="h-4 w-4 text-[#d85b1d]" />
+                    <span>Coordinación completa</span>
+                  </div>
+                  <span className="hidden lg:inline opacity-30 px-1">•</span>
+                  <div className="hidden lg:flex items-center gap-1.5">
+                    <Star className="h-4 w-4 text-[#d85b1d]" />
+                    <span>25 años en Madrid</span>
+                  </div>
+                </div>
+
               </div>
             </div>
-          </div>
-        </section>
+          </section>
+        ) : (
+          <section className="relative min-h-[60vh] sm:min-h-[70vh] md:min-h-[85vh] flex items-center justify-center overflow-hidden bg-slate-900">
+            <div className="absolute inset-0 z-0">
+              <div className="relative overflow-hidden w-full h-full">
+                <Image
+                  src={service.image}
+                  alt={landing.title}
+                  fill
+                  priority
+                  className="w-full h-full object-cover opacity-80"
+                  sizes="100vw"
+                />
+              </div>
+              <div className="absolute inset-0 bg-black/50" />
+              <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-transparent to-black/60" />
+            </div>
+            <div className="container mx-auto px-4 sm:px-6 relative z-10 pt-36 md:pt-40 pb-16 sm:pb-24">
+              <div className="max-w-4xl mx-auto text-center section-fade-up">
+                {landing.heroEyebrow ? (
+                  <div className="mb-5 inline-flex items-center rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-white/90 backdrop-blur-md">
+                    {landing.heroEyebrow}
+                  </div>
+                ) : null}
+                <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight text-balance">
+                  {landing.heroTitle ?? landing.title}
+                </h1>
+                {landing.heroParagraphs?.length ? (
+                  <div className="mx-auto mb-10 max-w-3xl space-y-5 px-2 text-left sm:text-center">
+                    {landing.heroParagraphs.map((paragraph) => (
+                      <p
+                        key={paragraph}
+                        className="text-base leading-8 text-white/90 sm:text-lg sm:leading-8"
+                      >
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
+                ) : (
+                  <>
+                    <p className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed font-light px-2 text-balance">
+                      {landing.heroSubtitle}
+                    </p>
+                    
+                    <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-10 px-2">
+                      {landing.heroBadges.map((badge, idx) => (
+                        <span key={idx} className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm font-medium text-white/90 backdrop-blur-md">
+                          <CheckCircle className="h-4 w-4 text-[#d85b1d]" />
+                          {badge}
+                        </span>
+                      ))}
+                    </div>
+                  </>
+                )}
+
+                <div className="flex flex-col sm:flex-row justify-center gap-4 px-4 sm:px-0">
+                  <Link
+                    href="#contacto"
+                    className="inline-flex items-center justify-center h-14 rounded-md bg-[#d85b1d] hover:bg-[#c24e15] text-white font-bold text-lg px-8 shadow-2xl transition-all duration-300 hover:scale-105 w-full sm:w-auto whitespace-nowrap"
+                  >
+                    Pedir Presupuesto
+                  </Link>
+                  <a
+                    href={`tel:${siteConfig.phoneHref}`}
+                    className="inline-flex items-center justify-center gap-2 h-14 rounded-md border-2 border-white text-white hover:bg-white hover:text-[#1a2b3c] font-bold text-lg px-8 bg-transparent w-full sm:w-auto transition-colors whitespace-nowrap"
+                  >
+                    <Phone className="h-5 w-5" />
+                    Llamar ahora
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+        )}
 
         {/* 2. Ventajas */}
         {landing.serviceSlug !== "reformas-cocinas" && (
@@ -410,22 +487,66 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
               </div>
 
               <div className="relative max-w-4xl mx-auto section-fade-up-delayed mt-10 sm:mt-16">
-                <div className="flex flex-col gap-10 sm:gap-12">
-                  {landing.process.map((step, idx) => (
-                    <div key={idx} className="relative bg-white/5 backdrop-blur-md rounded-xl sm:rounded-2xl p-8 sm:p-10 pt-12 sm:pt-14 border border-white/10 text-center shadow-2xl transition-all hover:bg-white/10">
-                      {/* Círculo superior centralizado */}
-                      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#ffb800] text-[#1a2b3c] shadow-[0_0_20px_rgba(255,184,0,0.3)] z-10 border-[4px] border-[#1a2b3c]">
-                        <span className="text-lg sm:text-xl font-extrabold">{idx + 1}</span>
+                {/* Línea central vertical (Desktop) */}
+                <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-white/10 -translate-x-1/2 z-0" />
+                
+                <div className="flex flex-col gap-6 md:gap-8">
+                  {landing.process.map((step, idx) => {
+                    // Impares (1, 3, 5 => idx 0, 2, 4) van con contenido a la Derecha
+                    const isOnRight = idx % 2 === 0;
+
+                    return (
+                      <div key={idx} className="relative z-10">
+                        
+                        {/* Mobile View: Estructura en pila limpia */}
+                        <div className="md:hidden relative bg-white/5 backdrop-blur-sm rounded-xl p-6 sm:p-7 border border-white/10 shadow-lg">
+                          <div className="flex items-center gap-4 mb-3">
+                            <div className="w-10 h-10 shrink-0 bg-[#ffb800] rounded-full flex items-center justify-center text-[#1a2b3c] font-black text-lg shadow-[0_0_15px_rgba(255,184,0,0.3)]">
+                              {idx + 1}
+                            </div>
+                            <h3 className="text-lg font-bold text-white leading-tight">
+                              {step.title}
+                            </h3>
+                          </div>
+                          <p className="text-white/70 text-[15px] leading-relaxed text-left pl-[56px] pr-2">
+                            {step.description}
+                          </p>
+                        </div>
+
+                        {/* Desktop View: Zig-Zag Alternado (Imagen 1) */}
+                        <div className="hidden md:block w-full rounded-[14px] bg-white/[0.04] backdrop-blur-sm border border-white/10 relative overflow-hidden transition-colors hover:bg-white/[0.06]">
+                          
+                          {/* Círculo Amarillo Central */}
+                          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[46px] h-[46px] bg-[#ffb800] rounded-full flex items-center justify-center text-[#1a2b3c] font-black text-[20px] shadow-[0_0_25px_rgba(255,184,0,0.5)] z-20">
+                            {idx + 1}
+                          </div>
+
+                          <div className="grid grid-cols-2 relative h-full min-h-[150px]">
+                            {/* Columna Izquierda */}
+                            <div className={`p-10 pr-14 flex flex-col justify-center ${!isOnRight ? 'opacity-100' : 'opacity-0'}`}>
+                              {!isOnRight && (
+                                <>
+                                  <h3 className="text-[22px] font-bold text-white mb-3 text-right tracking-tight">{step.title}</h3>
+                                  <p className="text-white/70 text-[16px] leading-[1.7] text-left">{step.description}</p>
+                                </>
+                              )}
+                            </div>
+
+                            {/* Columna Derecha */}
+                            <div className={`p-10 pl-14 flex flex-col justify-center ${isOnRight ? 'opacity-100' : 'opacity-0'}`}>
+                              {isOnRight && (
+                                <>
+                                  <h3 className="text-[22px] font-bold text-white mb-3 text-left tracking-tight">{step.title}</h3>
+                                  <p className="text-white/70 text-[16px] leading-[1.7] text-right">{step.description}</p>
+                                </>
+                              )}
+                            </div>
+                          </div>
+
+                        </div>
                       </div>
-                      
-                      <h3 className="text-xl md:text-2xl font-bold mb-3 sm:mb-4 text-white">
-                        {step.title}
-                      </h3>
-                      <p className="text-white/75 leading-relaxed text-sm sm:text-base max-w-2xl mx-auto">
-                        {step.description}
-                      </p>
-                    </div>
-                  ))}
+                    )
+                  })}
                 </div>
               </div>
             </div>
