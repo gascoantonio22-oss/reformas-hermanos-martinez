@@ -466,87 +466,51 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
           </section>
         )}
 
-        {/* 6. Proceso - Timeline Vertical */}
+        {/* 6. Proceso - Timeline Lineal Compacta (Exclusiv. Cocinas) */}
         {landing.serviceSlug === "reformas-cocinas" ? (
-          <section className="py-16 sm:py-20 md:py-24 bg-[#1a2b3c] text-white relative overflow-hidden">
-            <div 
-              className="absolute inset-0 opacity-5" 
-              style={{ 
-                backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0v40M0 20h40' stroke='%23ffffff' stroke-width='1.5' stroke-opacity='1' fill='none'/%3E%3C/svg%3E\")" 
-              }} 
-            />
+          <section className="py-16 sm:py-24 bg-[#1a2b3c] text-white relative">
+            {/* Se elimina la opacidad excesiva de la rejilla para un fondo sólido y serio */}
             <div className="container mx-auto px-4 sm:px-6 relative z-10">
-              <div className="text-center mb-10 sm:mb-12 md:mb-16 section-fade-up">
+              <div className="text-center mb-12 sm:mb-16 section-fade-up">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">
                   Cómo trabajamos una reforma de cocina
                 </h2>
-                <p className="text-lg text-white/80 max-w-2xl mx-auto">
+                <p className="text-[1.1rem] text-white/80 max-w-2xl mx-auto font-light leading-relaxed">
                   Seguimos un proceso claro para que la obra avance con orden, tiempos definidos y
                   decisiones bien resueltas desde el principio.
                 </p>
               </div>
 
-              <div className="relative max-w-4xl mx-auto section-fade-up-delayed mt-10 sm:mt-16">
-                {/* Línea central vertical (Desktop) */}
-                <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-px bg-white/10 -translate-x-1/2 z-0" />
-                
-                <div className="flex flex-col gap-6 md:gap-8">
-                  {landing.process.map((step, idx) => {
-                    // Impares (1, 3, 5 => idx 0, 2, 4) van con contenido a la Derecha
-                    const isOnRight = idx % 2 === 0;
-
-                    return (
-                      <div key={idx} className="relative z-10">
-                        
-                        {/* Mobile View: Estructura en pila limpia */}
-                        <div className="md:hidden relative bg-white/5 backdrop-blur-sm rounded-xl p-6 sm:p-7 border border-white/10 shadow-lg">
-                          <div className="flex items-center gap-4 mb-3">
-                            <div className="w-10 h-10 shrink-0 bg-[#ffb800] rounded-full flex items-center justify-center text-[#1a2b3c] font-black text-lg shadow-[0_0_15px_rgba(255,184,0,0.3)]">
-                              {idx + 1}
-                            </div>
-                            <h3 className="text-lg font-bold text-white leading-tight">
-                              {step.title}
-                            </h3>
-                          </div>
-                          <p className="text-white/70 text-[15px] leading-relaxed text-left pl-[56px] pr-2">
-                            {step.description}
-                          </p>
-                        </div>
-
-                        {/* Desktop View: Zig-Zag Alternado (Imagen 1) */}
-                        <div className="hidden md:block w-full rounded-[14px] bg-white/[0.04] backdrop-blur-sm border border-white/10 relative overflow-hidden transition-colors hover:bg-white/[0.06]">
-                          
-                          {/* Círculo Amarillo Central */}
-                          <div className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[46px] h-[46px] bg-[#ffb800] rounded-full flex items-center justify-center text-[#1a2b3c] font-black text-[20px] shadow-[0_0_25px_rgba(255,184,0,0.5)] z-20">
-                            {idx + 1}
-                          </div>
-
-                          <div className="grid grid-cols-2 relative h-full min-h-[150px]">
-                            {/* Columna Izquierda */}
-                            <div className={`p-10 pr-14 flex flex-col justify-center ${!isOnRight ? 'opacity-100' : 'opacity-0'}`}>
-                              {!isOnRight && (
-                                <>
-                                  <h3 className="text-[22px] font-bold text-white mb-3 text-right tracking-tight">{step.title}</h3>
-                                  <p className="text-white/70 text-[16px] leading-[1.7] text-left">{step.description}</p>
-                                </>
-                              )}
-                            </div>
-
-                            {/* Columna Derecha */}
-                            <div className={`p-10 pl-14 flex flex-col justify-center ${isOnRight ? 'opacity-100' : 'opacity-0'}`}>
-                              {isOnRight && (
-                                <>
-                                  <h3 className="text-[22px] font-bold text-white mb-3 text-left tracking-tight">{step.title}</h3>
-                                  <p className="text-white/70 text-[16px] leading-[1.7] text-right">{step.description}</p>
-                                </>
-                              )}
-                            </div>
-                          </div>
-
-                        </div>
+              <div className="max-w-3xl mx-auto section-fade-up-delayed mt-8">
+                <div className="flex flex-col">
+                  {landing.process.map((step, idx) => (
+                    <div key={idx} className="relative pl-12 sm:pl-16 pb-8 sm:pb-10 last:pb-0">
+                      {/* Timeline Line */}
+                      {idx !== landing.process.length - 1 && (
+                        <div className="absolute left-[1.1rem] sm:left-[1.35rem] top-10 bottom-0 w-px bg-white/15" />
+                      )}
+                      
+                      {/* Círculo del Número Sobrio */}
+                      <div className="absolute left-0 top-0 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-[#1a2b3c] border-2 border-white/20 flex items-center justify-center text-[#ffb800] font-bold text-sm sm:text-base z-10">
+                        {idx + 1}
                       </div>
-                    )
-                  })}
+
+                      {/* Contenido Compacto */}
+                      <div className="pt-1 sm:pt-2">
+                        <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">{step.title}</h3>
+                        <p className="text-white/75 leading-relaxed text-[15px] sm:text-base max-w-2xl">{step.description}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                {/* Cierre Suave (Inline CTA) */}
+                <div className="mt-12 sm:mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <p className="text-white/70 font-medium text-sm tracking-wide">Transparencia y orden de principio a fin.</p>
+                  <Link href="#contacto" className="inline-flex items-center gap-2 text-[#d85b1d] font-bold text-[15px] hover:text-[#c24e15] transition-colors focus:ring-0">
+                    Solicitar presupuesto
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
                 </div>
               </div>
             </div>
