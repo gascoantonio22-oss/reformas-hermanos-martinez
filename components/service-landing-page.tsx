@@ -120,21 +120,20 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
                   {landing.heroSubtitle}
                 </p>
 
-                <div className="mt-8 md:mt-10 flex flex-col justify-center sm:grid sm:auto-cols-auto sm:grid-flow-col gap-2 sm:gap-4 mb-5 sm:mb-10 w-full transition-[opacity,transform]">
+                <div className="mt-8 md:mt-10 flex flex-col sm:flex-row items-center sm:items-center gap-4 sm:gap-6 mb-5 sm:mb-10 w-full transition-[opacity,transform]">
                   <Link
                     href="#contacto"
-                    className="inline-flex items-center justify-center h-14 rounded-md bg-[#d85b1d] px-8 text-base font-bold text-white shadow-[0_0_20px_rgba(216,91,29,0.15)] hover:bg-[#c24e15] hover:shadow-[0_0_25px_rgba(216,91,29,0.3)] hover:-translate-y-0.5 transition-all duration-300 w-full focus:ring-0 whitespace-nowrap"
+                    className="inline-flex items-center justify-center h-14 rounded-md bg-[#d85b1d] px-8 text-base font-bold text-white shadow-[0_0_20px_rgba(216,91,29,0.15)] hover:bg-[#c24e15] hover:shadow-[0_0_25px_rgba(216,91,29,0.3)] hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto focus:ring-0 whitespace-nowrap"
                   >
                     Pedir presupuesto gratis
                   </Link>
 
-                  <a
-                    href={`tel:${siteConfig.phoneHref}`}
-                    className="inline-flex items-center justify-center gap-2 h-auto py-1 sm:h-14 sm:py-0 rounded-md border-transparent sm:border sm:border-white/30 bg-transparent px-0 sm:px-8 text-[15px] sm:text-base font-medium sm:font-bold text-white/70 sm:text-white underline underline-offset-4 sm:no-underline hover:text-white sm:hover:bg-white sm:hover:text-[#1a2b3c] transition-all duration-300 w-full whitespace-nowrap"
+                  <Link
+                    href="#proyectos"
+                    className="inline-flex items-center justify-center h-auto py-2 sm:py-1 px-0 text-[15px] font-medium text-white/80 hover:text-white underline underline-offset-4 transition-all duration-300 w-full sm:w-auto whitespace-nowrap"
                   >
-                    <Phone className="h-4 w-4 sm:h-5 sm:w-5" />
-                    Llamar ahora
-                  </a>
+                    Ver trabajos de cocina
+                  </Link>
                 </div>
 
                 {/* Fila de Confianza Inline (Trust Row) específica cocinas */}
@@ -203,21 +202,20 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
                   </p>
                 )}
 
-                <div className="mt-8 md:mt-10 flex flex-col justify-center sm:grid sm:auto-cols-auto sm:grid-flow-col gap-2 sm:gap-4 mb-5 sm:mb-10 w-full px-4 sm:px-0 transition-[opacity,transform]">
+                <div className="mt-8 md:mt-10 flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 mb-5 sm:mb-10 w-full px-4 sm:px-0 transition-[opacity,transform]">
                   <Link
                     href="#contacto"
-                    className="inline-flex items-center justify-center h-14 rounded-md bg-[#d85b1d] px-8 text-base font-bold text-white shadow-[0_0_20px_rgba(216,91,29,0.15)] hover:bg-[#c24e15] hover:shadow-[0_0_25px_rgba(216,91,29,0.3)] hover:-translate-y-0.5 transition-all duration-300 w-full focus:ring-0 whitespace-nowrap"
+                    className="inline-flex items-center justify-center h-14 rounded-md bg-[#d85b1d] px-8 text-base font-bold text-white shadow-[0_0_20px_rgba(216,91,29,0.15)] hover:bg-[#c24e15] hover:shadow-[0_0_25px_rgba(216,91,29,0.3)] hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto focus:ring-0 whitespace-nowrap"
                   >
                     Pedir Presupuesto
                   </Link>
 
-                  <a
-                    href={`tel:${siteConfig.phoneHref}`}
-                    className="inline-flex items-center justify-center gap-2 h-auto py-1 sm:h-14 sm:py-0 rounded-md border-transparent sm:border sm:border-white/30 bg-transparent px-0 sm:px-8 text-[15px] sm:text-base font-medium sm:font-bold text-white/70 sm:text-white underline underline-offset-4 sm:no-underline hover:text-white sm:hover:bg-white sm:hover:text-[#1a2b3c] transition-all duration-300 w-full whitespace-nowrap"
+                  <Link
+                    href="#proyectos"
+                    className="inline-flex items-center justify-center h-auto py-2 sm:py-1 px-0 text-[15px] font-medium text-white/80 hover:text-white underline underline-offset-4 transition-all duration-300 w-full sm:w-auto whitespace-nowrap"
                   >
-                    <Phone className="h-4 w-4 sm:h-5 sm:w-5" />
-                    Llamar ahora
-                  </a>
+                    Ver trabajos realizados
+                  </Link>
                 </div>
 
                 {!landing.heroParagraphs?.length && landing.heroBadges?.length > 0 && (
