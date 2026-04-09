@@ -11,10 +11,10 @@ const navLinks = [
 ]
 
 const servicesLinks = [
-  { href: "/reformas-cocinas-madrid", label: "Reformas de cocinas" },
-  { href: "/reformas-integrales-madrid", label: "Reformas integrales" },
-  { href: "/reformas-banos-madrid", label: "Reformas de baños" },
-  { href: "/cambiar-banera-por-ducha-madrid", label: "Cambiar bañera por ducha" },
+  { href: "/reformas-cocinas-madrid", label: "Reformas de cocinas en Madrid" },
+  { href: "/reformas-integrales-madrid", label: "Reformas integrales en Madrid" },
+  { href: "/reformas-banos-madrid", label: "Reformas de baños en Madrid" },
+  { href: "/cambiar-banera-por-ducha-madrid", label: "Cambiar bañera por ducha en Madrid" },
 ]
 
 export function Header() {

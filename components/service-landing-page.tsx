@@ -87,23 +87,43 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
           </div>
           <div className="container mx-auto px-4 sm:px-6 relative z-10 pt-36 md:pt-40 pb-16 sm:pb-24">
             <div className="max-w-4xl mx-auto text-center section-fade-up">
+              {landing.heroEyebrow ? (
+                <div className="mb-5 inline-flex items-center rounded-full border border-white/15 bg-white/10 px-4 py-2 text-sm font-semibold text-white/90 backdrop-blur-md">
+                  {landing.heroEyebrow}
+                </div>
+              ) : null}
               <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight text-balance">
-                {landing.title}
+                {landing.heroTitle ?? landing.title}
               </h1>
-              <p className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed font-light px-2 text-balance">
-                {landing.heroSubtitle}
-              </p>
-              
-              <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-10 px-2">
-                {landing.heroBadges.map((badge, idx) => (
-                  <div key={idx} className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
-                    {idx === 0 && <Star className="h-4 w-4 text-[#d85b1d] flex-shrink-0" />}
-                    {idx === 1 && <Shield className="h-4 w-4 text-[#d85b1d] flex-shrink-0" />}
-                    {idx === 2 && <Clock className="h-4 w-4 text-[#d85b1d] flex-shrink-0" />}
-                    <span className="text-white text-sm font-medium whitespace-nowrap">{badge}</span>
+              {landing.heroParagraphs?.length ? (
+                <div className="mx-auto mb-10 max-w-3xl space-y-5 px-2 text-left sm:text-center">
+                  {landing.heroParagraphs.map((paragraph) => (
+                    <p
+                      key={paragraph}
+                      className="text-base leading-8 text-white/90 sm:text-lg sm:leading-8"
+                    >
+                      {paragraph}
+                    </p>
+                  ))}
+                </div>
+              ) : (
+                <>
+                  <p className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed font-light px-2 text-balance">
+                    {landing.heroSubtitle}
+                  </p>
+                  
+                  <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-10 px-2">
+                    {landing.heroBadges.map((badge, idx) => (
+                      <div key={idx} className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
+                        {idx === 0 && <Star className="h-4 w-4 text-[#d85b1d] flex-shrink-0" />}
+                        {idx === 1 && <Shield className="h-4 w-4 text-[#d85b1d] flex-shrink-0" />}
+                        {idx === 2 && <Clock className="h-4 w-4 text-[#d85b1d] flex-shrink-0" />}
+                        <span className="text-white text-sm font-medium whitespace-nowrap">{badge}</span>
+                      </div>
+                    ))}
                   </div>
-                ))}
-              </div>
+                </>
+              )}
 
               <div className="flex flex-col sm:flex-row justify-center gap-4 px-4 sm:px-0">
                 <Link
@@ -125,36 +145,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
         </section>
 
         {/* 2. Ventajas */}
-        {/* 2. Ventajas */}
-        {landing.serviceSlug === "reformas-cocinas" ? (
-          <section className="py-14 sm:py-16 md:py-20 bg-[#f7f9fc]">
-            <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 section-fade-up">
-                {landing.advantages.map((adv, idx) => {
-                  const Icon = IconMap[adv.iconName] || Star
-                  return (
-                    <div key={idx} className="rounded-lg bg-white text-[#1a2b3c] shadow-sm group hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-[#d85b1d]/20 overflow-hidden flex flex-col h-full">
-                      <div className="p-5 sm:p-6 md:p-8 text-center flex flex-col h-full">
-                        <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-xl sm:rounded-2xl bg-[#d85b1d]/10 flex items-center justify-center mx-auto mb-4 sm:mb-5 md:mb-6">
-                          <Icon strokeWidth={2} className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-[#d85b1d]" />
-                        </div>
-                        {adv.statLabel && (
-                          <div className="text-2xl sm:text-3xl font-bold text-[#1a2b3c] mb-2 whitespace-nowrap">
-                            {adv.statLabel}
-                          </div>
-                        )}
-                        <h3 className="text-lg sm:text-xl font-bold text-[#1a2b3c] mb-2 sm:mb-3 min-h-[3rem] sm:min-h-[3.5rem] flex items-center justify-center text-balance">{adv.title}</h3>
-                        <p className="text-[#51677c] text-xs sm:text-sm leading-relaxed mt-auto">
-                          {adv.description}
-                        </p>
-                      </div>
-                    </div>
-                  )
-                })}
-              </div>
-            </div>
-          </section>
-        ) : (
+        {landing.serviceSlug !== "reformas-cocinas" && (
           <section className="py-16 sm:py-20 md:py-28 bg-[#f7f9fc]">
             <div className="container mx-auto px-4 sm:px-6">
               <div className="text-center mb-12 sm:mb-16 section-fade-up">
@@ -275,9 +266,11 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
             <div className="flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
               <div className="section-fade-up">
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3">
-                  Pasa de la idea a la realidad, sin demoras
+                  Da el paso y empieza a planificar tu nueva cocina
                 </h2>
-                <p className="text-white/80 text-lg">Pide asesoramiento formal sin compromiso en Madrid</p>
+                <p className="text-white/80 text-lg">
+                  Pide asesoramiento sin compromiso para tu reforma de cocina en Madrid.
+                </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto section-fade-up-delayed">
                 <Link
@@ -304,10 +297,11 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
             <div className="container mx-auto px-4 sm:px-6">
               <div className="text-center mb-8 sm:mb-10 md:mb-12 section-fade-up">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#1a2b3c] mb-4 tracking-tight">
-                  Proyectos recientes de cocina
+                  Proyectos recientes de reformas de cocina
                 </h2>
                 <p className="text-lg text-[#51677c] max-w-2xl mx-auto">
-                  Una muestra de distribución, acabados y atención al detalle en reformas de cocina bien ejecutadas.
+                  Una selección de trabajos reales donde puedes ver distribuciones, materiales y
+                  acabados en cocinas reformadas en Madrid.
                 </p>
               </div>
               
@@ -407,10 +401,11 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
             <div className="container mx-auto px-4 sm:px-6 relative z-10">
               <div className="text-center mb-10 sm:mb-12 md:mb-16 section-fade-up">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">
-                  Cómo trabajamos
+                  Cómo trabajamos una reforma de cocina
                 </h2>
                 <p className="text-lg text-white/80 max-w-2xl mx-auto">
-                  Un proceso claro para que la reforma avance con orden, tiempos realistas y decisiones bien coordinadas.
+                  Seguimos un proceso claro para que la obra avance con orden, tiempos definidos y
+                  decisiones bien resueltas desde el principio.
                 </p>
               </div>
 
@@ -493,10 +488,11 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
             <div className="container mx-auto px-4 sm:px-6">
               <div className="text-center mb-10 sm:mb-12 md:mb-16 section-fade-up">
                 <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#1a2b3c] mb-3 sm:mb-4">
-                  Lo que dicen nuestros clientes de cocina
+                  Opiniones de clientes que reformaron su cocina con nosotros
                 </h2>
                 <p className="text-base sm:text-lg text-[#51677c] max-w-2xl mx-auto px-2">
-                  Opiniones reales de clientes que confiaron en nosotros para reformar su cocina en Madrid.
+                  Estas son algunas experiencias de clientes que confiaron en nuestro equipo para
+                  reformar su cocina en Madrid.
                 </p>
               </div>
 
@@ -602,89 +598,6 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
           </section>
         )}
 
-        {/* 8. Long Content SEO o Recursos de Blog */}
-        {landing.serviceSlug === "reformas-cocinas" ? (
-          <section className="py-20 sm:py-28 bg-white border-t border-slate-100">
-            <div className="container mx-auto px-4 sm:px-6 max-w-6xl text-center section-fade-up">
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1a2b3c] mb-12 text-balance leading-tight">
-                Recursos para reformar tu cocina
-              </h2>
-              
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-                {[
-                  {
-                    label: "GUÍA DE PRECIOS",
-                    title: "Precios reales para reformar cocinas en Madrid",
-                    desc: "Desglose transparente y real de partidas específicas para viviendas en la capital."
-                  },
-                  {
-                    label: "CONSEJOS DE DISEÑO",
-                    title: "Las mejores distribuciones para familias",
-                    desc: "Descubre los diseños más prácticos de cocina para aprovechar el paso y el almacenaje en el día a día."
-                  },
-                  {
-                    label: "IDEAS Y TENDENCIAS",
-                    title: "Cocinas pequeñas, gran impacto",
-                    desc: "Estruja al máximo los metros cuadrados disponibles con estrategias inteligentes y muebles a medida."
-                  },
-                  {
-                    label: "ERRORES A EVITAR",
-                    title: "Errores comunes al reformar tu cocina",
-                    desc: "Conoce los fallos más habituales cometidos en la fase previa a una reforma y planifica con seguridad."
-                  },
-                  {
-                    label: "ELEGIR EMPRESA",
-                    title: "Cómo elegir a los profesionales adecuados",
-                    desc: "Lo que necesitas saber y preguntar antes de contratar la reforma de tu vivienda."
-                  },
-                  {
-                    label: "PERMISOS DE OBRA",
-                    title: "Guía de licencias de obra menor en Madrid",
-                    desc: "Todo lo que el Ayuntamiento te exigirá para renovar la instalación o tirar un tabique dentro de casa."
-                  }
-                ].map((recurso, idx) => (
-                  <button
-                    key={idx}
-                    type="button"
-                    onClick={(e) => {
-                      e.preventDefault()
-                      toast.info("No disponible en la Demo", {
-                        description: "Esta es una tarjeta de enlace de ejemplo para artículos de blog.",
-                      })
-                    }}
-                    className="bg-white rounded-2xl p-8 border border-slate-100 shadow-[0_4px_20px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 flex flex-col items-start text-left w-full group"
-                  >
-                    <span className="text-xs font-bold text-[#ffb800] uppercase tracking-wider mb-4 group-hover:text-[#e5a600] transition-colors">{recurso.label}</span>
-                    <h3 className="text-xl font-bold text-[#1a2b3c] mb-3 leading-snug group-hover:text-[#294a71] transition-colors">{recurso.title}</h3>
-                    <p className="text-[#51677c] text-sm leading-relaxed mt-auto">{recurso.desc}</p>
-                  </button>
-                ))}
-              </div>
-            </div>
-          </section>
-        ) : (
-          <section className="py-20 sm:py-28 bg-white border-t border-slate-100">
-            <div className="container mx-auto px-4 sm:px-6 max-w-4xl section-fade-up">
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1a2b3c] mb-10 text-balance text-left md:text-center">
-                Expertos en {landing.title}
-              </h2>
-              <div className="space-y-10">
-                {landing.longContent.map((chunk, idx) => (
-                  <div key={idx}>
-                    {chunk.subtitle && (
-                      <h3 className="text-2xl font-bold text-[#1a2b3c] mb-4">
-                        {chunk.subtitle}
-                      </h3>
-                    )}
-                    <p className="text-lg text-[#51677c] leading-relaxed">
-                      {chunk.paragraph}
-                    </p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
-        )}
 
         {/* 9. Gran Contacto / CTA Final */}
         <section className="py-24 bg-[#1a2b3c] relative overflow-hidden text-white" id="contacto">
@@ -693,15 +606,20 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
             <div className="grid lg:grid-cols-5 gap-12 lg:gap-20 items-center">
               <div className="lg:col-span-2 section-fade-up">
                 <h2 className="text-4xl sm:text-5xl font-extrabold mb-6 tracking-tight text-balance">
-                  Inicia tu proyecto hoy
+                  Cuéntanos tu proyecto de cocina
                 </h2>
                 <div className="h-1.5 w-16 bg-[#d85b1d] mb-8" />
                 <p className="text-lg text-white/80 mb-10 leading-relaxed text-balance">
-                  Cuéntanos los detalles de tu reforma. Analizaremos tu caso para ofrecerte un presupuesto claro, sin sorpresas y planificado al milímetro.
+                  Explícanos qué necesitas y prepararemos una propuesta clara para tu reforma de
+                  cocina en Madrid, con enfoque práctico, presupuesto definido y una obra bien
+                  organizada.
                 </p>
                 <div className="p-8 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-                  <h4 className="font-bold text-xl mb-3">Atención Directa</h4>
-                  <p className="text-white/70 mb-6">Si prefieres resolver dudas de inmediato, nuestro equipo te atiende por teléfono.</p>
+                  <h4 className="font-bold text-xl mb-3">Atención directa</h4>
+                  <p className="text-white/70 mb-6">
+                    Si prefieres hablar con nosotros antes de rellenar el formulario, llámanos y
+                    resolvemos tus dudas.
+                  </p>
                   <a
                     href={`tel:${siteConfig.phoneHref}`}
                     className="inline-flex items-center justify-center w-full bg-white text-[#1a2b3c] font-bold text-lg h-14 rounded-md transition-colors hover:bg-slate-100 whitespace-nowrap"

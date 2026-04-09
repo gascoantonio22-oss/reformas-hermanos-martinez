@@ -12,9 +12,9 @@ import { JsonLd } from "@/components/json-ld"
 import { buildBreadcrumbSchema, buildMetadata, buildWebPageSchema } from "@/lib/seo"
 
 export const metadata: Metadata = buildMetadata({
-  title: "Reformas integrales en Madrid con presupuesto claro | Hermanos Martínez",
+  title: "Reformas en Madrid con presupuesto cerrado y plazos por escrito | Hermanos Martínez",
   description:
-    "Empresa familiar de reformas en Madrid capital. Reformas integrales, cocinas, baños y cambio de bañera por ducha con presupuesto claro, plazos definidos y atención cercana.",
+    "Empresa familiar de reformas en Madrid con más de 25 años. Reformas integrales, cocinas y baños con presupuesto cerrado, plazos por escrito y un único equipo coordinando la obra.",
   path: "/",
   keywords: [
     "reformas en madrid",
@@ -33,7 +33,7 @@ export default function HomePage() {
           buildWebPageSchema({
             name: "Reformas en Madrid | Hermanos Martínez",
             description:
-              "Empresa familiar de reformas en Madrid capital especializada en reformas integrales, cocinas, baños y cambio de bañera por ducha.",
+              "Empresa familiar de reformas en Madrid especializada en reformas integrales, cocinas, baños y cambio de bañera por ducha con presupuesto cerrado y plazos por escrito.",
             path: "/",
           }),
           buildBreadcrumbSchema([{ name: "Inicio", path: "/" }]),

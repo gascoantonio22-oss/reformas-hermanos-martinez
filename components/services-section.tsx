@@ -27,6 +27,13 @@ export function ServicesSection() {
     "cambio-banera-ducha": ["Obra rápida", "Mampara", "Acabado sellado"],
   }
 
+  const displayTitleMap: Record<string, string> = {
+    "reformas-cocinas": "Reformas de cocinas en Madrid",
+    "reformas-banos": "Reformas de baños en Madrid",
+    "reformas-integrales": "Reformas integrales en Madrid",
+    "cambio-banera-ducha": "Cambio de bañera por ducha en Madrid",
+  }
+
   return (
     <section id="servicios" className="bg-[#f7f9fc] py-20 md:py-32">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -34,14 +41,14 @@ export function ServicesSection() {
         {/* Cabecera superior centrada */}
         <div className="mx-auto max-w-3xl text-center mb-20 section-fade-up">
           <p className="text-sm font-bold tracking-[0.2em] text-[#6a7c8f] uppercase mb-4">
-            Nuestros Servicios
+            Servicios
           </p>
           <h2 className="text-balance text-4xl font-extrabold tracking-tight text-[#1a2b3c] sm:text-5xl lg:text-6xl mb-6">
-            Servicios integrales para tu hogar
+            Servicios de reformas en Madrid para viviendas, cocinas y baños
           </h2>
           <p className="text-lg leading-relaxed text-[#51677c]">
-            Desde pequeñas actualizaciones hasta renovaciones completas, ponemos a tu disposición 
-            los mejores profesionales y materiales para garantizar un acabado impecable.
+            Realizamos reformas pensadas para que tengas un único equipo al frente de la obra, un
+            presupuesto claro y un resultado bien ejecutado.
           </p>
         </div>
 
@@ -71,7 +78,7 @@ export function ServicesSection() {
                 {/* Panel blanco solapado hacia arriba */}
                 <div className="relative z-10 mx-6 -mt-20 flex-1 flex flex-col md:mx-10 md:-mt-24 mb-6 md:mb-10 rounded-xl bg-white p-8 shadow-2xl transition-transform duration-300">
                   <h3 className="text-2xl font-bold tracking-tight text-[#1a2b3c] mb-3">
-                    {service.cardTitle}
+                    {displayTitleMap[service.slug] ?? service.cardTitle}
                   </h3>
                   <p className="text-[1.05rem] leading-relaxed text-[#51677c] mb-6">
                     {service.shortDescription}
@@ -125,7 +132,7 @@ export function ServicesSection() {
         {/* CTA Inferior de Sección */}
         <div className="mx-auto mt-24 max-w-2xl text-center section-fade-up">
           <p className="text-lg font-medium text-[#51677c] mb-6">
-            ¿No encuentras el tipo de reforma que estás buscando?
+            ¿Buscas otro tipo de trabajo dentro de tu reforma?
           </p>
           <Link
             href="#contacto"

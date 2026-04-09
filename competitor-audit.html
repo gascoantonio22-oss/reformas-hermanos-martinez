@@ -1,0 +1,2235 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Auditoría Competencia Reformas</title>
+  <style>
+    :root {
+      --bg: #eef2f5;
+      --card: #ffffff;
+      --ink: #1f2a37;
+      --muted: #66758a;
+      --line: #d8e0e8;
+      --primary: #234b73;
+      --accent: #da5b16;
+      --high: #b42318;
+      --medium: #b54708;
+      --low: #027a48;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: linear-gradient(180deg, #f6f8fb 0%, var(--bg) 100%);
+      color: var(--ink);
+    }
+    .wrap {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 32px 20px 48px;
+    }
+    .hero {
+      background: linear-gradient(135deg, rgba(35,75,115,.98), rgba(27,54,82,.95));
+      color: white;
+      border-radius: 28px;
+      padding: 28px;
+      box-shadow: 0 30px 60px -40px rgba(16, 24, 40, .45);
+    }
+    .hero h1 {
+      margin: 10px 0 0;
+      font-size: clamp(2rem, 3vw, 3.3rem);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+    }
+    .hero p {
+      margin: 14px 0 0;
+      max-width: 900px;
+      color: rgba(255,255,255,.82);
+      line-height: 1.7;
+    }
+    .eyebrow {
+      margin: 0;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .24em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,.74);
+    }
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border-radius: 999px;
+      padding: 8px 12px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .02em;
+      margin: 8px 8px 0 0;
+    }
+    .badge-summary {
+      background: rgba(255,255,255,.12);
+      color: white;
+      border: 1px solid rgba(255,255,255,.14);
+    }
+    .badge-tag {
+      background: #edf2f7;
+      color: var(--primary);
+      border: 1px solid #dce7f2;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+      gap: 18px;
+      margin-top: 24px;
+    }
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .summary-card {
+      background: rgba(255,255,255,.1);
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 20px;
+      padding: 16px;
+    }
+    .summary-card strong {
+      display: block;
+      font-size: 1.75rem;
+      margin-top: 4px;
+      letter-spacing: -0.04em;
+    }
+    .summary-card span {
+      color: rgba(255,255,255,.78);
+      font-size: 14px;
+    }
+    .insights {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 18px;
+      margin-top: 20px;
+    }
+    .insight-card {
+      background: rgba(255,255,255,.78);
+      border: 1px solid rgba(216,224,232,.95);
+      border-radius: 24px;
+      padding: 22px;
+      box-shadow: 0 18px 36px -30px rgba(15, 23, 42, .18);
+    }
+    .insight-card h2 {
+      margin: 0 0 10px;
+      font-size: 1.1rem;
+    }
+    .insight-card p {
+      margin: 0;
+      color: var(--muted);
+      line-height: 1.7;
+    }
+    .top-frictions {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 10px;
+    }
+    .top-frictions li {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px 14px;
+      border-radius: 16px;
+      background: #f8fafc;
+      border: 1px solid var(--line);
+      margin-top: 0;
+      text-transform: capitalize;
+    }
+    .top-frictions span {
+      color: var(--muted);
+      white-space: nowrap;
+    }
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 24px;
+      padding: 18px 20px;
+      border-radius: 22px;
+      background: rgba(255,255,255,.72);
+      border: 1px solid rgba(216,224,232,.95);
+      backdrop-filter: blur(10px);
+      position: sticky;
+      top: 14px;
+      z-index: 10;
+    }
+    .filter-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .filter-btn {
+      border: 1px solid var(--line);
+      background: white;
+      color: var(--primary);
+      border-radius: 999px;
+      padding: 10px 14px;
+      font-weight: 700;
+      cursor: pointer;
+    }
+    .filter-btn.active {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: white;
+    }
+    .search-input {
+      min-width: 280px;
+      padding: 12px 14px;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+      font: inherit;
+      color: var(--ink);
+      background: white;
+    }
+    .card {
+      background: var(--card);
+      border-radius: 24px;
+      border: 1px solid var(--line);
+      padding: 22px;
+      box-shadow: 0 18px 36px -28px rgba(15, 23, 42, .18);
+    }
+    .card-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: start;
+    }
+    .card h2 {
+      margin: 6px 0 0;
+      font-size: 1.1rem;
+      line-height: 1.2;
+    }
+    .severity-pill {
+      border-radius: 999px;
+      padding: 7px 11px;
+      font-size: 12px;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .severity-alta {
+      color: var(--high);
+      border-color: rgba(180,35,24,.18);
+      background: rgba(180,35,24,.08);
+    }
+    .severity-media {
+      color: var(--medium);
+      border-color: rgba(181,71,8,.18);
+      background: rgba(181,71,8,.08);
+    }
+    .severity-baja {
+      color: var(--low);
+      border-color: rgba(2,122,72,.18);
+      background: rgba(2,122,72,.08);
+    }
+    .summary {
+      margin: 14px 0;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+    .hidden {
+      display: none !important;
+    }
+    .links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin: 14px 0 0;
+    }
+    .links a {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 14px;
+    }
+    .copy-block {
+      margin-top: 14px;
+      padding: 14px;
+      border-radius: 18px;
+      background: #f8fafc;
+      color: var(--muted);
+      display: grid;
+      gap: 8px;
+      line-height: 1.45;
+      font-size: 14px;
+    }
+    .card h3 {
+      margin: 18px 0 10px;
+      font-size: 14px;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+      color: var(--primary);
+    }
+    ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--ink);
+      line-height: 1.65;
+    }
+    li + li {
+      margin-top: 8px;
+    }
+    .metrics {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-top: 18px;
+    }
+    .metrics div {
+      border-radius: 16px;
+      border: 1px solid var(--line);
+      background: #fbfcfd;
+      padding: 12px;
+    }
+    .metrics strong {
+      display: block;
+      font-size: 11px;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+    .metrics span {
+      font-weight: 700;
+      color: var(--ink);
+      font-size: 14px;
+    }
+    .footer-note {
+      margin-top: 22px;
+      color: var(--muted);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+    @media (max-width: 720px) {
+      .wrap { padding: 16px 14px 32px; }
+      .hero { padding: 20px; border-radius: 22px; }
+      .summary-grid,
+      .insights {
+        grid-template-columns: 1fr;
+      }
+      .filters {
+        position: static;
+        padding: 16px;
+      }
+      .search-input {
+        min-width: 0;
+        width: 100%;
+      }
+      .card { padding: 18px; border-radius: 20px; }
+      .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <section class="hero">
+      <p class="eyebrow">Auditoría Rápida</p>
+      <h1>Competencia reformas analizada una a una</h1>
+      <p>
+        Informe generado a partir de la lista de URLs facilitada. Es una auditoría rápida de fricciones
+        visibles en captación: claridad del mensaje, contacto, confianza, ruido, técnica y percepción de marca.
+      </p>
+      <div><span class="badge badge-summary">76 entradas</span><span class="badge badge-summary">3 sociales</span><span class="badge badge-summary">3 Wix</span><span class="badge badge-summary">4 por HTTP</span><span class="badge badge-summary">1 duplicadas</span><span class="badge badge-summary">11 fricción alta</span></div>
+      <div class="summary-grid">
+        <div class="summary-card"><span>Webs analizadas</span><strong>75</strong></div>
+        <div class="summary-card"><span>Fricción alta</span><strong>11</strong></div>
+        <div class="summary-card"><span>Social o Wix</span><strong>6</strong></div>
+        <div class="summary-card"><span>Entradas por HTTP</span><strong>4</strong></div>
+      </div>
+    </section>
+    <section class="insights">
+      <article class="insight-card">
+        <h2>Qué suele fallar en estas webs</h2>
+        <p>
+          El patrón más repetido es una mezcla de propuesta poco clara, ruido SEO, captación dispersa y señales de marca
+          antiguas. Este informe te sirve para detectar rápido la fricción principal de cada web y usarla luego en un
+          mensaje comercial mucho más preciso.
+        </p>
+      </article>
+      <article class="insight-card">
+        <h2>Fricciones más repetidas</h2>
+        <ul class="top-frictions"><li><strong>nav noise</strong><span>44 webs</span></li><li><strong>title seo</strong><span>34 webs</span></li><li><strong>too much text</strong><span>15 webs</span></li><li><strong>no description</strong><span>14 webs</span></li><li><strong>phone only</strong><span>12 webs</span></li><li><strong>no h1</strong><span>10 webs</span></li></ul>
+      </article>
+    </section>
+    <section class="filters">
+      <div class="filter-group">
+        <button class="filter-btn active" type="button" data-filter="all">Todas</button>
+        <button class="filter-btn" type="button" data-filter="alta">Alta</button>
+        <button class="filter-btn" type="button" data-filter="media">Media</button>
+        <button class="filter-btn" type="button" data-filter="baja">Baja</button>
+      </div>
+      <input class="search-input" id="search" type="search" placeholder="Buscar dominio..." />
+    </section>
+    <div class="grid">
+      
+    <article class="card severity-media" data-severity="media" data-host="reformasyanez.com">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#01 · HTTP 200</p>
+          <h2>reformasyanez.com</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">Se apoya demasiado en llamar por teléfono y no tanto en un formulario o CTA más cómodo.</p>
+      <div class="links">
+        <a href="https://reformasyanez.com/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://reformasyanez.com/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Reformas Yanez Las Palmas - MÁXIMA CALIDAD Y GARANTÍA</div>
+        <div><strong>H1:</strong> Reformas y Proyectos De Máxima Calidad Y Garantía</div>
+      </div>
+      <span class="badge badge-tag">phone-only</span><span class="badge badge-tag">nav-noise</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>Se apoya demasiado en llamar por teléfono y no tanto en un formulario o CTA más cómodo.</li><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>0</span></div><div><strong>Tel</strong><span>4</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>13</span></div><div><strong>Palabras</strong><span>888</span></div><div><strong>KB HTML</strong><span>407.6</span></div><div><strong>Carga</strong><span>0.24s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-media" data-severity="media" data-host="reformasbarataslaspalmas.com">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#02 · HTTP 200</p>
+          <h2>reformasbarataslaspalmas.com</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">El título parece más pensado para SEO que para convencer: suena genérico o recargado.</p>
+      <div class="links">
+        <a href="https://www.reformasbarataslaspalmas.com/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://www.reformasbarataslaspalmas.com/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Reformas Baratas Las Palmas: Reformas economicas a precios inmejorables</div>
+        <div><strong>H1:</strong> Reformas en Las Palmas - Empresa</div>
+      </div>
+      <span class="badge badge-tag">title-seo</span><span class="badge badge-tag">nav-noise</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>El título parece más pensado para SEO que para convencer: suena genérico o recargado.</li><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>0</span></div><div><strong>Tel</strong><span>0</span></div><div><strong>WhatsApp</strong><span>2</span></div><div><strong>Nav</strong><span>35</span></div><div><strong>Palabras</strong><span>685</span></div><div><strong>KB HTML</strong><span>45.6</span></div><div><strong>Carga</strong><span>0.32s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-baja" data-severity="baja" data-host="hogargo.es">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#03 · HTTP 200</p>
+          <h2>hogargo.es</h2>
+        </div>
+        <span class="severity-pill severity-baja">Baja</span>
+      </div>
+      <p class="summary">Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</p>
+      <div class="links">
+        <a href="https://hogargo.es/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://hogargo.es/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> HogarGo - Expertos en Reformas Integrales</div>
+        <div><strong>H1:</strong> Reformas integrales</div>
+      </div>
+      <span class="badge badge-tag">nav-noise</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>1</span></div><div><strong>Tel</strong><span>4</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>80</span></div><div><strong>Palabras</strong><span>1231</span></div><div><strong>KB HTML</strong><span>360.6</span></div><div><strong>Carga</strong><span>1.43s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-media" data-severity="media" data-host="holareformas.com">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#04 · HTTP 200</p>
+          <h2>holareformas.com</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">El título parece más pensado para SEO que para convencer: suena genérico o recargado.</p>
+      <div class="links">
+        <a href="https://holareformas.com/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://holareformas.com/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Empresa de Reformas | Hola Reformas</div>
+        <div><strong>H1:</strong> HOLA REFORMAS TU EMPRESA DE REFORMAS DE CONFIANZA</div>
+      </div>
+      <span class="badge badge-tag">title-seo</span><span class="badge badge-tag">nav-noise</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>El título parece más pensado para SEO que para convencer: suena genérico o recargado.</li><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>0</span></div><div><strong>Tel</strong><span>0</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>14</span></div><div><strong>Palabras</strong><span>745</span></div><div><strong>KB HTML</strong><span>205.5</span></div><div><strong>Carga</strong><span>1.67s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-media" data-severity="media" data-host="reformas-malaga.com">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#05 · HTTP 200</p>
+          <h2>reformas-malaga.com</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">El título parece más pensado para SEO que para convencer: suena genérico o recargado.</p>
+      <div class="links">
+        <a href="https://www.reformas-malaga.com/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://www.reformas-malaga.com/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Reformas Málaga | Expertos en Reformas Integrales y de Comunidades</div>
+        <div><strong>H1:</strong> Reformas Integrales en Málaga – Renueva tu Espacio</div>
+      </div>
+      <span class="badge badge-tag">title-seo</span><span class="badge badge-tag">nav-noise</span><span class="badge badge-tag">heavy-html</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>El título parece más pensado para SEO que para convencer: suena genérico o recargado.</li><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li><li>La home es muy pesada en HTML/contenido: suele ir ligada a sensación de web saturada.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>2</span></div><div><strong>Tel</strong><span>3</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>16</span></div><div><strong>Palabras</strong><span>1223</span></div><div><strong>KB HTML</strong><span>1081.7</span></div><div><strong>Carga</strong><span>0.31s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-media" data-severity="media" data-host="reformasextremas.wixsite.com">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#06 · HTTP 200</p>
+          <h2>reformasextremas.wixsite.com</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">Aspecto de plantilla y exceso SEO: transmite menos confianza de marca.</p>
+      <div class="links">
+        <a href="https://reformasextremas.wixsite.com/entodalacostadelsol" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://reformasextremas.wixsite.com/entodalacostadelsol" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Reforma integral General Malaga</div>
+        <div><strong>H1:</strong> Sobre nuestra empresa de reformas extremas en España.</div>
+      </div>
+      <span class="badge badge-tag">wix</span><span class="badge badge-tag">too-much-text</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>Se percibe como Wix/plantilla: resta autoridad y da sensación de negocio menos consolidado.</li><li>Hay muchísimo texto en la página y la jerarquía se vuelve pesada para convertir.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>0</span></div><div><strong>Tel</strong><span>0</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>4</span></div><div><strong>Palabras</strong><span>1875</span></div><div><strong>KB HTML</strong><span>477.9</span></div><div><strong>Carga</strong><span>0.14s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-media" data-severity="media" data-host="empresareformaenmalaga.com">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#07 · HTTP 200</p>
+          <h2>empresareformaenmalaga.com</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">El título parece más pensado para SEO que para convencer: suena genérico o recargado.</p>
+      <div class="links">
+        <a href="https://empresareformaenmalaga.com/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://empresareformaenmalaga.com/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Reformas Málaga Reforvis -pide presupuesto de reforma integral</div>
+        <div><strong>H1:</strong> Reformas Integrales en Málaga</div>
+      </div>
+      <span class="badge badge-tag">title-seo</span><span class="badge badge-tag">nav-noise</span><span class="badge badge-tag">too-much-text</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>El título parece más pensado para SEO que para convencer: suena genérico o recargado.</li><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li><li>Hay muchísimo texto en la página y la jerarquía se vuelve pesada para convertir.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>1</span></div><div><strong>Tel</strong><span>0</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>18</span></div><div><strong>Palabras</strong><span>1659</span></div><div><strong>KB HTML</strong><span>205.4</span></div><div><strong>Carga</strong><span>0.23s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-alta" data-severity="alta" data-host="santosreformas.com">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#08 · HTTP 200</p>
+          <h2>santosreformas.com</h2>
+        </div>
+        <span class="severity-pill severity-alta">Alta</span>
+      </div>
+      <p class="summary">La propuesta principal no queda clara porque no hay un H1 fuerte y reconocible.</p>
+      <div class="links">
+        <a href="https://santosreformas.com/sobre-nosotros/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://santosreformas.com/sobre-nosotros/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Sobre Nosotros - Santos Reformas</div>
+        <div><strong>H1:</strong> Sin H1 claro</div>
+      </div>
+      <span class="badge badge-tag">no-h1</span><span class="badge badge-tag">no-description</span><span class="badge badge-tag">nav-noise</span><span class="badge badge-tag">non-sales-landing</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>La propuesta principal no queda clara porque no hay un H1 fuerte y reconocible.</li><li>La meta description está ausente o floja: mala señal de cuidado y menos control del clic.</li><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li><li>La URL enviada aterriza en una página más informativa que comercial: peor para captar.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>0</span></div><div><strong>Tel</strong><span>0</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>12</span></div><div><strong>Palabras</strong><span>255</span></div><div><strong>KB HTML</strong><span>45.5</span></div><div><strong>Carga</strong><span>3.28s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-media" data-severity="media" data-host="reformasgroup.com">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#09 · HTTP 200</p>
+          <h2>reformasgroup.com</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</p>
+      <div class="links">
+        <a href="https://reformasgroup.com/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://reformasgroup.es/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> 【 Reformas en Málaga - Presupuesto aquí 👈】</div>
+        <div><strong>H1:</strong> Reformas Málaga | Reformas integrales Málaga - Reformasgroup S.L</div>
+      </div>
+      <span class="badge badge-tag">nav-noise</span><span class="badge badge-tag">too-much-text</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li><li>Hay muchísimo texto en la página y la jerarquía se vuelve pesada para convertir.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>2</span></div><div><strong>Tel</strong><span>0</span></div><div><strong>WhatsApp</strong><span>89</span></div><div><strong>Nav</strong><span>52</span></div><div><strong>Palabras</strong><span>1655</span></div><div><strong>KB HTML</strong><span>261.8</span></div><div><strong>Carga</strong><span>0.18s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-baja" data-severity="baja" data-host="hogargo.es">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#10 · Duplicada</p>
+          <h2>hogargo.es</h2>
+        </div>
+        <span class="severity-pill severity-baja">Baja</span>
+      </div>
+      <p class="summary">Esta entrada repite una URL ya auditada.</p>
+      <div class="links">
+        <a href="https://hogargo.es/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://hogargo.es/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> URL duplicada en la lista</div>
+        <div><strong>H1:</strong> </div>
+      </div>
+      <span class="badge badge-tag">duplicate</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>Esta URL ya apareció antes en la posición 3, así que no aporta una auditoría nueva.</li></ul>
+      
+    </article>
+    
+
+    <article class="card severity-baja" data-severity="baja" data-host="introreformas.com">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#11 · HTTP 200</p>
+          <h2>introreformas.com</h2>
+        </div>
+        <span class="severity-pill severity-baja">Baja</span>
+      </div>
+      <p class="summary">El título parece más pensado para SEO que para convencer: suena genérico o recargado.</p>
+      <div class="links">
+        <a href="http://www.introreformas.com/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://introreformas.com/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Introreformas | Empresa de reformas en Murcia</div>
+        <div><strong>H1:</strong> Ver nuestros últimos</div>
+      </div>
+      <span class="badge badge-tag">title-seo</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>El título parece más pensado para SEO que para convencer: suena genérico o recargado.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>0</span></div><div><strong>Tel</strong><span>0</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>4</span></div><div><strong>Palabras</strong><span>411</span></div><div><strong>KB HTML</strong><span>127.3</span></div><div><strong>Carga</strong><span>0.21s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-media" data-severity="media" data-host="reformister.com">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#12 · HTTP 200</p>
+          <h2>reformister.com</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</p>
+      <div class="links">
+        <a href="https://www.reformister.com/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://www.reformister.com/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Reformas, Construcción y Rehabilitación en Murcia - REFORMISTER</div>
+        <div><strong>H1:</strong> Empresa de Construcción y Reformas en Murcia</div>
+      </div>
+      <span class="badge badge-tag">nav-noise</span><span class="badge badge-tag">too-much-text</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li><li>Hay muchísimo texto en la página y la jerarquía se vuelve pesada para convertir.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>0</span></div><div><strong>Tel</strong><span>0</span></div><div><strong>WhatsApp</strong><span>1</span></div><div><strong>Nav</strong><span>16</span></div><div><strong>Palabras</strong><span>1670</span></div><div><strong>KB HTML</strong><span>159.8</span></div><div><strong>Carga</strong><span>0.11s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-baja" data-severity="baja" data-host="studio4contract.es">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#13 · HTTP 200</p>
+          <h2>studio4contract.es</h2>
+        </div>
+        <span class="severity-pill severity-baja">Baja</span>
+      </div>
+      <p class="summary">Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</p>
+      <div class="links">
+        <a href="https://studio4contract.es/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://studio4contract.es/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Reformas Integrales en Murcia | Studio4Contract</div>
+        <div><strong>H1:</strong> REFORMAS INTEGRALES EN MURCIA</div>
+      </div>
+      <span class="badge badge-tag">nav-noise</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>1</span></div><div><strong>Tel</strong><span>3</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>30</span></div><div><strong>Palabras</strong><span>820</span></div><div><strong>KB HTML</strong><span>172.3</span></div><div><strong>Carga</strong><span>0.18s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-media" data-severity="media" data-host="todoreformasmurcia.es">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#14 · HTTP 200</p>
+          <h2>todoreformasmurcia.es</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">El título parece más pensado para SEO que para convencer: suena genérico o recargado.</p>
+      <div class="links">
+        <a href="https://todoreformasmurcia.es/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://todoreformasmurcia.es/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> ▷ Empresa de reformas en Murcia - Todo Reformas Murcia</div>
+        <div><strong>H1:</strong> REFORMAS MURCIA</div>
+      </div>
+      <span class="badge badge-tag">title-seo</span><span class="badge badge-tag">phone-only</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>El título parece más pensado para SEO que para convencer: suena genérico o recargado.</li><li>Se apoya demasiado en llamar por teléfono y no tanto en un formulario o CTA más cómodo.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>0</span></div><div><strong>Tel</strong><span>2</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>8</span></div><div><strong>Palabras</strong><span>955</span></div><div><strong>KB HTML</strong><span>187.4</span></div><div><strong>Carga</strong><span>0.18s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-baja" data-severity="baja" data-host="reformasoviedo.site">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#15 · HTTP 200</p>
+          <h2>reformasoviedo.site</h2>
+        </div>
+        <span class="severity-pill severity-baja">Baja</span>
+      </div>
+      <p class="summary">El dominio suena muy SEO o poco marca: resta memorabilidad y confianza percibida.</p>
+      <div class="links">
+        <a href="https://reformasoviedo.site/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://reformasoviedo.site/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Reformas integrales en Oviedo con oviedorenova | OVIEDORENOVA</div>
+        <div><strong>H1:</strong> Reformas integrales en Oviedo</div>
+      </div>
+      <span class="badge badge-tag">seo-domain</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>El dominio suena muy SEO o poco marca: resta memorabilidad y confianza percibida.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>2</span></div><div><strong>Tel</strong><span>0</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>8</span></div><div><strong>Palabras</strong><span>152</span></div><div><strong>KB HTML</strong><span>163.6</span></div><div><strong>Carga</strong><span>0.65s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-baja" data-severity="baja" data-host="reformasfenoy.com">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#16 · HTTP 200</p>
+          <h2>reformasfenoy.com</h2>
+        </div>
+        <span class="severity-pill severity-baja">Baja</span>
+      </div>
+      <p class="summary">El título parece más pensado para SEO que para convencer: suena genérico o recargado.</p>
+      <div class="links">
+        <a href="http://reformasfenoy.com/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://reformasfenoy.com/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Obras y Reformas Fenoy | Expertos en Reformas Integrales, Cocinas y Baños</div>
+        <div><strong>H1:</strong> Empresa de reformas en Oviedo</div>
+      </div>
+      <span class="badge badge-tag">title-seo</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>El título parece más pensado para SEO que para convencer: suena genérico o recargado.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>0</span></div><div><strong>Tel</strong><span>0</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>0</span></div><div><strong>Palabras</strong><span>438</span></div><div><strong>KB HTML</strong><span>147.4</span></div><div><strong>Carga</strong><span>3.65s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-media" data-severity="media" data-host="proyectovio.es">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#17 · HTTP 200</p>
+          <h2>proyectovio.es</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">Se apoya demasiado en llamar por teléfono y no tanto en un formulario o CTA más cómodo.</p>
+      <div class="links">
+        <a href="https://proyectovio.es/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://proyectovio.es/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Reformas integrales de calidad en Oviedo - Proyecto VIO</div>
+        <div><strong>H1:</strong> Reformas Oviedo</div>
+      </div>
+      <span class="badge badge-tag">phone-only</span><span class="badge badge-tag">nav-noise</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>Se apoya demasiado en llamar por teléfono y no tanto en un formulario o CTA más cómodo.</li><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>0</span></div><div><strong>Tel</strong><span>5</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>14</span></div><div><strong>Palabras</strong><span>886</span></div><div><strong>KB HTML</strong><span>206.4</span></div><div><strong>Carga</strong><span>1.72s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-media" data-severity="media" data-host="reformasemi.com">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#18 · HTTP 200</p>
+          <h2>reformasemi.com</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">La propuesta principal no queda clara porque no hay un H1 fuerte y reconocible.</p>
+      <div class="links">
+        <a href="https://reformasemi.com/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://reformasemi.wordpress.com/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> REFORMAS EMI – Reformas presonalizadas con el mejor servicio y coste</div>
+        <div><strong>H1:</strong> Sin H1 claro</div>
+      </div>
+      <span class="badge badge-tag">no-h1</span><span class="badge badge-tag">title-seo</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>La propuesta principal no queda clara porque no hay un H1 fuerte y reconocible.</li><li>El título parece más pensado para SEO que para convencer: suena genérico o recargado.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>1</span></div><div><strong>Tel</strong><span>2</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>0</span></div><div><strong>Palabras</strong><span>218</span></div><div><strong>KB HTML</strong><span>102.2</span></div><div><strong>Carga</strong><span>0.06s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-media" data-severity="media" data-host="reformaspd.es">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#19 · HTTP 200</p>
+          <h2>reformaspd.es</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">Aspecto de plantilla y exceso SEO: transmite menos confianza de marca.</p>
+      <div class="links">
+        <a href="http://reformaspd.es/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://reformaspd.wixsite.com/reformaspd" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Inicio | Reformas PD</div>
+        <div><strong>H1:</strong> REFORMAS PD</div>
+      </div>
+      <span class="badge badge-tag">wix</span><span class="badge badge-tag">no-description</span><span class="badge badge-tag">heavy-html</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>Se percibe como Wix/plantilla: resta autoridad y da sensación de negocio menos consolidado.</li><li>La meta description está ausente o floja: mala señal de cuidado y menos control del clic.</li><li>La home es muy pesada en HTML/contenido: suele ir ligada a sensación de web saturada.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>2</span></div><div><strong>Tel</strong><span>0</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>4</span></div><div><strong>Palabras</strong><span>352</span></div><div><strong>KB HTML</strong><span>587.6</span></div><div><strong>Carga</strong><span>0.13s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-media" data-severity="media" data-host="carfsan.es">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#20 · HTTP 200</p>
+          <h2>carfsan.es</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">La meta description está ausente o floja: mala señal de cuidado y menos control del clic.</p>
+      <div class="links">
+        <a href="http://carfsan.es/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://carfsan.es/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Inicio - Reformas Carfsan</div>
+        <div><strong>H1:</strong> Reformas Carfsan</div>
+      </div>
+      <span class="badge badge-tag">no-description</span><span class="badge badge-tag">phone-only</span><span class="badge badge-tag">nav-noise</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>La meta description está ausente o floja: mala señal de cuidado y menos control del clic.</li><li>Se apoya demasiado en llamar por teléfono y no tanto en un formulario o CTA más cómodo.</li><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>0</span></div><div><strong>Tel</strong><span>3</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>11</span></div><div><strong>Palabras</strong><span>352</span></div><div><strong>KB HTML</strong><span>135.3</span></div><div><strong>Carga</strong><span>0.77s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-media" data-severity="media" data-host="reformasgesnort.es">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#21 · HTTP 200</p>
+          <h2>reformasgesnort.es</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">El título parece más pensado para SEO que para convencer: suena genérico o recargado.</p>
+      <div class="links">
+        <a href="https://reformasgesnort.es/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://reformasgesnort.es/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> GESNORT – Empresa de reformas en Oviedo | Reformas Gesnort</div>
+        <div><strong>H1:</strong> ¡Bienvenidos a Gesnort!</div>
+      </div>
+      <span class="badge badge-tag">title-seo</span><span class="badge badge-tag">no-description</span><span class="badge badge-tag">nav-noise</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>El título parece más pensado para SEO que para convencer: suena genérico o recargado.</li><li>La meta description está ausente o floja: mala señal de cuidado y menos control del clic.</li><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>0</span></div><div><strong>Tel</strong><span>2</span></div><div><strong>WhatsApp</strong><span>1</span></div><div><strong>Nav</strong><span>10</span></div><div><strong>Palabras</strong><span>367</span></div><div><strong>KB HTML</strong><span>95.1</span></div><div><strong>Carga</strong><span>2.45s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-baja" data-severity="baja" data-host="reformasperformance.es">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#22 · HTTP 200</p>
+          <h2>reformasperformance.es</h2>
+        </div>
+        <span class="severity-pill severity-baja">Baja</span>
+      </div>
+      <p class="summary">Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</p>
+      <div class="links">
+        <a href="https://reformasperformance.es/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://reformasperformance.es/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Reformas en Oviedo - Performance Construcciones</div>
+        <div><strong>H1:</strong> Performance Construcciones</div>
+      </div>
+      <span class="badge badge-tag">nav-noise</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>1</span></div><div><strong>Tel</strong><span>3</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>26</span></div><div><strong>Palabras</strong><span>1014</span></div><div><strong>KB HTML</strong><span>185.8</span></div><div><strong>Carga</strong><span>0.15s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-media" data-severity="media" data-host="grupojjg.es">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#23 · HTTP 200</p>
+          <h2>grupojjg.es</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">El título parece más pensado para SEO que para convencer: suena genérico o recargado.</p>
+      <div class="links">
+        <a href="http://www.grupojjg.es/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://grupojjg.es/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Grupo JJG - Reformas integrales Mallorca - Reformas Mallorca - Grupo JJG</div>
+        <div><strong>H1:</strong> Reformas Mallorca</div>
+      </div>
+      <span class="badge badge-tag">title-seo</span><span class="badge badge-tag">nav-noise</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>El título parece más pensado para SEO que para convencer: suena genérico o recargado.</li><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>3</span></div><div><strong>Tel</strong><span>1</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>67</span></div><div><strong>Palabras</strong><span>1123</span></div><div><strong>KB HTML</strong><span>201.5</span></div><div><strong>Carga</strong><span>0.14s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-baja" data-severity="baja" data-host="serviciosintegralespalma.com">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#24 · HTTP 200</p>
+          <h2>serviciosintegralespalma.com</h2>
+        </div>
+        <span class="severity-pill severity-baja">Baja</span>
+      </div>
+      <p class="summary">La meta description está ausente o floja: mala señal de cuidado y menos control del clic.</p>
+      <div class="links">
+        <a href="https://www.serviciosintegralespalma.com/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://www.serviciosintegralespalma.com/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Servicios Integrales Palma | Servicios Integrales Palma</div>
+        <div><strong>H1:</strong> SERVICIOS INTEGRALES</div>
+      </div>
+      <span class="badge badge-tag">no-description</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>La meta description está ausente o floja: mala señal de cuidado y menos control del clic.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>1</span></div><div><strong>Tel</strong><span>2</span></div><div><strong>WhatsApp</strong><span>2</span></div><div><strong>Nav</strong><span>3</span></div><div><strong>Palabras</strong><span>340</span></div><div><strong>KB HTML</strong><span>192.6</span></div><div><strong>Carga</strong><span>1.65s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-media" data-severity="media" data-host="reformasmigo.com">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#25 · Error</p>
+          <h2>reformasmigo.com</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">Hay un problema técnico o de acceso que ya genera fricción antes de vender.</p>
+      <div class="links">
+        <a href="http://reformasmigo.com/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="http://reformasmigo.com/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> No se pudo analizar automáticamente</div>
+        <div><strong>H1:</strong> </div>
+      </div>
+      <span class="badge badge-tag">error</span><span class="badge badge-tag">http</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>No se ha podido cargar correctamente: ConnectionError.</li></ul>
+      
+    </article>
+    
+
+    <article class="card severity-alta" data-severity="alta" data-host="xn--reformasbaoscocinaspamplona-yuc.com">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#26 · HTTP 200</p>
+          <h2>xn--reformasbaoscocinaspamplona-yuc.com</h2>
+        </div>
+        <span class="severity-pill severity-alta">Alta</span>
+      </div>
+      <p class="summary">El título parece más pensado para SEO que para convencer: suena genérico o recargado.</p>
+      <div class="links">
+        <a href="https://xn--reformasbaoscocinaspamplona-yuc.com/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://xn--reformasbaoscocinaspamplona-yuc.com/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Reformas de baños cocinas - Reformas fáciles de todo el hogar</div>
+        <div><strong>H1:</strong> Diseñamos la cocina y/o el baño de tus sueños</div>
+      </div>
+      <span class="badge badge-tag">title-seo</span><span class="badge badge-tag">no-description</span><span class="badge badge-tag">phone-only</span><span class="badge badge-tag">too-much-text</span><span class="badge badge-tag">seo-domain</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>El título parece más pensado para SEO que para convencer: suena genérico o recargado.</li><li>La meta description está ausente o floja: mala señal de cuidado y menos control del clic.</li><li>Se apoya demasiado en llamar por teléfono y no tanto en un formulario o CTA más cómodo.</li><li>Hay muchísimo texto en la página y la jerarquía se vuelve pesada para convertir.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>0</span></div><div><strong>Tel</strong><span>1</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>4</span></div><div><strong>Palabras</strong><span>2116</span></div><div><strong>KB HTML</strong><span>389.0</span></div><div><strong>Carga</strong><span>1.75s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-media" data-severity="media" data-host="reformasrodero.es">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#27 · HTTP 200</p>
+          <h2>reformasrodero.es</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">El título parece más pensado para SEO que para convencer: suena genérico o recargado.</p>
+      <div class="links">
+        <a href="https://www.reformasrodero.es/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://reformasrodero.es/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Reformas en Pamplona | Reformas Integrales, Cocinas y Baños</div>
+        <div><strong>H1:</strong> BIENVENIDOS A REFORMAS RODERO</div>
+      </div>
+      <span class="badge badge-tag">title-seo</span><span class="badge badge-tag">nav-noise</span><span class="badge badge-tag">heavy-html</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>El título parece más pensado para SEO que para convencer: suena genérico o recargado.</li><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li><li>La home es muy pesada en HTML/contenido: suele ir ligada a sensación de web saturada.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>2</span></div><div><strong>Tel</strong><span>4</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>17</span></div><div><strong>Palabras</strong><span>857</span></div><div><strong>KB HTML</strong><span>4077.5</span></div><div><strong>Carga</strong><span>2.56s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-baja" data-severity="baja" data-host="certireformas.es">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#28 · HTTP 200</p>
+          <h2>certireformas.es</h2>
+        </div>
+        <span class="severity-pill severity-baja">Baja</span>
+      </div>
+      <p class="summary">Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</p>
+      <div class="links">
+        <a href="https://certireformas.es/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://certireformas.es/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Reformas Integrales en Madrid | Garantía y Precios Cerrados</div>
+        <div><strong>H1:</strong> Reformas Integrales en Madrid: Proyectos Llave en Mano y Garantía</div>
+      </div>
+      <span class="badge badge-tag">nav-noise</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>1</span></div><div><strong>Tel</strong><span>2</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>18</span></div><div><strong>Palabras</strong><span>1032</span></div><div><strong>KB HTML</strong><span>331.4</span></div><div><strong>Carga</strong><span>0.17s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-media" data-severity="media" data-host="gruporeforma.es">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#29 · HTTP 200</p>
+          <h2>gruporeforma.es</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">El título parece más pensado para SEO que para convencer: suena genérico o recargado.</p>
+      <div class="links">
+        <a href="http://gruporeforma.es/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://gruporeforma.es/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> ▷ Empresa de Reformas en General en Madrid | Grupo Reforma</div>
+        <div><strong>H1:</strong> Reformas en General en Madrid</div>
+      </div>
+      <span class="badge badge-tag">title-seo</span><span class="badge badge-tag">nav-noise</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>El título parece más pensado para SEO que para convencer: suena genérico o recargado.</li><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>3</span></div><div><strong>Tel</strong><span>1</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>12</span></div><div><strong>Palabras</strong><span>1568</span></div><div><strong>KB HTML</strong><span>217.0</span></div><div><strong>Carga</strong><span>0.23s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-baja" data-severity="baja" data-host="presupuestosdereformasensalamanca.es">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#30 · HTTP 200</p>
+          <h2>presupuestosdereformasensalamanca.es</h2>
+        </div>
+        <span class="severity-pill severity-baja">Baja</span>
+      </div>
+      <p class="summary">El título parece más pensado para SEO que para convencer: suena genérico o recargado.</p>
+      <div class="links">
+        <a href="https://presupuestosdereformasensalamanca.es/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://presupuestosdereformasensalamanca.es/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Reformas Iglesias Salamanca | Reformas Integrales y Construcción de Chalets</div>
+        <div><strong>H1:</strong> Construyendo Tus Sueños</div>
+      </div>
+      <span class="badge badge-tag">title-seo</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>El título parece más pensado para SEO que para convencer: suena genérico o recargado.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>2</span></div><div><strong>Tel</strong><span>1</span></div><div><strong>WhatsApp</strong><span>1</span></div><div><strong>Nav</strong><span>0</span></div><div><strong>Palabras</strong><span>276</span></div><div><strong>KB HTML</strong><span>42.7</span></div><div><strong>Carga</strong><span>0.3s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-alta" data-severity="alta" data-host="luxurydesign.es">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#31 · HTTP 200</p>
+          <h2>luxurydesign.es</h2>
+        </div>
+        <span class="severity-pill severity-alta">Alta</span>
+      </div>
+      <p class="summary">No aparece viewport móvil claro: riesgo serio de mala experiencia en teléfono.</p>
+      <div class="links">
+        <a href="http://www.luxurydesign.es/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://www.luxurydesign.es/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Inicio - Reformas Salamanca, Decoración Salamanca, Empresa de construcción Salamanca</div>
+        <div><strong>H1:</strong> Sin H1 claro</div>
+      </div>
+      <span class="badge badge-tag">no-mobile-meta</span><span class="badge badge-tag">no-h1</span><span class="badge badge-tag">title-seo</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>No aparece viewport móvil claro: riesgo serio de mala experiencia en teléfono.</li><li>La propuesta principal no queda clara porque no hay un H1 fuerte y reconocible.</li><li>El título parece más pensado para SEO que para convencer: suena genérico o recargado.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>2</span></div><div><strong>Tel</strong><span>0</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>0</span></div><div><strong>Palabras</strong><span>166</span></div><div><strong>KB HTML</strong><span>66.0</span></div><div><strong>Carga</strong><span>0.19s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-media" data-severity="media" data-host="reformalitas.es">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#32 · HTTP 200</p>
+          <h2>reformalitas.es</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">El título parece más pensado para SEO que para convencer: suena genérico o recargado.</p>
+      <div class="links">
+        <a href="https://reformalitas.es/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://reformalitas.es/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Reformálitas – reformas a medida – Especialistas en reformas integrales. Te damos el control para una reforma sin sorpresas.</div>
+        <div><strong>H1:</strong> Reformas integrales sin complicaciones</div>
+      </div>
+      <span class="badge badge-tag">title-seo</span><span class="badge badge-tag">no-description</span><span class="badge badge-tag">nav-noise</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>El título parece más pensado para SEO que para convencer: suena genérico o recargado.</li><li>La meta description está ausente o floja: mala señal de cuidado y menos control del clic.</li><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>0</span></div><div><strong>Tel</strong><span>0</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>43</span></div><div><strong>Palabras</strong><span>737</span></div><div><strong>KB HTML</strong><span>135.3</span></div><div><strong>Carga</strong><span>0.72s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-media" data-severity="media" data-host="vesvinreformas.com">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#33 · HTTP 200</p>
+          <h2>vesvinreformas.com</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">Aspecto de plantilla y exceso SEO: transmite menos confianza de marca.</p>
+      <div class="links">
+        <a href="http://www.vesvinreformas.com/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://www.vesvinreformas.com/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Reformas Integrales | Vesvin Reformas | Comunidad de Madrid</div>
+        <div><strong>H1:</strong> BIENVENIDO A VESVIN REFORMAS</div>
+      </div>
+      <span class="badge badge-tag">wix</span><span class="badge badge-tag">title-seo</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>Se percibe como Wix/plantilla: resta autoridad y da sensación de negocio menos consolidado.</li><li>El título parece más pensado para SEO que para convencer: suena genérico o recargado.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>1</span></div><div><strong>Tel</strong><span>1</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>5</span></div><div><strong>Palabras</strong><span>230</span></div><div><strong>KB HTML</strong><span>462.9</span></div><div><strong>Carga</strong><span>0.11s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-media" data-severity="media" data-host="reformasreis.com">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#34 · HTTP 200</p>
+          <h2>reformasreis.com</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">La URL inicial entra por HTTP: transmite menos confianza y sensación de web antigua.</p>
+      <div class="links">
+        <a href="http://www.reformasreis.com/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="http://www.reformasreis.com/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> REFORMAS REIS</div>
+        <div><strong>H1:</strong> REFORMAS REIS</div>
+      </div>
+      <span class="badge badge-tag">http</span><span class="badge badge-tag">no-mobile-meta</span><span class="badge badge-tag">no-description</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>La URL inicial entra por HTTP: transmite menos confianza y sensación de web antigua.</li><li>No aparece viewport móvil claro: riesgo serio de mala experiencia en teléfono.</li><li>La meta description está ausente o floja: mala señal de cuidado y menos control del clic.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>1</span></div><div><strong>Tel</strong><span>0</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>0</span></div><div><strong>Palabras</strong><span>120</span></div><div><strong>KB HTML</strong><span>26.7</span></div><div><strong>Carga</strong><span>0.19s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-alta" data-severity="alta" data-host="instagram.com">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#35 · HTTP 200</p>
+          <h2>instagram.com</h2>
+        </div>
+        <span class="severity-pill severity-alta">Alta</span>
+      </div>
+      <p class="summary">Dependencia de perfil social: cuesta convertir y controlar la captación.</p>
+      <div class="links">
+        <a href="https://instagram.com/grupofp_tenerife?utm_medium=copy_link" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://www.instagram.com/grupofp_tenerife?utm_medium=copy_link" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Instagram</div>
+        <div><strong>H1:</strong> Sin H1 claro</div>
+      </div>
+      <span class="badge badge-tag">social</span><span class="badge badge-tag">no-h1</span><span class="badge badge-tag">no-description</span><span class="badge badge-tag">weak-cta</span><span class="badge badge-tag">heavy-html</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>No es una web propia sino un perfil social: peor control de captación, marca y analítica.</li><li>Depender de Facebook o Instagram mete fricción para pedir presupuesto y da menos imagen de empresa estructurada.</li><li>La propuesta principal no queda clara porque no hay un H1 fuerte y reconocible.</li><li>La meta description está ausente o floja: mala señal de cuidado y menos control del clic.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>0</span></div><div><strong>Tel</strong><span>0</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>0</span></div><div><strong>Palabras</strong><span>1</span></div><div><strong>KB HTML</strong><span>764.4</span></div><div><strong>Carga</strong><span>0.27s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-baja" data-severity="baja" data-host="reforcasa.net">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#36 · HTTP 200</p>
+          <h2>reforcasa.net</h2>
+        </div>
+        <span class="severity-pill severity-baja">Baja</span>
+      </div>
+      <p class="summary">Web operativa con menos fricciones visibles que la media del sector.</p>
+      <div class="links">
+        <a href="http://reforcasa.net/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://reforcasa.net/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> REFORCASA | Reformas en general ☎️ • 【696 085 446】</div>
+        <div><strong>H1:</strong> Empresa de reformas en Santa Cruz de Tenerife</div>
+      </div>
+      
+      <h3>Fricciones visibles</h3>
+      <ul><li>No se detectaron fricciones automáticas claras en esta pasada.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>2</span></div><div><strong>Tel</strong><span>3</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>8</span></div><div><strong>Palabras</strong><span>683</span></div><div><strong>KB HTML</strong><span>50.3</span></div><div><strong>Carga</strong><span>0.35s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-alta" data-severity="alta" data-host="reformasvlchome.com">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#37 · HTTP 200</p>
+          <h2>reformasvlchome.com</h2>
+        </div>
+        <span class="severity-pill severity-alta">Alta</span>
+      </div>
+      <p class="summary">La propuesta principal no queda clara porque no hay un H1 fuerte y reconocible.</p>
+      <div class="links">
+        <a href="https://reformasvlchome.com/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://reformasvlchome.com/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Reformas en Santa Cruz de Tenerife | Reformas VLC Home</div>
+        <div><strong>H1:</strong> Sin H1 claro</div>
+      </div>
+      <span class="badge badge-tag">no-h1</span><span class="badge badge-tag">title-seo</span><span class="badge badge-tag">phone-only</span><span class="badge badge-tag">nav-noise</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>La propuesta principal no queda clara porque no hay un H1 fuerte y reconocible.</li><li>El título parece más pensado para SEO que para convencer: suena genérico o recargado.</li><li>Se apoya demasiado en llamar por teléfono y no tanto en un formulario o CTA más cómodo.</li><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>0</span></div><div><strong>Tel</strong><span>2</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>13</span></div><div><strong>Palabras</strong><span>682</span></div><div><strong>KB HTML</strong><span>147.7</span></div><div><strong>Carga</strong><span>1.88s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-baja" data-severity="baja" data-host="vamat-slu.com">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#38 · HTTP 200</p>
+          <h2>vamat-slu.com</h2>
+        </div>
+        <span class="severity-pill severity-baja">Baja</span>
+      </div>
+      <p class="summary">La home es muy pesada en HTML/contenido: suele ir ligada a sensación de web saturada.</p>
+      <div class="links">
+        <a href="https://www.vamat-slu.com/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://www.vamat-slu.com/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Reformas integrales | Vamat | Santa Cruz de Tenerife</div>
+        <div><strong>H1:</strong> EL ESTUDIO</div>
+      </div>
+      <span class="badge badge-tag">heavy-html</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>La home es muy pesada en HTML/contenido: suele ir ligada a sensación de web saturada.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>1</span></div><div><strong>Tel</strong><span>0</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>9</span></div><div><strong>Palabras</strong><span>624</span></div><div><strong>KB HTML</strong><span>1068.6</span></div><div><strong>Carga</strong><span>0.09s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-alta" data-severity="alta" data-host="facebook.com">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#39 · HTTP 400</p>
+          <h2>facebook.com</h2>
+        </div>
+        <span class="severity-pill severity-alta">Alta</span>
+      </div>
+      <p class="summary">Dependencia de perfil social: cuesta convertir y controlar la captación.</p>
+      <div class="links">
+        <a href="https://www.facebook.com/SIPIcan-SL-362313183882534/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://www.facebook.com/SIPIcan-SL-362313183882534/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Error</div>
+        <div><strong>H1:</strong> Sorry, something went wrong.</div>
+      </div>
+      <span class="badge badge-tag">social</span><span class="badge badge-tag">no-mobile-meta</span><span class="badge badge-tag">no-description</span><span class="badge badge-tag">weak-cta</span><span class="badge badge-tag">error</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>La web responde con estado 400: ya hay fricción técnica de entrada.</li><li>No es una web propia sino un perfil social: peor control de captación, marca y analítica.</li><li>Depender de Facebook o Instagram mete fricción para pedir presupuesto y da menos imagen de empresa estructurada.</li><li>No aparece viewport móvil claro: riesgo serio de mala experiencia en teléfono.</li><li>La meta description está ausente o floja: mala señal de cuidado y menos control del clic.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>0</span></div><div><strong>Tel</strong><span>0</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>0</span></div><div><strong>Palabras</strong><span>23</span></div><div><strong>KB HTML</strong><span>1.5</span></div><div><strong>Carga</strong><span>0.18s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-baja" data-severity="baja" data-host="redidecoracion.com">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#40 · HTTP 200</p>
+          <h2>redidecoracion.com</h2>
+        </div>
+        <span class="severity-pill severity-baja">Baja</span>
+      </div>
+      <p class="summary">La meta description está ausente o floja: mala señal de cuidado y menos control del clic.</p>
+      <div class="links">
+        <a href="http://www.redidecoracion.com/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://redidecoracion.com/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> REDI – Reformas y Decoración en Santander</div>
+        <div><strong>H1:</strong> REDI</div>
+      </div>
+      <span class="badge badge-tag">no-description</span><span class="badge badge-tag">phone-only</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>La meta description está ausente o floja: mala señal de cuidado y menos control del clic.</li><li>Se apoya demasiado en llamar por teléfono y no tanto en un formulario o CTA más cómodo.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>0</span></div><div><strong>Tel</strong><span>2</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>7</span></div><div><strong>Palabras</strong><span>557</span></div><div><strong>KB HTML</strong><span>89.4</span></div><div><strong>Carga</strong><span>0.32s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-media" data-severity="media" data-host="reformascantabria.pro">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#41 · HTTP 200</p>
+          <h2>reformascantabria.pro</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</p>
+      <div class="links">
+        <a href="https://reformascantabria.pro/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://reformascantabria.pro/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> 🏠 Reformas Integrales Cantabria | Trabajos de calidad y barato</div>
+        <div><strong>H1:</strong> Reformas Integrales Cantabria</div>
+      </div>
+      <span class="badge badge-tag">nav-noise</span><span class="badge badge-tag">too-much-text</span><span class="badge badge-tag">seo-domain</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li><li>Hay muchísimo texto en la página y la jerarquía se vuelve pesada para convertir.</li><li>El dominio suena muy SEO o poco marca: resta memorabilidad y confianza percibida.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>2</span></div><div><strong>Tel</strong><span>6</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>68</span></div><div><strong>Palabras</strong><span>2441</span></div><div><strong>KB HTML</strong><span>187.1</span></div><div><strong>Carga</strong><span>2.17s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-media" data-severity="media" data-host="rentasycapitales.es">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#42 · HTTP 200</p>
+          <h2>rentasycapitales.es</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">La propuesta principal no queda clara porque no hay un H1 fuerte y reconocible.</p>
+      <div class="links">
+        <a href="https://rentasycapitales.es/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://www.rentasycapitales.es/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Inmobiliaria en Cantabria - Rentas y Capitales</div>
+        <div><strong>H1:</strong> Sin H1 claro</div>
+      </div>
+      <span class="badge badge-tag">no-h1</span><span class="badge badge-tag">nav-noise</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>La propuesta principal no queda clara porque no hay un H1 fuerte y reconocible.</li><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>3</span></div><div><strong>Tel</strong><span>3</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>10</span></div><div><strong>Palabras</strong><span>793</span></div><div><strong>KB HTML</strong><span>185.9</span></div><div><strong>Carga</strong><span>1.35s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-media" data-severity="media" data-host="reformayconstruyeinnovatenorte.com">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#43 · Error</p>
+          <h2>reformayconstruyeinnovatenorte.com</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">Hay un problema técnico o de acceso que ya genera fricción antes de vender.</p>
+      <div class="links">
+        <a href="http://www.reformayconstruyeinnovatenorte.com/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="http://www.reformayconstruyeinnovatenorte.com/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> No se pudo analizar automáticamente</div>
+        <div><strong>H1:</strong> </div>
+      </div>
+      <span class="badge badge-tag">error</span><span class="badge badge-tag">http</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>No se ha podido cargar correctamente: ConnectionError.</li></ul>
+      
+    </article>
+    
+
+    <article class="card severity-media" data-severity="media" data-host="dereformasevilla.es">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#44 · HTTP 200</p>
+          <h2>dereformasevilla.es</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">El título parece más pensado para SEO que para convencer: suena genérico o recargado.</p>
+      <div class="links">
+        <a href="https://dereformasevilla.es/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://dereformasevilla.es/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> ▷ DeReformaSevilla - Empresa de Reformas integrales en Sevilla</div>
+        <div><strong>H1:</strong> Empresa de Reformas en Sevilla</div>
+      </div>
+      <span class="badge badge-tag">title-seo</span><span class="badge badge-tag">nav-noise</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>El título parece más pensado para SEO que para convencer: suena genérico o recargado.</li><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>2</span></div><div><strong>Tel</strong><span>5</span></div><div><strong>WhatsApp</strong><span>1</span></div><div><strong>Nav</strong><span>53</span></div><div><strong>Palabras</strong><span>1033</span></div><div><strong>KB HTML</strong><span>392.3</span></div><div><strong>Carga</strong><span>0.22s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-baja" data-severity="baja" data-host="reformasevillagrupoms.es">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#45 · HTTP 200</p>
+          <h2>reformasevillagrupoms.es</h2>
+        </div>
+        <span class="severity-pill severity-baja">Baja</span>
+      </div>
+      <p class="summary">Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</p>
+      <div class="links">
+        <a href="https://reformasevillagrupoms.es/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://reformasevillagrupoms.es/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Reformas Integrales en Sevilla de todo tipo || Grupo Ms</div>
+        <div><strong>H1:</strong> Reformas Integrales en Sevilla</div>
+      </div>
+      <span class="badge badge-tag">nav-noise</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>1</span></div><div><strong>Tel</strong><span>1</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>11</span></div><div><strong>Palabras</strong><span>1019</span></div><div><strong>KB HTML</strong><span>197.7</span></div><div><strong>Carga</strong><span>0.32s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-media" data-severity="media" data-host="jrreformas.com">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#46 · HTTP 200</p>
+          <h2>jrreformas.com</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">El título parece más pensado para SEO que para convencer: suena genérico o recargado.</p>
+      <div class="links">
+        <a href="http://www.jrreformas.com/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://www.jrreformas.com/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Reformas de Lujo en Sevilla | J&amp;R Reformas Exclusivas</div>
+        <div><strong>H1:</strong> Empresa de Reformas en Sevilla</div>
+      </div>
+      <span class="badge badge-tag">title-seo</span><span class="badge badge-tag">nav-noise</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>El título parece más pensado para SEO que para convencer: suena genérico o recargado.</li><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>1</span></div><div><strong>Tel</strong><span>3</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>12</span></div><div><strong>Palabras</strong><span>1338</span></div><div><strong>KB HTML</strong><span>233.5</span></div><div><strong>Carga</strong><span>0.3s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-media" data-severity="media" data-host="mqreformas.es">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#47 · HTTP 200</p>
+          <h2>mqreformas.es</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">El título parece más pensado para SEO que para convencer: suena genérico o recargado.</p>
+      <div class="links">
+        <a href="http://mqreformas.es/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://www.mqreformas.es/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> MQ Reformas Sevilla | Empresa de reformas</div>
+        <div><strong>H1:</strong> Reformas Sevilla</div>
+      </div>
+      <span class="badge badge-tag">title-seo</span><span class="badge badge-tag">no-description</span><span class="badge badge-tag">nav-noise</span><span class="badge badge-tag">heavy-html</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>El título parece más pensado para SEO que para convencer: suena genérico o recargado.</li><li>La meta description está ausente o floja: mala señal de cuidado y menos control del clic.</li><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li><li>La home es muy pesada en HTML/contenido: suele ir ligada a sensación de web saturada.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>4</span></div><div><strong>Tel</strong><span>4</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>28</span></div><div><strong>Palabras</strong><span>963</span></div><div><strong>KB HTML</strong><span>1797.1</span></div><div><strong>Carga</strong><span>0.74s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-alta" data-severity="alta" data-host="xn--reformasmuoz-jhb.es">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#48 · HTTP 200</p>
+          <h2>xn--reformasmuoz-jhb.es</h2>
+        </div>
+        <span class="severity-pill severity-alta">Alta</span>
+      </div>
+      <p class="summary">El título parece más pensado para SEO que para convencer: suena genérico o recargado.</p>
+      <div class="links">
+        <a href="https://www.xn--reformasmuoz-jhb.es/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://www.xn--reformasmuoz-jhb.es/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Reformas Sevilla I Empresa de Reformas en Sevilla</div>
+        <div><strong>H1:</strong> REFORMAS SEVILLA</div>
+      </div>
+      <span class="badge badge-tag">title-seo</span><span class="badge badge-tag">nav-noise</span><span class="badge badge-tag">too-much-text</span><span class="badge badge-tag">seo-domain</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>El título parece más pensado para SEO que para convencer: suena genérico o recargado.</li><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li><li>Hay muchísimo texto en la página y la jerarquía se vuelve pesada para convertir.</li><li>El dominio suena muy SEO o poco marca: resta memorabilidad y confianza percibida.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>2</span></div><div><strong>Tel</strong><span>4</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>14</span></div><div><strong>Palabras</strong><span>1651</span></div><div><strong>KB HTML</strong><span>330.7</span></div><div><strong>Carga</strong><span>0.11s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-media" data-severity="media" data-host="reformassevilla.info">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#49 · HTTP 200</p>
+          <h2>reformassevilla.info</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">El título parece más pensado para SEO que para convencer: suena genérico o recargado.</p>
+      <div class="links">
+        <a href="http://www.reformassevilla.info/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://reformassevilla.info/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Reformas Sevilla - Empresa de Reformas integrales en Sevilla</div>
+        <div><strong>H1:</strong> Reformas Sevilla</div>
+      </div>
+      <span class="badge badge-tag">title-seo</span><span class="badge badge-tag">nav-noise</span><span class="badge badge-tag">too-much-text</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>El título parece más pensado para SEO que para convencer: suena genérico o recargado.</li><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li><li>Hay muchísimo texto en la página y la jerarquía se vuelve pesada para convertir.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>2</span></div><div><strong>Tel</strong><span>3</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>14</span></div><div><strong>Palabras</strong><span>1747</span></div><div><strong>KB HTML</strong><span>78.1</span></div><div><strong>Carga</strong><span>1.71s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-baja" data-severity="baja" data-host="reformasensevilla.net">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#50 · HTTP 200</p>
+          <h2>reformasensevilla.net</h2>
+        </div>
+        <span class="severity-pill severity-baja">Baja</span>
+      </div>
+      <p class="summary">El título parece más pensado para SEO que para convencer: suena genérico o recargado.</p>
+      <div class="links">
+        <a href="https://www.reformasensevilla.net/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://www.reformasensevilla.net/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Reformas Sevilla - REFORMAS SEVILLA</div>
+        <div><strong>H1:</strong> Reformas Sevilla</div>
+      </div>
+      <span class="badge badge-tag">title-seo</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>El título parece más pensado para SEO que para convencer: suena genérico o recargado.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>0</span></div><div><strong>Tel</strong><span>2</span></div><div><strong>WhatsApp</strong><span>1</span></div><div><strong>Nav</strong><span>9</span></div><div><strong>Palabras</strong><span>724</span></div><div><strong>KB HTML</strong><span>83.0</span></div><div><strong>Carga</strong><span>0.17s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-alta" data-severity="alta" data-host="reformasmelchor.es">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#51 · HTTP 200</p>
+          <h2>reformasmelchor.es</h2>
+        </div>
+        <span class="severity-pill severity-alta">Alta</span>
+      </div>
+      <p class="summary">La propuesta principal no queda clara porque no hay un H1 fuerte y reconocible.</p>
+      <div class="links">
+        <a href="http://www.reformasmelchor.es/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://www.reformasmelchor.es/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Reformas, Obras y Rehabilitaciones Melchor, en Sevilla desde 1980. Home</div>
+        <div><strong>H1:</strong> Sin H1 claro</div>
+      </div>
+      <span class="badge badge-tag">no-h1</span><span class="badge badge-tag">title-seo</span><span class="badge badge-tag">phone-only</span><span class="badge badge-tag">nav-noise</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>La propuesta principal no queda clara porque no hay un H1 fuerte y reconocible.</li><li>El título parece más pensado para SEO que para convencer: suena genérico o recargado.</li><li>Se apoya demasiado en llamar por teléfono y no tanto en un formulario o CTA más cómodo.</li><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>0</span></div><div><strong>Tel</strong><span>1</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>10</span></div><div><strong>Palabras</strong><span>219</span></div><div><strong>KB HTML</strong><span>17.0</span></div><div><strong>Carga</strong><span>0.25s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-media" data-severity="media" data-host="reiteman.com">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#52 · HTTP 200</p>
+          <h2>reiteman.com</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">El título parece más pensado para SEO que para convencer: suena genérico o recargado.</p>
+      <div class="links">
+        <a href="https://www.reiteman.com/?utm_source=si&amp;utm_id=gmb" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://www.reiteman.com/?utm_source=si&amp;utm_id=gmb" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Reformas Integrales en Madrid - Reiteman Reformas Profesionales</div>
+        <div><strong>H1:</strong> Reformas Integrales en Madrid</div>
+      </div>
+      <span class="badge badge-tag">title-seo</span><span class="badge badge-tag">too-much-text</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>El título parece más pensado para SEO que para convencer: suena genérico o recargado.</li><li>Hay muchísimo texto en la página y la jerarquía se vuelve pesada para convertir.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>3</span></div><div><strong>Tel</strong><span>4</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>0</span></div><div><strong>Palabras</strong><span>3528</span></div><div><strong>KB HTML</strong><span>368.5</span></div><div><strong>Carga</strong><span>0.3s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-alta" data-severity="alta" data-host="cys-vivebonitoreformasintegrales.com">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#53 · HTTP 200</p>
+          <h2>cys-vivebonitoreformasintegrales.com</h2>
+        </div>
+        <span class="severity-pill severity-alta">Alta</span>
+      </div>
+      <p class="summary">La propuesta principal no queda clara porque no hay un H1 fuerte y reconocible.</p>
+      <div class="links">
+        <a href="https://cys-vivebonitoreformasintegrales.com/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://cys-vivebonitoreformasintegrales.com/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Vive Bonito Reformas | Empresa de reformas integrales en Sevilla</div>
+        <div><strong>H1:</strong> Sin H1 claro</div>
+      </div>
+      <span class="badge badge-tag">no-h1</span><span class="badge badge-tag">title-seo</span><span class="badge badge-tag">nav-noise</span><span class="badge badge-tag">too-much-text</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>La propuesta principal no queda clara porque no hay un H1 fuerte y reconocible.</li><li>El título parece más pensado para SEO que para convencer: suena genérico o recargado.</li><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li><li>Hay muchísimo texto en la página y la jerarquía se vuelve pesada para convertir.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>5</span></div><div><strong>Tel</strong><span>8</span></div><div><strong>WhatsApp</strong><span>6</span></div><div><strong>Nav</strong><span>26</span></div><div><strong>Palabras</strong><span>3874</span></div><div><strong>KB HTML</strong><span>349.1</span></div><div><strong>Carga</strong><span>4.2s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-media" data-severity="media" data-host="connivelobrasyreformas.es">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#54 · HTTP 200</p>
+          <h2>connivelobrasyreformas.es</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">El título parece más pensado para SEO que para convencer: suena genérico o recargado.</p>
+      <div class="links">
+        <a href="https://connivelobrasyreformas.es/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://connivelobrasyreformas.es/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Con nivel obras, reformas y construcciones 🎖 | connivelobrasyreformas.es</div>
+        <div><strong>H1:</strong> Reformas y construcción de pisos en Valencia</div>
+      </div>
+      <span class="badge badge-tag">title-seo</span><span class="badge badge-tag">nav-noise</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>El título parece más pensado para SEO que para convencer: suena genérico o recargado.</li><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>2</span></div><div><strong>Tel</strong><span>2</span></div><div><strong>WhatsApp</strong><span>1</span></div><div><strong>Nav</strong><span>18</span></div><div><strong>Palabras</strong><span>1081</span></div><div><strong>KB HTML</strong><span>157.2</span></div><div><strong>Carga</strong><span>9.92s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-media" data-severity="media" data-host="reformasmarcosmym.com">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#55 · HTTP 200</p>
+          <h2>reformasmarcosmym.com</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">El título parece más pensado para SEO que para convencer: suena genérico o recargado.</p>
+      <div class="links">
+        <a href="https://reformasmarcosmym.com/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://reformasmarcosmym.com/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Reformas en Valencia | Reformas Marcos MyM</div>
+        <div><strong>H1:</strong> Construcción, Reformas y Proyectos Marcos MyM</div>
+      </div>
+      <span class="badge badge-tag">title-seo</span><span class="badge badge-tag">nav-noise</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>El título parece más pensado para SEO que para convencer: suena genérico o recargado.</li><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>2</span></div><div><strong>Tel</strong><span>2</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>28</span></div><div><strong>Palabras</strong><span>883</span></div><div><strong>KB HTML</strong><span>153.4</span></div><div><strong>Carga</strong><span>0.19s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-baja" data-severity="baja" data-host="cubicup.com">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#56 · HTTP 200</p>
+          <h2>cubicup.com</h2>
+        </div>
+        <span class="severity-pill severity-baja">Baja</span>
+      </div>
+      <p class="summary">Hay muchísimo texto en la página y la jerarquía se vuelve pesada para convertir.</p>
+      <div class="links">
+        <a href="https://cubicup.com/reformas-valencia/?utm_source=google&amp;utm_medium=maps&amp;utm_campaign=seolocal&amp;utm_content=valencia" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://cubicup.com/cuanto-cuesta-reforma-integral-valencia/?utm_source=google&amp;utm_medium=maps&amp;utm_campaign=seolocal&amp;utm_content=valencia" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> ▷ Reformas integrales en Valencia ¿Cuánto cuestan en 2026?</div>
+        <div><strong>H1:</strong> Reformas integrales en Valencia ¿Cuánto cuestan?</div>
+      </div>
+      <span class="badge badge-tag">too-much-text</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>Hay muchísimo texto en la página y la jerarquía se vuelve pesada para convertir.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>2</span></div><div><strong>Tel</strong><span>1</span></div><div><strong>WhatsApp</strong><span>2</span></div><div><strong>Nav</strong><span>8</span></div><div><strong>Palabras</strong><span>2029</span></div><div><strong>KB HTML</strong><span>161.1</span></div><div><strong>Carga</strong><span>0.26s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-baja" data-severity="baja" data-host="geteco.es">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#57 · HTTP 200</p>
+          <h2>geteco.es</h2>
+        </div>
+        <span class="severity-pill severity-baja">Baja</span>
+      </div>
+      <p class="summary">Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</p>
+      <div class="links">
+        <a href="https://www.geteco.es/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://www.geteco.es/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> ▷ Reformas INTEGRALES en Valencia | GETECO</div>
+        <div><strong>H1:</strong> Reformas integrales en Valencia</div>
+      </div>
+      <span class="badge badge-tag">nav-noise</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>1</span></div><div><strong>Tel</strong><span>2</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>10</span></div><div><strong>Palabras</strong><span>732</span></div><div><strong>KB HTML</strong><span>54.4</span></div><div><strong>Carga</strong><span>0.32s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-media" data-severity="media" data-host="reformasvalenciardg.es">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#58 · HTTP 200</p>
+          <h2>reformasvalenciardg.es</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">Se apoya demasiado en llamar por teléfono y no tanto en un formulario o CTA más cómodo.</p>
+      <div class="links">
+        <a href="https://www.reformasvalenciardg.es/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://reformasvalenciardg.es/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Empresa Profesional de Reformas en Valencia - RDG</div>
+        <div><strong>H1:</strong> Empresa profesional de reformas en Valencia</div>
+      </div>
+      <span class="badge badge-tag">phone-only</span><span class="badge badge-tag">nav-noise</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>Se apoya demasiado en llamar por teléfono y no tanto en un formulario o CTA más cómodo.</li><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>0</span></div><div><strong>Tel</strong><span>2</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>30</span></div><div><strong>Palabras</strong><span>1257</span></div><div><strong>KB HTML</strong><span>130.9</span></div><div><strong>Carga</strong><span>0.83s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-media" data-severity="media" data-host="reformasvalenciamj.es">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#59 · HTTP 200</p>
+          <h2>reformasvalenciamj.es</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</p>
+      <div class="links">
+        <a href="http://www.reformasvalenciamj.es/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://reformasvalenciamj.es/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Home - reformasvalenciamj.es</div>
+        <div><strong>H1:</strong> Reformas Valencia M.J</div>
+      </div>
+      <span class="badge badge-tag">nav-noise</span><span class="badge badge-tag">too-much-text</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li><li>Hay muchísimo texto en la página y la jerarquía se vuelve pesada para convertir.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>1</span></div><div><strong>Tel</strong><span>10</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>17</span></div><div><strong>Palabras</strong><span>2555</span></div><div><strong>KB HTML</strong><span>207.3</span></div><div><strong>Carga</strong><span>0.92s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-media" data-severity="media" data-host="rfcreformas.es">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#60 · HTTP 200</p>
+          <h2>rfcreformas.es</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</p>
+      <div class="links">
+        <a href="https://rfcreformas.es/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://rfcreformas.es/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Reformas Integrales en Valencia | Pide presupuesto</div>
+        <div><strong>H1:</strong> RFC | Reformas Integrales en Valencia</div>
+      </div>
+      <span class="badge badge-tag">nav-noise</span><span class="badge badge-tag">too-much-text</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li><li>Hay muchísimo texto en la página y la jerarquía se vuelve pesada para convertir.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>2</span></div><div><strong>Tel</strong><span>3</span></div><div><strong>WhatsApp</strong><span>3</span></div><div><strong>Nav</strong><span>60</span></div><div><strong>Palabras</strong><span>1938</span></div><div><strong>KB HTML</strong><span>220.2</span></div><div><strong>Carga</strong><span>0.2s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-alta" data-severity="alta" data-host="reformasintegrales-valencia.com.es">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#61 · HTTP 200</p>
+          <h2>reformasintegrales-valencia.com.es</h2>
+        </div>
+        <span class="severity-pill severity-alta">Alta</span>
+      </div>
+      <p class="summary">El título parece más pensado para SEO que para convencer: suena genérico o recargado.</p>
+      <div class="links">
+        <a href="https://reformasintegrales-valencia.com.es/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://reformasintegrales-valencia.com.es/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Reformas integrales Valencia 🛠️ Reformas integrales baratas</div>
+        <div><strong>H1:</strong> REFORMAS INTEGRALES VALENCIA</div>
+      </div>
+      <span class="badge badge-tag">title-seo</span><span class="badge badge-tag">nav-noise</span><span class="badge badge-tag">too-much-text</span><span class="badge badge-tag">seo-domain</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>El título parece más pensado para SEO que para convencer: suena genérico o recargado.</li><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li><li>Hay muchísimo texto en la página y la jerarquía se vuelve pesada para convertir.</li><li>El dominio suena muy SEO o poco marca: resta memorabilidad y confianza percibida.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>2</span></div><div><strong>Tel</strong><span>3</span></div><div><strong>WhatsApp</strong><span>1</span></div><div><strong>Nav</strong><span>124</span></div><div><strong>Palabras</strong><span>2647</span></div><div><strong>KB HTML</strong><span>396.3</span></div><div><strong>Carga</strong><span>0.28s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-media" data-severity="media" data-host="reformasvalencia.es">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#62 · HTTP 200</p>
+          <h2>reformasvalencia.es</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">Se apoya demasiado en llamar por teléfono y no tanto en un formulario o CTA más cómodo.</p>
+      <div class="links">
+        <a href="https://www.reformasvalencia.es/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://www.reformasvalencia.es/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Reformas Valencia | Cicerone</div>
+        <div><strong>H1:</strong> Reformas de calidad en Valencia</div>
+      </div>
+      <span class="badge badge-tag">phone-only</span><span class="badge badge-tag">nav-noise</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>Se apoya demasiado en llamar por teléfono y no tanto en un formulario o CTA más cómodo.</li><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>0</span></div><div><strong>Tel</strong><span>1</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>14</span></div><div><strong>Palabras</strong><span>519</span></div><div><strong>KB HTML</strong><span>99.2</span></div><div><strong>Carga</strong><span>1.33s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-baja" data-severity="baja" data-host="todoreformasvalencia.com">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#63 · HTTP 200</p>
+          <h2>todoreformasvalencia.com</h2>
+        </div>
+        <span class="severity-pill severity-baja">Baja</span>
+      </div>
+      <p class="summary">La home es muy pesada en HTML/contenido: suele ir ligada a sensación de web saturada.</p>
+      <div class="links">
+        <a href="https://www.todoreformasvalencia.com/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://www.todoreformasvalencia.com/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Todo Reformas Valencia</div>
+        <div><strong>H1:</strong> contacto@todoreformasvalencia.com</div>
+      </div>
+      <span class="badge badge-tag">heavy-html</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>La home es muy pesada en HTML/contenido: suele ir ligada a sensación de web saturada.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>0</span></div><div><strong>Tel</strong><span>3</span></div><div><strong>WhatsApp</strong><span>1</span></div><div><strong>Nav</strong><span>6</span></div><div><strong>Palabras</strong><span>657</span></div><div><strong>KB HTML</strong><span>2157.5</span></div><div><strong>Carga</strong><span>0.1s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-baja" data-severity="baja" data-host="profix360.es">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#64 · HTTP 200</p>
+          <h2>profix360.es</h2>
+        </div>
+        <span class="severity-pill severity-baja">Baja</span>
+      </div>
+      <p class="summary">Web operativa con menos fricciones visibles que la media del sector.</p>
+      <div class="links">
+        <a href="https://profix360.es/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://profix360.es/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Landing - ProFix360</div>
+        <div><strong>H1:</strong> ProFix 360</div>
+      </div>
+      
+      <h3>Fricciones visibles</h3>
+      <ul><li>No se detectaron fricciones automáticas claras en esta pasada.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>2</span></div><div><strong>Tel</strong><span>3</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>0</span></div><div><strong>Palabras</strong><span>244</span></div><div><strong>KB HTML</strong><span>100.5</span></div><div><strong>Carga</strong><span>0.21s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-baja" data-severity="baja" data-host="reformasmiguelgarrido.com">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#65 · HTTP 200</p>
+          <h2>reformasmiguelgarrido.com</h2>
+        </div>
+        <span class="severity-pill severity-baja">Baja</span>
+      </div>
+      <p class="summary">La meta description está ausente o floja: mala señal de cuidado y menos control del clic.</p>
+      <div class="links">
+        <a href="https://reformasmiguelgarrido.com/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://reformasmiguelgarrido.com/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Inicio - Reformas Miguel Garrido</div>
+        <div><strong>H1:</strong> Reformas Miguel Garrido</div>
+      </div>
+      <span class="badge badge-tag">no-description</span><span class="badge badge-tag">phone-only</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>La meta description está ausente o floja: mala señal de cuidado y menos control del clic.</li><li>Se apoya demasiado en llamar por teléfono y no tanto en un formulario o CTA más cómodo.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>0</span></div><div><strong>Tel</strong><span>1</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>8</span></div><div><strong>Palabras</strong><span>551</span></div><div><strong>KB HTML</strong><span>108.4</span></div><div><strong>Carga</strong><span>0.37s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-media" data-severity="media" data-host="reformasunion.es">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#66 · HTTP 200</p>
+          <h2>reformasunion.es</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">La propuesta principal no queda clara porque no hay un H1 fuerte y reconocible.</p>
+      <div class="links">
+        <a href="https://reformasunion.es/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://reformasunion.es/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Reformas union - Reformas Unión</div>
+        <div><strong>H1:</strong> Sin H1 claro</div>
+      </div>
+      <span class="badge badge-tag">no-h1</span><span class="badge badge-tag">title-seo</span><span class="badge badge-tag">nav-noise</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>La propuesta principal no queda clara porque no hay un H1 fuerte y reconocible.</li><li>El título parece más pensado para SEO que para convencer: suena genérico o recargado.</li><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>1</span></div><div><strong>Tel</strong><span>1</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>10</span></div><div><strong>Palabras</strong><span>902</span></div><div><strong>KB HTML</strong><span>192.2</span></div><div><strong>Carga</strong><span>0.21s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-media" data-severity="media" data-host="vallareforma.es">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#67 · Error</p>
+          <h2>vallareforma.es</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">Hay un problema técnico o de acceso que ya genera fricción antes de vender.</p>
+      <div class="links">
+        <a href="https://vallareforma.es/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://vallareforma.es/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> No se pudo analizar automáticamente</div>
+        <div><strong>H1:</strong> </div>
+      </div>
+      <span class="badge badge-tag">error</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>No se ha podido cargar correctamente: ConnectionError.</li></ul>
+      
+    </article>
+    
+
+    <article class="card severity-media" data-severity="media" data-host="reformasvigo.pro">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#68 · HTTP 200</p>
+          <h2>reformasvigo.pro</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">El título parece más pensado para SEO que para convencer: suena genérico o recargado.</p>
+      <div class="links">
+        <a href="https://reformasvigo.pro/?utm_source=google&amp;utm_medium=organic&amp;utm_campaign=gmb" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://reformasvigo.pro/?utm_source=google&amp;utm_medium=organic&amp;utm_campaign=gmb" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Reformas Vigo - Empresa de Reformas Integrales en Vigo</div>
+        <div><strong>H1:</strong> EMPRESA Nº1 DE REFORMAS EN VIGO</div>
+      </div>
+      <span class="badge badge-tag">title-seo</span><span class="badge badge-tag">nav-noise</span><span class="badge badge-tag">seo-domain</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>El título parece más pensado para SEO que para convencer: suena genérico o recargado.</li><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li><li>El dominio suena muy SEO o poco marca: resta memorabilidad y confianza percibida.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>1</span></div><div><strong>Tel</strong><span>2</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>22</span></div><div><strong>Palabras</strong><span>719</span></div><div><strong>KB HTML</strong><span>102.2</span></div><div><strong>Carga</strong><span>0.27s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-alta" data-severity="alta" data-host="facebook.com">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#69 · HTTP 400</p>
+          <h2>facebook.com</h2>
+        </div>
+        <span class="severity-pill severity-alta">Alta</span>
+      </div>
+      <p class="summary">Dependencia de perfil social: cuesta convertir y controlar la captación.</p>
+      <div class="links">
+        <a href="https://www.facebook.com/share/17epKGLLcG/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://www.facebook.com/share/17epKGLLcG/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Error</div>
+        <div><strong>H1:</strong> Sorry, something went wrong.</div>
+      </div>
+      <span class="badge badge-tag">social</span><span class="badge badge-tag">no-mobile-meta</span><span class="badge badge-tag">no-description</span><span class="badge badge-tag">weak-cta</span><span class="badge badge-tag">error</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>La web responde con estado 400: ya hay fricción técnica de entrada.</li><li>No es una web propia sino un perfil social: peor control de captación, marca y analítica.</li><li>Depender de Facebook o Instagram mete fricción para pedir presupuesto y da menos imagen de empresa estructurada.</li><li>No aparece viewport móvil claro: riesgo serio de mala experiencia en teléfono.</li><li>La meta description está ausente o floja: mala señal de cuidado y menos control del clic.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>0</span></div><div><strong>Tel</strong><span>0</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>0</span></div><div><strong>Palabras</strong><span>23</span></div><div><strong>KB HTML</strong><span>1.5</span></div><div><strong>Carga</strong><span>0.28s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-media" data-severity="media" data-host="isiobrasyservicios.com">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#70 · HTTP 200</p>
+          <h2>isiobrasyservicios.com</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">La propuesta principal no queda clara porque no hay un H1 fuerte y reconocible.</p>
+      <div class="links">
+        <a href="https://isiobrasyservicios.com/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://isiobrasyservicios.com/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Reformas en Zaragoza | ISI Obras y Servicios</div>
+        <div><strong>H1:</strong> Sin H1 claro</div>
+      </div>
+      <span class="badge badge-tag">no-h1</span><span class="badge badge-tag">nav-noise</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>La propuesta principal no queda clara porque no hay un H1 fuerte y reconocible.</li><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>0</span></div><div><strong>Tel</strong><span>4</span></div><div><strong>WhatsApp</strong><span>1</span></div><div><strong>Nav</strong><span>21</span></div><div><strong>Palabras</strong><span>658</span></div><div><strong>KB HTML</strong><span>136.9</span></div><div><strong>Carga</strong><span>0.09s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-baja" data-severity="baja" data-host="kovareformas.es">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#71 · HTTP 200</p>
+          <h2>kovareformas.es</h2>
+        </div>
+        <span class="severity-pill severity-baja">Baja</span>
+      </div>
+      <p class="summary">El título parece más pensado para SEO que para convencer: suena genérico o recargado.</p>
+      <div class="links">
+        <a href="https://kovareformas.es/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://kovareformas.es/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Empresa de Reformas en Zaragoza | Kova Reformas</div>
+        <div><strong>H1:</strong> Tu empresa de reformas en Zaragoza</div>
+      </div>
+      <span class="badge badge-tag">title-seo</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>El título parece más pensado para SEO que para convencer: suena genérico o recargado.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>0</span></div><div><strong>Tel</strong><span>3</span></div><div><strong>WhatsApp</strong><span>1</span></div><div><strong>Nav</strong><span>9</span></div><div><strong>Palabras</strong><span>565</span></div><div><strong>KB HTML</strong><span>242.7</span></div><div><strong>Carga</strong><span>0.3s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-baja" data-severity="baja" data-host="reformandozaragoza.com">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#72 · HTTP 200</p>
+          <h2>reformandozaragoza.com</h2>
+        </div>
+        <span class="severity-pill severity-baja">Baja</span>
+      </div>
+      <p class="summary">Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</p>
+      <div class="links">
+        <a href="http://www.reformandozaragoza.com/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://www.reformandozaragoza.com/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Reformas integrales Zaragoza</div>
+        <div><strong>H1:</strong> Reformas integrales Zaragoza</div>
+      </div>
+      <span class="badge badge-tag">nav-noise</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>1</span></div><div><strong>Tel</strong><span>2</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>37</span></div><div><strong>Palabras</strong><span>801</span></div><div><strong>KB HTML</strong><span>31.3</span></div><div><strong>Carga</strong><span>0.07s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-media" data-severity="media" data-host="zaragozareformas.com">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#73 · HTTP 200</p>
+          <h2>zaragozareformas.com</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">Se apoya demasiado en llamar por teléfono y no tanto en un formulario o CTA más cómodo.</p>
+      <div class="links">
+        <a href="https://www.zaragozareformas.com/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://zaragozareformas.com/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Reformas integrales y rehabilitación en Zaragoza | AFP</div>
+        <div><strong>H1:</strong> REFORMAS AFP ZARAGOZA</div>
+      </div>
+      <span class="badge badge-tag">phone-only</span><span class="badge badge-tag">nav-noise</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>Se apoya demasiado en llamar por teléfono y no tanto en un formulario o CTA más cómodo.</li><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>0</span></div><div><strong>Tel</strong><span>2</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>24</span></div><div><strong>Palabras</strong><span>707</span></div><div><strong>KB HTML</strong><span>208.2</span></div><div><strong>Carga</strong><span>0.77s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-media" data-severity="media" data-host="reformassyr.es">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#74 · HTTP 200</p>
+          <h2>reformassyr.es</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">El título parece más pensado para SEO que para convencer: suena genérico o recargado.</p>
+      <div class="links">
+        <a href="https://www.reformassyr.es/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://www.reformassyr.es/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Reformas Integrales en Zaragoza | Empresa Reformas SYR</div>
+        <div><strong>H1:</strong> Reformas Integrales en Zaragoza - Empresa de confianza</div>
+      </div>
+      <span class="badge badge-tag">title-seo</span><span class="badge badge-tag">too-much-text</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>El título parece más pensado para SEO que para convencer: suena genérico o recargado.</li><li>Hay muchísimo texto en la página y la jerarquía se vuelve pesada para convertir.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>1</span></div><div><strong>Tel</strong><span>5</span></div><div><strong>WhatsApp</strong><span>1</span></div><div><strong>Nav</strong><span>8</span></div><div><strong>Palabras</strong><span>2154</span></div><div><strong>KB HTML</strong><span>232.0</span></div><div><strong>Carga</strong><span>0.99s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-baja" data-severity="baja" data-host="reformaszaragozamorem.com">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#75 · HTTP 200</p>
+          <h2>reformaszaragozamorem.com</h2>
+        </div>
+        <span class="severity-pill severity-baja">Baja</span>
+      </div>
+      <p class="summary">Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</p>
+      <div class="links">
+        <a href="http://reformaszaragozamorem.com/?utm_source=google&amp;utm_medium=organic&amp;utm_campaign=gmb" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="https://reformaszaragozamorem.com/?utm_source=google&amp;utm_medium=organic&amp;utm_campaign=gmb" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> Expertos en Reformas en Zaragoza | Pide tu presupuesto</div>
+        <div><strong>H1:</strong> Morem, la empresa de confianza para reformas en Zaragoza</div>
+      </div>
+      <span class="badge badge-tag">nav-noise</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.</li></ul>
+      <div class='metrics'><div><strong>Forms</strong><span>1</span></div><div><strong>Tel</strong><span>2</span></div><div><strong>WhatsApp</strong><span>0</span></div><div><strong>Nav</strong><span>34</span></div><div><strong>Palabras</strong><span>1165</span></div><div><strong>KB HTML</strong><span>161.0</span></div><div><strong>Carga</strong><span>2.79s</span></div></div>
+    </article>
+    
+
+    <article class="card severity-media" data-severity="media" data-host="reformapisozaragoza.com">
+      <div class="card-top">
+        <div>
+          <p class="eyebrow">#76 · Error</p>
+          <h2>reformapisozaragoza.com</h2>
+        </div>
+        <span class="severity-pill severity-media">Media</span>
+      </div>
+      <p class="summary">Hay un problema técnico o de acceso que ya genera fricción antes de vender.</p>
+      <div class="links">
+        <a href="http://reformapisozaragoza.com/" target="_blank" rel="noopener noreferrer">Abrir URL</a>
+        <a href="http://reformapisozaragoza.com/" target="_blank" rel="noopener noreferrer">Destino final</a>
+      </div>
+      <div class="copy-block">
+        <div><strong>Title:</strong> No se pudo analizar automáticamente</div>
+        <div><strong>H1:</strong> </div>
+      </div>
+      <span class="badge badge-tag">error</span><span class="badge badge-tag">http</span>
+      <h3>Fricciones visibles</h3>
+      <ul><li>No se ha podido cargar correctamente: ConnectionError.</li></ul>
+      
+    </article>
+    
+    </div>
+    <p class="footer-note">
+      Nota: esto es una auditoría rápida automática + revisión de muestra, pensada para detectar fricciones
+      visibles y abrir conversaciones comerciales. No sustituye una revisión UX completa con móvil, velocidad,
+      mapas de scroll y conversión real.
+    </p>
+  </div>
+  <script>
+    const buttons = Array.from(document.querySelectorAll('.filter-btn'));
+    const cards = Array.from(document.querySelectorAll('.card'));
+    const search = document.getElementById('search');
+    let currentFilter = 'all';
+
+    function applyFilters() {
+      const term = (search?.value || '').trim().toLowerCase();
+      cards.forEach((card) => {
+        const severity = card.dataset.severity || '';
+        const host = card.dataset.host || '';
+        const matchSeverity = currentFilter === 'all' || severity === currentFilter;
+        const matchSearch = !term || host.includes(term);
+        card.classList.toggle('hidden', !(matchSeverity && matchSearch));
+      });
+    }
+
+    buttons.forEach((button) => {
+      button.addEventListener('click', () => {
+        currentFilter = button.dataset.filter || 'all';
+        buttons.forEach((btn) => btn.classList.toggle('active', btn === button));
+        applyFilters();
+      });
+    });
+
+    search?.addEventListener('input', applyFilters);
+  </script>
+</body>
+</html>

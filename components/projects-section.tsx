@@ -178,10 +178,11 @@ export function ProjectsSection() {
         <div className="mx-auto max-w-[112rem] px-4 sm:px-6 lg:px-8">
           <div className="section-fade-up mx-auto max-w-4xl text-center">
             <h2 className="text-balance text-3xl font-bold leading-tight text-foreground sm:text-4xl">
-              Reformas que hablan por sí solas
+              Trabajos de reformas realizados en Madrid
             </h2>
             <p className="mt-4 text-lg leading-8 text-muted-foreground">
-              Una selección de trabajos reales para que puedas ver acabados, materiales y resultados con más detalle.
+              Te enseñamos una selección de reformas reales para que puedas ver acabados,
+              soluciones y resultados antes de pedir presupuesto.
             </p>
           </div>
 

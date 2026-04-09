@@ -1,0 +1,2257 @@
+[
+  {
+    "index": 1,
+    "url": "https://reformasyanez.com/",
+    "status": "HTTP 200",
+    "final_url": "https://reformasyanez.com/",
+    "title": "Reformas Yanez Las Palmas - MÁXIMA CALIDAD Y GARANTÍA",
+    "description": "Servicios Integrales de Reformas en Las Palmas para viviendas y negocios de Canarias. Reformas Fiables y Rápidas. Reformas a tu Medida. ☎ 671 497 914",
+    "h1": "Reformas y Proyectos De Máxima Calidad Y Garantía",
+    "summary": "Se apoya demasiado en llamar por teléfono y no tanto en un formulario o CTA más cómodo.",
+    "score": 4,
+    "tags": [
+      "phone-only",
+      "nav-noise"
+    ],
+    "frictions": [
+      "Se apoya demasiado en llamar por teléfono y no tanto en un formulario o CTA más cómodo.",
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto."
+    ],
+    "metrics": {
+      "forms": 0,
+      "tel_links": 4,
+      "whatsapp_links": 0,
+      "nav_links": 13,
+      "word_count": 888,
+      "html_kb": 407.6,
+      "load_seconds": 0.24,
+      "viewport": true,
+      "cta_links": 3
+    }
+  },
+  {
+    "index": 2,
+    "url": "https://www.reformasbarataslaspalmas.com/",
+    "status": "HTTP 200",
+    "final_url": "https://www.reformasbarataslaspalmas.com/",
+    "title": "Reformas Baratas Las Palmas: Reformas economicas a precios inmejorables",
+    "description": "Reformas baratas Las Palmas es la página que buscaba. Reformas ANTI-CRISIS con precios rebajados hechas por los mejores profesionales. Este mes 20% descuento en todos los presupuestos",
+    "h1": "Reformas en Las Palmas - Empresa",
+    "summary": "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+    "score": 4,
+    "tags": [
+      "title-seo",
+      "nav-noise"
+    ],
+    "frictions": [
+      "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto."
+    ],
+    "metrics": {
+      "forms": 0,
+      "tel_links": 0,
+      "whatsapp_links": 2,
+      "nav_links": 35,
+      "word_count": 685,
+      "html_kb": 45.6,
+      "load_seconds": 0.32,
+      "viewport": true,
+      "cta_links": 5
+    }
+  },
+  {
+    "index": 3,
+    "url": "https://hogargo.es/",
+    "status": "HTTP 200",
+    "final_url": "https://hogargo.es/",
+    "title": "HogarGo - Expertos en Reformas Integrales",
+    "description": "Somos especialistas en llevar a cabo todo tipo de reformas integrales con resultados increíbles ¡Consulta nuestra web y descubre como podemos ayudarte!",
+    "h1": "Reformas integrales",
+    "summary": "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.",
+    "score": 2,
+    "tags": [
+      "nav-noise"
+    ],
+    "frictions": [
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto."
+    ],
+    "metrics": {
+      "forms": 1,
+      "tel_links": 4,
+      "whatsapp_links": 0,
+      "nav_links": 80,
+      "word_count": 1231,
+      "html_kb": 360.6,
+      "load_seconds": 1.43,
+      "viewport": true,
+      "cta_links": 3
+    }
+  },
+  {
+    "index": 4,
+    "url": "https://holareformas.com/",
+    "status": "HTTP 200",
+    "final_url": "https://holareformas.com/",
+    "title": "Empresa de Reformas | Hola Reformas",
+    "description": "Empresa de reformas especialista en reformas integrales o parciales. ☝ Solicita tu presupuesto en un solo click Sin Compromiso.",
+    "h1": "HOLA REFORMAS TU EMPRESA DE REFORMAS DE CONFIANZA",
+    "summary": "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+    "score": 4,
+    "tags": [
+      "title-seo",
+      "nav-noise"
+    ],
+    "frictions": [
+      "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto."
+    ],
+    "metrics": {
+      "forms": 0,
+      "tel_links": 0,
+      "whatsapp_links": 0,
+      "nav_links": 14,
+      "word_count": 745,
+      "html_kb": 205.5,
+      "load_seconds": 1.67,
+      "viewport": true,
+      "cta_links": 6
+    }
+  },
+  {
+    "index": 5,
+    "url": "https://www.reformas-malaga.com/",
+    "status": "HTTP 200",
+    "final_url": "https://www.reformas-malaga.com/",
+    "title": "Reformas Málaga | Expertos en Reformas Integrales y de Comunidades",
+    "description": "En Reformas Málaga somos especialistas en reformas integrales y de comunidades. Calidad garantizada y resultados que transforman tus espacios.",
+    "h1": "Reformas Integrales en Málaga – Renueva tu Espacio",
+    "summary": "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+    "score": 6,
+    "tags": [
+      "title-seo",
+      "nav-noise",
+      "heavy-html"
+    ],
+    "frictions": [
+      "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.",
+      "La home es muy pesada en HTML/contenido: suele ir ligada a sensación de web saturada."
+    ],
+    "metrics": {
+      "forms": 2,
+      "tel_links": 3,
+      "whatsapp_links": 0,
+      "nav_links": 16,
+      "word_count": 1223,
+      "html_kb": 1081.7,
+      "load_seconds": 0.31,
+      "viewport": true,
+      "cta_links": 3
+    }
+  },
+  {
+    "index": 6,
+    "url": "https://reformasextremas.wixsite.com/entodalacostadelsol",
+    "status": "HTTP 200",
+    "final_url": "https://reformasextremas.wixsite.com/entodalacostadelsol",
+    "title": "Reforma integral General Malaga",
+    "description": "Reforma Integral en General Casa Piso Villa Chalet Comunidad Malaga Toda La Costa sol Tel 643138222 Diseño interiores Alicatado Cocinas Construcion Casas Pisos",
+    "h1": "Sobre nuestra empresa de reformas extremas en España.",
+    "summary": "Aspecto de plantilla y exceso SEO: transmite menos confianza de marca.",
+    "score": 7,
+    "tags": [
+      "wix",
+      "too-much-text"
+    ],
+    "frictions": [
+      "Se percibe como Wix/plantilla: resta autoridad y da sensación de negocio menos consolidado.",
+      "Hay muchísimo texto en la página y la jerarquía se vuelve pesada para convertir."
+    ],
+    "metrics": {
+      "forms": 0,
+      "tel_links": 0,
+      "whatsapp_links": 0,
+      "nav_links": 4,
+      "word_count": 1875,
+      "html_kb": 477.9,
+      "load_seconds": 0.14,
+      "viewport": true,
+      "cta_links": 1
+    }
+  },
+  {
+    "index": 7,
+    "url": "https://empresareformaenmalaga.com/",
+    "status": "HTTP 200",
+    "final_url": "https://empresareformaenmalaga.com/",
+    "title": "Reformas Málaga Reforvis -pide presupuesto de reforma integral",
+    "description": "Somos una empresa de reformas en Málaga, realizando obras integrales y rehabilitaciones. Solicita un presupuesto y garantizamos el plazo",
+    "h1": "Reformas Integrales en Málaga",
+    "summary": "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+    "score": 7,
+    "tags": [
+      "title-seo",
+      "nav-noise",
+      "too-much-text"
+    ],
+    "frictions": [
+      "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.",
+      "Hay muchísimo texto en la página y la jerarquía se vuelve pesada para convertir."
+    ],
+    "metrics": {
+      "forms": 1,
+      "tel_links": 0,
+      "whatsapp_links": 0,
+      "nav_links": 18,
+      "word_count": 1659,
+      "html_kb": 205.4,
+      "load_seconds": 0.23,
+      "viewport": true,
+      "cta_links": 4
+    }
+  },
+  {
+    "index": 8,
+    "url": "https://santosreformas.com/sobre-nosotros/",
+    "status": "HTTP 200",
+    "final_url": "https://santosreformas.com/sobre-nosotros/",
+    "title": "Sobre Nosotros - Santos Reformas",
+    "description": "Sin meta description clara",
+    "h1": "Sin H1 claro",
+    "summary": "La propuesta principal no queda clara porque no hay un H1 fuerte y reconocible.",
+    "score": 8,
+    "tags": [
+      "no-h1",
+      "no-description",
+      "nav-noise",
+      "non-sales-landing"
+    ],
+    "frictions": [
+      "La propuesta principal no queda clara porque no hay un H1 fuerte y reconocible.",
+      "La meta description está ausente o floja: mala señal de cuidado y menos control del clic.",
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.",
+      "La URL enviada aterriza en una página más informativa que comercial: peor para captar."
+    ],
+    "metrics": {
+      "forms": 0,
+      "tel_links": 0,
+      "whatsapp_links": 0,
+      "nav_links": 12,
+      "word_count": 255,
+      "html_kb": 45.5,
+      "load_seconds": 3.28,
+      "viewport": true,
+      "cta_links": 3
+    }
+  },
+  {
+    "index": 9,
+    "url": "https://reformasgroup.com/",
+    "status": "HTTP 200",
+    "final_url": "https://reformasgroup.es/",
+    "title": "【 Reformas en Málaga - Presupuesto aquí 👈】",
+    "description": "Hemos diseñado un proceso de trabajo claro y organizado en 4 fases para garantizar que tu reforma se desarrolle sin sorpresas y con la máxima calidad.",
+    "h1": "Reformas Málaga | Reformas integrales Málaga - Reformasgroup S.L",
+    "summary": "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.",
+    "score": 5,
+    "tags": [
+      "nav-noise",
+      "too-much-text"
+    ],
+    "frictions": [
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.",
+      "Hay muchísimo texto en la página y la jerarquía se vuelve pesada para convertir."
+    ],
+    "metrics": {
+      "forms": 2,
+      "tel_links": 0,
+      "whatsapp_links": 89,
+      "nav_links": 52,
+      "word_count": 1655,
+      "html_kb": 261.8,
+      "load_seconds": 0.18,
+      "viewport": true,
+      "cta_links": 7
+    }
+  },
+  {
+    "index": 10,
+    "url": "https://hogargo.es/",
+    "status": "Duplicada",
+    "final_url": "https://hogargo.es/",
+    "title": "URL duplicada en la lista",
+    "description": "",
+    "h1": "",
+    "summary": "Esta entrada repite una URL ya auditada.",
+    "score": 0,
+    "tags": [
+      "duplicate"
+    ],
+    "frictions": [
+      "Esta URL ya apareció antes en la posición 3, así que no aporta una auditoría nueva."
+    ],
+    "metrics": {}
+  },
+  {
+    "index": 11,
+    "url": "http://www.introreformas.com/",
+    "status": "HTTP 200",
+    "final_url": "https://introreformas.com/",
+    "title": "Introreformas | Empresa de reformas en Murcia",
+    "description": "Si estas buscando tu empresa de reformas en Murcia, déjanos hacer realidad tus ilusiones y ayudarte a disfrutar de un resultado acorde a tus expectativas.",
+    "h1": "Ver nuestros últimos",
+    "summary": "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+    "score": 2,
+    "tags": [
+      "title-seo"
+    ],
+    "frictions": [
+      "El título parece más pensado para SEO que para convencer: suena genérico o recargado."
+    ],
+    "metrics": {
+      "forms": 0,
+      "tel_links": 0,
+      "whatsapp_links": 0,
+      "nav_links": 4,
+      "word_count": 411,
+      "html_kb": 127.3,
+      "load_seconds": 0.21,
+      "viewport": true,
+      "cta_links": 1
+    }
+  },
+  {
+    "index": 12,
+    "url": "https://www.reformister.com/",
+    "status": "HTTP 200",
+    "final_url": "https://www.reformister.com/",
+    "title": "Reformas, Construcción y Rehabilitación en Murcia - REFORMISTER",
+    "description": "REFORMISTER, Empresa Constructora y de Reformas en Murcia, ofrece presupuesto totalmente GRATIS, SIN COMPROMISO y en menos de 48 HORAS. Reformas Integrales.",
+    "h1": "Empresa de Construcción y Reformas en Murcia",
+    "summary": "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.",
+    "score": 5,
+    "tags": [
+      "nav-noise",
+      "too-much-text"
+    ],
+    "frictions": [
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.",
+      "Hay muchísimo texto en la página y la jerarquía se vuelve pesada para convertir."
+    ],
+    "metrics": {
+      "forms": 0,
+      "tel_links": 0,
+      "whatsapp_links": 1,
+      "nav_links": 16,
+      "word_count": 1670,
+      "html_kb": 159.8,
+      "load_seconds": 0.11,
+      "viewport": true,
+      "cta_links": 14
+    }
+  },
+  {
+    "index": 13,
+    "url": "https://studio4contract.es/",
+    "status": "HTTP 200",
+    "final_url": "https://studio4contract.es/",
+    "title": "Reformas Integrales en Murcia | Studio4Contract",
+    "description": "En Studio4Contract realizamos reformas integrales en Murcia combinando interiorismo, arquitectura y obras nuevas para crear espacios únicos.",
+    "h1": "REFORMAS INTEGRALES EN MURCIA",
+    "summary": "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.",
+    "score": 2,
+    "tags": [
+      "nav-noise"
+    ],
+    "frictions": [
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto."
+    ],
+    "metrics": {
+      "forms": 1,
+      "tel_links": 3,
+      "whatsapp_links": 0,
+      "nav_links": 30,
+      "word_count": 820,
+      "html_kb": 172.3,
+      "load_seconds": 0.18,
+      "viewport": true,
+      "cta_links": 6
+    }
+  },
+  {
+    "index": 14,
+    "url": "https://todoreformasmurcia.es/",
+    "status": "HTTP 200",
+    "final_url": "https://todoreformasmurcia.es/",
+    "title": "▷ Empresa de reformas en Murcia - Todo Reformas Murcia",
+    "description": "Empresa de reformas en Murcia Capital. ✅Reformas de integrales, reformas de viviendas, cocinas, reformas de baños, reformas generales ☎️644 53 50 65",
+    "h1": "REFORMAS MURCIA",
+    "summary": "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+    "score": 4,
+    "tags": [
+      "title-seo",
+      "phone-only"
+    ],
+    "frictions": [
+      "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+      "Se apoya demasiado en llamar por teléfono y no tanto en un formulario o CTA más cómodo."
+    ],
+    "metrics": {
+      "forms": 0,
+      "tel_links": 2,
+      "whatsapp_links": 0,
+      "nav_links": 8,
+      "word_count": 955,
+      "html_kb": 187.4,
+      "load_seconds": 0.18,
+      "viewport": true,
+      "cta_links": 5
+    }
+  },
+  {
+    "index": 15,
+    "url": "https://reformasoviedo.site/",
+    "status": "HTTP 200",
+    "final_url": "https://reformasoviedo.site/",
+    "title": "Reformas integrales en Oviedo con oviedorenova | OVIEDORENOVA",
+    "description": "En oviedorenova transformamos tu hogar en Oviedo con reformas integrales y personalizadas que se adaptan a tus necesidades y estilo.",
+    "h1": "Reformas integrales en Oviedo",
+    "summary": "El dominio suena muy SEO o poco marca: resta memorabilidad y confianza percibida.",
+    "score": 2,
+    "tags": [
+      "seo-domain"
+    ],
+    "frictions": [
+      "El dominio suena muy SEO o poco marca: resta memorabilidad y confianza percibida."
+    ],
+    "metrics": {
+      "forms": 2,
+      "tel_links": 0,
+      "whatsapp_links": 0,
+      "nav_links": 8,
+      "word_count": 152,
+      "html_kb": 163.6,
+      "load_seconds": 0.65,
+      "viewport": true,
+      "cta_links": 2
+    }
+  },
+  {
+    "index": 16,
+    "url": "http://reformasfenoy.com/",
+    "status": "HTTP 200",
+    "final_url": "https://reformasfenoy.com/",
+    "title": "Obras y Reformas Fenoy | Expertos en Reformas Integrales, Cocinas y Baños",
+    "description": "Descubre soluciones a medida en Reformas Fenoy para tu hogar o negocio. Especialistas en reformas de cocinas, baños y proyectos integrales. ¡Transformamos tus espacios!",
+    "h1": "Empresa de reformas en Oviedo",
+    "summary": "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+    "score": 2,
+    "tags": [
+      "title-seo"
+    ],
+    "frictions": [
+      "El título parece más pensado para SEO que para convencer: suena genérico o recargado."
+    ],
+    "metrics": {
+      "forms": 0,
+      "tel_links": 0,
+      "whatsapp_links": 0,
+      "nav_links": 0,
+      "word_count": 438,
+      "html_kb": 147.4,
+      "load_seconds": 3.65,
+      "viewport": true,
+      "cta_links": 4
+    }
+  },
+  {
+    "index": 17,
+    "url": "https://proyectovio.es/",
+    "status": "HTTP 200",
+    "final_url": "https://proyectovio.es/",
+    "title": "Reformas integrales de calidad en Oviedo - Proyecto VIO",
+    "description": "Nuestras reformas integrales de calidad en Oviedo. Reformas a medida en Oviedo con las mejores marcas, materiales, profesionales y diseños. Proyecto VIO Asturias.",
+    "h1": "Reformas Oviedo",
+    "summary": "Se apoya demasiado en llamar por teléfono y no tanto en un formulario o CTA más cómodo.",
+    "score": 4,
+    "tags": [
+      "phone-only",
+      "nav-noise"
+    ],
+    "frictions": [
+      "Se apoya demasiado en llamar por teléfono y no tanto en un formulario o CTA más cómodo.",
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto."
+    ],
+    "metrics": {
+      "forms": 0,
+      "tel_links": 5,
+      "whatsapp_links": 0,
+      "nav_links": 14,
+      "word_count": 886,
+      "html_kb": 206.4,
+      "load_seconds": 1.72,
+      "viewport": true,
+      "cta_links": 7
+    }
+  },
+  {
+    "index": 18,
+    "url": "https://reformasemi.com/",
+    "status": "HTTP 200",
+    "final_url": "https://reformasemi.wordpress.com/",
+    "title": "REFORMAS EMI – Reformas presonalizadas con el mejor servicio y coste",
+    "description": "Reformas presonalizadas con el mejor servicio y coste",
+    "h1": "Sin H1 claro",
+    "summary": "La propuesta principal no queda clara porque no hay un H1 fuerte y reconocible.",
+    "score": 5,
+    "tags": [
+      "no-h1",
+      "title-seo"
+    ],
+    "frictions": [
+      "La propuesta principal no queda clara porque no hay un H1 fuerte y reconocible.",
+      "El título parece más pensado para SEO que para convencer: suena genérico o recargado."
+    ],
+    "metrics": {
+      "forms": 1,
+      "tel_links": 2,
+      "whatsapp_links": 0,
+      "nav_links": 0,
+      "word_count": 218,
+      "html_kb": 102.2,
+      "load_seconds": 0.06,
+      "viewport": true,
+      "cta_links": 0
+    }
+  },
+  {
+    "index": 19,
+    "url": "http://reformaspd.es/",
+    "status": "HTTP 200",
+    "final_url": "https://reformaspd.wixsite.com/reformaspd",
+    "title": "Inicio | Reformas PD",
+    "description": "Sin meta description clara",
+    "h1": "REFORMAS PD",
+    "summary": "Aspecto de plantilla y exceso SEO: transmite menos confianza de marca.",
+    "score": 7,
+    "tags": [
+      "wix",
+      "no-description",
+      "heavy-html"
+    ],
+    "frictions": [
+      "Se percibe como Wix/plantilla: resta autoridad y da sensación de negocio menos consolidado.",
+      "La meta description está ausente o floja: mala señal de cuidado y menos control del clic.",
+      "La home es muy pesada en HTML/contenido: suele ir ligada a sensación de web saturada."
+    ],
+    "metrics": {
+      "forms": 2,
+      "tel_links": 0,
+      "whatsapp_links": 0,
+      "nav_links": 4,
+      "word_count": 352,
+      "html_kb": 587.6,
+      "load_seconds": 0.13,
+      "viewport": true,
+      "cta_links": 1
+    }
+  },
+  {
+    "index": 20,
+    "url": "http://carfsan.es/",
+    "status": "HTTP 200",
+    "final_url": "https://carfsan.es/",
+    "title": "Inicio - Reformas Carfsan",
+    "description": "Sin meta description clara",
+    "h1": "Reformas Carfsan",
+    "summary": "La meta description está ausente o floja: mala señal de cuidado y menos control del clic.",
+    "score": 5,
+    "tags": [
+      "no-description",
+      "phone-only",
+      "nav-noise"
+    ],
+    "frictions": [
+      "La meta description está ausente o floja: mala señal de cuidado y menos control del clic.",
+      "Se apoya demasiado en llamar por teléfono y no tanto en un formulario o CTA más cómodo.",
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto."
+    ],
+    "metrics": {
+      "forms": 0,
+      "tel_links": 3,
+      "whatsapp_links": 0,
+      "nav_links": 11,
+      "word_count": 352,
+      "html_kb": 135.3,
+      "load_seconds": 0.77,
+      "viewport": true,
+      "cta_links": 2
+    }
+  },
+  {
+    "index": 21,
+    "url": "https://reformasgesnort.es/",
+    "status": "HTTP 200",
+    "final_url": "https://reformasgesnort.es/",
+    "title": "GESNORT – Empresa de reformas en Oviedo | Reformas Gesnort",
+    "description": "Sin meta description clara",
+    "h1": "¡Bienvenidos a Gesnort!",
+    "summary": "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+    "score": 5,
+    "tags": [
+      "title-seo",
+      "no-description",
+      "nav-noise"
+    ],
+    "frictions": [
+      "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+      "La meta description está ausente o floja: mala señal de cuidado y menos control del clic.",
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto."
+    ],
+    "metrics": {
+      "forms": 0,
+      "tel_links": 2,
+      "whatsapp_links": 1,
+      "nav_links": 10,
+      "word_count": 367,
+      "html_kb": 95.1,
+      "load_seconds": 2.45,
+      "viewport": true,
+      "cta_links": 2
+    }
+  },
+  {
+    "index": 22,
+    "url": "https://reformasperformance.es/",
+    "status": "HTTP 200",
+    "final_url": "https://reformasperformance.es/",
+    "title": "Reformas en Oviedo - Performance Construcciones",
+    "description": "Bienvenido a Performance Construcciones, tu empresa de reformas y construcciones en Oviedo. Descubre nuestros servicios de alta calidad y transforma tu hogar.",
+    "h1": "Performance Construcciones",
+    "summary": "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.",
+    "score": 2,
+    "tags": [
+      "nav-noise"
+    ],
+    "frictions": [
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto."
+    ],
+    "metrics": {
+      "forms": 1,
+      "tel_links": 3,
+      "whatsapp_links": 0,
+      "nav_links": 26,
+      "word_count": 1014,
+      "html_kb": 185.8,
+      "load_seconds": 0.15,
+      "viewport": true,
+      "cta_links": 2
+    }
+  },
+  {
+    "index": 23,
+    "url": "http://www.grupojjg.es/",
+    "status": "HTTP 200",
+    "final_url": "https://grupojjg.es/",
+    "title": "Grupo JJG - Reformas integrales Mallorca - Reformas Mallorca - Grupo JJG",
+    "description": "Grupo JJG soluciones eléctricas | Reformas integrales y proyectos en Mallorca",
+    "h1": "Reformas Mallorca",
+    "summary": "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+    "score": 4,
+    "tags": [
+      "title-seo",
+      "nav-noise"
+    ],
+    "frictions": [
+      "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto."
+    ],
+    "metrics": {
+      "forms": 3,
+      "tel_links": 1,
+      "whatsapp_links": 0,
+      "nav_links": 67,
+      "word_count": 1123,
+      "html_kb": 201.5,
+      "load_seconds": 0.14,
+      "viewport": true,
+      "cta_links": 5
+    }
+  },
+  {
+    "index": 24,
+    "url": "https://www.serviciosintegralespalma.com/",
+    "status": "HTTP 200",
+    "final_url": "https://www.serviciosintegralespalma.com/",
+    "title": "Servicios Integrales Palma | Servicios Integrales Palma",
+    "description": "Sin meta description clara",
+    "h1": "SERVICIOS INTEGRALES",
+    "summary": "La meta description está ausente o floja: mala señal de cuidado y menos control del clic.",
+    "score": 1,
+    "tags": [
+      "no-description"
+    ],
+    "frictions": [
+      "La meta description está ausente o floja: mala señal de cuidado y menos control del clic."
+    ],
+    "metrics": {
+      "forms": 1,
+      "tel_links": 2,
+      "whatsapp_links": 2,
+      "nav_links": 3,
+      "word_count": 340,
+      "html_kb": 192.6,
+      "load_seconds": 1.65,
+      "viewport": true,
+      "cta_links": 2
+    }
+  },
+  {
+    "index": 25,
+    "url": "http://reformasmigo.com/",
+    "status": "Error",
+    "final_url": "http://reformasmigo.com/",
+    "title": "No se pudo analizar automáticamente",
+    "description": "",
+    "h1": "",
+    "summary": "Hay un problema técnico o de acceso que ya genera fricción antes de vender.",
+    "score": 6,
+    "tags": [
+      "error",
+      "http"
+    ],
+    "frictions": [
+      "No se ha podido cargar correctamente: ConnectionError."
+    ],
+    "metrics": {}
+  },
+  {
+    "index": 26,
+    "url": "https://xn--reformasbaoscocinaspamplona-yuc.com/",
+    "status": "HTTP 200",
+    "final_url": "https://xn--reformasbaoscocinaspamplona-yuc.com/",
+    "title": "Reformas de baños cocinas - Reformas fáciles de todo el hogar",
+    "description": "Sin meta description clara",
+    "h1": "Diseñamos la cocina y/o el baño de tus sueños",
+    "summary": "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+    "score": 10,
+    "tags": [
+      "title-seo",
+      "no-description",
+      "phone-only",
+      "too-much-text",
+      "seo-domain"
+    ],
+    "frictions": [
+      "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+      "La meta description está ausente o floja: mala señal de cuidado y menos control del clic.",
+      "Se apoya demasiado en llamar por teléfono y no tanto en un formulario o CTA más cómodo.",
+      "Hay muchísimo texto en la página y la jerarquía se vuelve pesada para convertir."
+    ],
+    "metrics": {
+      "forms": 0,
+      "tel_links": 1,
+      "whatsapp_links": 0,
+      "nav_links": 4,
+      "word_count": 2116,
+      "html_kb": 389.0,
+      "load_seconds": 1.75,
+      "viewport": true,
+      "cta_links": 1
+    }
+  },
+  {
+    "index": 27,
+    "url": "https://www.reformasrodero.es/",
+    "status": "HTTP 200",
+    "final_url": "https://reformasrodero.es/",
+    "title": "Reformas en Pamplona | Reformas Integrales, Cocinas y Baños",
+    "description": "Reformas Rodero: especialistas en reformas integrales, cocinas, baños, gran formato y eficiencia energética en Pamplona y comarca.",
+    "h1": "BIENVENIDOS A REFORMAS RODERO",
+    "summary": "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+    "score": 6,
+    "tags": [
+      "title-seo",
+      "nav-noise",
+      "heavy-html"
+    ],
+    "frictions": [
+      "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.",
+      "La home es muy pesada en HTML/contenido: suele ir ligada a sensación de web saturada."
+    ],
+    "metrics": {
+      "forms": 2,
+      "tel_links": 4,
+      "whatsapp_links": 0,
+      "nav_links": 17,
+      "word_count": 857,
+      "html_kb": 4077.5,
+      "load_seconds": 2.56,
+      "viewport": true,
+      "cta_links": 3
+    }
+  },
+  {
+    "index": 28,
+    "url": "https://certireformas.es/",
+    "status": "HTTP 200",
+    "final_url": "https://certireformas.es/",
+    "title": "Reformas Integrales en Madrid | Garantía y Precios Cerrados",
+    "description": "Expertos en Reformas Integrales Madrid: diseño y calidad premium al mejor precio. Aumenta el valor de tu vivienda. Llámanos para presupuesto y diseño 3D.",
+    "h1": "Reformas Integrales en Madrid: Proyectos Llave en Mano y Garantía",
+    "summary": "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.",
+    "score": 2,
+    "tags": [
+      "nav-noise"
+    ],
+    "frictions": [
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto."
+    ],
+    "metrics": {
+      "forms": 1,
+      "tel_links": 2,
+      "whatsapp_links": 0,
+      "nav_links": 18,
+      "word_count": 1032,
+      "html_kb": 331.4,
+      "load_seconds": 0.17,
+      "viewport": true,
+      "cta_links": 6
+    }
+  },
+  {
+    "index": 29,
+    "url": "http://gruporeforma.es/",
+    "status": "HTTP 200",
+    "final_url": "https://gruporeforma.es/",
+    "title": "▷ Empresa de Reformas en General en Madrid | Grupo Reforma",
+    "description": "¿Qué ofrecemos como empresa de reformas en general en Madrid? -Amplia experiencia:✅ -Atención personalizada:✅ -Servicio integral:✅ -Máxima satisfacción del cliente:✅ ¡Llama YA!☎️",
+    "h1": "Reformas en General en Madrid",
+    "summary": "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+    "score": 4,
+    "tags": [
+      "title-seo",
+      "nav-noise"
+    ],
+    "frictions": [
+      "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto."
+    ],
+    "metrics": {
+      "forms": 3,
+      "tel_links": 1,
+      "whatsapp_links": 0,
+      "nav_links": 12,
+      "word_count": 1568,
+      "html_kb": 217.0,
+      "load_seconds": 0.23,
+      "viewport": true,
+      "cta_links": 10
+    }
+  },
+  {
+    "index": 30,
+    "url": "https://presupuestosdereformasensalamanca.es/",
+    "status": "HTTP 200",
+    "final_url": "https://presupuestosdereformasensalamanca.es/",
+    "title": "Reformas Iglesias Salamanca | Reformas Integrales y Construcción de Chalets",
+    "description": "Empresa de reformas en Salamanca. Expertos en reformas integrales, construcción de chalets y presupuestos a medida. Garantía total. Contacta ahora: 662 645 118",
+    "h1": "Construyendo Tus Sueños",
+    "summary": "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+    "score": 2,
+    "tags": [
+      "title-seo"
+    ],
+    "frictions": [
+      "El título parece más pensado para SEO que para convencer: suena genérico o recargado."
+    ],
+    "metrics": {
+      "forms": 2,
+      "tel_links": 1,
+      "whatsapp_links": 1,
+      "nav_links": 0,
+      "word_count": 276,
+      "html_kb": 42.7,
+      "load_seconds": 0.3,
+      "viewport": true,
+      "cta_links": 1
+    }
+  },
+  {
+    "index": 31,
+    "url": "http://www.luxurydesign.es/",
+    "status": "HTTP 200",
+    "final_url": "https://www.luxurydesign.es/",
+    "title": "Inicio - Reformas Salamanca, Decoración Salamanca, Empresa de construcción Salamanca",
+    "description": "Empresa de reformas, interiorismo, tienda de decoración, venta directa en decoración. Muebles a medida",
+    "h1": "Sin H1 claro",
+    "summary": "No aparece viewport móvil claro: riesgo serio de mala experiencia en teléfono.",
+    "score": 9,
+    "tags": [
+      "no-mobile-meta",
+      "no-h1",
+      "title-seo"
+    ],
+    "frictions": [
+      "No aparece viewport móvil claro: riesgo serio de mala experiencia en teléfono.",
+      "La propuesta principal no queda clara porque no hay un H1 fuerte y reconocible.",
+      "El título parece más pensado para SEO que para convencer: suena genérico o recargado."
+    ],
+    "metrics": {
+      "forms": 2,
+      "tel_links": 0,
+      "whatsapp_links": 0,
+      "nav_links": 0,
+      "word_count": 166,
+      "html_kb": 66.0,
+      "load_seconds": 0.19,
+      "viewport": false,
+      "cta_links": 1
+    }
+  },
+  {
+    "index": 32,
+    "url": "https://reformalitas.es/",
+    "status": "HTTP 200",
+    "final_url": "https://reformalitas.es/",
+    "title": "Reformálitas – reformas a medida – Especialistas en reformas integrales. Te damos el control para una reforma sin sorpresas.",
+    "description": "Sin meta description clara",
+    "h1": "Reformas integrales sin complicaciones",
+    "summary": "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+    "score": 5,
+    "tags": [
+      "title-seo",
+      "no-description",
+      "nav-noise"
+    ],
+    "frictions": [
+      "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+      "La meta description está ausente o floja: mala señal de cuidado y menos control del clic.",
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto."
+    ],
+    "metrics": {
+      "forms": 0,
+      "tel_links": 0,
+      "whatsapp_links": 0,
+      "nav_links": 43,
+      "word_count": 737,
+      "html_kb": 135.3,
+      "load_seconds": 0.72,
+      "viewport": true,
+      "cta_links": 5
+    }
+  },
+  {
+    "index": 33,
+    "url": "http://www.vesvinreformas.com/",
+    "status": "HTTP 200",
+    "final_url": "https://www.vesvinreformas.com/",
+    "title": "Reformas Integrales | Vesvin Reformas | Comunidad de Madrid",
+    "description": "Reformas integrales o parciales en toda la comunidad de Madrid. presupuestos gratuitos para vivienda y locales comerciales al mejor precio y calidad. trabajo con garantia de un año",
+    "h1": "BIENVENIDO A VESVIN REFORMAS",
+    "summary": "Aspecto de plantilla y exceso SEO: transmite menos confianza de marca.",
+    "score": 6,
+    "tags": [
+      "wix",
+      "title-seo"
+    ],
+    "frictions": [
+      "Se percibe como Wix/plantilla: resta autoridad y da sensación de negocio menos consolidado.",
+      "El título parece más pensado para SEO que para convencer: suena genérico o recargado."
+    ],
+    "metrics": {
+      "forms": 1,
+      "tel_links": 1,
+      "whatsapp_links": 0,
+      "nav_links": 5,
+      "word_count": 230,
+      "html_kb": 462.9,
+      "load_seconds": 0.11,
+      "viewport": true,
+      "cta_links": 1
+    }
+  },
+  {
+    "index": 34,
+    "url": "http://www.reformasreis.com/",
+    "status": "HTTP 200",
+    "final_url": "http://www.reformasreis.com/",
+    "title": "REFORMAS REIS",
+    "description": "Sin meta description clara",
+    "h1": "REFORMAS REIS",
+    "summary": "La URL inicial entra por HTTP: transmite menos confianza y sensación de web antigua.",
+    "score": 7,
+    "tags": [
+      "http",
+      "no-mobile-meta",
+      "no-description"
+    ],
+    "frictions": [
+      "La URL inicial entra por HTTP: transmite menos confianza y sensación de web antigua.",
+      "No aparece viewport móvil claro: riesgo serio de mala experiencia en teléfono.",
+      "La meta description está ausente o floja: mala señal de cuidado y menos control del clic."
+    ],
+    "metrics": {
+      "forms": 1,
+      "tel_links": 0,
+      "whatsapp_links": 0,
+      "nav_links": 0,
+      "word_count": 120,
+      "html_kb": 26.7,
+      "load_seconds": 0.19,
+      "viewport": false,
+      "cta_links": 1
+    }
+  },
+  {
+    "index": 35,
+    "url": "https://instagram.com/grupofp_tenerife?utm_medium=copy_link",
+    "status": "HTTP 200",
+    "final_url": "https://www.instagram.com/grupofp_tenerife?utm_medium=copy_link",
+    "title": "Instagram",
+    "description": "Sin meta description clara",
+    "h1": "Sin H1 claro",
+    "summary": "Dependencia de perfil social: cuesta convertir y controlar la captación.",
+    "score": 15,
+    "tags": [
+      "social",
+      "no-h1",
+      "no-description",
+      "weak-cta",
+      "heavy-html"
+    ],
+    "frictions": [
+      "No es una web propia sino un perfil social: peor control de captación, marca y analítica.",
+      "Depender de Facebook o Instagram mete fricción para pedir presupuesto y da menos imagen de empresa estructurada.",
+      "La propuesta principal no queda clara porque no hay un H1 fuerte y reconocible.",
+      "La meta description está ausente o floja: mala señal de cuidado y menos control del clic."
+    ],
+    "metrics": {
+      "forms": 0,
+      "tel_links": 0,
+      "whatsapp_links": 0,
+      "nav_links": 0,
+      "word_count": 1,
+      "html_kb": 764.4,
+      "load_seconds": 0.27,
+      "viewport": true,
+      "cta_links": 0
+    }
+  },
+  {
+    "index": 36,
+    "url": "http://reforcasa.net/",
+    "status": "HTTP 200",
+    "final_url": "https://reforcasa.net/",
+    "title": "REFORCASA | Reformas en general ☎️ • 【696 085 446】",
+    "description": "Reforcasa es una empresa de reformas de Santa Cruz de Tenerife y nos ponemos a tu disposición para llevar a cabo todo tipo de obras",
+    "h1": "Empresa de reformas en Santa Cruz de Tenerife",
+    "summary": "Web operativa con menos fricciones visibles que la media del sector.",
+    "score": 0,
+    "tags": [],
+    "frictions": [
+      "No se detectaron fricciones automáticas claras en esta pasada."
+    ],
+    "metrics": {
+      "forms": 2,
+      "tel_links": 3,
+      "whatsapp_links": 0,
+      "nav_links": 8,
+      "word_count": 683,
+      "html_kb": 50.3,
+      "load_seconds": 0.35,
+      "viewport": true,
+      "cta_links": 1
+    }
+  },
+  {
+    "index": 37,
+    "url": "https://reformasvlchome.com/",
+    "status": "HTTP 200",
+    "final_url": "https://reformasvlchome.com/",
+    "title": "Reformas en Santa Cruz de Tenerife | Reformas VLC Home",
+    "description": "Más de 10 años ofreciendo soluciones de calidad como empresa especializada en reformas integrales Santa Cruz de Tenerife. Contáctanos.",
+    "h1": "Sin H1 claro",
+    "summary": "La propuesta principal no queda clara porque no hay un H1 fuerte y reconocible.",
+    "score": 9,
+    "tags": [
+      "no-h1",
+      "title-seo",
+      "phone-only",
+      "nav-noise"
+    ],
+    "frictions": [
+      "La propuesta principal no queda clara porque no hay un H1 fuerte y reconocible.",
+      "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+      "Se apoya demasiado en llamar por teléfono y no tanto en un formulario o CTA más cómodo.",
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto."
+    ],
+    "metrics": {
+      "forms": 0,
+      "tel_links": 2,
+      "whatsapp_links": 0,
+      "nav_links": 13,
+      "word_count": 682,
+      "html_kb": 147.7,
+      "load_seconds": 1.88,
+      "viewport": true,
+      "cta_links": 2
+    }
+  },
+  {
+    "index": 38,
+    "url": "https://www.vamat-slu.com/",
+    "status": "HTTP 200",
+    "final_url": "https://www.vamat-slu.com/",
+    "title": "Reformas integrales | Vamat | Santa Cruz de Tenerife",
+    "description": "Vamat Reformas integrales, Obra nueva, arquitectura e interiorismo en Tenerife",
+    "h1": "EL ESTUDIO",
+    "summary": "La home es muy pesada en HTML/contenido: suele ir ligada a sensación de web saturada.",
+    "score": 2,
+    "tags": [
+      "heavy-html"
+    ],
+    "frictions": [
+      "La home es muy pesada en HTML/contenido: suele ir ligada a sensación de web saturada."
+    ],
+    "metrics": {
+      "forms": 1,
+      "tel_links": 0,
+      "whatsapp_links": 0,
+      "nav_links": 9,
+      "word_count": 624,
+      "html_kb": 1068.6,
+      "load_seconds": 0.09,
+      "viewport": true,
+      "cta_links": 1
+    }
+  },
+  {
+    "index": 39,
+    "url": "https://www.facebook.com/SIPIcan-SL-362313183882534/",
+    "status": "HTTP 400",
+    "final_url": "https://www.facebook.com/SIPIcan-SL-362313183882534/",
+    "title": "Error",
+    "description": "Sin meta description clara",
+    "h1": "Sorry, something went wrong.",
+    "summary": "Dependencia de perfil social: cuesta convertir y controlar la captación.",
+    "score": 19,
+    "tags": [
+      "social",
+      "no-mobile-meta",
+      "no-description",
+      "weak-cta",
+      "error"
+    ],
+    "frictions": [
+      "La web responde con estado 400: ya hay fricción técnica de entrada.",
+      "No es una web propia sino un perfil social: peor control de captación, marca y analítica.",
+      "Depender de Facebook o Instagram mete fricción para pedir presupuesto y da menos imagen de empresa estructurada.",
+      "No aparece viewport móvil claro: riesgo serio de mala experiencia en teléfono.",
+      "La meta description está ausente o floja: mala señal de cuidado y menos control del clic."
+    ],
+    "metrics": {
+      "forms": 0,
+      "tel_links": 0,
+      "whatsapp_links": 0,
+      "nav_links": 0,
+      "word_count": 23,
+      "html_kb": 1.5,
+      "load_seconds": 0.18,
+      "viewport": false,
+      "cta_links": 0
+    }
+  },
+  {
+    "index": 40,
+    "url": "http://www.redidecoracion.com/",
+    "status": "HTTP 200",
+    "final_url": "https://redidecoracion.com/",
+    "title": "REDI – Reformas y Decoración en Santander",
+    "description": "Sin meta description clara",
+    "h1": "REDI",
+    "summary": "La meta description está ausente o floja: mala señal de cuidado y menos control del clic.",
+    "score": 3,
+    "tags": [
+      "no-description",
+      "phone-only"
+    ],
+    "frictions": [
+      "La meta description está ausente o floja: mala señal de cuidado y menos control del clic.",
+      "Se apoya demasiado en llamar por teléfono y no tanto en un formulario o CTA más cómodo."
+    ],
+    "metrics": {
+      "forms": 0,
+      "tel_links": 2,
+      "whatsapp_links": 0,
+      "nav_links": 7,
+      "word_count": 557,
+      "html_kb": 89.4,
+      "load_seconds": 0.32,
+      "viewport": true,
+      "cta_links": 3
+    }
+  },
+  {
+    "index": 41,
+    "url": "https://reformascantabria.pro/",
+    "status": "HTTP 200",
+    "final_url": "https://reformascantabria.pro/",
+    "title": "🏠 Reformas Integrales Cantabria | Trabajos de calidad y barato",
+    "description": "Si estas buscando Reformas Integrales Cantabria, somos tu empresa. ✅ Trabajos de calidad y económicos. Entra y pide tu presupuesto gratis.",
+    "h1": "Reformas Integrales Cantabria",
+    "summary": "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.",
+    "score": 7,
+    "tags": [
+      "nav-noise",
+      "too-much-text",
+      "seo-domain"
+    ],
+    "frictions": [
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.",
+      "Hay muchísimo texto en la página y la jerarquía se vuelve pesada para convertir.",
+      "El dominio suena muy SEO o poco marca: resta memorabilidad y confianza percibida."
+    ],
+    "metrics": {
+      "forms": 2,
+      "tel_links": 6,
+      "whatsapp_links": 0,
+      "nav_links": 68,
+      "word_count": 2441,
+      "html_kb": 187.1,
+      "load_seconds": 2.17,
+      "viewport": true,
+      "cta_links": 6
+    }
+  },
+  {
+    "index": 42,
+    "url": "https://rentasycapitales.es/",
+    "status": "HTTP 200",
+    "final_url": "https://www.rentasycapitales.es/",
+    "title": "Inmobiliaria en Cantabria - Rentas y Capitales",
+    "description": "Rentas y Capitales, la mejor inmobiliaria en Cantabria. Especialistas en pisos, casas, locales, garajes en venta y alquiler en Cantabria.",
+    "h1": "Sin H1 claro",
+    "summary": "La propuesta principal no queda clara porque no hay un H1 fuerte y reconocible.",
+    "score": 5,
+    "tags": [
+      "no-h1",
+      "nav-noise"
+    ],
+    "frictions": [
+      "La propuesta principal no queda clara porque no hay un H1 fuerte y reconocible.",
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto."
+    ],
+    "metrics": {
+      "forms": 3,
+      "tel_links": 3,
+      "whatsapp_links": 0,
+      "nav_links": 10,
+      "word_count": 793,
+      "html_kb": 185.9,
+      "load_seconds": 1.35,
+      "viewport": true,
+      "cta_links": 2
+    }
+  },
+  {
+    "index": 43,
+    "url": "http://www.reformayconstruyeinnovatenorte.com/",
+    "status": "Error",
+    "final_url": "http://www.reformayconstruyeinnovatenorte.com/",
+    "title": "No se pudo analizar automáticamente",
+    "description": "",
+    "h1": "",
+    "summary": "Hay un problema técnico o de acceso que ya genera fricción antes de vender.",
+    "score": 6,
+    "tags": [
+      "error",
+      "http"
+    ],
+    "frictions": [
+      "No se ha podido cargar correctamente: ConnectionError."
+    ],
+    "metrics": {}
+  },
+  {
+    "index": 44,
+    "url": "https://dereformasevilla.es/",
+    "status": "HTTP 200",
+    "final_url": "https://dereformasevilla.es/",
+    "title": "▷ DeReformaSevilla - Empresa de Reformas integrales en Sevilla",
+    "description": "I➨ DeReformaSevilla - empresa de Reformas en Sevilla⭐ Cumplimos en tiempo y presupuesto ➡️ Más de 10 años de experiencia con clientes felices",
+    "h1": "Empresa de Reformas en Sevilla",
+    "summary": "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+    "score": 4,
+    "tags": [
+      "title-seo",
+      "nav-noise"
+    ],
+    "frictions": [
+      "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto."
+    ],
+    "metrics": {
+      "forms": 2,
+      "tel_links": 5,
+      "whatsapp_links": 1,
+      "nav_links": 53,
+      "word_count": 1033,
+      "html_kb": 392.3,
+      "load_seconds": 0.22,
+      "viewport": true,
+      "cta_links": 8
+    }
+  },
+  {
+    "index": 45,
+    "url": "https://reformasevillagrupoms.es/",
+    "status": "HTTP 200",
+    "final_url": "https://reformasevillagrupoms.es/",
+    "title": "Reformas Integrales en Sevilla de todo tipo || Grupo Ms",
+    "description": "Reformas Integrales en Sevilla, reforme su hogar o negocio. Suelos, Techos, Carpintería, Iluminación,Saneamientos a precios económicos",
+    "h1": "Reformas Integrales en Sevilla",
+    "summary": "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.",
+    "score": 2,
+    "tags": [
+      "nav-noise"
+    ],
+    "frictions": [
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto."
+    ],
+    "metrics": {
+      "forms": 1,
+      "tel_links": 1,
+      "whatsapp_links": 0,
+      "nav_links": 11,
+      "word_count": 1019,
+      "html_kb": 197.7,
+      "load_seconds": 0.32,
+      "viewport": true,
+      "cta_links": 4
+    }
+  },
+  {
+    "index": 46,
+    "url": "http://www.jrreformas.com/",
+    "status": "HTTP 200",
+    "final_url": "https://www.jrreformas.com/",
+    "title": "Reformas de Lujo en Sevilla | J&R Reformas Exclusivas",
+    "description": "Empresa de Reformas exclusivas en Sevilla de la mano de J&amp;R Reformas Exclusivas, donde somos expertos en todo tipo de obras y construcciones. ¡Llámanos e infórmate!",
+    "h1": "Empresa de Reformas en Sevilla",
+    "summary": "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+    "score": 4,
+    "tags": [
+      "title-seo",
+      "nav-noise"
+    ],
+    "frictions": [
+      "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto."
+    ],
+    "metrics": {
+      "forms": 1,
+      "tel_links": 3,
+      "whatsapp_links": 0,
+      "nav_links": 12,
+      "word_count": 1338,
+      "html_kb": 233.5,
+      "load_seconds": 0.3,
+      "viewport": true,
+      "cta_links": 2
+    }
+  },
+  {
+    "index": 47,
+    "url": "http://mqreformas.es/",
+    "status": "HTTP 200",
+    "final_url": "https://www.mqreformas.es/",
+    "title": "MQ Reformas Sevilla | Empresa de reformas",
+    "description": "Sin meta description clara",
+    "h1": "Reformas Sevilla",
+    "summary": "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+    "score": 7,
+    "tags": [
+      "title-seo",
+      "no-description",
+      "nav-noise",
+      "heavy-html"
+    ],
+    "frictions": [
+      "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+      "La meta description está ausente o floja: mala señal de cuidado y menos control del clic.",
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.",
+      "La home es muy pesada en HTML/contenido: suele ir ligada a sensación de web saturada."
+    ],
+    "metrics": {
+      "forms": 4,
+      "tel_links": 4,
+      "whatsapp_links": 0,
+      "nav_links": 28,
+      "word_count": 963,
+      "html_kb": 1797.1,
+      "load_seconds": 0.74,
+      "viewport": true,
+      "cta_links": 3
+    }
+  },
+  {
+    "index": 48,
+    "url": "https://www.xn--reformasmuoz-jhb.es/",
+    "status": "HTTP 200",
+    "final_url": "https://www.xn--reformasmuoz-jhb.es/",
+    "title": "Reformas Sevilla I Empresa de Reformas en Sevilla",
+    "description": "Reformas Sevilla. Somos una empresa de reformas en Sevilla y provincia. ¿Necesitas hacer una reforma? Solicita presupuesto ☎689252317",
+    "h1": "REFORMAS SEVILLA",
+    "summary": "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+    "score": 9,
+    "tags": [
+      "title-seo",
+      "nav-noise",
+      "too-much-text",
+      "seo-domain"
+    ],
+    "frictions": [
+      "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.",
+      "Hay muchísimo texto en la página y la jerarquía se vuelve pesada para convertir.",
+      "El dominio suena muy SEO o poco marca: resta memorabilidad y confianza percibida."
+    ],
+    "metrics": {
+      "forms": 2,
+      "tel_links": 4,
+      "whatsapp_links": 0,
+      "nav_links": 14,
+      "word_count": 1651,
+      "html_kb": 330.7,
+      "load_seconds": 0.11,
+      "viewport": true,
+      "cta_links": 5
+    }
+  },
+  {
+    "index": 49,
+    "url": "http://www.reformassevilla.info/",
+    "status": "HTTP 200",
+    "final_url": "https://reformassevilla.info/",
+    "title": "Reformas Sevilla - Empresa de Reformas integrales en Sevilla",
+    "description": "Empresa de reformas en Sevilla⭐⭐⭐⭐⭐ Dirección: Residencial Villanueva nº 4Villanueva del Ariscal - 41808Sevilla ☎ 633 52 35 01 ☎",
+    "h1": "Reformas Sevilla",
+    "summary": "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+    "score": 7,
+    "tags": [
+      "title-seo",
+      "nav-noise",
+      "too-much-text"
+    ],
+    "frictions": [
+      "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.",
+      "Hay muchísimo texto en la página y la jerarquía se vuelve pesada para convertir."
+    ],
+    "metrics": {
+      "forms": 2,
+      "tel_links": 3,
+      "whatsapp_links": 0,
+      "nav_links": 14,
+      "word_count": 1747,
+      "html_kb": 78.1,
+      "load_seconds": 1.71,
+      "viewport": true,
+      "cta_links": 3
+    }
+  },
+  {
+    "index": 50,
+    "url": "https://www.reformasensevilla.net/",
+    "status": "HTTP 200",
+    "final_url": "https://www.reformasensevilla.net/",
+    "title": "Reformas Sevilla - REFORMAS SEVILLA",
+    "description": "Reformas Sevilla, manitas, fontaneria, mantenimiento de locales, oficinas, electricidad, cerrajeria, desinfeccion con ozono, vigilacia y control, etc.",
+    "h1": "Reformas Sevilla",
+    "summary": "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+    "score": 2,
+    "tags": [
+      "title-seo"
+    ],
+    "frictions": [
+      "El título parece más pensado para SEO que para convencer: suena genérico o recargado."
+    ],
+    "metrics": {
+      "forms": 0,
+      "tel_links": 2,
+      "whatsapp_links": 1,
+      "nav_links": 9,
+      "word_count": 724,
+      "html_kb": 83.0,
+      "load_seconds": 0.17,
+      "viewport": true,
+      "cta_links": 1
+    }
+  },
+  {
+    "index": 51,
+    "url": "http://www.reformasmelchor.es/",
+    "status": "HTTP 200",
+    "final_url": "https://www.reformasmelchor.es/",
+    "title": "Reformas, Obras y Rehabilitaciones Melchor, en Sevilla desde 1980. Home",
+    "description": "Reformas, Obras y Rehabilitaciones Melchor, Sevilla. Ba�os, Cocinas, reformas del hogar, locales, naves, Comunidades de Propietarios.",
+    "h1": "Sin H1 claro",
+    "summary": "La propuesta principal no queda clara porque no hay un H1 fuerte y reconocible.",
+    "score": 9,
+    "tags": [
+      "no-h1",
+      "title-seo",
+      "phone-only",
+      "nav-noise"
+    ],
+    "frictions": [
+      "La propuesta principal no queda clara porque no hay un H1 fuerte y reconocible.",
+      "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+      "Se apoya demasiado en llamar por teléfono y no tanto en un formulario o CTA más cómodo.",
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto."
+    ],
+    "metrics": {
+      "forms": 0,
+      "tel_links": 1,
+      "whatsapp_links": 0,
+      "nav_links": 10,
+      "word_count": 219,
+      "html_kb": 17.0,
+      "load_seconds": 0.25,
+      "viewport": true,
+      "cta_links": 2
+    }
+  },
+  {
+    "index": 52,
+    "url": "https://www.reiteman.com/?utm_source=si&utm_id=gmb",
+    "status": "HTTP 200",
+    "final_url": "https://www.reiteman.com/?utm_source=si&utm_id=gmb",
+    "title": "Reformas Integrales en Madrid - Reiteman Reformas Profesionales",
+    "description": "Empresa de reformas integrales en Madrid para transformar tu espacio. Expertos en diseño y calidad. Pide tu presupuesto fácil y rápido.",
+    "h1": "Reformas Integrales en Madrid",
+    "summary": "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+    "score": 5,
+    "tags": [
+      "title-seo",
+      "too-much-text"
+    ],
+    "frictions": [
+      "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+      "Hay muchísimo texto en la página y la jerarquía se vuelve pesada para convertir."
+    ],
+    "metrics": {
+      "forms": 3,
+      "tel_links": 4,
+      "whatsapp_links": 0,
+      "nav_links": 0,
+      "word_count": 3528,
+      "html_kb": 368.5,
+      "load_seconds": 0.3,
+      "viewport": true,
+      "cta_links": 7
+    }
+  },
+  {
+    "index": 53,
+    "url": "https://cys-vivebonitoreformasintegrales.com/",
+    "status": "HTTP 200",
+    "final_url": "https://cys-vivebonitoreformasintegrales.com/",
+    "title": "Vive Bonito Reformas | Empresa de reformas integrales en Sevilla",
+    "description": "Con más de 35 años de experiencia, nos especializamos en transformar cada estancia en espacios funcionales. ¡Contáctanos sin compromiso!",
+    "h1": "Sin H1 claro",
+    "summary": "La propuesta principal no queda clara porque no hay un H1 fuerte y reconocible.",
+    "score": 10,
+    "tags": [
+      "no-h1",
+      "title-seo",
+      "nav-noise",
+      "too-much-text"
+    ],
+    "frictions": [
+      "La propuesta principal no queda clara porque no hay un H1 fuerte y reconocible.",
+      "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.",
+      "Hay muchísimo texto en la página y la jerarquía se vuelve pesada para convertir."
+    ],
+    "metrics": {
+      "forms": 5,
+      "tel_links": 8,
+      "whatsapp_links": 6,
+      "nav_links": 26,
+      "word_count": 3874,
+      "html_kb": 349.1,
+      "load_seconds": 4.2,
+      "viewport": true,
+      "cta_links": 10
+    }
+  },
+  {
+    "index": 54,
+    "url": "https://connivelobrasyreformas.es/",
+    "status": "HTTP 200",
+    "final_url": "https://connivelobrasyreformas.es/",
+    "title": "Con nivel obras, reformas y construcciones 🎖 | connivelobrasyreformas.es",
+    "description": "Realizamos cualquier obra, reforma y construcción. Nuestros servicios son: Reformas integrales, reforma cocina, reformar baño y mucho más. 👇",
+    "h1": "Reformas y construcción de pisos en Valencia",
+    "summary": "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+    "score": 4,
+    "tags": [
+      "title-seo",
+      "nav-noise"
+    ],
+    "frictions": [
+      "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto."
+    ],
+    "metrics": {
+      "forms": 2,
+      "tel_links": 2,
+      "whatsapp_links": 1,
+      "nav_links": 18,
+      "word_count": 1081,
+      "html_kb": 157.2,
+      "load_seconds": 9.92,
+      "viewport": true,
+      "cta_links": 6
+    }
+  },
+  {
+    "index": 55,
+    "url": "https://reformasmarcosmym.com/",
+    "status": "HTTP 200",
+    "final_url": "https://reformasmarcosmym.com/",
+    "title": "Reformas en Valencia | Reformas Marcos MyM",
+    "description": "Con 15 años de experiencia en Reformas en Valencia | Seguimos reinventándonos día a día para aumentar sus parámetros de excelencia y calidad.",
+    "h1": "Construcción, Reformas y Proyectos Marcos MyM",
+    "summary": "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+    "score": 4,
+    "tags": [
+      "title-seo",
+      "nav-noise"
+    ],
+    "frictions": [
+      "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto."
+    ],
+    "metrics": {
+      "forms": 2,
+      "tel_links": 2,
+      "whatsapp_links": 0,
+      "nav_links": 28,
+      "word_count": 883,
+      "html_kb": 153.4,
+      "load_seconds": 0.19,
+      "viewport": true,
+      "cta_links": 1
+    }
+  },
+  {
+    "index": 56,
+    "url": "https://cubicup.com/reformas-valencia/?utm_source=google&utm_medium=maps&utm_campaign=seolocal&utm_content=valencia",
+    "status": "HTTP 200",
+    "final_url": "https://cubicup.com/cuanto-cuesta-reforma-integral-valencia/?utm_source=google&utm_medium=maps&utm_campaign=seolocal&utm_content=valencia",
+    "title": "▷ Reformas integrales en Valencia ¿Cuánto cuestan en 2026?",
+    "description": "¿Quieres saber cuánto cuesta una reforma integral en Valencia? En Cubicup te explicamos todo sobre los precios de reformas en Valencia. ¡Entra!",
+    "h1": "Reformas integrales en Valencia ¿Cuánto cuestan?",
+    "summary": "Hay muchísimo texto en la página y la jerarquía se vuelve pesada para convertir.",
+    "score": 3,
+    "tags": [
+      "too-much-text"
+    ],
+    "frictions": [
+      "Hay muchísimo texto en la página y la jerarquía se vuelve pesada para convertir."
+    ],
+    "metrics": {
+      "forms": 2,
+      "tel_links": 1,
+      "whatsapp_links": 2,
+      "nav_links": 8,
+      "word_count": 2029,
+      "html_kb": 161.1,
+      "load_seconds": 0.26,
+      "viewport": true,
+      "cta_links": 3
+    }
+  },
+  {
+    "index": 57,
+    "url": "https://www.geteco.es/",
+    "status": "HTTP 200",
+    "final_url": "https://www.geteco.es/",
+    "title": "▷ Reformas INTEGRALES en Valencia | GETECO",
+    "description": "Empresa de Reformas INTEGRALES Valencia: Reformas completas de pisos, chalets, casas y viviendas de todo tipo. ¡Informáte en GETECO!",
+    "h1": "Reformas integrales en Valencia",
+    "summary": "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.",
+    "score": 2,
+    "tags": [
+      "nav-noise"
+    ],
+    "frictions": [
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto."
+    ],
+    "metrics": {
+      "forms": 1,
+      "tel_links": 2,
+      "whatsapp_links": 0,
+      "nav_links": 10,
+      "word_count": 732,
+      "html_kb": 54.4,
+      "load_seconds": 0.32,
+      "viewport": true,
+      "cta_links": 5
+    }
+  },
+  {
+    "index": 58,
+    "url": "https://www.reformasvalenciardg.es/",
+    "status": "HTTP 200",
+    "final_url": "https://reformasvalenciardg.es/",
+    "title": "Empresa Profesional de Reformas en Valencia - RDG",
+    "description": "RDG la mejor empresa profesional de reformas en Valencia a su servicio. Especialistas en reformas integrales en general.",
+    "h1": "Empresa profesional de reformas en Valencia",
+    "summary": "Se apoya demasiado en llamar por teléfono y no tanto en un formulario o CTA más cómodo.",
+    "score": 4,
+    "tags": [
+      "phone-only",
+      "nav-noise"
+    ],
+    "frictions": [
+      "Se apoya demasiado en llamar por teléfono y no tanto en un formulario o CTA más cómodo.",
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto."
+    ],
+    "metrics": {
+      "forms": 0,
+      "tel_links": 2,
+      "whatsapp_links": 0,
+      "nav_links": 30,
+      "word_count": 1257,
+      "html_kb": 130.9,
+      "load_seconds": 0.83,
+      "viewport": true,
+      "cta_links": 7
+    }
+  },
+  {
+    "index": 59,
+    "url": "http://www.reformasvalenciamj.es/",
+    "status": "HTTP 200",
+    "final_url": "https://reformasvalenciamj.es/",
+    "title": "Home - reformasvalenciamj.es",
+    "description": "Reformas Integrales Valencia, Reformas Valencia hacemos realidad tus sueños. ¿Quieres hacer una reforma integral de tu vivienda?",
+    "h1": "Reformas Valencia M.J",
+    "summary": "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.",
+    "score": 5,
+    "tags": [
+      "nav-noise",
+      "too-much-text"
+    ],
+    "frictions": [
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.",
+      "Hay muchísimo texto en la página y la jerarquía se vuelve pesada para convertir."
+    ],
+    "metrics": {
+      "forms": 1,
+      "tel_links": 10,
+      "whatsapp_links": 0,
+      "nav_links": 17,
+      "word_count": 2555,
+      "html_kb": 207.3,
+      "load_seconds": 0.92,
+      "viewport": true,
+      "cta_links": 11
+    }
+  },
+  {
+    "index": 60,
+    "url": "https://rfcreformas.es/",
+    "status": "HTTP 200",
+    "final_url": "https://rfcreformas.es/",
+    "title": "Reformas Integrales en Valencia | Pide presupuesto",
+    "description": "Somo expertos en reformas integrales en valencia. Hacemos reformas e instalaciones en baños, cocinas, instalaciones eléctricas...",
+    "h1": "RFC | Reformas Integrales en Valencia",
+    "summary": "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.",
+    "score": 5,
+    "tags": [
+      "nav-noise",
+      "too-much-text"
+    ],
+    "frictions": [
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.",
+      "Hay muchísimo texto en la página y la jerarquía se vuelve pesada para convertir."
+    ],
+    "metrics": {
+      "forms": 2,
+      "tel_links": 3,
+      "whatsapp_links": 3,
+      "nav_links": 60,
+      "word_count": 1938,
+      "html_kb": 220.2,
+      "load_seconds": 0.2,
+      "viewport": true,
+      "cta_links": 11
+    }
+  },
+  {
+    "index": 61,
+    "url": "https://reformasintegrales-valencia.com.es/",
+    "status": "HTTP 200",
+    "final_url": "https://reformasintegrales-valencia.com.es/",
+    "title": "Reformas integrales Valencia 🛠️ Reformas integrales baratas",
+    "description": "Reformas integrales Valencia ☎️611 488 701 ⭐ Reformas integrales Valencia baños presupuestos baratas 24 horas",
+    "h1": "REFORMAS INTEGRALES VALENCIA",
+    "summary": "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+    "score": 9,
+    "tags": [
+      "title-seo",
+      "nav-noise",
+      "too-much-text",
+      "seo-domain"
+    ],
+    "frictions": [
+      "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.",
+      "Hay muchísimo texto en la página y la jerarquía se vuelve pesada para convertir.",
+      "El dominio suena muy SEO o poco marca: resta memorabilidad y confianza percibida."
+    ],
+    "metrics": {
+      "forms": 2,
+      "tel_links": 3,
+      "whatsapp_links": 1,
+      "nav_links": 124,
+      "word_count": 2647,
+      "html_kb": 396.3,
+      "load_seconds": 0.28,
+      "viewport": true,
+      "cta_links": 30
+    }
+  },
+  {
+    "index": 62,
+    "url": "https://www.reformasvalencia.es/",
+    "status": "HTTP 200",
+    "final_url": "https://www.reformasvalencia.es/",
+    "title": "Reformas Valencia | Cicerone",
+    "description": "Cicerone Group: Especialistas en reformas integrales, construcción y proyectos singulares en Valencia. Obra nueva, rehabilitación y gestión integral de proyectos.",
+    "h1": "Reformas de calidad en Valencia",
+    "summary": "Se apoya demasiado en llamar por teléfono y no tanto en un formulario o CTA más cómodo.",
+    "score": 4,
+    "tags": [
+      "phone-only",
+      "nav-noise"
+    ],
+    "frictions": [
+      "Se apoya demasiado en llamar por teléfono y no tanto en un formulario o CTA más cómodo.",
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto."
+    ],
+    "metrics": {
+      "forms": 0,
+      "tel_links": 1,
+      "whatsapp_links": 0,
+      "nav_links": 14,
+      "word_count": 519,
+      "html_kb": 99.2,
+      "load_seconds": 1.33,
+      "viewport": true,
+      "cta_links": 4
+    }
+  },
+  {
+    "index": 63,
+    "url": "https://www.todoreformasvalencia.com/",
+    "status": "HTTP 200",
+    "final_url": "https://www.todoreformasvalencia.com/",
+    "title": "Todo Reformas Valencia",
+    "description": "Todo Reformas Valencia, especialistas en reformas integrales de pisos y locales comerciales en Valencia. Llámanos 664 096 346 y pide tu presupuesto.",
+    "h1": "contacto@todoreformasvalencia.com",
+    "summary": "La home es muy pesada en HTML/contenido: suele ir ligada a sensación de web saturada.",
+    "score": 2,
+    "tags": [
+      "heavy-html"
+    ],
+    "frictions": [
+      "La home es muy pesada en HTML/contenido: suele ir ligada a sensación de web saturada."
+    ],
+    "metrics": {
+      "forms": 0,
+      "tel_links": 3,
+      "whatsapp_links": 1,
+      "nav_links": 6,
+      "word_count": 657,
+      "html_kb": 2157.5,
+      "load_seconds": 0.1,
+      "viewport": true,
+      "cta_links": 11
+    }
+  },
+  {
+    "index": 64,
+    "url": "https://profix360.es/",
+    "status": "HTTP 200",
+    "final_url": "https://profix360.es/",
+    "title": "Landing - ProFix360",
+    "description": "Servicios de “manitas” para cualquier reparación o proyecto pequeño, rápidos, confiables y adaptados a tus necesidades.",
+    "h1": "ProFix 360",
+    "summary": "Web operativa con menos fricciones visibles que la media del sector.",
+    "score": 0,
+    "tags": [],
+    "frictions": [
+      "No se detectaron fricciones automáticas claras en esta pasada."
+    ],
+    "metrics": {
+      "forms": 2,
+      "tel_links": 3,
+      "whatsapp_links": 0,
+      "nav_links": 0,
+      "word_count": 244,
+      "html_kb": 100.5,
+      "load_seconds": 0.21,
+      "viewport": true,
+      "cta_links": 2
+    }
+  },
+  {
+    "index": 65,
+    "url": "https://reformasmiguelgarrido.com/",
+    "status": "HTTP 200",
+    "final_url": "https://reformasmiguelgarrido.com/",
+    "title": "Inicio - Reformas Miguel Garrido",
+    "description": "Sin meta description clara",
+    "h1": "Reformas Miguel Garrido",
+    "summary": "La meta description está ausente o floja: mala señal de cuidado y menos control del clic.",
+    "score": 3,
+    "tags": [
+      "no-description",
+      "phone-only"
+    ],
+    "frictions": [
+      "La meta description está ausente o floja: mala señal de cuidado y menos control del clic.",
+      "Se apoya demasiado en llamar por teléfono y no tanto en un formulario o CTA más cómodo."
+    ],
+    "metrics": {
+      "forms": 0,
+      "tel_links": 1,
+      "whatsapp_links": 0,
+      "nav_links": 8,
+      "word_count": 551,
+      "html_kb": 108.4,
+      "load_seconds": 0.37,
+      "viewport": true,
+      "cta_links": 2
+    }
+  },
+  {
+    "index": 66,
+    "url": "https://reformasunion.es/",
+    "status": "HTTP 200",
+    "final_url": "https://reformasunion.es/",
+    "title": "Reformas union - Reformas Unión",
+    "description": "Union Reformas Valladolid Somos una empresa de reformas integrales, nos dedicamos a todo tipo de reformas, como reformas de viviendas, locales, reforma de cocinas y baños, reforma de porches, reforma de casas y chalets, especialistas en reformas rusticas (bodegas, merenderos, etc...) y cualquier tipo de reforma a medida Reformas Integrales llevamos 25 años haciendo reformas",
+    "h1": "Sin H1 claro",
+    "summary": "La propuesta principal no queda clara porque no hay un H1 fuerte y reconocible.",
+    "score": 7,
+    "tags": [
+      "no-h1",
+      "title-seo",
+      "nav-noise"
+    ],
+    "frictions": [
+      "La propuesta principal no queda clara porque no hay un H1 fuerte y reconocible.",
+      "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto."
+    ],
+    "metrics": {
+      "forms": 1,
+      "tel_links": 1,
+      "whatsapp_links": 0,
+      "nav_links": 10,
+      "word_count": 902,
+      "html_kb": 192.2,
+      "load_seconds": 0.21,
+      "viewport": true,
+      "cta_links": 4
+    }
+  },
+  {
+    "index": 67,
+    "url": "https://vallareforma.es/",
+    "status": "Error",
+    "final_url": "https://vallareforma.es/",
+    "title": "No se pudo analizar automáticamente",
+    "description": "",
+    "h1": "",
+    "summary": "Hay un problema técnico o de acceso que ya genera fricción antes de vender.",
+    "score": 6,
+    "tags": [
+      "error"
+    ],
+    "frictions": [
+      "No se ha podido cargar correctamente: ConnectionError."
+    ],
+    "metrics": {}
+  },
+  {
+    "index": 68,
+    "url": "https://reformasvigo.pro/?utm_source=google&utm_medium=organic&utm_campaign=gmb",
+    "status": "HTTP 200",
+    "final_url": "https://reformasvigo.pro/?utm_source=google&utm_medium=organic&utm_campaign=gmb",
+    "title": "Reformas Vigo - Empresa de Reformas Integrales en Vigo",
+    "description": "Reformas de baños, cocinas e integrales baratas, en vigo, precios LOW COST con un 20% de descuento. Presupuesto sin compromiso.",
+    "h1": "EMPRESA Nº1 DE REFORMAS EN VIGO",
+    "summary": "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+    "score": 6,
+    "tags": [
+      "title-seo",
+      "nav-noise",
+      "seo-domain"
+    ],
+    "frictions": [
+      "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.",
+      "El dominio suena muy SEO o poco marca: resta memorabilidad y confianza percibida."
+    ],
+    "metrics": {
+      "forms": 1,
+      "tel_links": 2,
+      "whatsapp_links": 0,
+      "nav_links": 22,
+      "word_count": 719,
+      "html_kb": 102.2,
+      "load_seconds": 0.27,
+      "viewport": true,
+      "cta_links": 4
+    }
+  },
+  {
+    "index": 69,
+    "url": "https://www.facebook.com/share/17epKGLLcG/",
+    "status": "HTTP 400",
+    "final_url": "https://www.facebook.com/share/17epKGLLcG/",
+    "title": "Error",
+    "description": "Sin meta description clara",
+    "h1": "Sorry, something went wrong.",
+    "summary": "Dependencia de perfil social: cuesta convertir y controlar la captación.",
+    "score": 19,
+    "tags": [
+      "social",
+      "no-mobile-meta",
+      "no-description",
+      "weak-cta",
+      "error"
+    ],
+    "frictions": [
+      "La web responde con estado 400: ya hay fricción técnica de entrada.",
+      "No es una web propia sino un perfil social: peor control de captación, marca y analítica.",
+      "Depender de Facebook o Instagram mete fricción para pedir presupuesto y da menos imagen de empresa estructurada.",
+      "No aparece viewport móvil claro: riesgo serio de mala experiencia en teléfono.",
+      "La meta description está ausente o floja: mala señal de cuidado y menos control del clic."
+    ],
+    "metrics": {
+      "forms": 0,
+      "tel_links": 0,
+      "whatsapp_links": 0,
+      "nav_links": 0,
+      "word_count": 23,
+      "html_kb": 1.5,
+      "load_seconds": 0.28,
+      "viewport": false,
+      "cta_links": 0
+    }
+  },
+  {
+    "index": 70,
+    "url": "https://isiobrasyservicios.com/",
+    "status": "HTTP 200",
+    "final_url": "https://isiobrasyservicios.com/",
+    "title": "Reformas en Zaragoza | ISI Obras y Servicios",
+    "description": "Reformas integrales en Zaragoza. ISI obras y servicios: calidad, rapidez y presupuesto sin compromiso. Llámanos: 636 155 847",
+    "h1": "Sin H1 claro",
+    "summary": "La propuesta principal no queda clara porque no hay un H1 fuerte y reconocible.",
+    "score": 5,
+    "tags": [
+      "no-h1",
+      "nav-noise"
+    ],
+    "frictions": [
+      "La propuesta principal no queda clara porque no hay un H1 fuerte y reconocible.",
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto."
+    ],
+    "metrics": {
+      "forms": 0,
+      "tel_links": 4,
+      "whatsapp_links": 1,
+      "nav_links": 21,
+      "word_count": 658,
+      "html_kb": 136.9,
+      "load_seconds": 0.09,
+      "viewport": true,
+      "cta_links": 8
+    }
+  },
+  {
+    "index": 71,
+    "url": "https://kovareformas.es/",
+    "status": "HTTP 200",
+    "final_url": "https://kovareformas.es/",
+    "title": "Empresa de Reformas en Zaragoza | Kova Reformas",
+    "description": "Reformas integrales de alto nivel en Zaragoza. Cocinas, baños, pisos completos y locales comerciales. Presupuesto sin compromiso. Llama al 644 805 935.",
+    "h1": "Tu empresa de reformas en Zaragoza",
+    "summary": "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+    "score": 2,
+    "tags": [
+      "title-seo"
+    ],
+    "frictions": [
+      "El título parece más pensado para SEO que para convencer: suena genérico o recargado."
+    ],
+    "metrics": {
+      "forms": 0,
+      "tel_links": 3,
+      "whatsapp_links": 1,
+      "nav_links": 9,
+      "word_count": 565,
+      "html_kb": 242.7,
+      "load_seconds": 0.3,
+      "viewport": true,
+      "cta_links": 8
+    }
+  },
+  {
+    "index": 72,
+    "url": "http://www.reformandozaragoza.com/",
+    "status": "HTTP 200",
+    "final_url": "https://www.reformandozaragoza.com/",
+    "title": "Reformas integrales Zaragoza",
+    "description": "Pequeña Empresa de reformas integrales en Zaragoza. Especialistas en cocinas, baños y cambios de ventanas. Todos los gremios: Fontanería, pintura, electricidad, carpintería y albañilería. Presupuesto sin compromiso.",
+    "h1": "Reformas integrales Zaragoza",
+    "summary": "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.",
+    "score": 2,
+    "tags": [
+      "nav-noise"
+    ],
+    "frictions": [
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto."
+    ],
+    "metrics": {
+      "forms": 1,
+      "tel_links": 2,
+      "whatsapp_links": 0,
+      "nav_links": 37,
+      "word_count": 801,
+      "html_kb": 31.3,
+      "load_seconds": 0.07,
+      "viewport": true,
+      "cta_links": 5
+    }
+  },
+  {
+    "index": 73,
+    "url": "https://www.zaragozareformas.com/",
+    "status": "HTTP 200",
+    "final_url": "https://zaragozareformas.com/",
+    "title": "Reformas integrales y rehabilitación en Zaragoza | AFP",
+    "description": "AFP Zaragoza es tu opción para reformas integrales y rehabilitación de fachadas. Calidad y compromiso en reformas en Zaragoza. ¡Descúbrenos!",
+    "h1": "REFORMAS AFP ZARAGOZA",
+    "summary": "Se apoya demasiado en llamar por teléfono y no tanto en un formulario o CTA más cómodo.",
+    "score": 4,
+    "tags": [
+      "phone-only",
+      "nav-noise"
+    ],
+    "frictions": [
+      "Se apoya demasiado en llamar por teléfono y no tanto en un formulario o CTA más cómodo.",
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto."
+    ],
+    "metrics": {
+      "forms": 0,
+      "tel_links": 2,
+      "whatsapp_links": 0,
+      "nav_links": 24,
+      "word_count": 707,
+      "html_kb": 208.2,
+      "load_seconds": 0.77,
+      "viewport": true,
+      "cta_links": 3
+    }
+  },
+  {
+    "index": 74,
+    "url": "https://www.reformassyr.es/",
+    "status": "HTTP 200",
+    "final_url": "https://www.reformassyr.es/",
+    "title": "Reformas Integrales en Zaragoza | Empresa Reformas SYR",
+    "description": "Reformas Integrales en Zaragoza de Pisos y Viviendas. Expertos en obras completas personalizadas. Pídenos Presupuesto Gratuito!",
+    "h1": "Reformas Integrales en Zaragoza - Empresa de confianza",
+    "summary": "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+    "score": 5,
+    "tags": [
+      "title-seo",
+      "too-much-text"
+    ],
+    "frictions": [
+      "El título parece más pensado para SEO que para convencer: suena genérico o recargado.",
+      "Hay muchísimo texto en la página y la jerarquía se vuelve pesada para convertir."
+    ],
+    "metrics": {
+      "forms": 1,
+      "tel_links": 5,
+      "whatsapp_links": 1,
+      "nav_links": 8,
+      "word_count": 2154,
+      "html_kb": 232.0,
+      "load_seconds": 0.99,
+      "viewport": true,
+      "cta_links": 5
+    }
+  },
+  {
+    "index": 75,
+    "url": "http://reformaszaragozamorem.com/?utm_source=google&utm_medium=organic&utm_campaign=gmb",
+    "status": "HTTP 200",
+    "final_url": "https://reformaszaragozamorem.com/?utm_source=google&utm_medium=organic&utm_campaign=gmb",
+    "title": "Expertos en Reformas en Zaragoza | Pide tu presupuesto",
+    "description": "En Morem empresa de reformas en Zaragoza realizamos todo tipo de reformas con la máxima calidad y garantía. Llámanos para presupuesto",
+    "h1": "Morem, la empresa de confianza para reformas en Zaragoza",
+    "summary": "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto.",
+    "score": 2,
+    "tags": [
+      "nav-noise"
+    ],
+    "frictions": [
+      "Hay demasiadas opciones de navegación y eso mete ruido antes del contacto."
+    ],
+    "metrics": {
+      "forms": 1,
+      "tel_links": 2,
+      "whatsapp_links": 0,
+      "nav_links": 34,
+      "word_count": 1165,
+      "html_kb": 161.0,
+      "load_seconds": 2.79,
+      "viewport": true,
+      "cta_links": 10
+    }
+  },
+  {
+    "index": 76,
+    "url": "http://reformapisozaragoza.com/",
+    "status": "Error",
+    "final_url": "http://reformapisozaragoza.com/",
+    "title": "No se pudo analizar automáticamente",
+    "description": "",
+    "h1": "",
+    "summary": "Hay un problema técnico o de acceso que ya genera fricción antes de vender.",
+    "score": 6,
+    "tags": [
+      "error",
+      "http"
+    ],
+    "frictions": [
+      "No se ha podido cargar correctamente: ConnectionError."
+    ],
+    "metrics": {}
+  }
+]

@@ -20,93 +20,87 @@ export function AboutSection() {
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
             </div>
-            
-            <div className="absolute -bottom-6 -right-6 md:-bottom-8 md:-right-8 bg-[#1a2b3c] text-white p-6 sm:p-8 md:p-10 rounded-2xl shadow-2xl max-w-[14rem] sm:max-w-xs z-10 hidden sm:block">
-              <p className="text-4xl md:text-5xl font-bold text-[#d85b1d] mb-1 md:mb-2">25</p>
-              <p className="text-sm sm:text-base md:text-lg text-white/90">Años de Experiencia</p>
-            </div>
           </div>
           
           <div className="section-fade-up-delayed mt-6 sm:mt-0">
             <span className="text-[#d85b1d] font-bold text-xs sm:text-sm uppercase tracking-wider block mb-2 md:mb-4">
-              Sobre Nosotros
+              SOBRE NOSOTROS
             </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#1a2b3c] mb-6 md:mb-8 text-balance">
-              Construyendo Hogares Desde 1999
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#1a2b3c] mb-6 md:mb-10 text-balance">
+              Empresa familiar de reformas en Madrid desde 1999
             </h2>
-            <div className="space-y-4 md:space-y-6 text-[#51677c] text-base md:text-lg leading-relaxed">
+
+            <div className="flex items-center gap-5 mb-8 md:mb-10 pt-2">
+              <div className="text-[#d85b1d] font-black text-6xl md:text-7xl leading-none tracking-tighter">25</div>
+              <div className="text-[#1a2b3c] font-bold text-lg md:text-xl leading-tight text-balance border-l-2 border-[#d85b1d]/20 pl-5 py-1">
+                Años de experiencia <span className="block text-[#51677c] font-medium text-base mt-0.5">realizando obras en Madrid</span>
+              </div>
+            </div>
+
+            <div className="space-y-4 md:space-y-6 text-[#51677c] text-base md:text-[1.05rem] leading-relaxed">
               <p>
-                Hermanos Martínez se fundó con una creencia simple: los propietarios merecen <span className="text-[#1a2b3c] font-semibold">honestidad, calidad y cuidado</span> en cada proyecto.
+                Hermanos Martínez nació con una idea sencilla: hacer reformas con seriedad,
+                presupuestos claros y un trato cercano.
               </p>
               <p>
-                Con más de 25 años de experiencia y más de 1.500 proyectos completados, hemos construido nuestra reputación sobre presupuestos transparentes, ejecución excepcional y tratando cada casa como si fuera la nuestra.
+                Llevamos más de 25 años trabajando en viviendas de Madrid, realizando reformas
+                integrales, reformas de cocinas y reformas de baños con una forma de trabajar
+                basada en la transparencia y en los buenos acabados.
               </p>
               <p>
-                Nuestro equipo de profesionales aporta verdadera dedicación a cada reforma integral, cocina o baño que creamos. Tu espacio soñado es nuestra misión.
+                Nuestro equipo propio se implica en cada obra para que el proceso sea más claro
+                para el cliente y el resultado final esté a la altura de lo acordado.
               </p>
             </div>
             
-            <div className="mt-8 flex flex-wrap gap-4">
-              <div className="flex items-center gap-3 bg-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl shadow-[0_4px_20px_rgb(0,0,0,0.04)] border border-slate-100">
-                <Award className="h-5 w-5 sm:h-6 sm:w-6 text-[#d85b1d]" />
-                <span className="font-bold text-[#1a2b3c] text-sm sm:text-base">Profesionales Cualificados</span>
+            <div className="mt-10 md:mt-12 flex flex-col sm:flex-row gap-6 sm:gap-10 border-t border-[#1a2b3c]/5 pt-8">
+              <div className="flex items-center gap-3">
+                <Award className="h-6 w-6 text-[#d85b1d] flex-shrink-0" />
+                <span className="font-bold text-[#1a2b3c] text-[1.05rem]">Profesionales Cualificados</span>
               </div>
-              <div className="flex items-center gap-3 bg-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl shadow-[0_4px_20px_rgb(0,0,0,0.04)] border border-slate-100">
-                <Shield className="h-5 w-5 sm:h-6 sm:w-6 text-[#d85b1d]" />
-                <span className="font-bold text-[#1a2b3c] text-sm sm:text-base">Garantía por Contrato</span>
+              <div className="flex items-center gap-3">
+                <Shield className="h-6 w-6 text-[#d85b1d] flex-shrink-0" />
+                <span className="font-bold text-[#1a2b3c] text-[1.05rem]">Garantía por Contrato</span>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 section-fade-up">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-14 section-fade-up mt-10 md:mt-16 pt-16 border-t border-[#1a2b3c]/5">
           
-          <div className="rounded-xl border border-slate-100 bg-white shadow-lg lg:hover:shadow-xl transition-all duration-300 lg:hover:-translate-y-2">
-            <div className="p-6 sm:p-8 text-center h-full flex flex-col items-center">
-              <div className="bg-[#f2f6ff] w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mb-5 sm:mb-6">
-                <Shield className="h-7 w-7 sm:h-8 sm:w-8 text-[#d85b1d]" />
-              </div>
-              <h3 className="text-lg sm:text-xl font-bold text-[#1a2b3c] mb-3">Transparencia</h3>
-              <p className="text-[#51677c] leading-relaxed text-sm">
-                Precios honestos, comunicación clara, sin sorpresas. Lo que ves y firmas es lo que verdaderamente se ejecuta.
-              </p>
-            </div>
+          <div className="flex flex-col items-start h-full">
+            <Shield strokeWidth={1.5} className="h-10 w-10 text-[#d85b1d] mb-5" />
+            <h3 className="text-xl font-bold text-[#1a2b3c] mb-3">Transparencia</h3>
+            <p className="text-[#51677c] leading-relaxed text-[1.05rem]">
+              Trabajamos con presupuestos claros, comunicación directa y una planificación
+              realista desde el principio.
+            </p>
           </div>
 
-          <div className="rounded-xl border border-slate-100 bg-white shadow-lg lg:hover:shadow-xl transition-all duration-300 lg:hover:-translate-y-2">
-            <div className="p-6 sm:p-8 text-center h-full flex flex-col items-center">
-              <div className="bg-[#f2f6ff] w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mb-5 sm:mb-6">
-                <Award className="h-7 w-7 sm:h-8 sm:w-8 text-[#d85b1d]" />
-              </div>
-              <h3 className="text-lg sm:text-xl font-bold text-[#1a2b3c] mb-3">Calidad</h3>
-              <p className="text-[#51677c] leading-relaxed text-sm">
-                Materiales de primera, acabados excelentes y atención a cada remate. Excelencia asegurada en toda la ejecución.
-              </p>
-            </div>
+          <div className="flex flex-col items-start h-full">
+            <Award strokeWidth={1.5} className="h-10 w-10 text-[#d85b1d] mb-5" />
+            <h3 className="text-xl font-bold text-[#1a2b3c] mb-3">Calidad</h3>
+            <p className="text-[#51677c] leading-relaxed text-[1.05rem]">
+              Cuidamos materiales, ejecución y remates para que la reforma quede bien hecha y
+              dure en el tiempo.
+            </p>
           </div>
 
-          <div className="rounded-xl border border-slate-100 bg-white shadow-lg lg:hover:shadow-xl transition-all duration-300 lg:hover:-translate-y-2">
-            <div className="p-6 sm:p-8 text-center h-full flex flex-col items-center">
-              <div className="bg-[#f2f6ff] w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mb-5 sm:mb-6">
-                <Users className="h-7 w-7 sm:h-8 sm:w-8 text-[#d85b1d]" />
-              </div>
-              <h3 className="text-lg sm:text-xl font-bold text-[#1a2b3c] mb-3">Experiencia</h3>
-              <p className="text-[#51677c] leading-relaxed text-sm">
-                Más de 25 años sirviendo en Madrid con más de 1.500 proyectos cerrados de éxito y clientes que nos recomiendan.
-              </p>
-            </div>
+          <div className="flex flex-col items-start h-full">
+            <Users strokeWidth={1.5} className="h-10 w-10 text-[#d85b1d] mb-5" />
+            <h3 className="text-xl font-bold text-[#1a2b3c] mb-3">Experiencia</h3>
+            <p className="text-[#51677c] leading-relaxed text-[1.05rem]">
+              Más de 25 años reformando viviendas en Madrid y más de 1.500 proyectos realizados.
+            </p>
           </div>
 
-          <div className="rounded-xl border border-slate-100 bg-white shadow-lg lg:hover:shadow-xl transition-all duration-300 lg:hover:-translate-y-2">
-            <div className="p-6 sm:p-8 text-center h-full flex flex-col items-center">
-              <div className="bg-[#f2f6ff] w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mb-5 sm:mb-6">
-                <Heart className="h-7 w-7 sm:h-8 sm:w-8 text-[#d85b1d]" />
-              </div>
-              <h3 className="text-lg sm:text-xl font-bold text-[#1a2b3c] mb-3">Cuidado</h3>
-              <p className="text-[#51677c] leading-relaxed text-sm">
-                Tratamos cada vivienda como si fuera la nuestra. Tu tranquilidad es nuestra prioridad durante todos los oficios.
-              </p>
-            </div>
+          <div className="flex flex-col items-start h-full">
+            <Heart strokeWidth={1.5} className="h-10 w-10 text-[#d85b1d] mb-5" />
+            <h3 className="text-xl font-bold text-[#1a2b3c] mb-3">Cuidado</h3>
+            <p className="text-[#51677c] leading-relaxed text-[1.05rem]">
+              Entramos en tu casa para trabajar con orden, respeto y atención al detalle en cada
+              fase de la obra.
+            </p>
           </div>
 
         </div>

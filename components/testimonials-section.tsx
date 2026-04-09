@@ -11,43 +11,43 @@ const testimonials = [
     yearsAgo: "hace 2 años",
     avatar: "M",
     avatarClassName: "bg-[#1a73e8]",
-    text: "Nos reformaron la cocina y desde el principio supimos qué se iba a hacer y cuánto iba a costar. El resultado quedó impecable y el trato fue muy cercano.",
+    text: "Nos reformaron la cocina y desde el principio tuvimos claro qué se iba a hacer y cuánto iba a costar. El resultado quedó muy bien y el trato fue cercano en todo momento.",
   },
   {
     id: 2,
     name: "Carlos Rodríguez",
-    location: "Málaga",
+    location: "Madrid",
     yearsAgo: "hace 3 años",
     avatar: "C",
     avatarClassName: "bg-[#0f766e]",
-    text: "El cambio del baño fue rápido, limpio y muy bien organizado. Da gusto trabajar con un equipo serio dentro de casa y que vaya cumpliendo lo hablado.",
+    text: "El cambio del baño fue rápido, limpio y muy bien organizado. Se agradece tener en casa a un equipo serio que cumple lo que habla.",
   },
   {
     id: 3,
     name: "Ana Martín",
-    location: "Ibiza",
+    location: "Madrid",
     yearsAgo: "hace 1 año",
     avatar: "A",
     avatarClassName: "bg-[#7c2d12]",
-    text: "En la reforma integral cumplieron todo lo acordado. La comunicación fue clara en todo momento y el resultado final mereció mucho la pena.",
+    text: "En la reforma integral fueron claros con el presupuesto y con los tiempos. La comunicación fue buena durante toda la obra y el resultado final mereció la pena.",
   },
   {
     id: 4,
     name: "Pedro Ortega",
-    location: "Barcelona",
+    location: "Madrid",
     yearsAgo: "hace 2 años",
     avatar: "P",
     avatarClassName: "bg-[#14532d]",
-    text: "Muy buenos profesionales. Nos ayudaron a ordenar toda la obra y fueron resolviendo dudas con rapidez. Se nota cuando hay experiencia detrás.",
+    text: "Muy buenos profesionales. Nos ayudaron a ordenar toda la reforma y fueron resolviendo dudas a medida que avanzaba la obra.",
   },
   {
     id: 5,
     name: "Soraya García",
-    location: "Valencia",
+    location: "Madrid",
     yearsAgo: "hace 4 años",
     avatar: "S",
     avatarClassName: "bg-[#3f6212]",
-    text: "Reforma de baño completa muy bien ejecutada. Los acabados quedaron muy finos y el proceso fue más tranquilo de lo que esperábamos.",
+    text: "Nos hicieron una reforma de baño completa y quedamos muy contentos con los acabados. Todo estuvo mejor organizado de lo que esperábamos.",
   },
 ] as const
 
@@ -137,10 +137,10 @@ export function TestimonialsSection() {
                 Testimonios
               </p>
               <h2 className="mt-2 text-balance text-[2rem] font-bold leading-[1.08] text-primary-foreground md:mt-3 md:text-4xl">
-                Opiniones de clientes que ya han reformado con nosotros
+                Opiniones de clientes que ya han reformado con nosotros en Madrid
               </h2>
               <p className="mt-2 text-sm leading-6 text-primary-foreground/80 md:mt-3 md:text-base md:leading-7">
-                La mejor carta de presentación es un cliente satisfecho y una obra bien terminada.
+                Nada transmite más confianza que una obra bien terminada y un cliente satisfecho.
               </p>
             </div>
 

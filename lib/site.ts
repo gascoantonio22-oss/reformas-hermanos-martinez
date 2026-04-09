@@ -26,9 +26,9 @@ export const siteConfig = {
       closes: "19:00",
     },
   ],
-  defaultTitle: "Reformas en Madrid con presupuesto claro | Hermanos Martínez",
+  defaultTitle: "Reformas en Madrid con presupuesto cerrado y plazos por escrito | Hermanos Martínez",
   defaultDescription:
-    "Empresa familiar de reformas en Madrid capital. Reformas integrales, cocinas, baños y cambio de bañera por ducha con presupuesto claro, coordinación de obra y atención cercana.",
+    "Empresa familiar de reformas en Madrid capital. Reformas integrales, cocinas, baños y cambio de bañera por ducha con presupuesto cerrado, plazos por escrito y atención cercana.",
   defaultOgImage: "/images/hero-renovation.jpg",
   sameAs: [] as string[],
 }

@@ -124,13 +124,14 @@ export function ProcessSection() {
         <div className="section-fade-up mx-auto max-w-5xl text-center">
           <p className="section-kicker">CÓMO TRABAJAMOS</p>
           <h2 className="mx-auto mt-4 max-w-5xl text-balance text-3xl font-bold leading-tight text-foreground sm:text-4xl">
-            <span className="sm:hidden">Nuestro método para que tu reforma salga bien desde el inicio</span>
+            <span className="sm:hidden">Así trabajamos para que tu reforma esté clara desde el inicio</span>
             <span className="hidden sm:inline">
-              Nuestro método para que tu reforma tenga precio claro y plazos definidos desde el inicio
+              Así organizamos tu reforma para que tengas precio claro y una obra bien coordinada
             </span>
           </h2>
           <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-muted-foreground">
-            Sabes qué se hace, cuándo se hace y cuánto cuesta antes de empezar la obra.
+            Antes de empezar, sabes qué se va a hacer, cuánto cuesta y cómo se va a organizar la
+            obra.
           </p>
         </div>
 

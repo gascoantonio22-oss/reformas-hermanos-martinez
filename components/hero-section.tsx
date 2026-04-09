@@ -10,8 +10,8 @@ import heroImage from "@/public/images/hero-renovation.jpg"
 const trustItems = [
   {
     icon: CheckCircle,
-    text: "Presupuesto claro desde el principio",
-    mobileText: "Presupuesto claro",
+    text: "Presupuesto cerrado desde el principio",
+    mobileText: "Presupuesto cerrado",
   },
   {
     icon: Clock,
@@ -25,7 +25,7 @@ const trustItems = [
   },
   {
     icon: HardHat,
-    text: "Equipo propio (sin subcontratas)",
+    text: "Equipo propio",
     mobileText: "Personal propio",
   },
 ]
@@ -68,8 +68,7 @@ export function HeroSection() {
           </h1>
 
           <p className="mx-auto mt-4 max-w-[34rem] text-base leading-relaxed text-primary-foreground/90 sm:mt-6 sm:text-xl">
-            Empresa familiar con 25 años reformando cocinas, baños y viviendas completas. Nos
-            ocupamos de todo para que vivas la obra sin estrés.
+            Empresa familiar con 25 años reformando cocinas, baños y viviendas completas. Nos ocupamos de todo para que vivas la obra sin estrés.
           </p>
 
           <div

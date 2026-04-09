@@ -4,6 +4,9 @@ export type SeoLanding = {
   path: string
   serviceSlug: string
   title: string
+  heroTitle?: string
+  heroEyebrow?: string
+  heroParagraphs?: string[]
   metaTitle: string
   metaDescription: string
   heroIntro: string
@@ -168,23 +171,26 @@ export const seoLandings: SeoLanding[] = [
     path: "/reformas-cocinas-madrid",
     serviceSlug: "reformas-cocinas",
     title: "Reformas de cocinas en Madrid",
-    metaTitle: "Reformas de cocinas integrales en Madrid | Diseño y Ejecución Completa",
-    metaDescription: "Cambiamos parcial o totalmente tu cocina. Renueva distribución, muebles, encimera y mejora las zonas de trabajo.",
-    heroIntro: "Damos forma a distribuciones de cocina pensando en cómo trabajas, cuidando el montaje del mobiliario y la renovación de la instalación eléctrica.",
-    heroSubtitle: "Estudio de espacio • Mobiliario a medida • Ajuste perfecto",
-    heroBadges: ["Materiales resistentes", "Montaje garantizado", "Presupuestos cerrados"],
+    heroTitle: "Especialistas en reformas de cocinas en Madrid",
+    metaTitle: "Reformas de cocinas en Madrid con diseño, ejecución y montaje bien coordinados | Hermanos Martínez",
+    metaDescription:
+      "Realizamos reformas de cocinas en Madrid cuidando la distribución, el mobiliario, la instalación eléctrica y los acabados para que la cocina quede práctica, bien aprovechada y lista para el día a día.",
+    heroIntro:
+      "Realizamos reformas de cocinas en Madrid cuidando la distribución, el mobiliario, la instalación eléctrica y los acabados para que la cocina quede práctica, bien aprovechada y lista para el día a día.",
+    heroSubtitle: "Diseño, obra y montaje coordinados con presupuesto cerrado",
+    heroBadges: [],
     advantages: [
-      { title: "Diseño a medida", description: "Cada cocina se diseña para adaptarse a tu forma de vivir, a tus gustos y al carácter de la vivienda.", iconName: "sparkles", statLabel: "100%" },
-      { title: "Pensada para revalorizar", description: "Planteamos mejoras que elevan el valor de la vivienda mientras crean una cocina más cómoda y mejor resuelta.", iconName: "trending-up", statLabel: "75%" },
-      { title: "Entrega en plazo", description: "Una planificación minuciosa permite ejecutar la obra en los tiempos previstos y con la menor interrupción posible.", iconName: "clock", statLabel: "5-10 sem." },
-      { title: "Oficio experto", description: "Profesionales con experiencia contrastada cuidan cada fase de la ejecución para lograr un resultado impecable.", iconName: "wrench", statLabel: "500+" }
+      { title: "Diseño a medida", description: "Cada cocina se diseña según tu forma de vivir, tus gustos y las características del espacio.", iconName: "sparkles", statLabel: "100%" },
+      { title: "Pensado para revalorizar", description: "Mejoras bien planteadas para ganar funcionalidad hoy y aportar valor a largo plazo.", iconName: "trending-up", statLabel: "75%" },
+      { title: "Entrega en plazo", description: "Organizamos cada fase para terminar la obra en el tiempo previsto y con las menores molestias.", iconName: "clock", statLabel: "5–10 semanas" },
+      { title: "Acabados de calidad", description: "Un equipo con experiencia que ejecuta cada reforma con detalle, orden y buenos remates.", iconName: "wrench", statLabel: "500+" }
     ],
     editorial: {
-      badge: "Especialistas en cocinas en Madrid",
-      title: "La cocina que imaginas está más cerca de lo que parece",
-      p1: "Reformar la cocina es una de las decisiones que más se nota en el día a día de una vivienda. Es el espacio donde empieza la mañana, donde se comparte tiempo en familia y donde una buena distribución marca la diferencia.",
-      p2: "Con años de experiencia en reformas de cocina en Madrid, sabemos que una buena obra no depende solo del diseño. También depende de que el proceso esté bien planteado desde el principio, con tiempos claros y ejecución ordenada.",
-      p3: "Desde la primera visita hasta los últimos remates, coordinamos cada fase de la reforma para que muebles, encimera, instalaciones y acabados encajen como deben. El objetivo es que la cocina funcione bien, se vea bien y esté bien resuelta."
+      badge: "ESPECIALISTAS EN REFORMAS DE COCINAS EN MADRID",
+      title: "Una cocina bien pensada cambia la forma de vivir la casa",
+      p1: "La cocina es una de las estancias que más se usan a diario. Por eso, una reforma de cocina bien planteada no consiste solo en cambiar muebles o revestimientos, sino en ordenar mejor el espacio y hacer que todo funcione como debe.",
+      p2: "En Hermanos Martínez realizamos reformas de cocinas en Madrid teniendo en cuenta distribución, almacenaje, instalaciones, iluminación y acabados para que el resultado sea práctico, duradero y cómodo en el día a día.",
+      p3: "Desde la primera visita hasta los remates finales, coordinamos cada fase de la obra para que fontanería, electricidad, albañilería, mobiliario y encimera encajen sin improvisaciones."
     },
     editorialImage: "/images/cocinas-madrid/8.jpg",
     galleryImages: [
@@ -197,27 +203,27 @@ export const seoLandings: SeoLanding[] = [
       "/images/cocinas-madrid/1.jpg"
     ],
     process: [
-      { title: "Visita y replanteo", timeframe: "Paso 1", description: "Visitamos la vivienda, tomamos medidas reales y revisamos instalaciones, condicionantes y posibilidades de distribución antes de presupuestar." },
-      { title: "Diseño y materiales", timeframe: "Paso 2", description: "Definimos la propuesta, ajustamos el mobiliario y ayudamos a elegir acabados, encimera, electrodomésticos y soluciones de almacenaje." },
-      { title: "Planificación de obra", timeframe: "Paso 3", description: "Organizamos fases, pedidos e instalaciones para que electricidad, fontanería, albañilería y carpintería encajen sin improvisaciones." },
-      { title: "Ejecución y montaje", timeframe: "Paso 4", description: "Coordinamos la obra y el montaje de muebles, encimera y equipamiento con seguimiento continuo y atención al detalle en cada fase." },
-      { title: "Remates y entrega", timeframe: "Paso 5", description: "Revisamos remates, ajustes, sellados y acabados finales para entregar una cocina bien resuelta, limpia y lista para usar." }
+      { title: "Visita y replanteo", timeframe: "Paso 1", description: "Visitamos la vivienda, tomamos medidas y revisamos instalaciones, condicionantes y posibilidades reales antes de presupuestar." },
+      { title: "Diseño y materiales", timeframe: "Paso 2", description: "Definimos la propuesta de distribución y te ayudamos a elegir mobiliario, encimera, revestimientos, iluminación y soluciones de almacenaje." },
+      { title: "Planificación de obra", timeframe: "Paso 3", description: "Organizamos fases, pedidos y tiempos para que fontanería, electricidad, albañilería y carpintería entren cuando corresponde." },
+      { title: "Ejecución y montaje", timeframe: "Paso 4", description: "Coordinamos la obra y el montaje de muebles, encimera y equipamiento con seguimiento continuo durante todo el proceso." },
+      { title: "Remates y entrega", timeframe: "Paso 5", description: "Revisamos ajustes, sellados, remates y acabados finales para entregarte una cocina bien terminada y lista para usar." }
     ],
     testimonials: [
       { quote: "Abrimos la cocina al salón y el cambio se notó desde el primer día. Todo quedó bien coordinado, con una distribución mucho más cómoda y unos acabados muy cuidados.", author: "Esther R.", location: "Retiro, Madrid", initial: "ER", role: "Reforma integral de cocina", date: "Marzo 2024" },
-      { quote: "Desde el presupuesto hasta los últimos remates fueron claros y ordenados. La encimera, el mobiliario y la instalación quedaron resueltos con mucho detalle.", author: "Borja F.", location: "Tetuán, Madrid", initial: "BF", role: "Cocina a medida", date: "Enero 2024" },
+      { quote: "Desde el presupuesto hasta los últimos remates fueron claros y ordenados. La encimera, el mobiliario y la instalación quedaron muy bien resueltos.", author: "Borja F.", location: "Tetuán, Madrid", initial: "BF", role: "Cocina a medida", date: "Enero 2024" },
       { quote: "Trabajaron con seriedad, cuidaron los tiempos y dejaron todo bien rematado. Se nota cuando una obra está bien planificada y cada oficio entra cuando toca.", author: "Mónica A.", location: "Centro, Madrid", initial: "MA", role: "Reforma completa de cocina", date: "Febrero 2024" }
     ],
     longContent: [
-      { subtitle: "Materiales y herrajes que soportan el paso del tiempo", paragraph: "Recomendamos que elijas siempre proveedores de mueble que garanticen correderas con buen freno o amortiguación. El grueso de una reforma de cocina no se nota el primer mes, sino a los cinco años cuando las puertas siguen cerrando perfectas frente a cocinas excesivamente económicas que se descuadran." },
-      { subtitle: "Prestando atención a la renovación eléctrica", paragraph: "Actualizar a placa de inducción, añadir lavavajillas o integrar hornos pirolíticos implica cargas de tensión fuertes. Renovar los tendidos de la cocina y disponer de magnetotérmicos independientes en el cuadro eléctrico garantiza seguridad total de uso simultáneo." }
+      { subtitle: "Distribución pensada para el uso diario", paragraph: "Una buena reforma de cocina no consiste solo en renovar acabados. También implica estudiar paso, luz, apoyo de trabajo y almacenaje para que la estancia se adapte mejor al día a día de la vivienda." },
+      { subtitle: "Instalaciones y montaje bien coordinados", paragraph: "Cuando fontanería, electricidad, albañilería, mobiliario y encimera se planifican bien desde el principio, la obra avanza con menos interrupciones y el resultado final queda más limpio, más práctico y mejor resuelto." }
     ],
-    directAnswer: "Una reforma de cocina en Madrid exige coordinar instalaciones eléctricas profundas, mobiliario, encimera de trabajo...",
-    faqTitle: "Preguntas frecuentes sobre de cocinas",
-    faqDescription: "Tiempos y estimaciones habituales para la reforma integral de cocina.",
+    directAnswer: "Una reforma de cocina en Madrid debe coordinar distribución, instalaciones, mobiliario y acabados para que el espacio resulte práctico, duradero y cómodo en el día a día.",
+    faqTitle: "Preguntas frecuentes sobre reformas de cocinas en Madrid",
+    faqDescription: "Dudas habituales sobre tiempos, instalaciones y cómo se organiza una reforma de cocina.",
     faqs: [
-      { question: "¿La reforma incluye fontanería y electricidad?", answer: "Lo recomendamos al cien por cien. Revisamos tomas y desagües, así como secciones de cable, para que no salten diferenciales por los hornos actuales." },
-      { question: "¿Cuánto tarda una reforma de cocina típica?", answer: "El montaje de muebles suele ser ágil, pero con la obra gris de electricidad, alicatado y tiempos del marmolista, solemos planificar varias semanas ordenadas al detalle." }
+      { question: "¿La reforma incluye fontanería y electricidad?", answer: "Sí, cuando hace falta revisamos y renovamos las instalaciones para que la cocina funcione bien con el nuevo mobiliario, electrodomésticos y puntos de agua." },
+      { question: "¿Cuánto tarda una reforma de cocina típica?", answer: "Depende del alcance, pero solemos trabajar con tiempos realistas y una planificación clara para que la obra avance con orden y sin improvisaciones." }
     ],
     relatedPaths: ["/reformas-banos-madrid", "/reformas-integrales-madrid", "/cambiar-banera-por-ducha-madrid"],
   },
