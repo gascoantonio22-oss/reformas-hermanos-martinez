@@ -15,7 +15,7 @@ export const services: Service[] = [
     slug: "reformas-cocinas",
     cardTitle: "Reformas de cocinas",
     pageTitle: "Reformas de cocinas",
-    image: "/images/services/cocina.jpg",
+    image: "/images/cocinas-madrid/6.jpg",
     price: "Desde 6.900 €",
     shortDescription:
       "Diseñamos tu cocina completa con fontanería, electricidad, muebles y encimera, para que no tengas que coordinar distintos profesionales.",

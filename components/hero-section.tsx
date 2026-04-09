@@ -49,7 +49,7 @@ export function HeroSection() {
           fill
           priority
           placeholder="blur"
-          onLoadingComplete={() => setIsImageReady(true)}
+          onLoad={() => setIsImageReady(true)}
           className={`object-cover transition-[opacity,transform] duration-700 ease-out ${
             isImageReady ? "scale-100 opacity-[0.28]" : "scale-[1.02] opacity-0"
           }`}

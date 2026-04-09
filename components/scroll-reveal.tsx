@@ -1,8 +1,11 @@
 "use client"
 
 import { useEffect } from "react"
+import { usePathname } from "next/navigation"
 
 export function ScrollReveal() {
+  const pathname = usePathname()
+
   useEffect(() => {
     const root = document.documentElement
     root.classList.add("has-scroll-reveal")
@@ -50,7 +53,7 @@ export function ScrollReveal() {
     })
 
     return () => observer.disconnect()
-  }, [])
+  }, [pathname])
 
   return null
 }

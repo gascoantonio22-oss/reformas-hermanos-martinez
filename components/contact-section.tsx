@@ -45,7 +45,7 @@ export function ContactSection() {
             Cuéntanos qué quieres reformar
           </h2>
           <p className="mx-auto mt-4 max-w-3xl text-base leading-7 text-muted-foreground md:text-lg md:leading-8">
-            Déjanos tus datos y te llamaremos para valorar tu reforma y concertar una visita sin
+            Déjanos tus datos y te llamaremos para valorar tu reforma en Madrid capital y concertar una visita sin
             compromiso.
           </p>
         </div>
