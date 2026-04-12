@@ -14,7 +14,7 @@ export const metadata: Metadata = buildMetadata({
   title: landing.metaTitle,
   description: landing.metaDescription,
   path: landing.path,
-  keywords: ["reformas cocinas madrid", "reforma cocina madrid", "empresa reformas cocina madrid"],
+  keywords: ["reformas cocinas madrid", "reforma cocina madrid", "cocinas a medida madrid"],
 })
 
 export default function ReformasCocinasMadridPage() {

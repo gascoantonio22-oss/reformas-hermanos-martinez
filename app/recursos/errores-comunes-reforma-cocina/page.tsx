@@ -9,7 +9,7 @@ import { JsonLd } from "@/components/json-ld"
 import { buildBreadcrumbSchema, buildMetadata, buildArticleSchema } from "@/lib/seo"
 
 const title = "10 Errores comunes al reformar tu cocina (y cómo evitarlos)"
-const description = "Conoce los fallos más habituales en distribución, elección de materiales e iluminación que arruinan la reforma de una cocina."
+const description = "Conoce los fallos más habituales en la distribución, la iluminación o la elección de materiales que pueden arruinar una reforma de cocina."
 const path = "/recursos/errores-comunes-reforma-cocina"
 const publishDate = "2026-04-09T08:00:00+02:00"
 
@@ -51,40 +51,82 @@ export default function ArticlePage() {
             {title}
           </h1>
           <p className="mt-6 text-lg tracking-tight text-muted-foreground">
-            La cocina es el corazón de la casa y también la estancia más cara y compleja de reformar metro a metro. Un error aquí se paga a diario. Estos son los fallos que más vemos y cómo prevenirlos.
+            La cocina es el corazón de la casa y también una de las estancias más complejas de
+            reformar. Un error aquí se paga a diario. Estos son los fallos que más vemos y cómo
+            prevenirlos.
           </p>
         </header>
 
         <div className="prose prose-gray max-w-none dark:prose-invert prose-headings:font-bold prose-a:text-primary">
-          <h2>1. Ignorar el "triángulo de trabajo"</h2>
+          <h2>1. Ignorar el triángulo de trabajo</h2>
           <p>
-            El triángulo de trabajo está formado por las zonas de almacenamiento (nevera), preparación (fregadero/encimera) y cocción (vitrocerámica). Si hay obstáculos en este triángulo o la distancia entre ellos es enorme, cocinar será incómodo. Es el error número uno.
+            Situar lavaplatos, cocina y nevera muy separados. Asegúrate de que haya buena
+            comunicación entre fregadero, fogones y frigorífico para ahorrar pasos al cocinar.
           </p>
 
-          <h2>2. Insuficiente iluminación o mal planificada</h2>
+          <h2>2. Falta de iluminación adecuada</h2>
           <p>
-            Poner solo un foco central en el techo hace que, al estar de pie cocinando, te des sombra a ti mismo sobre la encimera. Siempre debes incluir luces LED bajo los muebles altos para iluminar directamente el área de trabajo.
+            No planificar suficientes luces o puntos de luz. Añade iluminación general y específica
+            (por ejemplo, sobre la encimera y la zona de cocción) para evitar sombras molestas.
           </p>
 
-          <h2>3. Elegir la estética sobre la funcionalidad en los suelos</h2>
+          <h2>3. Elegir la estética antes que la funcionalidad en el suelo</h2>
           <p>
-            Ese suelo laminado precioso pero delicado, o esas baldosas blancas que se manchan con mirar... En la cocina, el suelo tiene que ser un "terreno de batalla". Recomendamos porcelánico: imita madera divinamente, es indestructible y fácil de limpiar.
+            Colocar un suelo bonito pero poco práctico. En la cocina es preferible un material fácil
+            de limpiar y antideslizante, aunque sea más sencillo estéticamente.
           </p>
 
-          <h2>4. Falta de enchufes</h2>
+          <h2>4. Insuficientes enchufes</h2>
           <p>
-            Cafetera, tostadora, freidora de aire, microondas, batidora, cargador del móvil, Thermomix... Hoy en día las cocinas necesitan muchísimos enchufes. Planea al menos un 30% más de los que crees que vas a necesitar.
+            No prever suficientes tomas eléctricas o ubicarlas mal. Coloca enchufes en lugares
+            estratégicos para pequeños electrodomésticos, cargadores y utensilios eléctricos
+            (cafetera, microondas, etc.).
           </p>
 
-          <h2>5. Cajones en lugar de puertas abajo</h2>
+          <h2>5. Renunciar a cajones de extracción total</h2>
           <p>
-            Los armarios bajos con puertas abatibles donde tienes que ponerte de rodillas para buscar el tupper del fondo son historia. Ahora se utilizan enormes cajones gaveteros de extracción total que traen todo el contenido hacia ti. Es ligeramente más caro, pero vale cada euro.
+            Prescindir de cajones profundos que facilitan el acceso al interior. Los cajones de
+            extracción completa permiten aprovechar todo el espacio útil para guardar ollas,
+            utensilios y alimentos de forma ordenada.
+          </p>
+
+          <h2>6. No planificar suficiente almacenamiento</h2>
+          <p>
+            Subestimar la necesidad de armarios y despensas. Asegúrate de tener espacio de
+            almacenamiento suficiente para menaje, alimentos y utensilios, usando armarios altos o
+            soluciones extra si es necesario.
+          </p>
+
+          <h2>7. Muebles demasiado grandes</h2>
+          <p>
+            Colocar muebles que no permiten moverse libremente. Deja al menos 1 metro libre frente
+            a las líneas de trabajo para poder abrir puertas y cajones con comodidad.
+          </p>
+
+          <h2>8. Encimeras estrechas</h2>
+          <p>
+            Colocar encimeras muy poco profundas, que limitan la superficie de trabajo. Opta por
+            encimeras de mayor fondo (hasta 65-70 cm si el espacio lo permite) para ganar área
+            útil.
+          </p>
+
+          <h2>9. Materiales de baja calidad</h2>
+          <p>
+            Escatimar en acabados y materiales pensando solo en el coste. En el largo plazo sale más
+            caro: invierte en alicatados e instalaciones de calidad media y garantías.
+          </p>
+
+          <h2>10. Olvidar la ventilación</h2>
+          <p>
+            No instalar una campana extractora eficaz. Garantiza una buena ventilación para extraer
+            humo, olores y humedad, protegiendo así muebles y acabados.
           </p>
 
           <div className="my-10 rounded-2xl bg-muted/50 p-6 sm:p-8">
-            <h3 className="mt-0 text-xl font-bold text-foreground">¿Diseñamos tu cocina ideal?</h3>
+            <h3 className="mt-0 text-xl font-bold text-foreground">¿Diseñamos tu cocina ideal en Madrid?</h3>
             <p className="mt-2 text-muted-foreground">
-              En Hermanos Martínez te asesoramos desde el plano hasta el último acabado para que tu cocina sea perfecta.
+              En Hermanos Martínez te asesoramos desde el primer plano hasta el último acabado para
+              que tu cocina sea práctica, bonita y adaptada a tu día a día.
             </p>
             <Link
               href="/reformas-cocinas-madrid"
@@ -101,13 +143,13 @@ export default function ArticlePage() {
             <h3 className="text-2xl font-bold mb-8">Artículos relacionados</h3>
             <div className="grid gap-6 md:grid-cols-2 text-left">
               <Link href="/recursos/cuanto-cuesta-reforma-integral-madrid" className="block p-6 bg-card rounded-xl border border-border hover:shadow-md transition-all">
-                <h4 className="font-bold mb-2">Precio de Reforma Integral</h4>
-                <p className="text-sm text-muted-foreground">Desglose de precios para reformar un piso en Madrid.</p>
+                <h4 className="font-bold mb-2">¿Cuánto cuesta una reforma integral?</h4>
+                <p className="text-sm text-muted-foreground">Desglose orientativo de partidas y precios para Madrid.</p>
                 <div className="mt-4 flex items-center text-sm font-medium text-primary">Leer más <ArrowRight className="ml-1 h-4 w-4"/></div>
               </Link>
               <Link href="/recursos/guia-cambiar-banera-por-ducha" className="block p-6 bg-card rounded-xl border border-border hover:shadow-md transition-all">
-                <h4 className="font-bold mb-2">Guía: Cambiar bañera por ducha</h4>
-                <p className="text-sm text-muted-foreground">El proceso completo para hacer tu baño más accesible y moderno.</p>
+                <h4 className="font-bold mb-2">Guía para cambiar bañera por ducha</h4>
+                <p className="text-sm text-muted-foreground">Proceso completo para ganar comodidad y seguridad.</p>
                 <div className="mt-4 flex items-center text-sm font-medium text-primary">Leer más <ArrowRight className="ml-1 h-4 w-4"/></div>
               </Link>
             </div>

@@ -1,8 +1,9 @@
 "use client"
 
+import { useState, useEffect } from "react"
 import Image from "next/image"
 import Link from "next/link"
-import { ArrowRight, Phone, Star, Shield, Clock, Sparkles, TrendingUp, Wrench, Quote, MapPin } from "lucide-react"
+import { ArrowRight, Phone, Star, Shield, Clock, Sparkles, TrendingUp, Wrench, Quote, MapPin, CheckCircle, X, ChevronLeft, ChevronRight } from "lucide-react"
 import { toast } from "sonner"
 
 import { Footer } from "@/components/footer"
@@ -31,16 +32,65 @@ const IconMap: Record<string, any> = {
 }
 
 export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
-  const service = getServiceBySlug(landing.serviceSlug)
-
-  if (!service) {
-    throw new Error(`Servicio no encontrado para ${landing.path}`)
-  }
+  const service = getServiceBySlug(landing.serviceSlug)!
+  const [lightboxImage, setLightboxImage] = useState<string | null>(null)
 
   // Precalcula imágenes de galería evitando servicios mezclados
   const displayGallery = (landing.galleryImages && landing.galleryImages.length > 0)
     ? landing.galleryImages
     : [service.image, service.image, service.image]
+
+  const handleNextImage = () => {
+    setLightboxImage((prev) => {
+      if (!prev) return null;
+      const currentIndex = displayGallery.indexOf(prev);
+      if (currentIndex !== -1 && currentIndex < displayGallery.length - 1) {
+        return displayGallery[currentIndex + 1];
+      } else if (currentIndex !== -1) {
+        return displayGallery[0];
+      }
+      return prev;
+    });
+  };
+
+  const handlePrevImage = () => {
+    setLightboxImage((prev) => {
+      if (!prev) return null;
+      const currentIndex = displayGallery.indexOf(prev);
+      if (currentIndex !== -1 && currentIndex > 0) {
+        return displayGallery[currentIndex - 1];
+      } else if (currentIndex !== -1) {
+        return displayGallery[displayGallery.length - 1];
+      }
+      return prev;
+    });
+  };
+
+  useEffect(() => {
+    if (lightboxImage !== null) {
+      document.body.style.overflow = "hidden"
+      
+      const handleKeyDown = (e: KeyboardEvent) => {
+        if (e.key === "Escape") {
+          setLightboxImage(null)
+        } else if (e.key === "ArrowRight") {
+          handleNextImage()
+        } else if (e.key === "ArrowLeft") {
+          handlePrevImage()
+        }
+      }
+      
+      window.addEventListener("keydown", handleKeyDown)
+      return () => {
+        document.body.style.overflow = ""
+        window.removeEventListener("keydown", handleKeyDown)
+      }
+    }
+  }, [lightboxImage, displayGallery])
+
+  if (!service) {
+    throw new Error(`Servicio no encontrado para ${landing.path}`)
+  }
 
   return (
     <>
@@ -70,99 +120,173 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
         />
 
         {/* 1. Hero principal */}
-        <section className="relative min-h-[60vh] sm:min-h-[70vh] md:min-h-[85vh] flex items-center justify-center overflow-hidden bg-slate-900">
-          <div className="absolute inset-0 z-0">
-            <div className="relative overflow-hidden w-full h-full">
-              <Image
-                src={service.image}
-                alt={landing.title}
-                fill
-                priority
-                className="w-full h-full object-cover opacity-80"
-                sizes="100vw"
-              />
-            </div>
-            <div className="absolute inset-0 bg-black/50" />
-            <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-transparent to-black/60" />
-          </div>
-          <div className="container mx-auto px-4 sm:px-6 relative z-10 pt-36 md:pt-40 pb-16 sm:pb-24">
-            <div className="max-w-4xl mx-auto text-center section-fade-up">
-              <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-6 leading-[1.1] tracking-tight text-balance">
-                {landing.title}
-              </h1>
-              <p className="text-lg sm:text-xl md:text-2xl text-white/90 max-w-3xl mx-auto mb-8 leading-relaxed font-light px-2 text-balance">
-                {landing.heroSubtitle}
-              </p>
-              
-              <div className="flex flex-wrap justify-center gap-3 sm:gap-4 mb-10 px-2">
-                {landing.heroBadges.map((badge, idx) => (
-                  <div key={idx} className="flex items-center gap-2 bg-white/10 backdrop-blur-md px-4 py-2 rounded-full border border-white/20">
-                    {idx === 0 && <Star className="h-4 w-4 text-[#d85b1d] flex-shrink-0" />}
-                    {idx === 1 && <Shield className="h-4 w-4 text-[#d85b1d] flex-shrink-0" />}
-                    {idx === 2 && <Clock className="h-4 w-4 text-[#d85b1d] flex-shrink-0" />}
-                    <span className="text-white text-sm font-medium whitespace-nowrap">{badge}</span>
-                  </div>
-                ))}
-              </div>
-
-              <div className="flex flex-col sm:flex-row justify-center gap-4 px-4 sm:px-0">
-                <Link
-                  href="#contacto"
-                  className="inline-flex items-center justify-center h-14 rounded-md bg-[#d85b1d] hover:bg-[#c24e15] text-white font-bold text-lg px-8 shadow-2xl transition-all duration-300 hover:scale-105 w-full sm:w-auto whitespace-nowrap"
-                >
-                  Pedir Presupuesto
-                </Link>
-                <a
-                  href={`tel:${siteConfig.phoneHref}`}
-                  className="inline-flex items-center justify-center gap-2 h-14 rounded-md border-2 border-white text-white hover:bg-white hover:text-[#1a2b3c] font-bold text-lg px-8 bg-transparent w-full sm:w-auto transition-colors whitespace-nowrap"
-                >
-                  <Phone className="h-5 w-5" />
-                  Llamar ahora
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* 2. Ventajas */}
-        {/* 2. Ventajas */}
         {landing.serviceSlug === "reformas-cocinas" ? (
-          <section className="py-14 sm:py-16 md:py-20 bg-[#f7f9fc]">
-            <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
-              <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 md:gap-6 section-fade-up">
-                {landing.advantages.map((adv, idx) => {
-                  const Icon = IconMap[adv.iconName] || Star
-                  return (
-                    <div key={idx} className="rounded-lg bg-white text-[#1a2b3c] shadow-sm group hover:shadow-xl transition-all duration-300 border-2 border-transparent hover:border-[#d85b1d]/20 overflow-hidden flex flex-col h-full">
-                      <div className="p-5 sm:p-6 md:p-8 text-center flex flex-col h-full">
-                        <div className="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-xl sm:rounded-2xl bg-[#d85b1d]/10 flex items-center justify-center mx-auto mb-4 sm:mb-5 md:mb-6">
-                          <Icon strokeWidth={2} className="h-6 w-6 sm:h-7 sm:w-7 md:h-8 md:w-8 text-[#d85b1d]" />
-                        </div>
-                        {adv.statLabel && (
-                          <div className="text-2xl sm:text-3xl font-bold text-[#1a2b3c] mb-2 whitespace-nowrap">
-                            {adv.statLabel}
-                          </div>
-                        )}
-                        <h3 className="text-lg sm:text-xl font-bold text-[#1a2b3c] mb-2 sm:mb-3 min-h-[3rem] sm:min-h-[3.5rem] flex items-center justify-center text-balance">{adv.title}</h3>
-                        <p className="text-[#51677c] text-xs sm:text-sm leading-relaxed mt-auto">
-                          {adv.description}
-                        </p>
-                      </div>
-                    </div>
-                  )
-                })}
+          <section className="relative min-h-[60vh] md:min-h-[70vh] flex items-start md:items-center overflow-hidden bg-[#1a2b3c]">
+            <div className="absolute inset-0 z-0">
+              <div className="relative w-full h-full">
+                <Image
+                  src={service.image}
+                  alt={landing.title}
+                  fill
+                  priority
+                  className="w-full h-full object-cover scale-105"
+                  sizes="100vw"
+                />
+              </div>
+              {/* Fotografía: mix-blend multiply y gradiente desplazado */}
+              <div className="absolute inset-0 bg-[#1a2b3c]/60 mix-blend-multiply" />
+              <div className="absolute inset-0 bg-gradient-to-r from-[#1a2b3c]/90 via-[#1a2b3c]/60 to-transparent" />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#1a2b3c] via-transparent to-transparent md:hidden" />
+            </div>
+            
+            <div className="container mx-auto px-4 sm:px-6 relative z-10 pt-24 pb-16 md:py-36">
+              <div className="max-w-[46rem] text-left section-fade-up">
+                
+                <span className="block text-[#d85b1d] font-bold text-[11px] sm:inline-flex sm:items-center sm:rounded-full sm:border sm:border-white/20 sm:bg-white/10 sm:px-4 sm:py-2 sm:text-sm uppercase tracking-wider sm:normal-case sm:tracking-normal mb-3 sm:mb-6 sm:text-white/90 sm:backdrop-blur-md text-left">
+                  {landing.heroEyebrow ?? "Construyendo Hogares Desde 1999"}
+                </span>
+                
+                <h1 className="text-[28px] sm:text-5xl md:text-6xl font-extrabold text-white mb-4 sm:mb-6 leading-[1.1] tracking-tight text-balance drop-shadow-sm text-left">
+                  {landing.heroTitle ?? landing.title}
+                </h1>
+
+                {landing.heroParagraphs?.length ? (
+                  <div className="mb-8 mt-4 sm:mt-5 max-w-[38rem] space-y-4 text-left text-[15px] sm:text-[1.1rem] sm:text-xl font-light leading-relaxed text-white/90 drop-shadow-sm text-balance">
+                    {landing.heroParagraphs.map((paragraph) => (
+                      <p key={paragraph}>{paragraph}</p>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="mb-8 mt-4 sm:mt-5 max-w-[38rem] text-[15px] sm:text-[1.1rem] sm:text-xl font-light leading-relaxed text-white/90 drop-shadow-sm text-balance text-left">
+                    {landing.heroSubtitle}
+                  </p>
+                )}
+
+                <div className="mt-8 md:mt-10 flex flex-col sm:flex-row items-center sm:items-center gap-4 sm:gap-6 mb-5 sm:mb-10 w-full transition-[opacity,transform]">
+                  <Link
+                    href="#contacto"
+                    className="inline-flex items-center justify-center h-14 rounded-md bg-[#d85b1d] px-8 text-base font-bold text-white shadow-[0_0_20px_rgba(216,91,29,0.15)] hover:bg-[#c24e15] hover:shadow-[0_0_25px_rgba(216,91,29,0.3)] hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto focus:ring-0 whitespace-nowrap"
+                  >
+                    Pedir presupuesto gratis
+                  </Link>
+
+                  <Link
+                    href="#proyectos"
+                    className="inline-flex items-center justify-center h-auto py-2 sm:py-1 px-0 text-[15px] font-medium text-white/80 hover:text-white underline underline-offset-4 transition-all duration-300 w-full sm:w-auto whitespace-nowrap"
+                  >
+                    Ver trabajos de cocina
+                  </Link>
+                </div>
+
+                {/* Fila de Confianza Inline (Trust Row) específica cocinas */}
+                <div className="mt-5 sm:mt-10 flex flex-wrap items-center justify-start gap-x-3 sm:gap-x-4 gap-y-2 sm:gap-y-3 text-[13px] sm:text-sm font-medium text-white/80">
+                  <div className="flex items-center gap-1.5">
+                    <CheckCircle className="h-4 w-4 text-[#d85b1d]" />
+                    <span>Presupuesto cerrado</span>
+                  </div>
+                  <span className="opacity-30 sm:px-1">•</span>
+                  <div className="flex items-center gap-1.5">
+                    <CheckCircle className="h-4 w-4 text-[#d85b1d]" />
+                    <span>Diseño + obra + montaje</span>
+                  </div>
+                  <span className="hidden sm:inline opacity-30 px-1">•</span>
+                  <div className="hidden sm:flex items-center gap-1.5">
+                    <CheckCircle className="h-4 w-4 text-[#d85b1d]" />
+                    <span>Coordinación completa</span>
+                  </div>
+                  <span className="hidden md:inline opacity-30 px-1">•</span>
+                  <div className="hidden md:flex items-center gap-1.5">
+                    <Star className="h-4 w-4 text-[#d85b1d]" />
+                    <span>25 años en Madrid</span>
+                  </div>
+                </div>
+
               </div>
             </div>
           </section>
         ) : (
+          <section className="relative min-h-[60vh] sm:min-h-[70vh] md:min-h-[85vh] flex items-center justify-center overflow-hidden bg-slate-900">
+            <div className="absolute inset-0 z-0">
+              <div className="relative overflow-hidden w-full h-full">
+                <Image
+                  src={service.image}
+                  alt={landing.title}
+                  fill
+                  priority
+                  className="w-full h-full object-cover opacity-80"
+                  sizes="100vw"
+                />
+              </div>
+              <div className="absolute inset-0 bg-black/50" />
+              <div className="absolute inset-0 bg-gradient-to-br from-black/40 via-transparent to-black/60" />
+            </div>
+            <div className="container mx-auto px-4 sm:px-6 relative z-10 pt-36 md:pt-40 pb-16 sm:pb-24">
+              <div className="max-w-4xl mx-auto text-center section-fade-up">
+                {landing.heroEyebrow ? (
+                  <span className="block text-[#d85b1d] font-bold text-[11px] sm:inline-flex sm:items-center sm:rounded-full sm:border sm:border-white/15 sm:bg-white/10 sm:px-4 sm:py-2 sm:text-sm uppercase tracking-wider sm:normal-case sm:tracking-normal mb-3 sm:mb-5 sm:text-white/90 sm:backdrop-blur-md">
+                    {landing.heroEyebrow}
+                  </span>
+                ) : null}
+                <h1 className="text-[28px] leading-[1.1] sm:text-5xl md:text-6xl lg:text-7xl font-extrabold text-white mb-4 sm:mb-6 tracking-tight text-balance">
+                  {landing.heroTitle ?? landing.title}
+                </h1>
+                {landing.heroParagraphs?.length ? (
+                  <div className="mx-auto mb-8 sm:mb-10 max-w-3xl space-y-4 sm:space-y-5 px-2 text-left sm:text-center text-[15px] sm:text-lg text-white/90 font-light">
+                    {landing.heroParagraphs.map((paragraph) => (
+                      <p key={paragraph} className="leading-relaxed">
+                        {paragraph}
+                      </p>
+                    ))}
+                  </div>
+                ) : (
+                  <p className="mb-8 mt-4 sm:mt-5 max-w-[38rem] mx-auto text-[15px] sm:text-xl font-light leading-relaxed text-white/90 text-balance text-left sm:text-center px-2">
+                    {landing.heroSubtitle}
+                  </p>
+                )}
+
+                <div className="mt-8 md:mt-10 flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-6 mb-5 sm:mb-10 w-full px-4 sm:px-0 transition-[opacity,transform]">
+                  <Link
+                    href="#contacto"
+                    className="inline-flex items-center justify-center h-14 rounded-md bg-[#d85b1d] px-8 text-base font-bold text-white shadow-[0_0_20px_rgba(216,91,29,0.15)] hover:bg-[#c24e15] hover:shadow-[0_0_25px_rgba(216,91,29,0.3)] hover:-translate-y-0.5 transition-all duration-300 w-full sm:w-auto focus:ring-0 whitespace-nowrap"
+                  >
+                    Pedir presupuesto
+                  </Link>
+
+                  <Link
+                    href="#proyectos"
+                    className="inline-flex items-center justify-center h-auto py-2 sm:py-1 px-0 text-[15px] font-medium text-white/80 hover:text-white underline underline-offset-4 transition-all duration-300 w-full sm:w-auto whitespace-nowrap"
+                  >
+                    Ver trabajos realizados
+                  </Link>
+                </div>
+
+                {!landing.heroParagraphs?.length && landing.heroBadges?.length > 0 && (
+                  <div className="mt-5 sm:mt-10 flex flex-wrap items-center justify-center sm:justify-center gap-y-2 sm:gap-y-3 text-[13px] sm:text-sm font-medium text-white/80 px-2 text-left sm:text-center">
+                    {landing.heroBadges.map((badge, idx) => (
+                      <div key={idx} className={`flex items-center gap-1.5 ${idx >= 2 ? "hidden sm:flex" : ""}`}>
+                        {idx > 0 && <span className={`opacity-30 px-1 sm:px-2 ${idx >= 2 ? "hidden sm:inline" : ""}`}>•</span>}
+                        <CheckCircle className="h-4 w-4 text-[#d85b1d]" />
+                        <span>{badge}</span>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            </div>
+          </section>
+        )}
+
+        {/* 2. Ventajas */}
+        {landing.serviceSlug !== "reformas-cocinas" && (
           <section className="py-16 sm:py-20 md:py-28 bg-[#f7f9fc]">
             <div className="container mx-auto px-4 sm:px-6">
               <div className="text-center mb-12 sm:mb-16 section-fade-up">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#1a2b3c] mb-4">
-                  ¿Por qué elegirnos?
+                  ¿Por qué elegirnos para tu reforma en Madrid?
                 </h2>
                 <p className="text-lg sm:text-xl text-[#51677c] max-w-2xl mx-auto">
-                  No somos simples intermediarios. Controlamos cada fase de la obra para asegurar la calidad final.
+                  Coordinamos cada fase de la obra para que el resultado final quede limpio,
+                  coherente y bien ejecutado.
                 </p>
               </div>
               <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto section-fade-up-delayed">
@@ -207,9 +331,11 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
                     <p className="text-base sm:text-[1.1rem] leading-relaxed text-[#51677c]">
                       {landing.editorial.p2}
                     </p>
-                    <p className="text-base sm:text-[1.1rem] leading-relaxed text-[#51677c]">
-                      {landing.editorial.p3}
-                    </p>
+                    {landing.editorial.p3 ? (
+                      <p className="text-base sm:text-[1.1rem] leading-relaxed text-[#51677c]">
+                        {landing.editorial.p3}
+                      </p>
+                    ) : null}
                   </div>
                 </div>
                 <div className="lg:order-2 section-fade-up-delayed mt-8 lg:mt-0">
@@ -244,9 +370,11 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
                     <p className="text-[1.1rem] leading-relaxed text-[#51677c]">
                       {landing.editorial.p2}
                     </p>
-                    <p className="text-[1.1rem] leading-relaxed text-[#51677c]">
-                      {landing.editorial.p3}
-                    </p>
+                    {landing.editorial.p3 ? (
+                      <p className="text-[1.1rem] leading-relaxed text-[#51677c]">
+                        {landing.editorial.p3}
+                      </p>
+                    ) : null}
                   </div>
                 </div>
                 <div className="relative lg:order-2 section-fade-up-delayed">
@@ -275,16 +403,18 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
             <div className="flex flex-col lg:flex-row items-center justify-between gap-8 text-center lg:text-left">
               <div className="section-fade-up">
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-3">
-                  Pasa de la idea a la realidad, sin demoras
+                  Planifica tu reforma de cocina con un equipo que te acompaña de principio a fin
                 </h2>
-                <p className="text-white/80 text-lg">Pide asesoramiento formal sin compromiso en Madrid</p>
+                <p className="text-white/80 text-lg">
+                  Pide asesoramiento sin compromiso para tu reforma de cocina en Madrid y te ayudamos a ordenar distribución, materiales y presupuesto.
+                </p>
               </div>
               <div className="flex flex-col sm:flex-row gap-4 w-full sm:w-auto section-fade-up-delayed">
                 <Link
                   href="#contacto"
                   className="inline-flex items-center justify-center gap-2 h-14 rounded-md bg-[#d85b1d] hover:bg-[#c24e15] text-white font-bold px-8 shadow-xl transition-all w-full sm:w-auto whitespace-nowrap"
                 >
-                  Pedir Presupuesto <ArrowRight className="h-5 w-5" />
+                  Pedir presupuesto <ArrowRight className="h-5 w-5" />
                 </Link>
                 <a
                   href={`tel:${siteConfig.phoneHref}`}
@@ -304,51 +434,55 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
             <div className="container mx-auto px-4 sm:px-6">
               <div className="text-center mb-8 sm:mb-10 md:mb-12 section-fade-up">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#1a2b3c] mb-4 tracking-tight">
-                  Proyectos recientes de cocina
+                  Proyectos recientes de reformas de cocinas en Madrid
                 </h2>
                 <p className="text-lg text-[#51677c] max-w-2xl mx-auto">
-                  Una muestra de distribución, acabados y atención al detalle en reformas de cocina bien ejecutadas.
+                  Una selección de trabajos reales donde puedes ver distribuciones, materiales y
+                  acabados en cocinas reformadas en Madrid.
                 </p>
               </div>
               
               <div className="section-fade-up-delayed max-w-6xl mx-auto">
-                <div className="relative mb-4 sm:mb-6 md:mb-8 rounded-xl sm:rounded-2xl overflow-hidden shadow-xl sm:shadow-2xl group w-full h-[280px] sm:h-[400px] md:h-[500px] lg:h-[600px]">
+                <button
+                  type="button"
+                  onClick={() => setLightboxImage(landing.galleryImages[0] || service.image)}
+                  className="relative block w-full mb-4 sm:mb-6 md:mb-8 rounded-xl sm:rounded-2xl overflow-hidden shadow-xl sm:shadow-2xl group h-[280px] sm:h-[400px] md:h-[500px] lg:h-[600px] cursor-zoom-in"
+                >
                   <Image
                     src={landing.galleryImages[0] || service.image}
-                    alt="Proyecto principal de cocina reformificada en Madrid con mobiliario a medida"
+                    alt="Proyecto principal de cocina reformada en Madrid con mobiliario a medida"
                     fill
                     className="object-cover group-hover:scale-105 transition-transform duration-700"
                     sizes="100vw"
                   />
-                </div>
+                </button>
                 
                 <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-4 md:gap-6">
                   {landing.galleryImages.slice(1, 7).map((imgSrc, idx) => (
-                    <div key={idx} className="relative rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-xl sm:hover:shadow-2xl transition-all duration-500 group aspect-[4/3]">
+                    <button 
+                      key={idx} 
+                      type="button"
+                      onClick={() => setLightboxImage(imgSrc || service.image)}
+                      className="relative block w-full rounded-lg sm:rounded-xl overflow-hidden shadow-md sm:shadow-lg hover:shadow-xl sm:hover:shadow-2xl transition-all duration-500 group aspect-[4/3] cursor-zoom-in"
+                    >
                       <Image
                         src={imgSrc || service.image}
-                        alt={`Muestra de detalle en proyecto de cocina, vista ${idx + 2}`}
+                        alt={`Muestra de detalle en proyecto de cocina reformada, vista ${idx + 2}`}
                         fill
                         className="object-cover group-hover:scale-110 transition-transform duration-700"
                         sizes="(min-width: 768px) 33vw, 50vw"
                       />
-                    </div>
+                    </button>
                   ))}
                 </div>
 
                 <div className="text-center mt-8 sm:mt-10 md:mt-12">
-                  <button
-                    type="button"
-                    onClick={(e) => {
-                      e.preventDefault();
-                      toast.info("No disponible en la Demo", {
-                        description: "Esta es una galería visual de demostración.",
-                      });
-                    }}
+                  <Link
+                    href="#contacto"
                     className="inline-flex items-center justify-center h-12 rounded-md border-2 border-[#1a2b3c] text-[#1a2b3c] hover:bg-[#1a2b3c] hover:text-white font-bold px-8 transition-colors text-base sm:text-lg"
                   >
-                    Ver más trabajos
-                  </button>
+                    Pedir presupuesto
+                  </Link>
                 </div>
               </div>
             </div>
@@ -366,7 +500,11 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
               </div>
               
               <div className="grid gap-4 sm:gap-6 lg:grid-cols-3 section-fade-up-delayed">
-                <div className="lg:col-span-2 relative aspect-[16/9] lg:aspect-auto w-full rounded-2xl overflow-hidden group shadow-xl bg-slate-200">
+                <button 
+                  type="button"
+                  onClick={() => setLightboxImage(displayGallery[0] || service.image)}
+                  className="lg:col-span-2 relative block w-full aspect-[16/9] lg:aspect-auto rounded-2xl overflow-hidden group shadow-xl bg-slate-200 cursor-zoom-in"
+                >
                   <Image
                     src={displayGallery[0] || service.image}
                     alt={`Proyecto de ${landing.title}`}
@@ -375,10 +513,15 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
                     sizes="(min-width: 1024px) 66vw, 100vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#1a2b3c]/40 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
+                </button>
                 <div className="grid gap-4 sm:gap-6 grid-rows-2">
                   {displayGallery.slice(1, 3).map((imgSrc, idx) => (
-                     <div key={idx} className="relative aspect-[16/9] lg:aspect-auto w-full rounded-2xl overflow-hidden group shadow-lg bg-slate-200">
+                     <button 
+                      key={idx} 
+                      type="button"
+                      onClick={() => setLightboxImage(imgSrc || service.image)}
+                      className="relative block w-full aspect-[16/9] lg:aspect-auto rounded-2xl overflow-hidden group shadow-lg bg-slate-200 cursor-zoom-in"
+                     >
                       <Image
                         src={imgSrc || service.image}
                         alt={`Detalle de ${landing.title}`}
@@ -387,7 +530,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
                         sizes="(min-width: 1024px) 33vw, 100vw"
                       />
                       <div className="absolute inset-0 bg-[#1a2b3c]/0 group-hover:bg-[#1a2b3c]/10 transition-colors duration-300" />
-                    </div>
+                    </button>
                   ))}
                 </div>
               </div>
@@ -395,42 +538,51 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
           </section>
         )}
 
-        {/* 6. Proceso - Timeline Vertical */}
+        {/* 6. Proceso - Timeline Lineal Compacta (Exclusiv. Cocinas) */}
         {landing.serviceSlug === "reformas-cocinas" ? (
-          <section className="py-16 sm:py-20 md:py-24 bg-[#1a2b3c] text-white relative overflow-hidden">
-            <div 
-              className="absolute inset-0 opacity-5" 
-              style={{ 
-                backgroundImage: "url(\"data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0v40M0 20h40' stroke='%23ffffff' stroke-width='1.5' stroke-opacity='1' fill='none'/%3E%3C/svg%3E\")" 
-              }} 
-            />
+          <section className="py-16 sm:py-24 bg-[#1a2b3c] text-white relative">
+            {/* Se elimina la opacidad excesiva de la rejilla para un fondo sólido y serio */}
             <div className="container mx-auto px-4 sm:px-6 relative z-10">
-              <div className="text-center mb-10 sm:mb-12 md:mb-16 section-fade-up">
+              <div className="text-center mb-12 sm:mb-16 section-fade-up">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 tracking-tight">
-                  Cómo trabajamos
+                  Cómo trabajamos una reforma de cocina en Madrid
                 </h2>
-                <p className="text-lg text-white/80 max-w-2xl mx-auto">
-                  Un proceso claro para que la reforma avance con orden, tiempos realistas y decisiones bien coordinadas.
+                <p className="text-[1.1rem] text-white/80 max-w-2xl mx-auto font-light leading-relaxed">
+                  Seguimos un proceso claro para que la obra avance con orden, tiempos definidos y
+                  decisiones bien resueltas desde el principio.
                 </p>
               </div>
 
-              <div className="relative max-w-4xl mx-auto section-fade-up-delayed mt-10 sm:mt-16">
-                <div className="flex flex-col gap-10 sm:gap-12">
+              <div className="max-w-3xl mx-auto section-fade-up-delayed mt-8">
+                <div className="flex flex-col">
                   {landing.process.map((step, idx) => (
-                    <div key={idx} className="relative bg-white/5 backdrop-blur-md rounded-xl sm:rounded-2xl p-8 sm:p-10 pt-12 sm:pt-14 border border-white/10 text-center shadow-2xl transition-all hover:bg-white/10">
-                      {/* Círculo superior centralizado */}
-                      <div className="absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#ffb800] text-[#1a2b3c] shadow-[0_0_20px_rgba(255,184,0,0.3)] z-10 border-[4px] border-[#1a2b3c]">
-                        <span className="text-lg sm:text-xl font-extrabold">{idx + 1}</span>
-                      </div>
+                    <div key={idx} className="relative pl-12 sm:pl-16 pb-8 sm:pb-10 last:pb-0">
+                      {/* Timeline Line */}
+                      {idx !== landing.process.length - 1 && (
+                        <div className="absolute left-[1.1rem] sm:left-[1.35rem] top-10 bottom-0 w-px bg-white/15" />
+                      )}
                       
-                      <h3 className="text-xl md:text-2xl font-bold mb-3 sm:mb-4 text-white">
-                        {step.title}
-                      </h3>
-                      <p className="text-white/75 leading-relaxed text-sm sm:text-base max-w-2xl mx-auto">
-                        {step.description}
-                      </p>
+                      {/* Círculo del Número Sobrio */}
+                      <div className="absolute left-0 top-0 w-9 h-9 sm:w-11 sm:h-11 rounded-full bg-[#1a2b3c] border-2 border-white/20 flex items-center justify-center text-[#ffb800] font-bold text-sm sm:text-base z-10">
+                        {idx + 1}
+                      </div>
+
+                      {/* Contenido Compacto */}
+                      <div className="pt-1 sm:pt-2">
+                        <h3 className="text-xl sm:text-2xl font-bold text-white mb-2">{step.title}</h3>
+                        <p className="text-white/75 leading-relaxed text-[15px] sm:text-base max-w-2xl">{step.description}</p>
+                      </div>
                     </div>
                   ))}
+                </div>
+
+                {/* Cierre Suave (Inline CTA) */}
+                <div className="mt-12 sm:mt-16 pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <p className="text-white/70 font-medium text-sm tracking-wide">Transparencia y orden de principio a fin.</p>
+                  <Link href="#contacto" className="inline-flex items-center gap-2 text-[#d85b1d] font-bold text-[15px] hover:text-[#c24e15] transition-colors focus:ring-0">
+                    Pedir presupuesto
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
                 </div>
               </div>
             </div>
@@ -443,7 +595,8 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
                   Cómo trabajamos
                 </h2>
                 <p className="text-lg text-white/80 max-w-2xl mx-auto">
-                  Un flujo de actuación ordenado y transparente desde el primer día de contacto hasta la entrega definitiva.
+                  Un proceso claro, ordenado y transparente desde el primer contacto hasta la
+                  entrega definitiva.
                 </p>
               </div>
 
@@ -489,14 +642,15 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
 
         {/* 7. Testimonios */}
         {landing.serviceSlug === "reformas-cocinas" ? (
-          <section className="py-16 sm:py-20 md:py-24 bg-[#f2f6ff]">
+          <section className="pt-16 sm:pt-20 md:pt-24 pb-12 sm:pb-16 bg-[#f2f6ff]">
             <div className="container mx-auto px-4 sm:px-6">
               <div className="text-center mb-10 sm:mb-12 md:mb-16 section-fade-up">
                 <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#1a2b3c] mb-3 sm:mb-4">
-                  Lo que dicen nuestros clientes de cocina
+                  Opiniones de clientes que reformaron su cocina con nosotros
                 </h2>
                 <p className="text-base sm:text-lg text-[#51677c] max-w-2xl mx-auto px-2">
-                  Opiniones reales de clientes que confiaron en nosotros para reformar su cocina en Madrid.
+                  Estas son algunas experiencias de clientes que confiaron en nuestro equipo para
+                  reformar su cocina en Madrid.
                 </p>
               </div>
 
@@ -567,7 +721,7 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
             <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
               <div className="text-center mb-16 section-fade-up">
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#1a2b3c]">
-                  Clientes satisfechos
+                  Testimonios
                 </h2>
               </div>
               {/* Si solo hay 2 testimonios usa 2 columnas, si hay 3 usa 3 */}
@@ -602,84 +756,73 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
           </section>
         )}
 
-        {/* 8. Long Content SEO o Recursos de Blog */}
-        {landing.serviceSlug === "reformas-cocinas" ? (
-          <section className="py-20 sm:py-28 bg-white border-t border-slate-100">
-            <div className="container mx-auto px-4 sm:px-6 max-w-6xl text-center section-fade-up">
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1a2b3c] mb-12 text-balance leading-tight">
-                Recursos para reformar tu cocina
-              </h2>
-              
-              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+        {/* 8.5. Nueva Sección de Recursos (Solo Cocinas) */}
+        {landing.serviceSlug === "reformas-cocinas" && (
+          <section className="pt-20 sm:pt-28 pb-16 sm:pb-24 bg-slate-50 border-t border-slate-200 shadow-[inset_0_4px_6px_-6px_rgba(0,0,0,0.1)]">
+            <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
+              <div className="text-center mb-12 sm:mb-16 section-fade-up">
+                <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold text-[#1a2b3c] mb-4 tracking-tight">
+                  Guías y consejos para planificar tu reforma de cocina en Madrid
+                </h2>
+                <p className="text-lg text-[#51677c] max-w-2xl mx-auto">
+                  Una selección de contenidos prácticos para ayudarte a tomar mejores decisiones antes de reformar tu cocina en Madrid.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 section-fade-up-delayed">
                 {[
                   {
-                    label: "GUÍA DE PRECIOS",
-                    title: "Precios reales para reformar cocinas en Madrid",
-                    desc: "Desglose transparente y real de partidas específicas para viviendas en la capital."
+                    eyebrow: "GUÍA DE PRECIOS",
+                    title: "Cuánto cuesta reformar una cocina en Madrid",
+                    text: "Factores que influyen en el presupuesto de una reforma de cocina y cómo comparar partidas con más claridad."
                   },
                   {
-                    label: "CONSEJOS DE DISEÑO",
-                    title: "Las mejores distribuciones para familias",
-                    desc: "Descubre los diseños más prácticos de cocina para aprovechar el paso y el almacenaje en el día a día."
+                    eyebrow: "DISTRIBUCIÓN",
+                    title: "Qué distribución de cocina aprovecha mejor el espacio",
+                    text: "Ideas para resolver cocinas alargadas, abiertas o pequeñas sin perder funcionalidad."
                   },
                   {
-                    label: "IDEAS Y TENDENCIAS",
-                    title: "Cocinas pequeñas, gran impacto",
-                    desc: "Estruja al máximo los metros cuadrados disponibles con estrategias inteligentes y muebles a medida."
+                    eyebrow: "MATERIALES",
+                    title: "Encimeras, muebles y acabados: qué elegir",
+                    text: "Consejos para comparar materiales según uso diario, mantenimiento y estilo."
                   },
                   {
-                    label: "ERRORES A EVITAR",
-                    title: "Errores comunes al reformar tu cocina",
-                    desc: "Conoce los fallos más habituales cometidos en la fase previa a una reforma y planifica con seguridad."
+                    eyebrow: "ERRORES COMUNES",
+                    title: "Errores que conviene evitar antes de reformar la cocina",
+                    text: "Decisiones que suelen encarecer la obra o complicar el resultado final si no se prevén a tiempo."
                   },
                   {
-                    label: "ELEGIR EMPRESA",
-                    title: "Cómo elegir a los profesionales adecuados",
-                    desc: "Lo que necesitas saber y preguntar antes de contratar la reforma de tu vivienda."
+                    eyebrow: "PLANIFICACIÓN",
+                    title: "Cómo preparar una reforma de cocina paso a paso",
+                    text: "Qué revisar antes de empezar, cómo ordenar decisiones y qué conviene dejar cerrado desde el principio."
                   },
                   {
-                    label: "PERMISOS DE OBRA",
-                    title: "Guía de licencias de obra menor en Madrid",
-                    desc: "Todo lo que el Ayuntamiento te exigirá para renovar la instalación o tirar un tabique dentro de casa."
+                    eyebrow: "PERMISOS Y OBRA",
+                    title: "Qué tener en cuenta antes de empezar la obra",
+                    text: "Instalaciones, tiempos, coordinación de oficios y aspectos prácticos a revisar antes de arrancar."
                   }
-                ].map((recurso, idx) => (
+                ].map((resource, idx) => (
                   <button
                     key={idx}
                     type="button"
                     onClick={(e) => {
-                      e.preventDefault()
-                      toast.info("No disponible en la Demo", {
-                        description: "Esta es una tarjeta de enlace de ejemplo para artículos de blog.",
-                      })
+                      e.preventDefault();
+                      toast.info("Próximamente en recursos", {
+                        description: "Estamos preparando esta guía para añadirla a la sección de recursos.",
+                      });
                     }}
-                    className="bg-white rounded-2xl p-8 border border-slate-100 shadow-[0_4px_20px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 flex flex-col items-start text-left w-full group"
+                    className="group bg-white rounded-2xl p-6 sm:p-8 border border-slate-100 shadow-[0_2px_10px_rgb(0,0,0,0.02)] hover:shadow-[0_10px_40px_-10px_rgba(0,0,0,0.08)] hover:-translate-y-1 transition-all duration-300 text-left flex flex-col h-full cursor-pointer"
                   >
-                    <span className="text-xs font-bold text-[#ffb800] uppercase tracking-wider mb-4 group-hover:text-[#e5a600] transition-colors">{recurso.label}</span>
-                    <h3 className="text-xl font-bold text-[#1a2b3c] mb-3 leading-snug group-hover:text-[#294a71] transition-colors">{recurso.title}</h3>
-                    <p className="text-[#51677c] text-sm leading-relaxed mt-auto">{recurso.desc}</p>
-                  </button>
-                ))}
-              </div>
-            </div>
-          </section>
-        ) : (
-          <section className="py-20 sm:py-28 bg-white border-t border-slate-100">
-            <div className="container mx-auto px-4 sm:px-6 max-w-4xl section-fade-up">
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#1a2b3c] mb-10 text-balance text-left md:text-center">
-                Expertos en {landing.title}
-              </h2>
-              <div className="space-y-10">
-                {landing.longContent.map((chunk, idx) => (
-                  <div key={idx}>
-                    {chunk.subtitle && (
-                      <h3 className="text-2xl font-bold text-[#1a2b3c] mb-4">
-                        {chunk.subtitle}
-                      </h3>
-                    )}
-                    <p className="text-lg text-[#51677c] leading-relaxed">
-                      {chunk.paragraph}
+                    <span className="text-[#d85b1d] font-bold text-[10px] tracking-wider uppercase mb-3 block">
+                      {resource.eyebrow}
+                    </span>
+                    <h3 className="text-[#1a2b3c] font-bold text-[17px] leading-snug mb-3 group-hover:text-[#d85b1d] transition-colors">
+                      {resource.title}
+                    </h3>
+                    <p className="text-[#51677c] text-[15px] font-light leading-relaxed mt-auto">
+                      {resource.text}
                     </p>
-                  </div>
+                  </button>
                 ))}
               </div>
             </div>
@@ -693,15 +836,20 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
             <div className="grid lg:grid-cols-5 gap-12 lg:gap-20 items-center">
               <div className="lg:col-span-2 section-fade-up">
                 <h2 className="text-4xl sm:text-5xl font-extrabold mb-6 tracking-tight text-balance">
-                  Inicia tu proyecto hoy
+                  Cuéntanos tu proyecto de reforma de cocina en Madrid
                 </h2>
                 <div className="h-1.5 w-16 bg-[#d85b1d] mb-8" />
                 <p className="text-lg text-white/80 mb-10 leading-relaxed text-balance">
-                  Cuéntanos los detalles de tu reforma. Analizaremos tu caso para ofrecerte un presupuesto claro, sin sorpresas y planificado al milímetro.
+                  Explícanos qué necesitas y prepararemos una propuesta clara para tu reforma de
+                  cocina en Madrid, con enfoque práctico, presupuesto definido y una obra bien
+                  organizada.
                 </p>
                 <div className="p-8 bg-white/5 backdrop-blur-sm rounded-xl border border-white/10">
-                  <h4 className="font-bold text-xl mb-3">Atención Directa</h4>
-                  <p className="text-white/70 mb-6">Si prefieres resolver dudas de inmediato, nuestro equipo te atiende por teléfono.</p>
+                  <h4 className="font-bold text-xl mb-3">Atención directa</h4>
+                  <p className="text-white/70 mb-6">
+                    Si prefieres hablar con nosotros antes de rellenar el formulario, llámanos y
+                    resolvemos tus dudas.
+                  </p>
                   <a
                     href={`tel:${siteConfig.phoneHref}`}
                     className="inline-flex items-center justify-center w-full bg-white text-[#1a2b3c] font-bold text-lg h-14 rounded-md transition-colors hover:bg-slate-100 whitespace-nowrap"
@@ -723,6 +871,73 @@ export function ServiceLandingPage({ landing }: ServiceLandingPageProps) {
 
       </main>
       <Footer />
+
+      {/* Lightbox Overlay */}
+      {lightboxImage && (
+        <div
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-[rgba(22,33,47,0.9)] p-2 backdrop-blur-sm sm:p-4 opacity-100 transition-opacity duration-300"
+          role="dialog"
+          aria-modal="true"
+          onClick={() => setLightboxImage(null)}
+        >
+          <button
+            type="button"
+            aria-label="Cerrar imagen ampliada"
+            className="absolute right-3 top-3 z-10 inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white transition-all hover:bg-white/20 sm:right-5 sm:top-5"
+            onClick={(e) => {
+              e.stopPropagation()
+              setLightboxImage(null)
+            }}
+          >
+            <X className="h-5 w-5" />
+          </button>
+
+          {displayGallery.length > 1 && (
+            <>
+              <button
+                type="button"
+                aria-label="Imagen anterior"
+                className="absolute left-3 top-1/2 z-10 -translate-y-1/2 inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white transition-all hover:bg-white/20 sm:left-6 sm:h-14 sm:w-14"
+                onClick={(e) => {
+                  e.stopPropagation()
+                  handlePrevImage()
+                }}
+              >
+                <ChevronLeft className="h-6 w-6 sm:h-8 sm:w-8" />
+              </button>
+              
+              <button
+                type="button"
+                aria-label="Siguiente imagen"
+                className="absolute right-3 top-1/2 z-10 -translate-y-1/2 inline-flex h-12 w-12 items-center justify-center rounded-full border border-white/25 bg-white/10 text-white transition-all hover:bg-white/20 sm:right-6 sm:h-14 sm:w-14"
+                onClick={(e) => {
+                  e.stopPropagation()
+                  handleNextImage()
+                }}
+              >
+                <ChevronRight className="h-6 w-6 sm:h-8 sm:w-8" />
+              </button>
+            </>
+          )}
+
+          <div
+            className="relative h-[92vh] w-full max-w-[1800px] scale-100 transition-transform duration-300 ease-out flex items-center justify-center"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="relative w-full h-full">
+              <Image
+                src={lightboxImage}
+                alt="Vista ampliada de la reforma"
+                fill
+                quality={100}
+                sizes="100vw"
+                className="object-contain"
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </>
   )
+
 }

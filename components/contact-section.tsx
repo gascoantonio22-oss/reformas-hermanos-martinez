@@ -45,8 +45,7 @@ export function ContactSection() {
             Cuéntanos qué quieres reformar
           </h2>
           <p className="mx-auto mt-4 max-w-3xl text-base leading-7 text-muted-foreground md:text-lg md:leading-8">
-            Déjanos tus datos y te llamaremos para valorar tu reforma en Madrid capital y concertar una visita sin
-            compromiso.
+            Déjanos tu nombre, teléfono y una breve descripción para valorarlo.
           </p>
         </div>
 
@@ -60,7 +59,7 @@ export function ContactSection() {
               </div>
               <h3 className="text-3xl font-bold text-foreground">Solicitud enviada</h3>
               <p className="mt-3 text-base leading-7 text-muted-foreground">
-                Te llamaremos para comentar tu reforma.
+                Gracias, pronto te llamaremos para comentar tu reforma.
               </p>
               <Button className="mt-5 bg-accent text-accent-foreground hover:bg-accent/92" onClick={() => setIsSubmitted(false)}>
                 Enviar otra solicitud
@@ -120,10 +119,10 @@ export function ContactSection() {
 
               <div className="space-y-2">
                 <Label htmlFor="descripcion">Descripción</Label>
-                <Textarea
-                  id="descripcion"
-                  rows={6}
-                  placeholder="Cuéntanos brevemente qué necesitas reformar"
+                  <Textarea
+                    id="descripcion"
+                    rows={6}
+                    placeholder="Cuéntanos brevemente qué necesitas reformar"
                   value={formState.descripcion}
                   onChange={(e) => setFormState((current) => ({ ...current, descripcion: e.target.value }))}
                 />
@@ -144,6 +143,7 @@ export function ContactSection() {
                   <span className="font-semibold text-foreground underline underline-offset-4">
                     política de privacidad
                   </span>
+                  .
                 </p>
 
                 <div className="mt-4 flex flex-col items-center justify-center gap-3 sm:mt-5 sm:flex-row sm:gap-6">
@@ -156,7 +156,7 @@ export function ContactSection() {
                   </a>
                   <div className="inline-flex items-center gap-2 text-sm text-muted-foreground sm:text-base">
                     <Clock className="h-4 w-4 text-primary" />
-                    Lun-Vie 8:00 a 19:00
+                    Atención telefónica: 912 345 678 (Lun-Vie 8:00-19:00).
                   </div>
                 </div>
               </div>

@@ -3,18 +3,18 @@
 import { useState } from "react"
 import Link from "next/link"
 import { Menu, MessageCircle, Phone, X, ChevronDown } from "lucide-react"
-import { toast } from "sonner"
 
 const navLinks = [
   { href: "/#proyectos", label: "Trabajos realizados" },
   { href: "/#contacto", label: "Presupuesto" },
+  { href: "/blog", label: "Blog" },
 ]
 
 const servicesLinks = [
-  { href: "/reformas-cocinas-madrid", label: "Reformas de cocinas" },
-  { href: "/reformas-integrales-madrid", label: "Reformas integrales" },
-  { href: "/reformas-banos-madrid", label: "Reformas de baños" },
-  { href: "/cambiar-banera-por-ducha-madrid", label: "Cambiar bañera por ducha" },
+  { href: "/reformas-cocinas-madrid", label: "Reformas de cocinas en Madrid" },
+  { href: "/reformas-integrales-madrid", label: "Reformas integrales en Madrid" },
+  { href: "/reformas-banos-madrid", label: "Reformas de baños en Madrid" },
+  { href: "/cambiar-banera-por-ducha-madrid", label: "Cambiar bañera por ducha en Madrid" },
 ]
 
 export function Header() {
@@ -23,46 +23,26 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50 border-b border-border bg-white shadow-sm">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between gap-4">
+        <div className="flex h-14 lg:h-16 items-center justify-between gap-4">
           <Link href="/" className="text-base font-semibold text-foreground sm:text-lg shrink-0">
             Hermanos Martínez
           </Link>
 
           <nav className="hidden items-center gap-6 lg:flex">
-            <div className="group relative flex h-16 items-center">
+            <div className="group relative flex h-14 lg:h-16 items-center">
               <span className="flex cursor-pointer items-center gap-1 text-sm font-medium text-foreground transition-colors group-hover:text-primary">
                 Servicios <ChevronDown className="h-4 w-4 transition-transform group-hover:rotate-180" />
               </span>
               <div className="absolute left-0 top-[100%] z-50 hidden w-[260px] flex-col rounded-xl border border-border bg-white p-2 shadow-xl group-hover:flex">
-                {servicesLinks.map((service) => {
-                  if (service.href === "/reformas-cocinas-madrid") {
-                    return (
-                      <Link
-                        key={service.href}
-                        href={service.href}
-                        className="rounded-lg p-3 text-sm font-medium text-foreground transition-colors hover:bg-muted hover:text-primary"
-                      >
-                        {service.label}
-                      </Link>
-                    )
-                  }
-                  
-                  return (
-                    <button
-                      key={service.href}
-                      type="button"
-                      onClick={(e) => {
-                        e.preventDefault()
-                        toast.info("No disponible en la Demo", {
-                          description: "Para ver una referencia de cómo maquetamos un servicio completo, por favor entra en 'Reformas de cocinas'.",
-                        })
-                      }}
-                      className="rounded-lg p-3 text-left text-sm font-medium text-foreground transition-colors hover:bg-muted hover:text-primary"
-                    >
-                      {service.label}
-                    </button>
-                  )
-                })}
+                {servicesLinks.map((service) => (
+                  <Link
+                    key={service.href}
+                    href={service.href}
+                    className="rounded-lg p-3 text-sm font-medium text-foreground transition-colors hover:bg-muted hover:text-primary"
+                  >
+                    {service.label}
+                  </Link>
+                ))}
               </div>
             </div>
 
@@ -112,36 +92,16 @@ export function Header() {
                   Servicios
                 </p>
                 <div className="ml-3 flex flex-col gap-1 border-l-2 border-muted pl-3">
-                  {servicesLinks.map((service) => {
-                    if (service.href === "/reformas-cocinas-madrid") {
-                      return (
-                        <Link
-                          key={service.href}
-                          href={service.href}
-                          className="py-2 text-sm font-medium text-foreground"
-                          onClick={() => setMobileMenuOpen(false)}
-                        >
-                          {service.label}
-                        </Link>
-                      )
-                    }
-                    return (
-                      <button
-                        key={service.href}
-                        type="button"
-                        onClick={(e) => {
-                          e.preventDefault()
-                          setMobileMenuOpen(false)
-                          toast.info("No disponible en la Demo", {
-                            description: "Para ver una referencia de cómo maquetamos un servicio completo, por favor entra en 'Reformas de cocinas'.",
-                          })
-                        }}
-                        className="py-2 text-left text-sm font-medium text-foreground"
-                      >
-                        {service.label}
-                      </button>
-                    )
-                  })}
+                  {servicesLinks.map((service) => (
+                    <Link
+                      key={service.href}
+                      href={service.href}
+                      className="py-2 text-sm font-medium text-foreground"
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {service.label}
+                    </Link>
+                  ))}
                 </div>
               </div>
 

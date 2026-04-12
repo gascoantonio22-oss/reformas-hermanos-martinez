@@ -5,9 +5,12 @@ import { Award, Shield, Users, Heart } from "lucide-react"
 
 export function AboutSection() {
   return (
-    <section id="nosotros" className="py-24 overflow-hidden bg-[#f7f9fc]">
+    <section id="nosotros" className="relative pt-8 pb-16 md:pt-12 md:pb-24 overflow-hidden bg-[#f7f9fc]">
+      {/* Transición Suave Inter-Sección (Gradient Divider) */}
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-4/5 max-w-5xl h-px bg-gradient-to-r from-transparent via-[#1a2b3c]/10 to-transparent" />
+
       <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
-        <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center mb-16 md:mb-24">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-16 items-center mb-12 md:mb-24">
           
           <div className="relative section-fade-up">
             <div className="relative overflow-hidden rounded-2xl shadow-2xl">
@@ -16,98 +19,104 @@ export function AboutSection() {
                 alt="Equipo de Hermanos Martínez"
                 width={800}
                 height={600}
-                className="w-full h-[400px] sm:h-[500px] md:h-[600px] object-cover"
+                className="w-full h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] object-cover"
                 sizes="(max-width: 768px) 100vw, 50vw"
               />
-            </div>
-            
-            <div className="absolute -bottom-6 -right-6 md:-bottom-8 md:-right-8 bg-[#1a2b3c] text-white p-6 sm:p-8 md:p-10 rounded-2xl shadow-2xl max-w-[14rem] sm:max-w-xs z-10 hidden sm:block">
-              <p className="text-4xl md:text-5xl font-bold text-[#d85b1d] mb-1 md:mb-2">25</p>
-              <p className="text-sm sm:text-base md:text-lg text-white/90">Años de Experiencia</p>
             </div>
           </div>
           
           <div className="section-fade-up-delayed mt-6 sm:mt-0">
             <span className="text-[#d85b1d] font-bold text-xs sm:text-sm uppercase tracking-wider block mb-2 md:mb-4">
-              Sobre Nosotros
+              SOBRE NOSOTROS
             </span>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#1a2b3c] mb-6 md:mb-8 text-balance">
-              Construyendo Hogares Desde 1999
+            <h2 className="text-[28px] leading-tight sm:text-4xl md:text-5xl lg:text-6xl font-bold text-[#1a2b3c] mb-6 md:mb-10 text-balance">
+              Profesionales de verdad, trato cercano
             </h2>
-            <div className="space-y-4 md:space-y-6 text-[#51677c] text-base md:text-lg leading-relaxed">
+
+            <div className="flex items-center gap-4 md:gap-5 mb-6 md:mb-10 pt-1 md:pt-2">
+              <div className="text-[#d85b1d] font-black text-5xl md:text-7xl leading-none tracking-tighter">25</div>
+              <div className="text-[#1a2b3c] font-bold text-[17px] md:text-xl leading-tight text-balance border-l-2 border-[#d85b1d]/20 pl-4 md:pl-5 py-0.5 md:py-1">
+                Más de 25 años de experiencia{" "}
+                <span className="block text-[#51677c] font-medium text-[15px] md:text-base mt-0 md:mt-0.5">
+                  reformando viviendas en Madrid
+                </span>
+              </div>
+            </div>
+
+            <div className="space-y-4 md:space-y-6 text-[#51677c] text-[15px] md:text-[1.05rem] leading-relaxed">
               <p>
-                Hermanos Martínez se fundó con una creencia simple: los propietarios merecen <span className="text-[#1a2b3c] font-semibold">honestidad, calidad y cuidado</span> en cada proyecto.
+                Somos una empresa familiar, no una cadena. Desde 1999 trabajamos en reformas en
+                Madrid con responsabilidad y atención al detalle.
               </p>
               <p>
-                Con más de 25 años de experiencia y más de 1.500 proyectos completados, hemos construido nuestra reputación sobre presupuestos transparentes, ejecución excepcional y tratando cada casa como si fuera la nuestra.
+                Nuestro equipo propio coordina cada fase, manteniendo una comunicación cercana y un
+                trato personal en todo momento.
               </p>
               <p>
-                Nuestro equipo de profesionales aporta verdadera dedicación a cada reforma integral, cocina o baño que creamos. Tu espacio soñado es nuestra misión.
+                Llevamos más de 25 años reformando cocinas, baños y viviendas completas en Madrid
+                con más de 1.500 proyectos realizados. Nuestro objetivo es que tengas una reforma
+                bien planificada, con un presupuesto claro y un resultado duradero a la altura de lo
+                acordado.
               </p>
             </div>
             
-            <div className="mt-8 flex flex-wrap gap-4">
-              <div className="flex items-center gap-3 bg-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl shadow-[0_4px_20px_rgb(0,0,0,0.04)] border border-slate-100">
-                <Award className="h-5 w-5 sm:h-6 sm:w-6 text-[#d85b1d]" />
-                <span className="font-bold text-[#1a2b3c] text-sm sm:text-base">Profesionales Cualificados</span>
+            <div className="mt-8 md:mt-12 flex flex-col sm:flex-row gap-4 sm:gap-10 border-t border-[#1a2b3c]/5 pt-6 md:pt-8">
+              <div className="flex items-center gap-3">
+                <Award className="h-6 w-6 text-[#d85b1d] flex-shrink-0" />
+                <span className="font-bold text-[#1a2b3c] text-[15px] md:text-[1.05rem]">Presupuesto claro</span>
               </div>
-              <div className="flex items-center gap-3 bg-white px-4 sm:px-6 py-3 sm:py-4 rounded-xl shadow-[0_4px_20px_rgb(0,0,0,0.04)] border border-slate-100">
-                <Shield className="h-5 w-5 sm:h-6 sm:w-6 text-[#d85b1d]" />
-                <span className="font-bold text-[#1a2b3c] text-sm sm:text-base">Garantía por Contrato</span>
+              <div className="flex items-center gap-3">
+                <Shield className="h-6 w-6 text-[#d85b1d] flex-shrink-0" />
+                <span className="font-bold text-[#1a2b3c] text-[15px] md:text-[1.05rem]">Garantía mínima de 2 años</span>
               </div>
             </div>
           </div>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 section-fade-up">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 md:gap-12 lg:gap-14 section-fade-up mt-8 md:mt-16 pt-8 md:pt-16 border-t border-[#1a2b3c]/5">
           
-          <div className="rounded-xl border border-slate-100 bg-white shadow-lg lg:hover:shadow-xl transition-all duration-300 lg:hover:-translate-y-2">
-            <div className="p-6 sm:p-8 text-center h-full flex flex-col items-center">
-              <div className="bg-[#f2f6ff] w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mb-5 sm:mb-6">
-                <Shield className="h-7 w-7 sm:h-8 sm:w-8 text-[#d85b1d]" />
+          <div className="flex flex-col md:items-start h-full border-b border-[#1a2b3c]/5 pb-5 mb-5 md:border-0 md:pb-0 md:mb-0">
+              <div className="flex items-center md:gap-0 mb-1 md:mb-5 md:flex-col md:items-start">
+                <Shield strokeWidth={1.5} className="hidden md:block md:h-10 md:w-10 text-[#d85b1d] flex-shrink-0" />
+                <h3 className="text-base md:text-xl font-bold text-[#1a2b3c] md:mt-0">Transparencia</h3>
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-[#1a2b3c] mb-3">Transparencia</h3>
-              <p className="text-[#51677c] leading-relaxed text-sm">
-                Precios honestos, comunicación clara, sin sorpresas. Lo que ves y firmas es lo que verdaderamente se ejecuta.
+              <p className="text-[#51677c] leading-relaxed text-[14px] md:text-[1.05rem]">
+              Partidas detalladas para saber qué incluye cada parte de la reforma antes de empezar.
               </p>
             </div>
-          </div>
 
-          <div className="rounded-xl border border-slate-100 bg-white shadow-lg lg:hover:shadow-xl transition-all duration-300 lg:hover:-translate-y-2">
-            <div className="p-6 sm:p-8 text-center h-full flex flex-col items-center">
-              <div className="bg-[#f2f6ff] w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mb-5 sm:mb-6">
-                <Award className="h-7 w-7 sm:h-8 sm:w-8 text-[#d85b1d]" />
+          <div className="flex flex-col md:items-start h-full border-b border-[#1a2b3c]/5 pb-5 mb-5 md:border-0 md:pb-0 md:mb-0">
+              <div className="flex items-center md:gap-0 mb-1 md:mb-5 md:flex-col md:items-start">
+                <Award strokeWidth={1.5} className="hidden md:block md:h-10 md:w-10 text-[#d85b1d] flex-shrink-0" />
+                <h3 className="text-base md:text-xl font-bold text-[#1a2b3c] md:mt-0">Calidad</h3>
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-[#1a2b3c] mb-3">Calidad</h3>
-              <p className="text-[#51677c] leading-relaxed text-sm">
-                Materiales de primera, acabados excelentes y atención a cada remate. Excelencia asegurada en toda la ejecución.
+              <p className="text-[#51677c] leading-relaxed text-[14px] md:text-[1.05rem]">
+              Seleccionamos los mejores materiales y supervisamos cada detalle para un acabado
+              duradero.
               </p>
             </div>
-          </div>
 
-          <div className="rounded-xl border border-slate-100 bg-white shadow-lg lg:hover:shadow-xl transition-all duration-300 lg:hover:-translate-y-2">
-            <div className="p-6 sm:p-8 text-center h-full flex flex-col items-center">
-              <div className="bg-[#f2f6ff] w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mb-5 sm:mb-6">
-                <Users className="h-7 w-7 sm:h-8 sm:w-8 text-[#d85b1d]" />
+          <div className="hidden md:flex flex-col md:items-start h-full">
+              <div className="flex items-center md:gap-0 mb-1 md:mb-5 md:flex-col md:items-start">
+                <Users strokeWidth={1.5} className="hidden md:block md:h-10 md:w-10 text-[#d85b1d] flex-shrink-0" />
+                <h3 className="text-base md:text-xl font-bold text-[#1a2b3c] md:mt-0">Experiencia</h3>
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-[#1a2b3c] mb-3">Experiencia</h3>
-              <p className="text-[#51677c] leading-relaxed text-sm">
-                Más de 25 años sirviendo en Madrid con más de 1.500 proyectos cerrados de éxito y clientes que nos recomiendan.
+              <p className="text-[#51677c] leading-relaxed text-[14px] md:text-[1.05rem]">
+              25 años reformando viviendas en Madrid nos avalan. Más de 1.500 proyectos completados
+              demuestran nuestra solvencia.
               </p>
             </div>
-          </div>
 
-          <div className="rounded-xl border border-slate-100 bg-white shadow-lg lg:hover:shadow-xl transition-all duration-300 lg:hover:-translate-y-2">
-            <div className="p-6 sm:p-8 text-center h-full flex flex-col items-center">
-              <div className="bg-[#f2f6ff] w-14 h-14 sm:w-16 sm:h-16 rounded-full flex items-center justify-center mb-5 sm:mb-6">
-                <Heart className="h-7 w-7 sm:h-8 sm:w-8 text-[#d85b1d]" />
+          <div className="flex flex-col md:items-start h-full pb-2 md:pb-0">
+              <div className="flex items-center md:gap-0 mb-1 md:mb-5 md:flex-col md:items-start">
+                <Heart strokeWidth={1.5} className="hidden md:block md:h-10 md:w-10 text-[#d85b1d] flex-shrink-0" />
+                <h3 className="text-base md:text-xl font-bold text-[#1a2b3c] md:mt-0">Cercanía</h3>
               </div>
-              <h3 className="text-lg sm:text-xl font-bold text-[#1a2b3c] mb-3">Cuidado</h3>
-              <p className="text-[#51677c] leading-relaxed text-sm">
-                Tratamos cada vivienda como si fuera la nuestra. Tu tranquilidad es nuestra prioridad durante todos los oficios.
+              <p className="text-[#51677c] leading-relaxed text-[14px] md:text-[1.05rem]">
+              Entramos en tu casa con respeto, orden y atención al detalle, como si fuera nuestra.
+              Mantenemos la comunicación abierta para que estés tranquilo en cada fase.
               </p>
             </div>
-          </div>
 
         </div>
       </div>

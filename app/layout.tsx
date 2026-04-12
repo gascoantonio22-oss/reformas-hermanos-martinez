@@ -1,6 +1,8 @@
 import type { Metadata } from "next"
+import { Suspense } from "react"
 import { Inter } from "next/font/google"
 import { JsonLd } from "@/components/json-ld"
+import { DemoGuard } from "@/components/demo-guard"
 import { ScrollReveal } from "@/components/scroll-reveal"
 import { buildLocalBusinessSchema, buildOrganizationSchema, buildWebsiteSchema } from "@/lib/seo"
 import { siteConfig } from "@/lib/site"
@@ -63,9 +65,12 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="es">
+    <html lang="es" suppressHydrationWarning>
       <body className={`${inter.variable} font-sans antialiased`}>
         <JsonLd data={[buildWebsiteSchema(), buildOrganizationSchema(), buildLocalBusinessSchema()]} />
+        <Suspense fallback={null}>
+          <DemoGuard />
+        </Suspense>
         <ScrollReveal />
         {children}
         <Toaster richColors position="bottom-center" />

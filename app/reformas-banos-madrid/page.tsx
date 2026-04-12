@@ -14,7 +14,7 @@ export const metadata: Metadata = buildMetadata({
   title: landing.metaTitle,
   description: landing.metaDescription,
   path: landing.path,
-  keywords: ["reformas baños madrid", "reforma baño madrid", "empresa reformas baño madrid"],
+  keywords: ["reformas baños madrid", "reforma baño madrid", "cambiar bañera por ducha madrid"],
 })
 
 export default function ReformasBanosMadridPage() {

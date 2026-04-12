@@ -60,34 +60,29 @@ export function FaqSection({
   faqs = defaultFaqs,
 }: FaqSectionProps) {
   return (
-    <section id={id} className="py-16 md:py-24">
-      <div className="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
-        <div className="mx-auto mb-12 max-w-2xl text-center md:mb-16">
-          <p className="text-sm font-bold uppercase tracking-[0.2em] text-primary/70">
+    <section id={id} className="py-4 md:py-8">
+      <div className="mx-auto max-w-3xl">
+        <div className="mb-10">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#d85b1d]">
             {eyebrow}
           </p>
-          <h2 className="mt-4 text-3xl font-extrabold tracking-tight text-foreground md:text-5xl">
+          <h2 className="mt-3 text-2xl font-semibold tracking-tight text-[#182838] text-balance sm:text-3xl">
             {title}
           </h2>
-          <p className="mt-5 text-lg leading-relaxed text-muted-foreground">{description}</p>
+          <p className="mt-4 max-w-2xl text-base leading-7 text-[#5b6d7e]">{description}</p>
         </div>
 
-        <Accordion type="single" collapsible className="space-y-4">
+        <Accordion type="single" collapsible className="border-t border-border/70">
           {faqs.map((faq, index) => (
             <AccordionItem
               key={faq.question}
               value={`faq-${index + 1}`}
-              className="group rounded-2xl border border-border/60 bg-white px-6 shadow-sm transition-all hover:border-primary/30 hover:shadow-md data-[state=open]:border-primary/40 data-[state=open]:bg-primary/[0.02]"
+              className="border-b border-border/70 py-5"
             >
-              <AccordionTrigger className="gap-5 py-6 text-left text-base font-semibold text-foreground hover:no-underline md:text-lg">
-                <span className="flex items-center gap-4">
-                  <span className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-primary/10 text-sm font-bold text-primary transition-colors group-data-[state=open]:bg-primary group-data-[state=open]:text-white">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                  <span className="pt-0.5 leading-tight">{faq.question}</span>
-                </span>
+              <AccordionTrigger className="py-0 text-left text-base font-semibold text-[#182838] hover:no-underline sm:text-lg">
+                <span className="leading-tight">{faq.question}</span>
               </AccordionTrigger>
-              <AccordionContent className="pl-14 pb-6 pr-4 text-base leading-relaxed text-muted-foreground/90 md:pr-12 md:text-lg">
+              <AccordionContent className="pt-4 text-base leading-7 text-[#5b6d7e] sm:text-[17px]">
                 {faq.answer}
               </AccordionContent>
             </AccordionItem>

@@ -49,7 +49,7 @@ export function EmbeddedContactForm() {
           </div>
           <h3 className="text-3xl font-bold text-foreground">Solicitud enviada</h3>
           <p className="mt-3 text-base leading-7 text-muted-foreground">
-            Te llamaremos para comentar tu reforma.
+            Gracias, pronto te llamaremos para comentar tu reforma.
           </p>
           <Button className="mt-5 bg-accent text-accent-foreground hover:bg-accent/92" onClick={() => setIsSubmitted(false)}>
             Enviar otra solicitud
@@ -60,7 +60,7 @@ export function EmbeddedContactForm() {
           <div className="border-b border-border pb-4 text-center sm:pb-5">
             <h3 className="text-2xl font-bold text-foreground sm:text-3xl">Pide tu presupuesto</h3>
             <p className="mt-2 text-sm leading-6 text-muted-foreground sm:mt-3 sm:text-base sm:leading-7">
-              Rellena el formulario y te contactaremos.
+              Rellena el formulario y te contactaremos lo antes posible.
             </p>
           </div>
 
@@ -82,7 +82,7 @@ export function EmbeddedContactForm() {
                 id="telefono"
                 type="tel"
                 required
-                placeholder="Tu número"
+                placeholder="Tu número de contacto"
                 value={formState.telefono}
                 onChange={(e) => setFormState((current) => ({ ...current, telefono: e.target.value }))}
               />
@@ -112,7 +112,7 @@ export function EmbeddedContactForm() {
             <Textarea
               id="descripcion"
               rows={4}
-              placeholder="Cuéntanos brevemente qué necesitas"
+              placeholder="Cuéntanos brevemente qué necesitas reformar"
               value={formState.descripcion}
               onChange={(e) => setFormState((current) => ({ ...current, descripcion: e.target.value }))}
             />
@@ -124,7 +124,7 @@ export function EmbeddedContactForm() {
             className="h-auto w-full whitespace-normal px-4 py-3 text-center text-[0.95rem] leading-snug font-semibold text-accent-foreground bg-accent hover:bg-accent/92 sm:h-12 sm:text-base"
             disabled={isSubmitting}
           >
-            {isSubmitting ? "Enviando..." : "Quiero mi presupuesto"}
+            {isSubmitting ? "Enviando..." : "Quiero mi presupuesto sin compromiso"}
           </Button>
 
           <div className="border-t border-border pt-4 text-center sm:pt-5">
@@ -136,7 +136,7 @@ export function EmbeddedContactForm() {
             </p>
             <div className="inline-flex items-center gap-2 text-sm text-muted-foreground">
               <Clock className="h-4 w-4 text-primary/70" />
-              Horario de oficina: Lun-Vie 8:00 a 19:00
+              Horario de oficina: Lun-Vie 8:00-19:00
             </div>
           </div>
         </form>

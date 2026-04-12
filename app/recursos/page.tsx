@@ -7,8 +7,8 @@ import { Footer } from "@/components/footer"
 import { JsonLd } from "@/components/json-ld"
 import { buildBreadcrumbSchema, buildMetadata, buildWebPageSchema } from "@/lib/seo"
 
-const title = "Recursos y guías sobre reformas | Hermanos Martínez"
-const description = "Descubre nuestras guías prácticas, consejos y estimaciones de precios para tu próxima reforma en Madrid."
+const title = "Recursos y guías para planificar tu reforma | Hermanos Martínez"
+const description = "Todo lo que necesitas saber antes de empezar tu reforma en Madrid. Artículos prácticos para comparar precios, materiales y decisiones clave."
 const path = "/recursos"
 
 export const metadata: Metadata = buildMetadata({
@@ -21,19 +21,19 @@ export const metadata: Metadata = buildMetadata({
 const resources = [
   {
     title: "¿Cuánto cuesta una reforma integral en Madrid?",
-    description: "Desglose real de partidas, costes medios y consejos para no pasarte del presupuesto en tu reforma.",
+    description: "Desglose de partidas, costes medios y consejos para calcular mejor el presupuesto de una reforma integral en Madrid.",
     href: "/recursos/cuanto-cuesta-reforma-integral-madrid",
     icon: FileText,
   },
   {
-    title: "10 Errores al reformar tu cocina (y cómo evitarlos)",
-    description: "Conoce los fallos más comunes en distribución, materiales e iluminación antes de empezar tu obra.",
+    title: "10 errores al reformar tu cocina",
+    description: "Conoce los fallos más comunes en distribución, materiales e iluminación antes de empezar una reforma de cocina.",
     href: "/recursos/errores-comunes-reforma-cocina",
     icon: CheckCircle2,
   },
   {
-    title: "Guía para cambiar bañera por ducha en 24 horas",
-    description: "Todo el proceso paso a paso, los mejores materiales antideslizantes y qué debes tener en cuenta.",
+    title: "Guía para cambiar bañera por ducha",
+    description: "Todo el proceso paso a paso, los materiales antideslizantes y qué conviene revisar antes de empezar.",
     href: "/recursos/guia-cambiar-banera-por-ducha",
     icon: BookOpen,
   },
@@ -60,11 +60,12 @@ export default function RecursosPage() {
       <section className="bg-muted/30 py-16 md:py-24">
         <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto mb-12 max-w-2xl text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-foreground md:text-5xl">
-              Recursos y Guías
+              <h1 className="text-4xl font-bold tracking-tight text-foreground md:text-5xl">
+              Recursos y guías para planificar tu reforma
             </h1>
             <p className="mt-4 text-lg text-muted-foreground">
-              Todo lo que necesitas saber antes de empezar tu reforma. Artículos prácticos escritos por profesionales.
+              Todo lo que necesitas saber antes de empezar tu reforma en Madrid. Artículos
+              prácticos para comparar precios, materiales y decisiones clave.
             </p>
           </div>
 

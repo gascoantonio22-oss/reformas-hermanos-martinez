@@ -8,7 +8,7 @@ import { JsonLd } from "@/components/json-ld"
 import { buildBreadcrumbSchema, buildMetadata, buildArticleSchema } from "@/lib/seo"
 
 const title = "Guía definitiva para cambiar bañera por ducha en Madrid"
-const description = "Descubre el proceso completo, precios y tiempos reales para realizar un cambio de bañera por ducha seguro y accesible."
+const description = "Descubre el proceso completo, los plazos reales y los materiales que conviene revisar al realizar esta reforma."
 const path = "/recursos/guia-cambiar-banera-por-ducha"
 const publishDate = "2026-04-09T08:00:00+02:00"
 
@@ -50,34 +50,42 @@ export default function ArticlePage() {
             {title}
           </h1>
           <p className="mt-6 text-lg tracking-tight text-muted-foreground">
-            Es la reforma estrella y la que más nos solicitan en Madrid. Ganarás en seguridad (sobre todo para personas mayores), espacio y modernidad. ¿Cómo lo hacemos y cuánto se tarda?
+            Cambiar la bañera por una ducha es muy popular en Madrid para ganar seguridad y
+            comodidad en el baño.
           </p>
         </header>
 
         <div className="prose prose-gray max-w-none dark:prose-invert prose-headings:font-bold prose-a:text-primary">
-          <h2>El proceso y los plazos</h2>
+          <h2>Proceso y plazos</h2>
           <p>
-            Mucha publicidad promete este cambio "en 24 horas". Nuestro consejo es huir de las prisas que sacrifican el secado de los materiales. Un cambio hecho por profesionales requiere, como mínimo, <strong>dos o tres jornadas completas</strong> para asegurar que todo el perímetro quede estanco y no haya goteras en un mes.
+            Aunque algunos prometen cambios en 24 horas, lo recomendable es dedicar al menos
+            <strong> 2-3 días</strong> para asegurar un buen resultado.
           </p>
 
           <ol>
-            <li><strong>Día 1:</strong> Demolición, retirada de escombros de la antigua bañera, y subida del nivel del desagüe para el nuevo plato extraplano. Se prepara la pared (se rasea con mortero).</li>
-            <li><strong>Día 2:</strong> Instalación del plato de ducha (asegurando el nivel para que corra el agua) y alicatado en la zona donde estaba la bañera.</li>
-            <li><strong>Día 3:</strong> Rejuntado, colocación de grifería y mampara.</li>
+            <li><strong>Día 1:</strong> Demolición y retirada de la bañera antigua. Preparación de la base para el nuevo plato.</li>
+            <li><strong>Día 2:</strong> Instalación del plato de ducha, verificación del nivel y colocación de azulejos en las zonas afectadas.</li>
+            <li><strong>Día 3:</strong> Rejuntado, montaje de grifería y colocación de la mampara.</li>
           </ol>
 
-          <h2>Los Materiales Clave</h2>
+          <h2>Los materiales clave</h2>
           <p>
-            El corazón de esta reforma es el plato. El estándar hoy son los <strong>platos de resina con carga mineral</strong>. Son muy cálidos, apenas levantan 3cm del suelo y lo más importante: tienen clasificación C3 antideslizante (la máxima).
+            El plato de ducha es fundamental. Actualmente se recomiendan los platos de resina con
+            carga mineral por su resistencia y ligereza.
           </p>
           <p>
-            Respecto a la mampara, para ganar amplitud visual recomendamos una hoja fija de cristal templado (mínimo 6mm, preferible 8mm) con tratamiento antical. Evita perfiles en la parte inferior para que sea fácil pasar la fregona.
+            En cuanto a la mampara, para ganar amplitud visual se suele optar por una hoja de
+            cristal templado. Los perfiles de aluminio o acero inoxidable aportan durabilidad y
+            estilo.
           </p>
 
           <div className="my-10 rounded-2xl bg-muted/50 p-6 sm:p-8">
             <h3 className="mt-0 text-xl font-bold text-foreground">Gana seguridad hoy</h3>
             <p className="mt-2 text-muted-foreground">
-              Somos especialistas. Trabajamos con los mejores proveedores nacionales y cuidamos cada milímetro.
+              Somos especialistas en Madrid con más de 25 años de experiencia en reformas de
+              baños. Trabajamos con proveedores de confianza y cuidamos cada milímetro para que el
+              cambio quede perfectamente rematado. Garantizamos cada proyecto con documentación
+              por escrito para tu tranquilidad.
             </p>
             <Link
               href="/cambiar-banera-por-ducha-madrid"
@@ -94,13 +102,13 @@ export default function ArticlePage() {
             <h3 className="text-2xl font-bold mb-8">Artículos relacionados</h3>
             <div className="grid gap-6 md:grid-cols-2 text-left">
               <Link href="/recursos/cuanto-cuesta-reforma-integral-madrid" className="block p-6 bg-card rounded-xl border border-border hover:shadow-md transition-all">
-                <h4 className="font-bold mb-2">Precio de Reforma Integral</h4>
-                <p className="text-sm text-muted-foreground">Desglose de precios para reformar un piso en Madrid.</p>
+                <h4 className="font-bold mb-2">¿Cuánto cuesta una reforma integral?</h4>
+                <p className="text-sm text-muted-foreground">Desglose orientativo de partidas y precios para Madrid.</p>
                 <div className="mt-4 flex items-center text-sm font-medium text-primary">Leer más <ArrowRight className="ml-1 h-4 w-4"/></div>
               </Link>
               <Link href="/recursos/errores-comunes-reforma-cocina" className="block p-6 bg-card rounded-xl border border-border hover:shadow-md transition-all">
-                <h4 className="font-bold mb-2">10 Errores al reformar tu cocina</h4>
-                <p className="text-sm text-muted-foreground">Evita dolores de cabeza en la zona más cara de reformar.</p>
+                <h4 className="font-bold mb-2">10 errores al reformar tu cocina</h4>
+                <p className="text-sm text-muted-foreground">Evita fallos de distribución, luz y materiales antes de empezar.</p>
                 <div className="mt-4 flex items-center text-sm font-medium text-primary">Leer más <ArrowRight className="ml-1 h-4 w-4"/></div>
               </Link>
             </div>

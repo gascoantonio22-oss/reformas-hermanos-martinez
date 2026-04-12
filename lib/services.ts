@@ -14,21 +14,21 @@ export const services: Service[] = [
   {
     slug: "reformas-cocinas",
     cardTitle: "Reformas de cocinas",
-    pageTitle: "Reformas de cocinas",
+    pageTitle: "Reformas de cocinas en Madrid",
     image: "/images/cocinas-madrid/6.jpg",
     price: "Desde 6.900 €",
     shortDescription:
-      "Diseñamos tu cocina completa con fontanería, electricidad, muebles y encimera, para que no tengas que coordinar distintos profesionales.",
+      "Reformas de cocinas en Madrid: Remodelamos cocinas coordinando la fontanería, la electricidad, los muebles y la encimera para lograr un espacio práctico, cómodo y duradero. Pensamos cada detalle en la mejor distribución según tu espacio y necesidades.",
     intro:
-      "Reformamos cocinas para que resulten más cómodas, prácticas y agradables de usar cada día, adaptando la distribución y los materiales a cómo se vive la casa de verdad.",
+      "Reformamos cocinas en Madrid pensando en la circulación, la luz, el almacenaje y los materiales para que el espacio funcione mejor en el día a día.",
     highlights: [
-      "Mejor aprovechamiento del espacio para cocinar y guardar.",
+      "Distribución pensada para ganar comodidad y almacenaje.",
       "Renovación de muebles, encimera, iluminación y puntos de agua.",
-      "Materiales pensados para aguantar bien el uso diario.",
+      "Materiales resistentes para el uso diario.",
     ],
     included: [
       "Retirada de acabados y elementos anteriores.",
-      "Actualización básica de fontanería y electricidad de la zona.",
+      "Actualización de fontanería, electricidad e iluminación.",
       "Montaje de mobiliario, encimera y remates finales.",
       "Coordinación completa hasta dejar la cocina lista.",
     ],
@@ -36,13 +36,13 @@ export const services: Service[] = [
   {
     slug: "reformas-banos",
     cardTitle: "Reformas de baños",
-    pageTitle: "Reformas de baños",
+    pageTitle: "Reformas de baños en Madrid",
     image: "/images/services/bano.jpg",
     price: "Desde 4.900 €",
     shortDescription:
-      "Especialistas en cambio de bañera por plato de ducha o reformas completas con nuevos azulejos, sanitarios y mobiliario.",
+      "Reformas de baños en Madrid: Reformamos tu baño renovando las instalaciones y alicatados con materiales resistentes. Diseñamos espacios cómodos y fáciles de limpiar, con una obra limpia y sin complicaciones.",
     intro:
-      "Reformamos baños completos para que ganen comodidad, limpieza y funcionalidad, con soluciones duraderas y fáciles de mantener.",
+      "Reformamos baños completos en Madrid para que ganen comodidad, limpieza y funcionalidad con soluciones duraderas y fáciles de mantener.",
     highlights: [
       "Cambio de sanitarios, mobiliario y griferías.",
       "Nuevos revestimientos con un acabado limpio y actual.",
@@ -58,11 +58,11 @@ export const services: Service[] = [
   {
     slug: "reformas-integrales",
     cardTitle: "Reformas integrales",
-    pageTitle: "Reformas integrales",
+    pageTitle: "Reformas integrales en Madrid",
     image: "/images/services/reforma-integral.jpg",
     price: "Desde 650 €/m2",
     shortDescription:
-      "Renovamos tu vivienda completa coordinando todos los trabajos para que el resultado quede bien ejecutado y a tu gusto.",
+      "Reformas integrales en Madrid: Coordinamos todos los gremios, materiales y fases de obra de tu vivienda para una reforma completa sin sorpresas. Planificamos el proyecto con criterio, evitando tiempos muertos y garantizando fechas realistas.",
     intro:
       "Nos encargamos de la reforma completa de la vivienda para que todo tenga orden, coherencia y un único equipo coordinando el proceso.",
     highlights: [
@@ -80,11 +80,11 @@ export const services: Service[] = [
   {
     slug: "cambio-banera-ducha",
     cardTitle: "Cambio de bañera por ducha",
-    pageTitle: "Cambio de bañera por ducha",
+    pageTitle: "Cambio de bañera por ducha en Madrid",
     image: "/images/services/bano-plato-ucha.jpg",
     price: "Desde 1.950 €",
     shortDescription:
-      "Sustituimos tu bañera por un plato de ducha moderno, cómodo y fácil de limpiar en muy poco tiempo.",
+      "Cambio de bañera por ducha en Madrid: Sustituimos tu bañera por un plato antideslizante accesible, con obras contenidas y un resultado limpio. Mejoramos la seguridad y comodidad diaria con un acabado profesional.",
     intro:
       "Cambiamos la bañera por una ducha más cómoda y accesible, con una obra contenida y un resultado que se nota desde el primer día.",
     highlights: [
@@ -190,7 +190,7 @@ export const services: Service[] = [
 ]
 
 export const servicePriceNote =
-  "Orientación habitual en España peninsular. El precio final puede variar según metros, materiales, accesos y el estado previo de la vivienda."
+  "Orientación habitual para Madrid. El precio final puede variar según metros, materiales, accesos y el estado previo de la vivienda."
 
 export function getServiceBySlug(slug: string) {
   return services.find((service) => service.slug === slug)

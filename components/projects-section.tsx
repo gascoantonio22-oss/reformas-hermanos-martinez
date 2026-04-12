@@ -18,42 +18,42 @@ const galleryImages = [
   {
     id: 4,
     src: "/images/reformas-gallery/4.jpg",
-    alt: "Cocina reformada en tonos claros y líneas rectas",
+    alt: "Cocina reformada en Madrid en tonos claros y líneas rectas",
   },
   {
     id: 5,
     src: "/images/reformas-gallery/5.jpg",
-    alt: "Vivienda en obras con escalera de madera y cableado visible",
+    alt: "Vivienda en obras en Madrid con escalera de madera y cableado visible",
   },
   {
     id: 6,
     src: "/images/reformas-gallery/6.jpg",
-    alt: "Cocina acabada con encimera efecto mármol y luz integrada",
+    alt: "Cocina acabada en Madrid con encimera efecto mármol y luz integrada",
   },
   {
     id: 7,
     src: "/images/reformas-gallery/7.jpg",
-    alt: "Pasillo en proceso de reforma con escalera y suelo de madera",
+    alt: "Pasillo en proceso de reforma en Madrid con escalera y suelo de madera",
   },
   {
     id: 8,
     src: "/images/reformas-gallery/8.jpg",
-    alt: "Baño reformado con espejo iluminado y muebles de madera",
+    alt: "Baño reformado en Madrid con espejo iluminado y muebles de madera",
   },
   {
     id: 9,
     src: "/images/reformas-gallery/9.jpg",
-    alt: "Cocina acabada con encimera porcelánica y luz cálida",
+    alt: "Cocina acabada en Madrid con encimera porcelánica y luz cálida",
   },
   {
     id: 10,
     src: "/images/reformas-gallery/10.jpg",
-    alt: "Baño moderno con iluminación integrada y acabados claros",
+    alt: "Baño moderno en Madrid con iluminación integrada y acabados claros",
   },
   {
     id: 11,
     src: "/images/reformas-gallery/11.jpg",
-    alt: "Detalle de baño reformado con nichos iluminados y espejo grande",
+    alt: "Detalle de baño reformado en Madrid con nichos iluminados y espejo grande",
   },
 ]
 
@@ -174,14 +174,15 @@ export function ProjectsSection() {
 
   return (
     <>
-      <section id="proyectos" className="scroll-mt-24 bg-[#f3f6fa] py-14 md:scroll-mt-28 md:py-20">
+      <section id="proyectos" className="scroll-mt-24 bg-[#f3f6fa] pt-14 pb-8 md:scroll-mt-28 md:pt-20 md:pb-12">
         <div className="mx-auto max-w-[112rem] px-4 sm:px-6 lg:px-8">
           <div className="section-fade-up mx-auto max-w-4xl text-center">
             <h2 className="text-balance text-3xl font-bold leading-tight text-foreground sm:text-4xl">
               Reformas que hablan por sí solas
             </h2>
             <p className="mt-4 text-lg leading-8 text-muted-foreground">
-              Una selección de trabajos reales para que puedas ver acabados, materiales y resultados con más detalle.
+              Te mostramos una selección de proyectos reales en Madrid para que compruebes nuestros
+              acabados, soluciones y resultados antes de pedir presupuesto.
             </p>
           </div>
 
@@ -216,7 +217,7 @@ export function ProjectsSection() {
               ))}
             </div>
 
-            <div className="mt-6 flex items-center justify-center gap-3 md:mt-8 md:gap-4">
+            <div className="mt-4 flex items-center justify-center gap-3 md:mt-6 md:gap-4">
               <button
                 type="button"
                 onClick={goToPrevious}

@@ -4,19 +4,19 @@ import { ArrowRight, BookOpen, FileText, CheckCircle2 } from "lucide-react"
 const resources = [
   {
     title: "¿Cuánto cuesta una reforma integral en Madrid?",
-    description: "Desglose real de partidas, costes medios y consejos para no pasarte del presupuesto en tu reforma.",
+    description: "Desglose de partidas, costes medios y consejos para calcular mejor el presupuesto de una reforma integral en Madrid.",
     href: "/recursos/cuanto-cuesta-reforma-integral-madrid",
     icon: FileText,
   },
   {
-    title: "10 Errores al reformar tu cocina (y cómo evitarlos)",
-    description: "Conoce los fallos más comunes en distribución, materiales e iluminación antes de empezar tu obra.",
+    title: "10 errores al reformar tu cocina",
+    description: "Conoce los fallos más comunes en distribución, materiales e iluminación antes de empezar una reforma de cocina.",
     href: "/recursos/errores-comunes-reforma-cocina",
     icon: CheckCircle2,
   },
   {
-    title: "Guía para cambiar bañera por ducha en 24 horas",
-    description: "Todo el proceso paso a paso, los mejores materiales antideslizantes y qué debes tener en cuenta.",
+    title: "Guía para cambiar bañera por ducha",
+    description: "Todo el proceso paso a paso, los materiales antideslizantes y qué conviene revisar antes de empezar.",
     href: "/recursos/guia-cambiar-banera-por-ducha",
     icon: BookOpen,
   },
@@ -28,13 +28,13 @@ export function ResourcesSection() {
       <div className="mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto mb-10 max-w-2xl text-center md:mb-12">
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-primary/70">
-            Recursos y Guías
+            Recursos y guías para planificar tu reforma
           </p>
           <h2 className="mt-3 text-3xl font-bold text-foreground text-balance md:text-4xl">
-            Aprende antes de reformar
+            Todo lo que necesitas saber antes de empezar tu reforma en Madrid
           </h2>
           <p className="mt-3 text-muted-foreground">
-            Artículos y guías prácticas para ayudarte a tomar mejores decisiones en tu proyecto.
+            Artículos prácticos para comparar precios, materiales y decisiones clave.
           </p>
         </div>
 
@@ -72,7 +72,7 @@ export function ResourcesSection() {
             href="/recursos"
             className="inline-flex items-center justify-center rounded-lg border border-border bg-transparent px-6 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-muted"
           >
-            Ver todos los recursos
+            Ver todas las guías
           </Link>
         </div>
       </div>
